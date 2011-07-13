@@ -13,6 +13,7 @@ gem "dm-sqlite-adapter"
 
 group :production do
   # gem 'pony'
+  gem "dm-postgres-adapter"
 end
 
 group :development do
