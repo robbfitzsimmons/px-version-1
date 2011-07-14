@@ -14,4 +14,10 @@ class Question
   property :created_at,   DateTime  # Generated when each resource is created
   property :updated_at,   DateTime  # Generated when each resource is updated
 
+  ## Links a question to multiple answers
+  has n,   :answers
+
+  ## Links questions to events
+  belongs_to :event, :key => true
+
 end

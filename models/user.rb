@@ -17,4 +17,23 @@ class User
 
   property :created_at, DateTime  # Generated when each resource is created
   property :updated_at, DateTime  # Generated when each resource is updated
+
+  ## Links users to events
+  has n, 	 :user_event_associations
+  has n,	 :events, :through => :user_event_associations
+
+  ## Links users to speakers
+  has n,   :presentations
+  has n,   :time_slots, :through => :presentations
+
+  ## Links a user to multiple invites
+  has n,   :invites
+
+  has n,   :answers
+
+  # Lists topics a user is speaking in as speeches
+  def speeches
+    self.time_slots
+  end
+
 end

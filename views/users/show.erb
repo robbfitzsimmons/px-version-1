@@ -1,0 +1,6 @@
+<h1><%= @user.name %></h1>
+
+<h2>My Events</h2>
+<% @user.user_event_associations.each do |event| %>
+	<p><%= event.event.id %><%= event.event.name %></p>
+<% end %>

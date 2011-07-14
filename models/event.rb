@@ -17,4 +17,16 @@ class Event
 
   property :created_at,   DateTime  # Generated when each resource is created
   property :updated_at,   DateTime  # Generated when each resource is updated
+
+
+  ## Links events to users
+  has n,   :user_event_associations
+  has n,   :users, :through => :user_event_associations
+
+
+  ## Links an event to multiple time_slots and multiple invites and multiple questions
+  has n, :time_slots
+  has n, :invites
+  has n, :questions
+
 end

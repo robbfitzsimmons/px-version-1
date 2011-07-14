@@ -13,7 +13,7 @@ gem "dm-sqlite-adapter"
 
 group :production do
   # gem 'pony'
-  gem "dm-postgres-adapter"
+  gem "dm-postgres-adapter"			# allows database to work on Heroku
 end
 
 group :development do
