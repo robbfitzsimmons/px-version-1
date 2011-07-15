@@ -9,7 +9,8 @@ DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite://#{Dir.pwd}/db/proxim
 DataMapper.finalize
 
 # Create the db/tables if they don't exist
-DataMapper::auto_upgrade!
+DataMapper.auto_migrate!
+#DataMapper::auto_upgrade!
 
 get '/' do
   @title = 'Hey there!'
