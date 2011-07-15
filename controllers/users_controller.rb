@@ -66,13 +66,13 @@ post '/signup/step2' do
 
 	if @user.save
 		status(202)
-		redirect '/signup/step3'
+		rredirect '/users/#{@user.id}'
 	else
 		status(412)
 		@user.errors.each do |e|
 		    puts e
 		end
-		redirect '/users/:id'
+		redirect '/signup/step2'
 	end
 end
 
