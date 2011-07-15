@@ -5,9 +5,15 @@ class TimeSlot
   property :name,             String    #
   property :description,      String    #
   property :location,         String    # Name of location
+
+  validates_presence_of :name
   
   property :start_date,       DateTime	#
   property :end_date,         DateTime	#
+
+  validates_presence_of :start_date
+  validates_presence_of :end_date
+  validates_with_method :end_date, :method => :valid_end_date?, :if => lambda { |t| t.start_date != nil && t.end_date != nil}
 
   #property :speaker_user_id,  Integer   # Links a topic to a speaker
   #property :event_id,         Integer   # Links a topic to an event

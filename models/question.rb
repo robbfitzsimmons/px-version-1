@@ -4,6 +4,9 @@ class Question
   property :id,					  Serial    #
   property :type,         String    # Type of Question (Radio, Text, Select)
   property :text,         String    # Question's text
+
+  validates_presence_of :type
+  validates_presence_of :text
   
   property :option1,      String    # If needed, question's option's text
   property :option2,      String    # If needed, question's option's text

@@ -10,6 +10,7 @@ gem "dm-migrations"
 gem "dm-validations"
 gem "dm-timestamps"
 
+gem "omniauth"
 
 group :development do
   # gem 'pony'

@@ -1,6 +1,8 @@
-# Import all Models and Controllers
+# Import all Models, Controllers, Helpers
 Dir.glob("#{Dir.pwd}/models/*.rb") { |m| require "#{m.chomp}" }
 Dir.glob("#{Dir.pwd}/controllers/*.rb") { |m| require "#{m.chomp}" }
+Dir.glob("#{Dir.pwd}/helpers/*.rb") { |m| require "#{m.chomp}" }
+require 'openid/store/filesystem'
 
 # Set up database
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite://#{Dir.pwd}/db/proximate.db")
@@ -8,9 +10,22 @@ DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite://#{Dir.pwd}/db/proxim
 # Initialize (finalize) db
 DataMapper.finalize
 
+# Reset the db/tables and recreate
+# DataMapper.auto_migrate!
+
 # Create the db/tables if they don't exist
-DataMapper.auto_migrate!
-#DataMapper::auto_upgrade!
+DataMapper::auto_upgrade!
+
+
+use Rack::Session::Cookie
+use OmniAuth::Builder do
+	provider :open_id, OpenID::Store::Filesystem.new('./tmp')
+	provider :twitter, '6kDJ3xRTKjubSoXL1CE41Q', 'FP4UD6lcyyMti5rGm9v3EwfAxIFqIpsDJ84cHlpbTM'
+	provider :linked_in, 'CuqtbGhGfygi_swi36LOR91i-qHQSuMpz6BstFD5lABv3n9qNcRV7Mcfu2ZaKW5g', 'DId-d7qGWoVTcsfLseckYGdD53CObk1Mp9ISDCXEu8d-HC_UrPzLrxiF3I2bKmas'
+	
+	## https://www.linkedin.com/secure/developer
+	## https://dev.twitter.com/apps/new
+end
 
 get '/' do
   @title = 'Hey there!'

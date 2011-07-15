@@ -1,10 +1,18 @@
 class Invite
   include DataMapper::Resource
 
-  property :id,					  Serial    #
-  property :email,        String    # 
-  property :slug,         String    # Unique indentifier URL
-  property :visited,      String    # Has the slug been visited?
+  property :id,					  Serial                       #
+  property :email,        String                       # 
+  property :slug,         String                       # Unique indentifier URL
+  property :visited,      String, :default => false    # Has the slug been visited?
+
+  before :valid?, :create_slug
+
+  validates_presence_of :email
+  validates_presence_of :slug
+  validates_uniqueness_of :email, :scope => :event_id
+  validates_uniqueness_of :slug
+  validates_format_of :email, :as => :email_address
 
   #property :event_id,     Integer   # Links an invite to an event
   #property :user_id,      Integer   # Links an invite to a user (must have registered or already a member)
@@ -15,4 +23,6 @@ class Invite
   ## Links an invite to an event
   belongs_to :event
   belongs_to :user, :required => false	# Link created when signing up a user if their email exists in user database or when if they register given this invite
+
+  validates_uniqueness_of :user_id, :scope => :event_id   # Insure a unique user for each event
 end

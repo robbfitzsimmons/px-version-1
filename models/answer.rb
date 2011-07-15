@@ -16,4 +16,6 @@ class Answer
   belongs_to :question,   :key => true
   belongs_to :user
 
+  validates_numericality_of :int_answer, :integer_only => true, :gte => 0
+
 end
