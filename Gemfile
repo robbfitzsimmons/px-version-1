@@ -9,9 +9,12 @@ gem "dm-core"
 gem "dm-migrations"
 gem "dm-validations"
 gem "dm-timestamps"
-gem "dm-sqlite-adapter"
 
-gem "dm-postgres-adapter"
+
+group :development do
+  # gem 'pony'
+  gem "dm-sqlite-adapter"
+end
 
 group :production do
   # gem 'pony'
