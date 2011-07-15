@@ -10,7 +10,11 @@ get '/auth/:name/callback' do
 	
 	# PP::pp(auth, $stderr, 50)
 	# Search for a user with the name
-	@user = User.first(:name => auth["user_info"]["name"])
+	if(auth["provider"] == "linked_in")
+		@user = User.first(:linked_in => auth["user_info"]["urls"]["LinkedIn"])
+	elsif(auth["provider"] == "twitter")
+		@user = User.first(:twitter => auth["user_info"]["urls"]["Twitter"])
+	end
 	
 	# If user does not exist create a new one
 	if (@user == nil)
@@ -25,7 +29,12 @@ get '/auth/:name/callback' do
 			# For twitter drop the _normal for full size, _bigger works too
 			:image     => auth["user_info"]["image"]
 		}
-		
+
+	else
+		# The user already exists, so lets log them in :)
+
+		# And redirect them to their profile page
+		redirect "/users/#{@user.id}"
 	end
 	
 	# if it is linked_in and linked_in has not been filled out
@@ -66,7 +75,7 @@ post '/signup/step2' do
 
 	if @user.save
 		status(202)
-		redirect '/users/#{@user.id}'
+		redirect "/users/#{@user.id}"
 	else
 		status(412)
 		@user.errors.each do |e|
