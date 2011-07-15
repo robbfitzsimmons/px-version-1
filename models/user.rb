@@ -13,8 +13,8 @@ class User
   validates_format_of :email, :as => :email_address
   validates_uniqueness_of :email
   
-  property :password,   String		#
-  property :salt,   		String		#
+  property :password,   String, :length => 6..500		#
+  property :salt,   		String, :length => 6..500		#
 
   validates_presence_of :password
   #validates_presence_of :salt
