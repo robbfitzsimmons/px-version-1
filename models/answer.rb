@@ -3,8 +3,8 @@ class Answer
 
   property :id,					  	Serial    #
  
-  property :user_id,        String    # Links an answer to a user
-  #property :question_id,    String    # Links an answer to a question
+  #property :user_id,        Integer    # Links an answer to a user
+  #property :question_id,    Integer    # Links an answer to a question
   
   property :text_answer,    String    # An answer to question_id, that is a String
   property :int_answer, 		Integer		# An answer to question_id, that is an int (or boolean)

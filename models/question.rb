@@ -9,7 +9,7 @@ class Question
   property :option2,      String    # If needed, question's option's text
   property :option3,      String    # If needed, question's option's text
 
-  property :event_id,			Integer		# Links a question to an event
+  #property :event_id,			Integer		# Links a question to an event
 
   property :created_at,   DateTime  # Generated when each resource is created
   property :updated_at,   DateTime  # Generated when each resource is updated

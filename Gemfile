@@ -11,6 +11,8 @@ gem "dm-validations"
 gem "dm-timestamps"
 gem "dm-sqlite-adapter"
 
+gem "dm-postgres-adapter"
+
 group :production do
   # gem 'pony'
   gem "dm-postgres-adapter"			# allows database to work on Heroku

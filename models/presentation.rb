@@ -3,8 +3,8 @@ class Presentation
 
   property :id,					  	Serial    #
  
-  # property :user_id,        String    # Links an user to a topic
-  # property :topic_id,		    String    # Links a topic to a user
+  # property :user_id,        Integer    # Links an user to a topic
+  # property :topic_id,		    Integer    # Links a topic to a user
 
   # Links speaker to a user and a time slot
   belongs_to :user,   :key => true
