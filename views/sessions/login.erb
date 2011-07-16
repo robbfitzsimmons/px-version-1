@@ -1,0 +1,22 @@
+<h6>Find me in views/sessions/login.erb</h6>
+
+<form action="/login" method="post">
+
+	<label for="session[email]">Email</label>
+	<input name="session[email]" type="text" />
+
+	<label for="session[password]">Password</label>
+	<input name="session[password]" type="password" />
+
+	<br />
+
+	<input type="submit" value="Sign In" />
+</form>
+
+<p>Or sign in using the Linked In service</p>
+<!-- <a href="/auth/twitter">Sign in with Twitter</a> -->
+<a href="/auth/linked_in">
+	<img alt="Sign in with Linked In" src="images/log-in-linkedin-large.png" />
+</a>
+
+<p>If you are new sign up!</p>

@@ -11,13 +11,16 @@ DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite://#{Dir.pwd}/db/proxim
 DataMapper.finalize
 
 # Reset the db/tables and recreate
- DataMapper.auto_migrate!
+# DataMapper.auto_migrate!
 
 # Create the db/tables if they don't exist
-#DataMapper::auto_upgrade!
+DataMapper::auto_upgrade!
+
+use Rack::Session::Cookie, :secret => 'Xzw8TvIwQVZrnjKXkoI8SRDHhIZ65y'
+use Rack::Flash
 
 
-use Rack::Session::Cookie
+
 use OmniAuth::Builder do
 	provider :open_id, OpenID::Store::Filesystem.new('./tmp')
 	provider :twitter, '6kDJ3xRTKjubSoXL1CE41Q', 'FP4UD6lcyyMti5rGm9v3EwfAxIFqIpsDJ84cHlpbTM'
@@ -25,6 +28,10 @@ use OmniAuth::Builder do
 	
 	## https://www.linkedin.com/secure/developer
 	## https://dev.twitter.com/apps/new
+end
+
+get '/style.css' do
+	sass :style
 end
 
 get '/' do

@@ -1,0 +1,7 @@
+<% [:success, :error, :warning]. each do |message| %>       
+  <% if flash.has?(message) %>
+    <div class="flash" id="<%= message %>">           
+      <%= flash[message] %>           
+    </div>
+  <% end %>
+<% end %>

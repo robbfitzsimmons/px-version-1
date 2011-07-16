@@ -12,6 +12,8 @@ gem "dm-timestamps"
 
 gem "omniauth"
 
+gem "sass" 
+
 group :development do
   # gem 'pony'
   gem "dm-sqlite-adapter"
