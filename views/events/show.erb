@@ -1,0 +1,14 @@
+<h1><%= @event.name %></h1>
+<h6>Find me in views/events/show.erb</h6>
+
+<% if is_event_admin(@event) %>
+	You are an admin
+<% end %>
+
+
+<h2>Attendees</h2>
+<ul>
+<% @event.user_event_associations.each do |assoc| %>
+	<li><%= assoc.user.name %></li>
+<% end %>
+</ul>

@@ -1,7 +1,15 @@
 <h1><%= @user.name %></h1>
 <h6>Find me in views/users/show.erb</h6>
 
-<h2>My Events</h2>
-<% @user.user_event_associations.each do |event| %>
-	<p><%= event.event.id %><%= event.event.name %></p>
+<h2>Events (<%= @user.user_event_associations.length %>)</h2>
+<a href="/events/new">Create an Event</a>
+<% if @user.user_event_associations.length != 00 %>
+	<% @user.user_event_associations.each do |assoc| %>
+		<p>
+			<%= assoc.event.id %><%= assoc.event.name %>
+			<% if assoc.admin %>
+				<strong>Admin</strong>
+			<% end %>
+		</p>
+	<% end %>
 <% end %>

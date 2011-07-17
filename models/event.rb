@@ -21,8 +21,8 @@ class Event
 
   
   property :location,     String    # Name of location
-  property :latitude,		  Float		  # Latitude of location (useful for Google Maps)
-  property :longitude,	  Float		  # Longtitude of location (useful for Google Maps)
+  property :latitude,		  Float	, :default => 0	  # Latitude of location (useful for Google Maps)
+  property :longitude,	  Float,  :default => 0		  # Longtitude of location (useful for Google Maps)
   property :language,     String    # 
 
   validates_presence_of :location

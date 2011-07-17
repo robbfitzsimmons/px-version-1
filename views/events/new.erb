@@ -1,0 +1,49 @@
+<h6>Find me in views/events/new.erb</h6>
+
+<h1>Create a New Event</h1>
+<p>If you have no invites to events why not make your own?</p>
+
+
+<form action="/events" method="post">
+
+	<p>Information</p>
+
+	<label for="event[name]">Name</label>
+	<input name="event[name]" type="text" value="<%= @event.name%>" />
+
+	<label for="event[description]">Description</label>
+	<input name="event[description]" type="text" value="<%= @event.description%>" />
+
+	<label for="event[location]">Location</label>
+	<input name="event[location]" type="text" value="<%= @event.location%>" />
+
+	<label for="event[logo]">Logo</label>
+	<input name="event[logo]" type="text" value="<%= @event.logo%>" />
+
+	<label for="event[permalink]">Permalink</label>
+	<input name="event[permalink]" type="text" value="<%= @event.permalink%>" />
+
+	<label for="start_day">Start Day</label>
+	<select name="start_day">
+		 <% i = 1 %>
+		 <% while i <= 31 %>
+				<option value="<%= i %>"><%= i %></option>
+				<% -i += 1 %>
+		<% end %>
+	</select>
+
+	<label for="end_day">End Day</label>
+	<select name="end_day">
+		 <% i = 1 %>
+		 <% while i <= 31 %>
+				<option value="<%= i %>"><%= i %></option>
+				<% -i += 1 %>
+		<% end %>
+	</select>
+	
+	<br />
+
+	<input type="submit" value="Sign Up" />
+</form>
+
+

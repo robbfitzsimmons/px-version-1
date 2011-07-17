@@ -14,8 +14,8 @@ post '/login' do
 	else
 		# Sign the user in and redirect to the user's show page.
 		flash[:success] = "Logged in Successfully."
-		session[:user] = user
-		redirect "/user/show"
+		session[:user] = user.id
+		redirect "/users/#{user.id}"
 	end
 end
 

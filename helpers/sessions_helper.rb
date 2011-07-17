@@ -13,5 +13,5 @@ end
 
 	private
 		def user_from_session 
-			session[:user]
+			User.get(session[:user])
 		end
