@@ -6,7 +6,7 @@
 <% if @user.user_event_associations.length != 00 %>
 	<% @user.user_event_associations.each do |assoc| %>
 		<p>
-			<%= assoc.event.id %><%= assoc.event.name %>
+			<a href="/events/<%= assoc.event.permalink %>"><%= assoc.event.id %><%= assoc.event.name %></a>
 			<% if assoc.admin %>
 				<strong>Admin</strong>
 			<% end %>

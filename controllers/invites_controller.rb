@@ -36,3 +36,12 @@ post '/invites' do
 	end
 	redirect "/events/#{current_event.permalink}"
 end
+
+get '/invites/:slug' do
+	
+	invite = Invite.first(:slug => params[:slug])
+	status(200)
+	invite.update(:visited =>  true)
+
+	redirect "/events/#{invite.event.permalink}"
+end

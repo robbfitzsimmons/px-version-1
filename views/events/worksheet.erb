@@ -24,8 +24,11 @@
     	<%= invite.user.nil? == false && invite.user.user_event_associations.events.include?(@event)  ? "true" : "false" %>
     </td>
     <td>
-    	<% if !invite.user.nil?  %>
-    		invite.user.user_event_associations.events.
+    	<% if !invite.user.nil? && invite.user.user_event_associations.events.include?(@event)  %>
+    		<% @this_event = invite.user.user_event_associations.first(:event => @event) %>
+    		<%= @this_event.checked_in %>
+    	<% else %>
+    		false
     	<% end %>
 
     </td>
