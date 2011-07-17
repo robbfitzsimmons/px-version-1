@@ -1,0 +1,425 @@
+@charset "UTF-8";
+
+/* Proximate Styles 1.0
+ * Author: Sarah Canieso
+ */
+ 
+/* CSS5 */
+header,footer,article,section,hgroup,nav,figure{display:block;}
+
+/* http://meyerweb.com/eric/tools/css/reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,hr,p,input,textarea,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}:focus{outline:none}::-moz-focus-inner { border: 0;}
+
+/* mixins */
+
+@mixin gradient($top, $bot) {
+	background: $bot;
+	background-image: -moz-linear-gradient(top, $top, $bot);
+	background-image: -ms-linear-gradient(top, $top, $bot);
+	background-image: -o-linear-gradient(top, $top, $bot);
+	background-image: -webkit-gradient(linear, left top, left bottom, from($top), to($bot));
+	background-image: -webkit-linear-gradient(top, $top, $bot);
+	background-image: linear-gradient(top, $top, $bot);
+}
+
+@mixin radius($rad) {	
+	-moz-border-radius: $rad;
+	-ms-border-radius: $rad;
+	-o-border-radius: $rad;
+	-webkit-border-radius: $rad;
+	border-bottom-radius: $rad;	
+}
+
+@mixin radius-top($rad) {
+	-moz-border-radius-topleft: $rad;
+	-moz-border-radius-topright: $rad;
+	-ms-border-top-left-radius: $rad;
+	-ms-border-top-right-radius: $rad;
+	-o-border-radius-topleft: $rad;
+	-o-border-radius-topright: $rad;
+	-webkit-border-top-left-radius: $rad;
+	-webkit-border-top-right-radius: $rad;
+	border-top-left-radius: $rad;
+	border-top-right-radius: $rad;
+}
+
+@mixin radius-bot($rad) {
+	-moz-border-radius-bottomleft: $rad;
+	-moz-border-radius-bottomright: $rad;
+	-ms-border-bottom-left-radius: $rad;
+	-ms-border-bottom-right-radius: $rad;
+	-o-border-radius-bottomleft: $rad;
+	-o-border-radius-bottomright: $rad;
+	-webkit-border-bottom-left-radius: $rad;
+	-webkit-border-bottom-right-radius: $rad;
+	border-bottom-left-radius: $rad;
+	border-bottom-right-radius: $rad;
+}
+
+@mixin radius-left($rad) {
+	-moz-border-radius-bottomleft: $rad;
+	-moz-border-radius-topleft: $rad;
+	-ms-border-bottom-left-radius: $rad;
+	-ms-border-top-left-radius: $rad;
+	-o-border-radius-bottomleft: $rad;
+	-o-border-radius-topleft: $rad;
+	-webkit-border-bottom-left-radius: $rad;
+	-webkit-border-top-left-radius: $rad;
+	border-bottom-left-radius: $rad;
+	border-top-left-radius: $rad;
+}
+
+@mixin radius-right($rad) {
+	-moz-border-radius-bottomright: $rad;
+	-moz-border-radius-topright: $rad;
+	-ms-border-bottom-right-radius: $rad;
+	-ms-border-top-right-radius: $rad;
+	-o-border-radius-bottomright: $rad;
+	-o-border-radius-topright: $rad;
+	-webkit-border-bottom-right-radius: $rad;
+	-webkit-border-top-right-radius: $rad;
+	border-bottom-right-radius: $rad;
+	border-top-right-radius: $rad;
+}
+
+@mixin boxshadow($hilite) {
+	-moz-box-shadow: $hilite;
+	-ms-box-shadow: $hilite;
+	-o-box-shadow:$hilite;
+	-webkit-box-shadow: $hilite;
+	box-shadow: $hilite;
+}
+
+@mixin boxshadow2($hilite, $shad) {
+	-moz-box-shadow: $hilite, $shad;
+	-ms-box-shadow: $hilite, $shad;
+	-o-box-shadow:$hilite, $shad;
+	-webkit-box-shadow: $hilite, $shad;
+	box-shadow: $hilite, $shad;
+}
+
+/* variables */
+$raleway: 'Raleway', 'Arial', sans-serif;
+
+/* styles */
+
+body {
+	background: #fafafa url('images/bg.png') repeat-x;
+	color: #484848;
+	font-family: 'Istok Web', 'Arial', sans-serif;
+	font-size: 18px;
+	line-height: 1em;
+	
+	a {
+		text-decoration: underline;
+	}
+}
+
+#container {
+	margin: 0 auto;
+	padding: 40px 0;
+	width: 960px;
+}
+
+header {
+	float: left;
+	width: 100%;
+	
+	h1 {
+		float: left;
+	}
+	
+	nav {
+		ul {
+			float: right;
+			
+			li {
+				float: left;
+				margin: 0 0 0 40px;
+				
+				a, a:visited {
+					color: #909090;
+					float: left;
+					font-size: 14px;
+					text-decoration: none;
+					
+					&#login {
+						color: #2e5cc7;
+						font-weight: bold;
+					}
+					&:hover {
+						color: #df4c4b;
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+}
+
+#top {
+	@include gradient(#3870d1, #2e5cc7);
+	@include radius-top(10px);
+	@include boxshadow(inset 0 1px 1px 0 #3c7aef);
+	border: 1px solid #2d59b3;
+	color: #f7f7f7;
+	float: left;
+	margin: 40px 0 0;
+	padding: 4px 0;
+	text-align: center;
+	width: 100%;
+	
+	span {
+		display: block;
+		font-size: 24px;
+		line-height: 1em;
+		text-transform: uppercase;
+	}
+}
+
+#mid {
+	background: #fff;
+	border-left: 1px solid #e8e8e8;
+	border-right: 1px solid #e8e8e8;
+	float: left;
+	padding: 45px;
+	width: 870px;
+	
+	.left {
+		float: left;
+		width: 390px;
+		
+		h2 {
+			font-family: $raleway;
+			font-size: 44px;
+			line-height: 1em;
+			margin: 0 0 20px 0;
+		}
+		
+		li {
+			color: #909090;
+			display: block;
+			float: left;
+			font-size: 15px;
+			margin: 0 0 10px 0;
+			width: 100%;
+			
+			span {
+				background: url('images/featureicons.jpg') no-repeat -32px 0;
+				display: block;
+				float: left;
+				height: 31px;
+				margin: 0 25px 0 0;
+				width: 31px;
+				
+				&#feature1 { background-position: 0 0};
+				&#feature2 { background-position: -31px 0};
+				&#feature3 { background-position: -62px 0};
+				&#feature4 { background-position: -93px 0};
+				&#feature5 { background-position: -124px 0};
+			}
+		}
+	}
+	
+	.right {
+		float: right;
+		width: 390px;
+	
+		input {
+			@include radius(4px);
+			@include boxshadow(inset 0 2px 2px 0 #f7f7f7);
+			border: 1px solid #dedede;
+			color: #ccc;
+			height: 16px;
+			line-height: 1em;
+			margin: 0 0 20px 0;
+			padding: 18px;
+			width: 354px;
+			
+			&:hover {
+				background: #fafafa;
+			}
+			
+			&.active {
+				@include boxshadow(inset 0 2px 2px 0 #e4eaf8);
+				background: #ecf0f8;
+				border-color: #cfd7e7;
+				color: #96a8cd;
+			}
+		}
+		
+		a {
+			@include gradient(#f6f6f6, #eee);
+			@include boxshadow(0 1px 1px 0 #eee);
+			
+			border: 1px solid #dbdbdb;
+			color: #b8b8b8;
+			cursor: pointer;
+			float: left;
+			padding: 10px 0;
+			text-align: center;
+			text-decoration: none;
+			text-shadow: 0 1px 1px #fff;
+			width: 128px;
+			
+			img {
+				height: 22px;
+				width: 22px;
+			}
+			
+			&#signup{
+				@include radius-left(4px);
+				padding: 14px 0;
+			}
+			&#linkedin {
+				border-left: 0;
+				border-right: 0;
+				width: 130px;
+				&:hover {
+					border: 1px solid #884f51;
+					width: 128px;
+				}
+			}
+			&#facebook {
+				@include radius-right(4px);
+			}
+			
+			&:hover {
+				@include boxshadow2(inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #ccc);
+				@include gradient(#df4c4b, #c43037);
+				border: 1px solid #884f51;
+				color: #7e171e;
+				text-shadow: 0 1px 1px #e35851;
+					
+				img {
+					@include boxshadow(1px 1px 1px 0 #e35851);
+				}
+			}
+			
+			&:active {
+				@include gradient(#c43037, #df4c4b);
+				@include boxshadow(none);
+				border: 1px solid #884f51;
+				color: #7e171e;
+				margin-top: 1px;
+				text-shadow: 0 1px 1px #e35851;
+			}
+		}
+	}
+}
+	
+footer {
+	@include gradient(#3870d1, #2e5cc7);
+	@include radius-bot(10px);
+	@include boxshadow(inset 0 1px 1px 0 #3c7aef);
+	border: 1px solid #2d59b3;
+	color: #fff;
+	float: left;
+	height: 25px;
+	width: 100%;
+}
+
+.flash {
+	margin: 0 0 10px 0;
+	
+	&#error { color: #c43037; }
+	&#success { color: #2e9716; }
+}
+
+#form {
+	float: right;
+	width: 390px;
+	
+	h2 {
+		font-family: $raleway;
+		font-size: 54px;
+		line-height: 1.2em;
+	}
+
+	p {
+		color: #bbb;
+		margin: 0 0 10px 0;
+		text-shadow: 0 1px 1px #fff;
+	}
+}
+
+#list {
+	margin: 30px auto;
+	width: 700px;
+	
+	h1 {
+		float: left;
+		font-family: $raleway;
+		font-size: 54px;
+		line-height: 1.2em;
+		margin: 0 0 15px 0;
+	}
+	
+	a {
+		@include gradient(#f6f6f6, #eee);
+		@include radius(4px);
+		border: 1px solid #dbdbdb;
+		color: #b8b8b8;
+		cursor: pointer;
+		float: right;
+		margin: 8px 0 0 8px;
+		padding: 10px 20px;
+		text-decoration: none;
+		text-shadow: 0 1px 1px #fff;
+		
+		&:hover {
+			@include gradient(#df4c4b, #c43037);
+			border: 1px solid #884f51;
+			color: #7e171e;
+			text-shadow: 0 1px 1px #e35851;
+		}
+		
+		&:active {
+			@include gradient(#c43037, #df4c4b);
+			border: 1px solid #884f51;
+			color: #7e171e;
+			text-shadow: 0 1px 1px #e35851;
+		}
+	}
+	
+	table {
+		background: #fff;
+		border: 1px solid #d8d8d8;
+		float: left;
+		margin: 15px 0 0;
+		width: 100%;
+		
+		thead {
+			width: 100%;
+			
+			td {
+				@include gradient(#3870d1, #2e5cc7);
+				@include boxshadow(inset 0 1px 1px 0 #3c7aef);
+				
+				border: 1px solid #2d59b3;
+				border: 1px solid #2d59b3;
+				color: #f7f7f7;
+				padding: 10px;
+			}
+		}
+		tr {
+			td {
+				padding: 10px;
+			}
+			&.even {
+				background: #eee;
+			}
+		}
+	}
+}
+
+::selection {
+	background: #c43037;
+	color: #fff;
+	text-shadow: 0 1px 1px #484848;
+}
+::-moz-selection {
+	background: #c43037;
+	color: #fff;
+	text-shadow: none;
+}

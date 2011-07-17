@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Hello, my name is Proximate.</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link href='http://fonts.googleapis.com/css?family=Raleway:100|Sue+Ellen+Francisco|Istok+Web:700italic,400,700,400italic' rel='stylesheet' type='text/css'>
+		
+		<!--[if IE]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<style type="text/css">
+				.clear {
+					display: block;
+					zoom: 1;
+				}
+			</style>
+		<![endif]-->
+
+	</head>
+	<body>
+		<div id="container">
+			<header>
+				<h1>[logo lives here]</h1>
+				
+				<nav>
+					<ul>
+						<li><a href="javascript: void(0)">how to use</a></li>
+						<li><a href="javascript: void(0)">plans & pricing</a></li>
+						<li><a href="javascript: void(0)">blog</a></li>
+						<li><a href="javascript: void(0)">say hello</a></li>
+						<li><a href="/login" id="login">log in</a></li>
+					</ul>
+				</nav>
+			</header>
+			
+			<div id="top">
+				<span>Hello</span>
+				my name is
+			</div>
+			
+			<div id="mid">
+			
+			  	<% if current_user %>
+			  		<p>Welcome <%= current_user.name %></p>
+			      <form action="/logout" method="post">
+			        <input name="_method" type="hidden" value="delete" />
+			        <input type="submit" value="Sign Out" />
+			      </form>
+			  	<% end %>
+			    <%= erb :flash %>
+			    <%= yield %>
+
+			</div>
+			
+			<footer></footer>
+			
+		</div> <!-- //container -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script src="js/index.js"></script>
+	</body>
+</html>

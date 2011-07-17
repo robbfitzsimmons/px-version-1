@@ -1,5 +1,26 @@
-<h1>Index .erb </h1>
-<h6>Find me in views/index/erb</h6>
+<section class="left">
+	<h2>Get to know the people around you.</h2>
+	
+	<ul>
+		<li><span id="feature1"></span>Create personalized name tags on the fly</li>
+		<li><span id="feature2"></span>Fast (90 sec) sign up for attendees</li>
+		<li><span id="feature3"></span>Extend your event with social tools</li>
+		<li><span id="feature4"></span>A customized social network for your event</li>
+		<li><span id="feature5"></span>Match attendees for more effective networking</li>
+	</ul>
+</section>
 
-<a href="/signup">Sign Up Page</a>
-<a href="/login">Log In Page</a>
+<section class="right">
+	<form>
+		<input type="text" value="name@email.com" />
+		<input type="password" value="password" />
+		
+		<a href="/signup" id="signup">Sign Up</a>
+		<a href="/auth/linked_in" id="linkedin">
+			<img src="images/social_linkedin.gif" alt="" />
+		</a>
+		<a href="javascript: void(0)" id="facebook">
+			<img src="images/social_facebook.gif" alt="" />
+		</a>
+	</form>
+</section>

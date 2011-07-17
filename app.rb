@@ -11,7 +11,7 @@ DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite://#{Dir.pwd}/db/proxim
 DataMapper.finalize
 
 # Reset the db/tables and recreate
-# DataMapper.auto_migrate!
+#DataMapper.auto_migrate!
 
 # Create the db/tables if they don't exist
 DataMapper::auto_upgrade!
@@ -31,11 +31,12 @@ use OmniAuth::Builder do
 end
 
 get '/style.css' do
-	sass :style
+	scss :style
 end
 
 get '/' do
   @title = 'Hey there!'
   
-  erb :index
+  erb :index, {:layout => :static_layout}
+
 end
