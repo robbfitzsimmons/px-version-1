@@ -31,6 +31,7 @@ post '/events' do
 		end
 		current_user.events << @event
 		current_user.save
+		session[:event] = @event.id
 
 		redirect "/events/#{@event.permalink}"
 	else
@@ -51,5 +52,18 @@ get '/events/:permalink' do
 	@event = Event.first(:permalink => params[:permalink].downcase)
 	@title = "#{@event.name}"
 
+	if is_event_admin(@event)
+		session[:event] = @event.id
+	end
 	erb :'events/show'	
 end
+
+# Show events worksheet (list of invites/ checked in)
+get '/events/:permalink/worksheet' do
+	@event = Event.first(:permalink => params[:permalink].downcase)
+
+	@title = "#{@event.name} Worksheet"
+
+	erb :'events/worksheet'
+end
+

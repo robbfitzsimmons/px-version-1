@@ -1,0 +1,34 @@
+<h1><%= @event.name %> Invites</h1>
+<h6>Find me in views/events/worksheet.erb</h6>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Sent</th>
+    <th>Opened</th>
+    <th>Registered</th>
+    <th>Checked In</th>
+
+  </tr>
+
+<% @event.invites.each do |invite| %>
+  <tr>
+    <td>
+    	<%= invite.user.name if invite.user.nil? == false %>
+    </td>
+    <td><%= invite.email %></td>
+    <td>true</td>
+    <td><%= invite.visited %></td>
+    <td>
+    	<%= invite.user.nil? == false && invite.user.user_event_associations.events.include?(@event)  ? "true" : "false" %>
+    </td>
+    <td>
+    	<% if !invite.user.nil?  %>
+    		invite.user.user_event_associations.events.
+    	<% end %>
+
+    </td>
+  </tr>
+<% end %>
+</table>

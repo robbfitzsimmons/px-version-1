@@ -9,3 +9,12 @@ def is_event_admin(event)
 	end
 	return false
 end
+
+def current_event
+	@current_event ||= event_from_session
+end
+
+	private
+		def event_from_session 
+			Event.get(session[:event])
+		end

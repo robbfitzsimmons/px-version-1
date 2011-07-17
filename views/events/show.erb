@@ -1,14 +1,24 @@
 <h1><%= @event.name %></h1>
 <h6>Find me in views/events/show.erb</h6>
 
-<% if is_event_admin(@event) %>
+<% event_admin = is_event_admin(@event) %>
+
+<% if event_admin %>
 	You are an admin
 <% end %>
 
 
 <h2>Attendees</h2>
+<% if event_admin %>
+	<a href = "/events/<%= @event.permalink %>/worksheet">View the Worksheet</a>
+<% end %>
 <ul>
 <% @event.user_event_associations.each do |assoc| %>
 	<li><%= assoc.user.name %></li>
 <% end %>
 </ul>
+
+<% if event_admin %>
+	<h3>Invite People to the event</h3>
+	<a href="/invites/new">Click here</a>
+<% end %>

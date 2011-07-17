@@ -52,7 +52,7 @@ get '/auth/:name/callback' do
 	
 	puts @user.linked_in
 
-	session[:user] = @user.id
+	session[:user] = @user
 
 	redirect '/signup/step2'
 

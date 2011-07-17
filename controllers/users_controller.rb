@@ -15,6 +15,7 @@ post '/signup/step2' do
 
 	if @user.save
 		status(202)
+		session[:user] = @user.id
 		redirect "/users/#{@user.id}"
 	else
 		status(412)
