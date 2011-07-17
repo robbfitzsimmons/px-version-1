@@ -50,6 +50,12 @@ class User
     self.time_slots
   end
 
+  # Lists related people
+  def people_matches
+    User.all(:limit => 4)
+  end
+
+  # List all invites the user has chosen not to hide
   def new_invites
     self.invites.all(:hide => false)
   end

@@ -22,3 +22,10 @@
 		</p>
 	<% end %>
 <% end %>
+
+<h2>Matches (<%= @user.people_matches.length %>)</h2>
+<% @user.people_matches.each do |match| %>
+	<p>
+		<%= match.name %>
+	</p>
+<% end %>
