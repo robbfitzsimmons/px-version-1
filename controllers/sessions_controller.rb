@@ -2,7 +2,7 @@ get '/login' do
 	@title = "Login"
 	@user = User.new
 
-	erb :'sessions/login'
+	erb :'sessions/login', {:layout => :static_layout}
 end
 
 post '/login' do

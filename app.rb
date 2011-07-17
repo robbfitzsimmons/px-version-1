@@ -38,5 +38,4 @@ get '/' do
   @title = 'Hey there!'
   
   erb :index, {:layout => :static_layout}
-
 end

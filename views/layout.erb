@@ -1,16 +1,50 @@
-<!DOCTYPE html>
-  <head>
-    <title><%= @title %></title>
-  </head>
-  <body>
-  	<% if current_user %>
-  		<p>Welcome <%= current_user.name %></p>
-      <form action="/logout" method="post">
-        <input name="_method" type="hidden" value="delete" />
-        <input type="submit" value="Sign Out" />
-      </form>
-  	<% end %>
-    <%= erb :flash %>
-    <%= yield %>
-  </body>
+<!doctype html>
+<html>
+	<head>
+		<title>Hello, my name is Proximate.</title>
+		<link rel="stylesheet" type="text/css" href="/style.css" />
+		<link href='http://fonts.googleapis.com/css?family=Raleway:100|Sue+Ellen+Francisco|Istok+Web:700italic,400,700,400italic' rel='stylesheet' type='text/css'>
+		
+		<!--[if IE]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<style type="text/css">
+				.clear {
+					display: block;
+					zoom: 1;
+				}
+			</style>
+		<![endif]-->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+
+	</head>
+	<body>
+		<div id="container">
+			
+			<div id="top">
+		  		<p>Welcome <%= current_user.name %></p>
+			</div>
+			
+			<div id="mid">
+			  	<% if current_user %>
+			      <form action="/logout" method="post">
+			        <input name="_method" type="hidden" value="delete" />
+			        <input type="submit" value="Sign Out" />
+			      </form>
+			  	<% end %>
+			    <%= erb :flash %>
+			    <%= yield %>
+
+			</div>
+			
+			<div id="bot"></div>
+			
+			<footer>
+				<span  class='st_twitter_hcount' displayText='Tweet'></span><span  class='st_facebook_hcount' displayText='Facebook'></span><span  class='st_linkedin_hcount' displayText='LinkedIn'></span><span  class='st_fblike_hcount' ></span>
+			</footer>
+			
+		</div> <!-- //container -->
+		<script type="text/javascript">var switchTo5x=true;</script>
+		<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+		<script type="text/javascript">stLight.options({publisher:'d4421eb4-bd0a-4665-ba3d-bfad0daebe1b'});</script>
+	</body>
 </html>

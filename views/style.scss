@@ -103,8 +103,12 @@ $raleway: 'Raleway', 'Arial', sans-serif;
 
 /* styles */
 
+html {
+	overflow-y: scroll;
+}
+
 body {
-	background: #fafafa url('images/bg.png') repeat-x;
+	background: #fafafa;
 	color: #484848;
 	font-family: 'Istok Web', 'Arial', sans-serif;
 	font-size: 18px;
@@ -112,6 +116,10 @@ body {
 	
 	a {
 		text-decoration: underline;
+	}
+	
+	strong {
+		font-weight: bold;
 	}
 }
 
@@ -193,7 +201,7 @@ header {
 			font-family: $raleway;
 			font-size: 44px;
 			line-height: 1em;
-			margin: 0 0 20px 0;
+			margin: 0 0 45px 0;
 		}
 		
 		li {
@@ -224,91 +232,101 @@ header {
 	.right {
 		float: right;
 		width: 390px;
-	
-		input {
-			@include radius(4px);
-			@include boxshadow(inset 0 2px 2px 0 #f7f7f7);
-			border: 1px solid #dedede;
-			color: #ccc;
-			height: 16px;
-			line-height: 1em;
-			margin: 0 0 20px 0;
-			padding: 18px;
-			width: 354px;
-			
-			&:hover {
-				background: #fafafa;
-			}
-			
-			&.active {
-				@include boxshadow(inset 0 2px 2px 0 #e4eaf8);
-				background: #ecf0f8;
-				border-color: #cfd7e7;
-				color: #96a8cd;
-			}
-		}
 		
-		a {
-			@include gradient(#f6f6f6, #eee);
-			@include boxshadow(0 1px 1px 0 #eee);
-			
-			border: 1px solid #dbdbdb;
-			color: #b8b8b8;
-			cursor: pointer;
-			float: left;
-			padding: 10px 0;
-			text-align: center;
-			text-decoration: none;
-			text-shadow: 0 1px 1px #fff;
-			width: 128px;
-			
-			img {
-				height: 22px;
-				width: 22px;
-			}
-			
-			&#signup{
-				@include radius-left(4px);
-				padding: 14px 0;
-			}
-			&#linkedin {
-				border-left: 0;
-				border-right: 0;
-				width: 130px;
+		form {
+			input {
+				@include radius(4px);
+				@include boxshadow(inset 0 2px 2px 0 #f7f7f7);
+				border: 1px solid #dedede;
+				color: #ccc;
+				height: 16px;
+				line-height: 1em;
+				margin: 0 0 20px 0;
+				padding: 18px;
+				width: 354px;
+				
 				&:hover {
-					border: 1px solid #884f51;
-					width: 128px;
+					background: #fafafa;
+				}
+				
+				&.active {
+					@include boxshadow(inset 0 2px 2px 0 #e4eaf8);
+					background: #ecf0f8;
+					border-color: #cfd7e7;
+					color: #96a8cd;
 				}
 			}
-			&#facebook {
-				@include radius-right(4px);
-			}
 			
-			&:hover {
-				@include boxshadow2(inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #ccc);
-				@include gradient(#df4c4b, #c43037);
-				border: 1px solid #884f51;
-				color: #7e171e;
-				text-shadow: 0 1px 1px #e35851;
-					
+			a {
+				@include gradient(#f6f6f6, #eee);
+				@include boxshadow(0 1px 1px 0 #eee);
+				
+				border: 1px solid #dbdbdb;
+				color: #b8b8b8;
+				cursor: pointer;
+				float: left;
+				padding: 10px 0;
+				text-align: center;
+				text-decoration: none;
+				text-shadow: 0 1px 1px #fff;
+				width: 128px;
+				
 				img {
-					@include boxshadow(1px 1px 1px 0 #e35851);
+					@include boxshadow(1px 1px 1px 0 #fff);
+					height: 22px;
+					width: 22px;
+				}
+				
+				&#signup{
+					@include radius-left(4px);
+					padding: 14px 0;
+				}
+				&#linkedin {
+					border-left: 0;
+					border-right: 0;
+					width: 130px;
+					&:hover {
+						border: 1px solid #884f51;
+						width: 128px;
+					}
+				}
+				&#facebook {
+					@include radius-right(4px);
+				}
+				
+				&:hover {
+					@include boxshadow2(inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #ccc);
+					@include gradient(#df4c4b, #c43037);
+					border: 1px solid #884f51;
+					color: #7e171e;
+					text-shadow: 0 1px 1px #e35851;
+						
+					img {
+						@include boxshadow(1px 1px 1px 0 #e35851);
+					}
+				}
+				
+				&:active {
+					@include gradient(#c43037, #df4c4b);
+					@include boxshadow(none);
+					border: 1px solid #884f51;
+					color: #7e171e;
+					margin-top: 1px;
+					text-shadow: 0 1px 1px #e35851;
 				}
 			}
 			
-			&:active {
-				@include gradient(#c43037, #df4c4b);
-				@include boxshadow(none);
-				border: 1px solid #884f51;
-				color: #7e171e;
-				margin-top: 1px;
-				text-shadow: 0 1px 1px #e35851;
+			p {
+				color: #ccc;
+				float: left;
+				font-size: 14px;
+				margin: 15px 0 0 0;
 			}
 		}
 	}
 }
 	
-footer {
+#bot {
 	@include gradient(#3870d1, #2e5cc7);
 	@include radius-bot(10px);
 	@include boxshadow(inset 0 1px 1px 0 #3c7aef);
@@ -411,6 +429,11 @@ footer {
 			}
 		}
 	}
+}
+
+footer {
+	float: left;
+	padding: 20px 0 40px;
 }
 
 ::selection {
