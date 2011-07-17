@@ -32,7 +32,7 @@ post '/events' do
 		current_user.events << @event
 		current_user.save
 
-		redirect "/"
+		redirect "/events/#{@event.permalink}"
 	else
 		status(412)
 		@event.errors.each do |e|
@@ -48,7 +48,7 @@ end
 # Show a specific event
 get '/events/:permalink' do
 	
-	@event = Event.get(params[:permalink])
+	@event = Event.first(:permalink => params[:permalink].downcase)
 	@title = "#{@event.name}"
 
 	erb :'events/show'	

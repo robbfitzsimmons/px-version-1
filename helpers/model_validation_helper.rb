@@ -18,33 +18,26 @@ def create_slug
 end
 
 def create_permalink
-		str = self.name
-		# accents = { 
-		#   ['á','à','â','ä','ã'] => 'a',
-		#   ['Ã','Ä','Â','À','�?'] => 'A',
-		#   ['é','è','ê','ë'] => 'e',
-		#   ['Ë','É','È','Ê'] => 'E',
-		#   ['í','ì','î','ï'] => 'i',
-		#   ['�?','Î','Ì','�?'] => 'I',
-		#   ['ó','ò','ô','ö','õ'] => 'o',
-		#   ['Õ','Ö','Ô','Ò','Ó'] => 'O',
-		#   ['ú','ù','û','ü'] => 'u',
-		#   ['Ú','Û','Ù','Ü'] => 'U',
-		#   ['ç'] => 'c', ['Ç'] => 'C',
-		#   ['ñ'] => 'n', ['Ñ'] => 'N'
-		#   }
-		# accents.each do |ac,rep|
-		#   ac.each do |s|
-		# 	str = str.gsub(s, rep)
-		#   end
-		# end
-		str = str.gsub(/[^a-zA-Z0-9 ]/,"")
-		
-		str = str.gsub(/[ ]+/," ")
-		
+		ret = self.name.strip
 
-		str = str.gsub(/ /,"-")
-		str = str.downcase
-		
-		self.name = str
+    #blow away apostrophes
+    ret.gsub! /['`]/,""
+
+    # @ --> at, and & --> and
+    ret.gsub! /\s*@\s*/, " at "
+    ret.gsub! /\s*&\s*/, " and "
+
+    #replace all non alphanumeric, underscore or periods with underscore
+     ret.gsub! /\s*[^A-Za-z0-9\.\-]\s*/, '_'  
+
+     #convert double underscores to single
+     ret.gsub! /_+/,"_"
+
+     #strip off leading/trailing underscore
+     ret.gsub! /\A[_\.]+|[_\.]+\z/,""
+
+     ret.downcase!
+
+     self.permalink = ret[0,16]
+
 	end

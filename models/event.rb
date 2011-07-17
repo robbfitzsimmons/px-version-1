@@ -7,7 +7,7 @@ class Event
   property :logo,         String    # URL linking to Amazon File Upload (http://ididitmyway.heroku.com/past/2011/1/16/uploading_files_in_sinatra/)
   property :permalink,    String    # A link to take you to the event
 
-  #before :valid?, :create_permalink
+  before :valid?, :create_permalink
 
   validates_presence_of :name
   validates_uniqueness_of :name
