@@ -27,7 +27,7 @@ get '/auth/:name/callback' do
 		# The user already exists, so lets log them in :)
 
 		# And redirect them to their profile page
-		session[:user] = @user
+		session[:user] = @user.id
 		redirect "/users/#{@user.id}"
 	end
 	
@@ -52,7 +52,7 @@ get '/auth/:name/callback' do
 	
 	puts @user.linked_in
 
-	session[:user] = @user
+	session[:user] = @user.id
 
 	redirect '/signup/step2'
 
