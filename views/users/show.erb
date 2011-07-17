@@ -3,13 +3,22 @@
 
 <h2>Events (<%= @user.user_event_associations.length %>)</h2>
 <a href="/events/new">Create an Event</a>
-<% if @user.user_event_associations.length != 00 %>
+<% if @user.user_event_associations.length != 0 %>
 	<% @user.user_event_associations.each do |assoc| %>
 		<p>
-			<a href="/events/<%= assoc.event.permalink %>"><%= assoc.event.id %><%= assoc.event.name %></a>
+			<a href="/events/<%= assoc.event.permalink %>"><%= assoc.event.name %></a>
 			<% if assoc.admin %>
 				<strong>Admin</strong>
 			<% end %>
+		</p>
+	<% end %>
+<% end %>
+
+<h2>Invites (<%= @user.new_invites.length %>)</h2>
+<% if @user.new_invites.length != 0 %>
+	<% @user.new_invites.each do |invite| %>
+		<p>
+			<a href="/invites/<%= invite.slug %>"><%= invite.event.name %></a>
 		</p>
 	<% end %>
 <% end %>

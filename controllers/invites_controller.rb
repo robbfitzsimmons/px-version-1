@@ -43,5 +43,8 @@ get '/invites/:slug' do
 	status(200)
 	invite.update(:visited =>  true)
 
+	session[:invite_event] = invite.event.id
+	session[:invite] = invite.id
+
 	redirect "/events/#{invite.event.permalink}"
 end

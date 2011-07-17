@@ -46,6 +46,37 @@ post '/events' do
 	end
 end
 
+# Used for updating an event, including adding a user
+put '/events/:id' do
+	if current_user.nil?
+		flash[:warning] = "You must log in or sign up first."
+		redirect '/signup'
+	end
+
+	event = Event.get(params[:id])
+
+	if params[:join] == "true"
+		event.users << current_user
+		puts current_user.name
+	end
+
+	if event.save
+		status(202)
+		flash[:success] = "You are now attending #{event.name}."
+		session[:invite_event] = nil
+		invite = Invite.get(session[:invite])
+		invite.update(:hide => true)
+	else
+		status(412)
+		event.errors.each do |e|
+		    puts e
+		end
+		flash[:error] = "Please Try Again."
+	end
+
+	redirect "/events/#{event.permalink}"
+end
+
 # Show a specific event
 get '/events/:permalink' do
 	

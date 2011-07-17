@@ -7,6 +7,16 @@
 	You are an admin
 <% end %>
 
+<% if session[:invite_event] == @event.id %>
+	<form action="/events/<%= @event.id %>" method="post">
+		<input name="_method" type="hidden" value="put" />
+		<input name="join" type="hidden" value="true" />
+		<input name="invite" type="hidden" value="<%= session[:invite] %>" />
+
+		<input type="submit" value="Join" />
+	</form>
+<% end %>
+
 
 <h2>Attendees</h2>
 <% if event_admin %>

@@ -4,8 +4,9 @@ class Invite
   property :id,					  Serial                       #
   property :email,        String                       # 
   property :slug,         String                       # Unique indentifier URL
-  property :visited,      String, :default => false    # Has the slug been visited?
-
+  property :visited,      Boolean, :default => false    # Has the slug been visited?
+  property :hide,         Boolean, :default => false
+  
   before :valid?, :create_slug
 
   validates_presence_of :email

@@ -50,6 +50,10 @@ class User
     self.time_slots
   end
 
+  def new_invites
+    self.invites.all(:hide => false)
+  end
+
   def has_password?(submitted_password) 
     password == encrypt(submitted_password)
   end 
