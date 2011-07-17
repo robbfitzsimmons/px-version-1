@@ -61,36 +61,3 @@ get '/users/:id/edit' do
 	
 	erb :'users/edit'	
 end
-
-# Add new user
-post '/users' do
-	@user = User.new(params[:user])
-
-	if @user.save
-	
-	else
-
-	end	
-end
-
-# Edit existing user
-put '/users/:id' do
-	@user = User.find(params[:id])
-
-	if @user.save
-	
-	else
-
-	end	
-end
-
-# Delete existing user
-delete '/users/:id' do
-	@user = User.find(params[:id])
-
-	if @user.destroy
-	
-	else
-
-	end	
-end
