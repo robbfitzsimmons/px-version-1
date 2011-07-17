@@ -98,6 +98,44 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,hr,p,input,textarea,bl
 	box-shadow: $hilite, $shad;
 }
 
+@mixin button($width) {
+	@include gradient(#f6f6f6, #eee);
+	@include boxshadow(0 1px 1px 0 #eee);
+	
+	border: 1px solid #dbdbdb;
+	color: #b8b8b8;
+	cursor: pointer;
+	float: left;
+	min-width: $width;
+	padding: 10px 5px;
+	text-align: center;
+	text-shadow: 0 1px 1px #fff;
+				
+	img {
+		@include boxshadow(1px 1px 1px 0 #fff);
+	}
+				
+	&:hover {
+		@include boxshadow2(inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #ccc);
+		@include gradient(#df4c4b, #c43037);
+		border: 1px solid #884f51;
+		color: #7e171e;
+		text-shadow: 0 1px 1px #e35851;
+			
+		img {
+			@include boxshadow(1px 1px 1px 0 #e35851);
+		}
+	}
+				
+	&:active {
+		@include gradient(#c43037, #df4c4b);
+		@include boxshadow(none);
+		border: 1px solid #884f51;
+		color: #7e171e;
+		text-shadow: 0 1px 1px #e35851;
+	}
+}
+
 /* variables */
 $raleway: 'Raleway', 'Arial', sans-serif;
 
@@ -109,13 +147,13 @@ html {
 
 body {
 	background: #fafafa;
-	color: #484848;
+	color: #909090;
 	font-family: 'Istok Web', 'Arial', sans-serif;
 	font-size: 18px;
 	line-height: 1em;
 	
 	a {
-		text-decoration: underline;
+		text-decoration: none;
 	}
 	
 	strong {
@@ -125,16 +163,33 @@ body {
 
 #container {
 	margin: 0 auto;
-	padding: 40px 0;
 	width: 960px;
 }
 
 header {
 	float: left;
+	padding: 40px 0 0;
 	width: 100%;
 	
 	h1 {
-		float: left;
+		a {
+			color: #3870d1;
+			float: left;
+			font-family: "Sue Ellen Francisco";
+			font-size: 24px;
+			
+			&:hover {
+				color: red;
+				
+				span {
+					color: #3870d1;
+				}
+			}
+			
+			span {
+				color: red;
+			}
+		}
 	}
 	
 	nav {
@@ -149,7 +204,6 @@ header {
 					color: #909090;
 					float: left;
 					font-size: 14px;
-					text-decoration: none;
 					
 					&#login {
 						color: #2e5cc7;
@@ -177,27 +231,63 @@ header {
 	text-align: center;
 	width: 100%;
 	
-	span {
-		display: block;
-		font-size: 24px;
-		line-height: 1em;
-		text-transform: uppercase;
+	p {
+		span {
+			display: block;
+			font-size: 24px;
+			line-height: 1em;
+			text-transform: uppercase;
+		}
 	}
 }
 
 #mid {
 	background: #fff;
-	border-left: 1px solid #e8e8e8;
-	border-right: 1px solid #e8e8e8;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
 	float: left;
 	padding: 45px;
 	width: 870px;
 	
-	.left {
+	input[type=text],
+	input[type=password] {
+		@include radius(4px);
+		@include boxshadow(inset 0 2px 2px 0 #f7f7f7);
+		border: 1px solid #dedede;
+		color: #bbb;
+		height: 16px;
+		line-height: 1em;
+		margin: 0 0 20px 0;
+		padding: 18px;
+				
+		&:hover {
+			background: #fafafa;
+		}
+		
+		&.active {
+			@include boxshadow2(inset 0 2px 2px 0 #e4eaf8, 0 0 4px 0 #96a8cd);
+			background: #ecf0f8;
+			border-color: #cfd7e7;
+			color: #96a8cd;
+		}
+	}
+	
+	textarea {
+		@extend input[type=text];
+		height: 46px;
+	}
+	
+	.left-33 {
+		float: left;
+		width: 245px;
+	}
+	
+	.left-50 {
 		float: left;
 		width: 390px;
 		
 		h2 {
+			color: #484848;
 			font-family: $raleway;
 			font-size: 44px;
 			line-height: 1em;
@@ -229,50 +319,19 @@ header {
 		}
 	}
 	
-	.right {
+	.right-50 {
 		float: right;
 		width: 390px;
 		
 		form {
 			input {
-				@include radius(4px);
-				@include boxshadow(inset 0 2px 2px 0 #f7f7f7);
-				border: 1px solid #dedede;
-				color: #ccc;
-				height: 16px;
-				line-height: 1em;
-				margin: 0 0 20px 0;
-				padding: 18px;
 				width: 354px;
-				
-				&:hover {
-					background: #fafafa;
-				}
-				
-				&.active {
-					@include boxshadow(inset 0 2px 2px 0 #e4eaf8);
-					background: #ecf0f8;
-					border-color: #cfd7e7;
-					color: #96a8cd;
-				}
 			}
 			
 			a {
-				@include gradient(#f6f6f6, #eee);
-				@include boxshadow(0 1px 1px 0 #eee);
-				
-				border: 1px solid #dbdbdb;
-				color: #b8b8b8;
-				cursor: pointer;
-				float: left;
-				padding: 10px 0;
-				text-align: center;
-				text-decoration: none;
-				text-shadow: 0 1px 1px #fff;
-				width: 128px;
+				@include button(118px);
 				
 				img {
-					@include boxshadow(1px 1px 1px 0 #fff);
 					height: 22px;
 					width: 22px;
 				}
@@ -281,6 +340,7 @@ header {
 					@include radius-left(4px);
 					padding: 14px 0;
 				}
+				
 				&#linkedin {
 					border-left: 0;
 					border-right: 0;
@@ -290,29 +350,9 @@ header {
 						width: 128px;
 					}
 				}
+				
 				&#facebook {
 					@include radius-right(4px);
-				}
-				
-				&:hover {
-					@include boxshadow2(inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #ccc);
-					@include gradient(#df4c4b, #c43037);
-					border: 1px solid #884f51;
-					color: #7e171e;
-					text-shadow: 0 1px 1px #e35851;
-						
-					img {
-						@include boxshadow(1px 1px 1px 0 #e35851);
-					}
-				}
-				
-				&:active {
-					@include gradient(#c43037, #df4c4b);
-					@include boxshadow(none);
-					border: 1px solid #884f51;
-					color: #7e171e;
-					margin-top: 1px;
-					text-shadow: 0 1px 1px #e35851;
 				}
 			}
 			
@@ -321,6 +361,43 @@ header {
 				float: left;
 				font-size: 14px;
 				margin: 15px 0 0 0;
+			}
+		}
+	}
+	
+	.right-67 {
+		float: right;
+		width: 580px;
+		
+		#form-signup {
+			float: left;
+			@include radius(4px);
+			background: #f5f5f5;
+			border: 1px solid #e8e8e3;
+			padding: 20px;
+			
+			label {
+				float: left;
+				font-size: 16px;
+				height: 35px;
+				line-height: 1.2em;
+				padding: 18px 0 0;
+				width: 160px;
+				
+				&#passwordconf {
+					padding: 9px 0 0;
+				}
+			}
+			
+			input[type=text],
+			input[type=password] {
+				width: 340px;
+			}
+			
+			input[type=submit] {
+				@include button(110px);
+				@include radius(4px);
+				float: right;
 			}
 		}
 	}
@@ -382,7 +459,6 @@ header {
 		float: right;
 		margin: 8px 0 0 8px;
 		padding: 10px 20px;
-		text-decoration: none;
 		text-shadow: 0 1px 1px #fff;
 		
 		&:hover {
