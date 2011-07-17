@@ -1,6 +1,12 @@
-<h6>Find me in views/sessions/login.erb</h6>
+<section class="left-33">
+	<h3>Log In</h3>
+	
+	<p>If you're new to Proximate, <a href="/signup">sign up here</a>, or use <a href="/auth/linked_in">LinkedIn</a> or <a href="javascript: void(0)">Facebook</a>.</p>
+	
+</section>
+
 <section class="right-67">
-	<form action="/login" method="post" id="form-signup">
+	<form action="/login" method="post" id="form-login">
 	
 		<input name="session[email]" type="text" value="name@email.com" class="focushide" />
 	
@@ -8,12 +14,4 @@
 	
 		<input type="submit" value="Sign In" />
 	</form>
-	
-	<p>Or sign in using the Linked In service</p>
-	<!-- <a href="/auth/twitter">Sign in with Twitter</a> -->
-	<a href="/auth/linked_in">
-		<img alt="Sign in with Linked In" src="images/log-in-linkedin-large.png" />
-	</a>
-	
-	<a href="/signup">Sign Up</a>
 </section>
