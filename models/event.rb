@@ -39,7 +39,7 @@ class Event
 
 
   ## Links an event to multiple time_slots and multiple invites and multiple questions
-  has n, :time_slots
+  has n, :activities
   has n, :invites
   has n, :questions
   
