@@ -82,8 +82,8 @@ body {
   .container #mid input[type=password]:hover,
   .container #mid textarea:hover {
     background: #fafafa; }
-  .container #mid form input.active,
-  .container #mid form textarea.active {
+  .container #mid input.active,
+  .container #mid textarea.active {
     /* 		@include boxshadow2(none, none) */
     -moz-box-shadow: inset 0 2px 2px 0 #dbdfe7, 0 0 4px 0 #3870d1;
     -ms-box-shadow: inset 0 2px 2px 0 #dbdfe7, 0 0 4px 0 #3870d1;
@@ -93,8 +93,8 @@ body {
     background: #ecf0f8;
     border: 1px solid #7cb4ff;
     color: #3870d1; }
-    .container #mid form input.active:hover,
-    .container #mid form textarea.active:hover {
+    .container #mid input.active:hover,
+    .container #mid textarea.active:hover {
       background: #ecf0f8; }
   .container.dark-gray #top, .container.dark-gray #bot {
     background: #666666;
@@ -114,7 +114,7 @@ body {
     color: #777777; }
   .container.dark-gray #mid input[type=text]:hover, .container.dark-gray #mid form textarea:hover, .container.dark-gray #mid input[type=password]:hover, .container.dark-gray #mid textarea:hover {
     background: #fafafa; }
-  .container.dark-gray #mid form input.active, .container.dark-gray #mid form textarea.active {
+  .container.dark-gray #mid input.active, .container.dark-gray #mid textarea.active {
     /* 		@include boxshadow2(none, none) */
     -moz-box-shadow: inset 0 2px 2px 0 #d7d7d7, 0 0 4px 0 #777777;
     -ms-box-shadow: inset 0 2px 2px 0 #d7d7d7, 0 0 4px 0 #777777;
@@ -124,7 +124,7 @@ body {
     background: #e8e8e8;
     border: 1px solid #bbbbbb;
     color: #777777; }
-    .container.dark-gray #mid form input.active:hover, .container.dark-gray #mid form textarea.active:hover {
+    .container.dark-gray #mid input.active:hover, .container.dark-gray #mid textarea.active:hover {
       background: #e8e8e8; }
   .container.dark-gray-blue #top, .container.dark-gray-blue #bot {
     background: #1f516b;
@@ -144,7 +144,7 @@ body {
     color: #30627c; }
   .container.dark-gray-blue #mid input[type=text]:hover, .container.dark-gray-blue #mid form textarea:hover, .container.dark-gray-blue #mid input[type=password]:hover, .container.dark-gray-blue #mid textarea:hover {
     background: #fafafa; }
-  .container.dark-gray-blue #mid form input.active, .container.dark-gray-blue #mid form textarea.active {
+  .container.dark-gray-blue #mid input.active, .container.dark-gray-blue #mid textarea.active {
     /* 		@include boxshadow2(none, none) */
     -moz-box-shadow: inset 0 2px 2px 0 #ced7dc, 0 0 4px 0 #30627c;
     -ms-box-shadow: inset 0 2px 2px 0 #ced7dc, 0 0 4px 0 #30627c;
@@ -154,7 +154,7 @@ body {
     background: #dfe8ed;
     border: 1px solid #74a6c0;
     color: #30627c; }
-    .container.dark-gray-blue #mid form input.active:hover, .container.dark-gray-blue #mid form textarea.active:hover {
+    .container.dark-gray-blue #mid input.active:hover, .container.dark-gray-blue #mid textarea.active:hover {
       background: #dfe8ed; }
   .container.forest-green #top, .container.forest-green #bot {
     background: #005256;
@@ -174,7 +174,7 @@ body {
     color: #016367; }
   .container.forest-green #mid input[type=text]:hover, .container.forest-green #mid form textarea:hover, .container.forest-green #mid input[type=password]:hover, .container.forest-green #mid textarea:hover {
     background: #fafafa; }
-  .container.forest-green #mid form input.active, .container.forest-green #mid form textarea.active {
+  .container.forest-green #mid input.active, .container.forest-green #mid textarea.active {
     /* 		@include boxshadow2(none, none) */
     -moz-box-shadow: inset 0 2px 2px 0 #d2e5d9, 0 0 4px 0 #016367;
     -ms-box-shadow: inset 0 2px 2px 0 #d2e5d9, 0 0 4px 0 #016367;
@@ -184,7 +184,7 @@ body {
     background: #e3f6ea;
     border: 1px solid #45a7ab;
     color: #016367; }
-    .container.forest-green #mid form input.active:hover, .container.forest-green #mid form textarea.active:hover {
+    .container.forest-green #mid input.active:hover, .container.forest-green #mid textarea.active:hover {
       background: #e3f6ea; }
   .container.light-gray #top, .container.light-gray #bot {
     background: #bbbbbb;
@@ -204,7 +204,7 @@ body {
     color: #cccccc; }
   .container.light-gray #mid input[type=text]:hover, .container.light-gray #mid form textarea:hover, .container.light-gray #mid input[type=password]:hover, .container.light-gray #mid textarea:hover {
     background: #fafafa; }
-  .container.light-gray #mid form input.active, .container.light-gray #mid form textarea.active {
+  .container.light-gray #mid input.active, .container.light-gray #mid textarea.active {
     /* 		@include boxshadow2(none, none) */
     -moz-box-shadow: inset 0 2px 2px 0 #d7d7d7, 0 0 4px 0 #cccccc;
     -ms-box-shadow: inset 0 2px 2px 0 #d7d7d7, 0 0 4px 0 #cccccc;
@@ -214,7 +214,7 @@ body {
     background: #e8e8e8;
     border: 1px solid white;
     color: #cccccc; }
-    .container.light-gray #mid form input.active:hover, .container.light-gray #mid form textarea.active:hover {
+    .container.light-gray #mid input.active:hover, .container.light-gray #mid textarea.active:hover {
       background: #e8e8e8; }
   .container.lime-popsicle #top, .container.lime-popsicle #bot {
     background: #88ba00;
@@ -234,7 +234,7 @@ body {
     color: #99cb02; }
   .container.lime-popsicle #mid input[type=text]:hover, .container.lime-popsicle #mid form textarea:hover, .container.lime-popsicle #mid input[type=password]:hover, .container.lime-popsicle #mid textarea:hover {
     background: #fafafa; }
-  .container.lime-popsicle #mid form input.active, .container.lime-popsicle #mid form textarea.active {
+  .container.lime-popsicle #mid input.active, .container.lime-popsicle #mid textarea.active {
     /* 		@include boxshadow2(none, none) */
     -moz-box-shadow: inset 0 2px 2px 0 #e2e6d5, 0 0 4px 0 #99cb02;
     -ms-box-shadow: inset 0 2px 2px 0 #e2e6d5, 0 0 4px 0 #99cb02;
@@ -244,7 +244,7 @@ body {
     background: #f3f7e6;
     border: 1px solid #ddff46;
     color: #99cb02; }
-    .container.lime-popsicle #mid form input.active:hover, .container.lime-popsicle #mid form textarea.active:hover {
+    .container.lime-popsicle #mid input.active:hover, .container.lime-popsicle #mid textarea.active:hover {
       background: #f3f7e6; }
   .container.mac-n-cheese #top, .container.mac-n-cheese #bot {
     background: #edba00;
@@ -264,7 +264,7 @@ body {
     color: #fecb00; }
   .container.mac-n-cheese #mid input[type=text]:hover, .container.mac-n-cheese #mid form textarea:hover, .container.mac-n-cheese #mid input[type=password]:hover, .container.mac-n-cheese #mid textarea:hover {
     background: #fafafa; }
-  .container.mac-n-cheese #mid form input.active, .container.mac-n-cheese #mid form textarea.active {
+  .container.mac-n-cheese #mid input.active, .container.mac-n-cheese #mid textarea.active {
     /* 		@include boxshadow2(none, none) */
     -moz-box-shadow: inset 0 2px 2px 0 #e6e2d1, 0 0 4px 0 #fecb00;
     -ms-box-shadow: inset 0 2px 2px 0 #e6e2d1, 0 0 4px 0 #fecb00;
@@ -274,7 +274,7 @@ body {
     background: #f7f3e2;
     border: 1px solid #ffff44;
     color: #fecb00; }
-    .container.mac-n-cheese #mid form input.active:hover, .container.mac-n-cheese #mid form textarea.active:hover {
+    .container.mac-n-cheese #mid input.active:hover, .container.mac-n-cheese #mid textarea.active:hover {
       background: #f7f3e2; }
   .container.pink #top, .container.pink #bot {
     background: #ee5689;
@@ -294,7 +294,7 @@ body {
     color: #ff679a; }
   .container.pink #mid input[type=text]:hover, .container.pink #mid form textarea:hover, .container.pink #mid input[type=password]:hover, .container.pink #mid textarea:hover {
     background: #fafafa; }
-  .container.pink #mid form input.active, .container.pink #mid form textarea.active {
+  .container.pink #mid input.active, .container.pink #mid textarea.active {
     /* 		@include boxshadow2(none, none) */
     -moz-box-shadow: inset 0 2px 2px 0 #e8d9de, 0 0 4px 0 #ff679a;
     -ms-box-shadow: inset 0 2px 2px 0 #e8d9de, 0 0 4px 0 #ff679a;
@@ -304,7 +304,7 @@ body {
     background: #f9eaef;
     border: 1px solid #ffabde;
     color: #ff679a; }
-    .container.pink #mid form input.active:hover, .container.pink #mid form textarea.active:hover {
+    .container.pink #mid input.active:hover, .container.pink #mid textarea.active:hover {
       background: #f9eaef; }
   .container.purple #top, .container.purple #bot {
     background: #be5abe;
@@ -324,7 +324,7 @@ body {
     color: #cf6bcf; }
   .container.purple #mid input[type=text]:hover, .container.purple #mid form textarea:hover, .container.purple #mid input[type=password]:hover, .container.purple #mid textarea:hover {
     background: #fafafa; }
-  .container.purple #mid form input.active, .container.purple #mid form textarea.active {
+  .container.purple #mid input.active, .container.purple #mid textarea.active {
     /* 		@include boxshadow2(none, none) */
     -moz-box-shadow: inset 0 2px 2px 0 #edd9ed, 0 0 4px 0 #cf6bcf;
     -ms-box-shadow: inset 0 2px 2px 0 #edd9ed, 0 0 4px 0 #cf6bcf;
@@ -334,7 +334,7 @@ body {
     background: #feeafe;
     border: 1px solid #ffafff;
     color: #cf6bcf; }
-    .container.purple #mid form input.active:hover, .container.purple #mid form textarea.active:hover {
+    .container.purple #mid input.active:hover, .container.purple #mid textarea.active:hover {
       background: #feeafe; }
   .container.red #top, .container.red #bot {
     background: #d60000;
@@ -354,7 +354,7 @@ body {
     color: #e70000; }
   .container.red #mid input[type=text]:hover, .container.red #mid form textarea:hover, .container.red #mid input[type=password]:hover, .container.red #mid textarea:hover {
     background: #fafafa; }
-  .container.red #mid form input.active, .container.red #mid form textarea.active {
+  .container.red #mid input.active, .container.red #mid textarea.active {
     /* 		@include boxshadow2(none, none) */
     -moz-box-shadow: inset 0 2px 2px 0 #ead5d5, 0 0 4px 0 #e70000;
     -ms-box-shadow: inset 0 2px 2px 0 #ead5d5, 0 0 4px 0 #e70000;
@@ -364,7 +364,7 @@ body {
     background: #fbe6e6;
     border: 1px solid #ff4444;
     color: #e70000; }
-    .container.red #mid form input.active:hover, .container.red #mid form textarea.active:hover {
+    .container.red #mid input.active:hover, .container.red #mid textarea.active:hover {
       background: #fbe6e6; }
   .container.sunset-orange #top, .container.sunset-orange #bot {
     background: #ee5500;
@@ -384,7 +384,7 @@ body {
     color: #ff6600; }
   .container.sunset-orange #mid input[type=text]:hover, .container.sunset-orange #mid form textarea:hover, .container.sunset-orange #mid input[type=password]:hover, .container.sunset-orange #mid textarea:hover {
     background: #fafafa; }
-  .container.sunset-orange #mid form input.active, .container.sunset-orange #mid form textarea.active {
+  .container.sunset-orange #mid input.active, .container.sunset-orange #mid textarea.active {
     /* 		@include boxshadow2(none, none) */
     -moz-box-shadow: inset 0 2px 2px 0 #ebdfd7, 0 0 4px 0 #ff6600;
     -ms-box-shadow: inset 0 2px 2px 0 #ebdfd7, 0 0 4px 0 #ff6600;
@@ -394,7 +394,7 @@ body {
     background: #fcf0e8;
     border: 1px solid #ffaa44;
     color: #ff6600; }
-    .container.sunset-orange #mid form input.active:hover, .container.sunset-orange #mid form textarea.active:hover {
+    .container.sunset-orange #mid input.active:hover, .container.sunset-orange #mid textarea.active:hover {
       background: #fcf0e8; }
   .container.turquoise #top, .container.turquoise #bot {
     background: #189abc;
@@ -414,7 +414,7 @@ body {
     color: #29abcd; }
   .container.turquoise #mid input[type=text]:hover, .container.turquoise #mid form textarea:hover, .container.turquoise #mid input[type=password]:hover, .container.turquoise #mid textarea:hover {
     background: #fafafa; }
-  .container.turquoise #mid form input.active, .container.turquoise #mid form textarea.active {
+  .container.turquoise #mid input.active, .container.turquoise #mid textarea.active {
     /* 		@include boxshadow2(none, none) */
     -moz-box-shadow: inset 0 2px 2px 0 #deebee, 0 0 4px 0 #29abcd;
     -ms-box-shadow: inset 0 2px 2px 0 #deebee, 0 0 4px 0 #29abcd;
@@ -424,7 +424,7 @@ body {
     background: #effcff;
     border: 1px solid #6defff;
     color: #29abcd; }
-    .container.turquoise #mid form input.active:hover, .container.turquoise #mid form textarea.active:hover {
+    .container.turquoise #mid input.active:hover, .container.turquoise #mid textarea.active:hover {
       background: #effcff; }
 
 header {
@@ -510,7 +510,7 @@ header {
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
     -webkit-border-radius: 4px;
-    border-bottom-radius: 4px;
+    border-radius: 4px;
     -moz-box-shadow: inset 0 2px 2px 0 #f7f7f7, 0 0 0 0 white;
     -ms-box-shadow: inset 0 2px 2px 0 #f7f7f7, 0 0 0 0 white;
     -o-box-shadow: inset 0 2px 2px 0 #f7f7f7, 0 0 0 0 white;
@@ -532,6 +532,9 @@ header {
       background: #f0b7b7;
       border-color: #dc8181;
       color: #bf4e4d; }
+      #mid form input[type=text].error:hover, #mid form textarea.error:hover,
+      #mid form input[type=password].error:hover {
+        background: #f0b7b7; }
   #mid form input[type=submit] {
     background: #eeeeee;
     background-image: -moz-linear-gradient(top, #f6f6f6, #eeeeee);
@@ -559,7 +562,7 @@ header {
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
     -webkit-border-radius: 4px;
-    border-bottom-radius: 4px;
+    border-radius: 4px;
     float: right; }
     #mid form input[type=submit] img {
       -moz-box-shadow: 1px 1px 1px 0 white;
@@ -770,7 +773,7 @@ header {
       -ms-border-radius: 4px;
       -o-border-radius: 4px;
       -webkit-border-radius: 4px;
-      border-bottom-radius: 4px;
+      border-radius: 4px;
       background: #f5f5f5;
       border: 1px solid #e8e8e3;
       padding: 20px; }
