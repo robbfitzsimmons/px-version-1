@@ -1,5 +1,6 @@
 # Create a new actvitity Page
 get '/activities/new' do
+	@event = Event.get(session[:event])
 	@activity = Activity.new()
 
 	erb :'activities/new'
@@ -13,6 +14,7 @@ post '/activities' do
 	activity.start_date = DateTime.new(2011, 8, params[:start_day].to_i, params[:start_hour].to_i, 0)
 	activity.end_date = DateTime.new(2011, 8, params[:end_day].to_i, params[:end_hour].to_i, 0)
 	activity.event = event
+	activity.users << User.get(params[:speaker])
 
 
 	if activity.save
@@ -30,4 +32,12 @@ post '/activities' do
 		#erb :'activitys/new'
 		redirect "/activities/new"
 	end
+end
+
+# Create a new actvitity Page
+get '/activities/edit/:id' do
+	@activity = Activity.get(params[:id])
+	@event = @activity.event
+
+	erb :'activities/edit'
 end

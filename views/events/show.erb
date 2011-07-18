@@ -7,6 +7,8 @@
 	You are an admin
 <% end %>
 
+<br /><br />
+
 <% if session[:invite_event] == @event.id %>
 	<form action="/events/<%= @event.id %>" method="post">
 		<input name="_method" type="hidden" value="put" />
@@ -16,6 +18,8 @@
 		<input type="submit" value="Join" />
 	</form>
 <% end %>
+
+<br /><br />
 
 
 <h2>Attendees</h2>
@@ -29,8 +33,10 @@
 </ul>
 
 <% if event_admin %>
-	<h3>Invite People to the event</h3>
+	<br /><br />
+	<h2>Invite People to the event</h2>
 	<a href="/invites/new">Click here</a>
+	<br /><br />
 <% end %>
 
 <h2>Agenda</h2>
@@ -39,11 +45,13 @@
 <% end %>
 <ul>
 <% @event.activities(:order => [:start_date.asc]).each do |activity| %>
-	<li><%= activity.start_date.strftime("%I:%M %p").delete " " %><%= activity.name %></li>
+	<li><%= activity.start_date.strftime("%I:%M %p").delete " " %> <%= activity.name %> 
+		<% activity.users.each do |speaker| %>
+			w/ <%= speaker.name %>
+		<% end %>
+		<% if event_admin %>
+			<a href="/activities/edit/<%= activity.id %>">Add Speaker</a>
+		<% end %>
+	</li>
 <% end %>
 </ul>
-
-<% if event_admin %>
-	<h3>Invite People to the event</h3>
-	<a href="/invites/new">Click here</a>
-<% end %>
