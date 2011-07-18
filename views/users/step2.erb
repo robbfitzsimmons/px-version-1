@@ -27,6 +27,8 @@
 		<label for="user[website]">Website</label>
 		<input name="user[website]" type="text" value="<%= @user.website%>" />
 		
+		<input name="user[linked_in]" type="hidden" value="<%= @user.linked_in%>" />
+		
 		<fieldset id="terms">
 			<input name="terms" type="checkbox" />
 			<label for="terms">I agree to the terms.</label>
