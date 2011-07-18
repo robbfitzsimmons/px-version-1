@@ -109,6 +109,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,hr,p,input,textarea,bl
 	min-width: $width;
 	padding: 10px 5px;
 	text-align: center;
+	text-decoration: none;
 	text-shadow: 0 1px 1px #fff;
 				
 	img {
@@ -138,6 +139,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,hr,p,input,textarea,bl
 
 /* variables */
 $raleway: 'Raleway', 'Arial', sans-serif;
+$suellen: 'Sue Ellen Francisco', cursive;
 
 /* styles */
 
@@ -248,6 +250,28 @@ header {
 	float: left;
 	padding: 45px;
 	width: 870px;
+		
+	h3 {
+		color: #484848;
+		font-family: $raleway;
+		font-size: 36px;
+		line-height: 1em;
+		margin: 0 0 20px 0;
+	}
+	
+	p {
+		line-height: 1.4em;
+		margin: 0 0 20px 0;
+	}
+	
+	a {
+		color: #3870d1;
+		text-decoration: underline;
+		
+		&:hover {
+			text-decoration: none;
+		}
+	}
 	
 	input[type=text],
 	input[type=password] {
@@ -270,6 +294,12 @@ header {
 			border-color: #cfd7e7;
 			color: #96a8cd;
 		}
+	}
+			
+	input[type=submit] {
+		@include button(110px);
+		@include radius(4px);
+		float: right;
 	}
 	
 	textarea {
@@ -393,11 +423,14 @@ header {
 			input[type=password] {
 				width: 340px;
 			}
+		}
+		
+		#form-login {
+			@extend #form-signup;
 			
-			input[type=submit] {
-				@include button(110px);
-				@include radius(4px);
-				float: right;
+			input[type=text],
+			input[type=password] {
+				width: 500px;
 			}
 		}
 	}
