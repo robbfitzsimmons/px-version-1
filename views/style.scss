@@ -27,7 +27,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,hr,p,input,textarea,bl
 	-ms-border-radius: $rad;
 	-o-border-radius: $rad;
 	-webkit-border-radius: $rad;
-	border-bottom-radius: $rad;	
+	border-radius: $rad;	
 }
 
 @mixin radius-top($rad) {
@@ -151,15 +151,22 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,hr,p,input,textarea,bl
 }
 
 @mixin inputactive($color, $bg) {			
-	#mid form input:hover {
+	#mid input[type=text]:hover,		
+	#mid input[type=password]:hover,
+	#mid textarea:hover {
 		background: #fafafa;
 	}
-	#mid form input.active {
+	#mid input.active,
+	#mid textarea.active {
 /* 		@include boxshadow2(none, none) */
 		@include boxshadow2(inset 0 2px 2px 0 $bg - #111, 0 0 4px 0 $color);
 		background: $bg;
 		border: 1px solid $color + #444;
 		color: $color;
+		
+		&:hover {
+			background: $bg;
+		}
 	}
 }
 
@@ -338,6 +345,10 @@ header {
 				background: #f0b7b7;
 				border-color: #dc8181;
 				color: #bf4e4d;
+				
+				&:hover {
+					background: #f0b7b7;
+				}
 			}
 		}
 				
@@ -514,6 +525,10 @@ header {
 			
 			label.error {
 				margin: 0;
+			}
+			
+			a {
+				@extend .right-50;
 			}
 		}
 	}
