@@ -38,8 +38,8 @@
 	<a href = "/activities/new">Add Activity</a>
 <% end %>
 <ul>
-<% @event.activities(:order => [:start_date.asc]).each do |activity| %>
-	<li><%= activity.start_date.strftime("%I:%M %p").delete " " %><%= activity.name %></li>
+<% @event.activities.each do |slot| %>
+	<li><%= slot.name %></li>
 <% end %>
 </ul>
 

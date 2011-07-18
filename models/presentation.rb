@@ -8,6 +8,6 @@ class Presentation
 
   # Links speaker to a user and a time slot
   belongs_to :user,   :key => true
-  belongs_to :time_slot,   :key => true
+  belongs_to :activity,   :key => true
 
 end

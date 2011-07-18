@@ -1,0 +1,61 @@
+<h6>Find me in views/activities/new.erb</h6>
+
+<h1>Create a New Activity</h1>
+<p>If you have no activities why would people come to your event?</p>
+
+
+<form action="/activities" method="post">
+
+	<p>Information</p>
+
+	<label for="activity[name]">Name</label>
+	<input name="activity[name]" type="text" value="<%= @activity.name%>" />
+
+	<label for="activity[description]">Description</label>
+	<input name="activity[description]" type="text" value="<%= @activity.description%>" />
+
+	<label for="activity[location]">Location</label>
+	<input name="activity[location]" type="text" value="<%= @activity.location%>" />
+
+	<label for="start_day">Start Day</label>
+	<select name="start_day">
+		 <% i = 1 %>
+		 <% while i <= 31 %>
+				<option value="<%= i %>"><%= i %></option>
+				<% -i += 1 %>
+		<% end %>
+	</select>
+
+	<label for="start_hour">Start Hour</label>
+	<select name="start_hour">
+		 <% i = 0 %>
+		 <% while i <= 23 %>
+				<option value="<%= i %>"><%= i %></option>
+				<% -i += 1 %>
+		<% end %>
+	</select>
+
+	<label for="end_day">End Day</label>
+	<select name="end_day">
+		 <% i = 1 %>
+		 <% while i <= 31 %>
+				<option value="<%= i %>"><%= i %></option>
+				<% -i += 1 %>
+		<% end %>
+	</select>
+
+	<label for="end_hour">End Hour</label>
+	<select name="end_hour">
+		 <% i = 0 %>
+		 <% while i <= 23 %>
+				<option value="<%= i %>"><%= i %></option>
+				<% -i += 1 %>
+		<% end %>
+	</select>
+	
+	<br />
+
+	<input type="submit" value="Sign Up" />
+</form>
+
+

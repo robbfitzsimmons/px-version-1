@@ -36,7 +36,7 @@ class User
 
   ## Links users to speakers
   has n,   :presentations
-  has n,   :time_slots, :through => :presentations
+  has n,   :activities, :through => :presentations
 
   ## Links a user to multiple invites
   has n,   :invites
