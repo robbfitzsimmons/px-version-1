@@ -18,7 +18,7 @@ $(document).ready(function()
     	
 	});
 	
-	$("input").focus(function() {
+	$("input, textarea").focus(function() {
 		f = $(this);
 		
     	f.addClass('active');

@@ -27,8 +27,11 @@
 		<label for="user[website]">Website</label>
 		<input name="user[website]" type="text" value="<%= @user.website%>" />
 		
-		<label for="terms"></label>
-		<input name="terms" type="checkbox" />
+		<fieldset id="terms">
+			<input name="terms" type="checkbox" />
+			<label for="terms">I agree to the terms.</label>
+			<label for="terms" class="error hide">You must agree to the terms.</label>
+		</fieldset>
 	
 		<input type="submit" value="Sign Up" />
 	</form>

@@ -138,9 +138,42 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,hr,p,input,textarea,bl
 	}
 }
 
+@mixin barcolor($color) {
+	#top, #bot {
+		@include gradient($color, $color - #111);
+		@include boxshadow(inset 0 1px 1px 0 $color + #222);
+		border: 1px solid $color - #222;
+	}
+}
+
+@mixin linkcolor($color) {
+	#mid a { color: $color; }
+}
+
+@mixin inputactive($color, $bg) {			
+	#mid form input:hover {
+		background: #fafafa;
+	}
+	#mid form input.active {
+/* 		@include boxshadow2(none, none) */
+		@include boxshadow2(inset 0 2px 2px 0 $bg - #111, 0 0 4px 0 $color);
+		background: $bg;
+		border: 1px solid $color + #444;
+		color: $color;
+	}
+}
+
+@mixin color($color, $bg) {
+	@include barcolor($color);
+	@include linkcolor($color);
+	@include inputactive($color, $bg);
+}
+
 /* variables */
 $raleway: 'Raleway', 'Arial', sans-serif;
 $suellen: 'Sue Ellen Francisco', cursive;
+
+$color: #3870d1;
 
 /* styles */
 
@@ -162,11 +195,29 @@ body {
 	strong {
 		font-weight: bold;
 	}
+	
+	em {
+		font-style: italic;
+	}
 }
 
 .container {
 	margin: 0 auto;
 	width: 960px;
+	
+	@include color(#3870d1, #ecf0f8);
+	
+	&.dark-gray { @include color(#777, #e8e8e8); }
+	&.dark-gray-blue { @include color(#30627c, #dfe8ed); }
+	&.forest-green { @include color(#016367, #e3f6ea); }
+	&.light-gray { @include color(#ccc, #e8e8e8); }
+	&.lime-popsicle { @include color(#99cb02, #f3f7e6); }
+	&.mac-n-cheese { @include color(#fecb00, #f7f3e2); }
+	&.pink { @include color(#ff679a, #f9eaef); }
+	&.purple { @include color(#cf6bcf, #feeafe); }
+	&.red { @include color(#e70000, #fbe6e6); }
+	&.sunset-orange { @include color(#ff6600, #fcf0e8); }
+	&.turquoise { @include color(#29abcd, #effcff); }
 }
 
 header {
@@ -174,9 +225,9 @@ header {
 	padding: 40px 0 0;
 	width: 100%;
 	
-	h1 {
+	h1 { /* logo */
 		a {
-			color: #3870d1;
+			color: $color;
 			float: left;
 			font-family: "Sue Ellen Francisco";
 			font-size: 24px;
@@ -185,7 +236,7 @@ header {
 				color: red;
 				
 				span {
-					color: #3870d1;
+					color: $color;
 				}
 			}
 			
@@ -209,7 +260,7 @@ header {
 					font-size: 14px;
 					
 					&#login {
-						color: #2e5cc7;
+						color: $color - #111;
 						font-weight: bold;
 					}
 					&:hover {
@@ -223,19 +274,16 @@ header {
 }
 
 #top {
-	@include gradient(#3870d1, #2e5cc7);
 	@include radius-top(10px);
-	@include boxshadow(inset 0 1px 1px 0 #3c7aef);
-	border: 1px solid #2d59b3;
 	color: #f7f7f7;
 	float: left;
 	line-height: 1em;
 	margin: 40px 0 0;
-	padding: 4px 0;
-	text-align: center;
-	width: 100%;
+	padding: 15px;
+	width: 930px;
 	
-	p {
+	h3 {
+		text-align: center;
 		span {
 			display: block;
 			font-size: 24px;
@@ -266,7 +314,6 @@ header {
 	}
 	
 	a {
-		color: #3870d1;
 		text-decoration: underline;
 		
 		&:hover {
@@ -278,24 +325,13 @@ header {
 		input[type=text],
 		input[type=password] {
 			@include radius(4px);
-			@include boxshadow(inset 0 2px 2px 0 #f7f7f7);
+			@include boxshadow2(inset 0 2px 2px 0 #f7f7f7, 0 0 0 0 #fff);
 			border: 1px solid #dedede;
 			color: #bbb;
 			height: 16px;
 			line-height: 1em;
 			margin: 0 0 20px 0;
 			padding: 18px;
-					
-			&:hover {
-				background: #fafafa;
-			}
-			
-			&.active {
-				@include boxshadow2(inset 0 2px 2px 0 #e4eaf8, 0 0 4px 0 #96a8cd);
-				background: #ecf0f8;
-				border-color: #cfd7e7;
-				color: #96a8cd;
-			}
 			
 			&.error {
 				@include boxshadow(0 0 4px 0 #862020);
@@ -373,7 +409,7 @@ header {
 		float: right;
 		width: 390px;
 		
-		form {
+		form { /* hompage form */
 			input {
 				width: 354px;
 			}
@@ -395,6 +431,7 @@ header {
 					border-left: 0;
 					border-right: 0;
 					width: 130px;
+					
 					&:hover {
 						border: 1px solid #884f51;
 						width: 128px;
@@ -426,6 +463,17 @@ header {
 			border: 1px solid #e8e8e3;
 			padding: 20px;
 			
+			fieldset#terms {
+				label {
+					float: left;
+					padding: 0 0 0 15px;
+				}
+				input {
+					float: left;
+					margin: 0 0 0 160px;
+				}
+			}
+			
 			label {
 				float: left;
 				font-size: 16px;
@@ -450,6 +498,10 @@ header {
 			input[type=password] {
 				width: 340px;
 			}
+			
+			a {
+				@extend .right-50;
+			}
 		}
 		
 		#form-login {
@@ -468,39 +520,11 @@ header {
 }
 	
 #bot {
-	@include gradient(#3870d1, #2e5cc7);
 	@include radius-bot(10px);
-	@include boxshadow(inset 0 1px 1px 0 #3c7aef);
-	border: 1px solid #2d59b3;
 	color: #fff;
 	float: left;
 	height: 25px;
 	width: 100%;
-}
-
-.flash {
-	bottom: 0;
-	display: none;
-	padding: 20px 0;
-	position: fixed;
-	text-align: center;
-	width: 100%;
-	z-index: 10;
-	
-	&#error {
-		$color: #c43037;
-		@include boxshadow(hilite 0 2px 2px 0 $color + #666);
-		@include gradient($color + #444, $color + #333);
-		border-top: 1px solid $color;
-		color: $color;
-	}
-	&#success {
-		$color: #2e9716;
-		@include boxshadow(hilite 0 2px 2px 0 $color + #666);
-		@include gradient($color + #444, $color + #333);
-		border-top: 1px solid $color;
-		color: $color;
-	}
 }
 
 #form {
@@ -520,6 +544,7 @@ header {
 	}
 }
 
+/*
 #list {
 	margin: 30px auto;
 	width: 700px;
@@ -569,7 +594,7 @@ header {
 			width: 100%;
 			
 			td {
-				@include gradient(#3870d1, #2e5cc7);
+				@include gradient($color, #2e5cc7);
 				@include boxshadow(inset 0 1px 1px 0 #3c7aef);
 				
 				border: 1px solid #2d59b3;
@@ -588,10 +613,40 @@ header {
 		}
 	}
 }
+*/
 
 footer {
 	float: left;
 	padding: 20px 0 40px;
+	
+	a {
+		color: $color;
+	}
+}
+
+.flash {
+	bottom: 0;
+	display: none;
+	padding: 20px 0;
+	position: fixed;
+	text-align: center;
+	width: 100%;
+	z-index: 10;
+	
+	&#error {
+		$errorcolor: #c43037;
+		@include boxshadow(hilite 0 2px 2px 0 $errorcolor + #666);
+		@include gradient($errorcolor + #444, $errorcolor + #333);
+		border-top: 1px solid $errorcolor;
+		color: $errorcolor;
+	}
+	&#success {
+		$successcolor: #2e9716;
+		@include boxshadow(hilite 0 2px 2px 0 $successcolor + #666);
+		@include gradient($successcolor + #444, $successcolor + #333);
+		border-top: 1px solid $successcolor;
+		color: $successcolor;
+	}
 }
 
 ::selection {
@@ -603,4 +658,8 @@ footer {
 	background: #c43037;
 	color: #fff;
 	text-shadow: none;
+}
+
+.hide {
+	display: none;
 }
