@@ -22,6 +22,8 @@ post '/signup/step2' do
 		@user.errors.each do |e|
 		    puts e
 		end
+		
+		flash[:error] = "Email already registered."
 		redirect '/signup/step2'
 	end
 end

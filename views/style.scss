@@ -273,38 +273,57 @@ header {
 		}
 	}
 	
-	input[type=text],
-	input[type=password] {
-		@include radius(4px);
-		@include boxshadow(inset 0 2px 2px 0 #f7f7f7);
-		border: 1px solid #dedede;
-		color: #bbb;
-		height: 16px;
-		line-height: 1em;
-		margin: 0 0 20px 0;
-		padding: 18px;
+	form {
+		input[type=text],
+		input[type=password] {
+			@include radius(4px);
+			@include boxshadow(inset 0 2px 2px 0 #f7f7f7);
+			border: 1px solid #dedede;
+			color: #bbb;
+			height: 16px;
+			line-height: 1em;
+			margin: 0 0 20px 0;
+			padding: 18px;
+					
+			&:hover {
+				background: #fafafa;
+			}
+			
+			&.active {
+				@include boxshadow2(inset 0 2px 2px 0 #e4eaf8, 0 0 4px 0 #96a8cd);
+				background: #ecf0f8;
+				border-color: #cfd7e7;
+				color: #96a8cd;
+			}
+			
+			&.error {
+				@include boxshadow(0 0 4px 0 #862020);
+				background: #f0b7b7;
+				border-color: #dc8181;
+				color: #bf4e4d;
+			}
+		}
 				
-		&:hover {
-			background: #fafafa;
+		input[type=submit] {
+			@include button(110px);
+			@include radius(4px);
+			float: right;
 		}
 		
-		&.active {
-			@include boxshadow2(inset 0 2px 2px 0 #e4eaf8, 0 0 4px 0 #96a8cd);
-			background: #ecf0f8;
-			border-color: #cfd7e7;
-			color: #96a8cd;
+		textarea {
+			@extend input[type=text];
+			height: 46px;
 		}
-	}
-			
-	input[type=submit] {
-		@include button(110px);
-		@include radius(4px);
-		float: right;
-	}
-	
-	textarea {
-		@extend input[type=text];
-		height: 46px;
+		
+		label {				
+			&.error {
+				color: #df4c4b;
+				float: left;
+				margin: 0 0 15px 160px;
+				padding: 0;
+				width: 340px;
+			}
+		}
 	}
 	
 	.left-33 {
@@ -416,6 +435,13 @@ header {
 				
 				&#passwordconf {
 					padding: 9px 0 0;
+				}
+				
+				&.error {
+					float: left;
+					margin: 0 0 15px 160px;
+					padding: 0;
+					width: 340px;
 				}
 			}
 			

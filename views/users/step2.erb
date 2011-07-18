@@ -10,10 +10,10 @@
 		<input name="user[email]" type="text" value="<%= @user.email%>" />
 	
 		<label for="user[password]">Password</label>
-		<input name="user[password]" type="password" value="<%= @user.password%>" />
+		<input name="user[password]" type="password" value="<%= @user.password%>" id="password" />
 	
-		<label for="user[password]" id="passwordconf">Password Confirmation</label>
-		<input name="user[password]" type="password" value="<%= @user.password%>" />
+		<label for="passwordconf" id="passwordconf">Password Confirmation</label>
+		<input name="passwordconf" type="password" value="<%= @user.password%>" />
 	
 		<label for="user[name]">Name</label>
 		<input name="user[name]" type="text" value="<%= @user.name%>" />
@@ -26,9 +26,9 @@
 	
 		<label for="user[website]">Website</label>
 		<input name="user[website]" type="text" value="<%= @user.website%>" />
-	
-		<label for="user[linked_in]">Linked In</label>
-		<input name="user[linked_in]" type="text" value="<%= @user.linked_in%>" />
+		
+		<label for="terms"></label>
+		<input name="terms" type="checkbox" />
 	
 		<input type="submit" value="Sign Up" />
 	</form>
