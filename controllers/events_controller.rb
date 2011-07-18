@@ -103,6 +103,8 @@ get '/:permalink/questions/answer' do
 	@event = Event.first(:permalink => params[:permalink].downcase)
 	@answer = Answer.new()
 
+	session[:event] = @event.id
+
 	@title = "#{@event.name} Questions"
 
 	erb :'events/questions/answer'

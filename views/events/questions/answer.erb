@@ -5,30 +5,31 @@
 
 
 <form action="/answers" method="post">
-	
+	<% @i = 0 %>
 	<% @event.questions.each do |question| %>
+	<% @i = @i + 1 %>
 		
 		<% if question.type == "text" %>
-			<label for="answer[text_answer]"><%= question.text %></label>
-			<input name="answer[text_answer]" type="text" value="<%= @answer.text_answer%>" />
+			<label for="answer<%= @i %>[text_answer]"><%= question.text %></label>
+			<input name="answer<%= @i %>[text_answer]" type="text" value="<%= @answer.text_answer%>" />
 			<br/ ><br />
 		<% end %>
 
 		<% if question.type == "radio" %>
-			<label for="answer[int_answer]"><%= question.text %></label>
+			<label for="answer<%= @i %>[int_answer]"><%= question.text %></label>
 				<% if !question.option1.empty? %>
 					<label>
-						<input name="answer[int_answer]" type="radio" value="1" /><%= question.option1 %>
+						<input name="answer<%= @i %>[int_answer]" type="radio" value="1" /><%= question.option1 %>
 					</label>
 				<% end %>
 				<% if !question.option2.empty? %>
 					<label>
-						<input name="answer[int_answer]" type="radio" value="2" /><%= question.option2 %>
+						<input name="answer<%= @i %>[int_answer]" type="radio" value="2" /><%= question.option2 %>
 					</label>
 				<% end %>
 				<% if !question.option3.empty? %>
 					<label>
-						<input name="answer[int_answer]" type="radio" value="3" /><%= question.option3 %>
+						<input name="answer<%= @i %>[int_answer]" type="radio" value="3" /><%= question.option3 %>
 					</label>
 				<% end %>
 			<br />
@@ -36,19 +37,19 @@
 
 
 		<% if question.type == "select" %>
-			<label for="answer[int_answer]"><%= question.text %></label>
-				<select name="answer[int_answer]">
+			<label for="answer<%= @i %>[int_answer]"><%= question.text %></label>
+				<select name="answer<%= @i %>[int_answer]">
 					<% if !question.option1.empty? %>
-							<option name="answer[int_answer]" type="radio" value="1"><%= question.option1 %></option>
+							<option name="answer<%= @i %>[int_answer]" type="radio" value="1"><%= question.option1 %></option>
 					<% end %>
 					<% if !question.option2.empty? %>
 						<label>
-							<option name="answer[int_answer]" type="radio" value="2"><%= question.option2 %></option>
+							<option name="answer<%= @i %>[int_answer]" type="radio" value="2"><%= question.option2 %></option>
 						</label>
 					<% end %>
 					<% if !question.option3.empty? %>
 						<label>
-							<option name="answer[int_answer]" type="radio" value="3"><%= question.option3 %></option>
+							<option name="answer<%= @i %>[int_answer]" type="radio" value="3"><%= question.option3 %></option>
 						</label>
 					<% end %>
 				</select>
@@ -58,6 +59,6 @@
 
 	<% end %>
 
-	
+	<input name="num_questions" type="hidden" value="<%= @i%>" />
 	<input type="submit" value="Submit Answers" />
 </form>
