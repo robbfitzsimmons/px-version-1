@@ -4,6 +4,8 @@
 		<title>Hello, my name is Proximate.</title>
 		<link rel="stylesheet" type="text/css" href="/style.css" />
 		<link href='http://fonts.googleapis.com/css?family=Raleway:100|Sue+Ellen+Francisco|Istok+Web:700italic,400,700,400italic' rel='stylesheet' type='text/css'>
+	    
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 		
 		<!--[if IE]>
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -17,7 +19,7 @@
 
 	</head>
 	<body>
-		<div id="container">
+		<div class="container">
 			<header>
 				<h1><a href="/">Pr<span>o</span>ximate Logo Belongs Here</a></h1>
 				
@@ -43,7 +45,6 @@
 			</div>
 			
 			<div id="mid">
-			    <%= erb :flash %>
 			    <%= yield %>
 
 			</div>
@@ -55,9 +56,9 @@
 			</footer>
 			
 		</div> <!-- //container -->
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+			
+	    <%= erb :flash %>
 		<script src="/js/scripts.js"></script>
-		<script src="/js/validate.js"></script>
 		<script type="text/javascript">var switchTo5x=true;</script>
 		<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
 		<script type="text/javascript">stLight.options({publisher:'d4421eb4-bd0a-4665-ba3d-bfad0daebe1b'});</script>

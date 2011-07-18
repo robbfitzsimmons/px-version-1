@@ -106,6 +106,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,hr,p,input,textarea,bl
 	color: #b8b8b8;
 	cursor: pointer;
 	float: left;
+	line-height: 1em;
 	min-width: $width;
 	padding: 10px 5px;
 	text-align: center;
@@ -152,7 +153,7 @@ body {
 	color: #909090;
 	font-family: 'Istok Web', 'Arial', sans-serif;
 	font-size: 18px;
-	line-height: 1em;
+	line-height: 1.4em;
 	
 	a {
 		text-decoration: none;
@@ -163,7 +164,7 @@ body {
 	}
 }
 
-#container {
+.container {
 	margin: 0 auto;
 	width: 960px;
 }
@@ -228,6 +229,7 @@ header {
 	border: 1px solid #2d59b3;
 	color: #f7f7f7;
 	float: left;
+	line-height: 1em;
 	margin: 40px 0 0;
 	padding: 4px 0;
 	text-align: center;
@@ -260,7 +262,6 @@ header {
 	}
 	
 	p {
-		line-height: 1.4em;
 		margin: 0 0 20px 0;
 	}
 	
@@ -458,6 +459,10 @@ header {
 			input[type=password] {
 				width: 500px;
 			}
+			
+			label.error {
+				margin: 0;
+			}
 		}
 	}
 }
@@ -474,10 +479,28 @@ header {
 }
 
 .flash {
-	margin: 0 0 10px 0;
+	bottom: 0;
+	display: none;
+	padding: 20px 0;
+	position: fixed;
+	text-align: center;
+	width: 100%;
+	z-index: 10;
 	
-	&#error { color: #c43037; }
-	&#success { color: #2e9716; }
+	&#error {
+		$color: #c43037;
+		@include boxshadow(hilite 0 2px 2px 0 $color + #666);
+		@include gradient($color + #444, $color + #333);
+		border-top: 1px solid $color;
+		color: $color;
+	}
+	&#success {
+		$color: #2e9716;
+		@include boxshadow(hilite 0 2px 2px 0 $color + #666);
+		@include gradient($color + #444, $color + #333);
+		border-top: 1px solid $color;
+		color: $color;
+	}
 }
 
 #form {
