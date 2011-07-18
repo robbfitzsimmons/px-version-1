@@ -98,3 +98,15 @@ get '/events/:permalink/worksheet' do
 	erb :'events/worksheet'
 end
 
+# Show events questions with answer fields for attendee
+get '/:permalink/questions/answer' do
+	@event = Event.first(:permalink => params[:permalink].downcase)
+	@answer = Answer.new()
+
+	@title = "#{@event.name} Questions"
+
+	erb :'events/questions/answer'
+end
+
+
+

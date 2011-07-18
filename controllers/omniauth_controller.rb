@@ -25,9 +25,10 @@ get '/auth/:name/callback' do
 
 	else
 		# The user already exists, so lets log them in :)
-
 		# And redirect them to their profile page
+		puts "They exist already"
 		session[:user] = @user.id
+		puts "Logged them in as user #{session[:user]}"
 		redirect "/users/#{@user.id}"
 	end
 	

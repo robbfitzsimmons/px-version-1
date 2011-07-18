@@ -52,7 +52,7 @@ class User
 
   # Lists related people
   def people_matches
-    User.all(:limit => 4)
+    @users = User.all(:limit => 4, :id.not => self.id)
   end
 
   # List all invites the user has chosen not to hide
