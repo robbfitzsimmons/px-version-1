@@ -24,7 +24,7 @@ class User
   property :twitter,		String		#
   
   property :website,		String		#
-  property :image,			String		# URL Pulled from social service or added using File upload to Amazon (http://ididitmyway.heroku.com/past/2011/1/16/uploading_files_in_sinatra/)
+  property :image,			String, :length => 6..500  		# URL Pulled from social service or added using File upload to Amazon (http://ididitmyway.heroku.com/past/2011/1/16/uploading_files_in_sinatra/)
   property :location,		String		# Location of the user (ex. Massachusetts)
 
   property :created_at, DateTime  # Generated when each resource is created
