@@ -2,6 +2,7 @@
 get '/invites/new' do
 	
 	@invite = Invite.new()
+	@event = current_event
 
 	erb :'invites/new'
 end

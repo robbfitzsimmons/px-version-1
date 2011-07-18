@@ -17,11 +17,20 @@
 	<label for="event[location]">Location</label>
 	<input name="event[location]" type="text" value="<%= @event.location%>" />
 
-	<label for="event[logo]">Logo</label>
-	<input name="event[logo]" type="text" value="<%= @event.logo%>" />
-
-	<label for="event[permalink]">Permalink</label>
-	<input name="event[permalink]" type="text" value="<%= @event.permalink%>" />
+	<label for="event[color]">Logo</label>
+	<select name="event[color]">
+		<option value="blue">Blue</option>
+		<option value="dark-gray">Dark Gray</option>
+		<option value="forest-green">Forest Green</option>
+		<option value="light-gray">Light Gray</option>
+		<option value="lime-popsicle">Lime Popsicle</option>
+		<option value="mac-n-cheese">Mac 'n' Cheese</option>
+		<option value="pink">Pink</option>
+		<option value="purple">Purple</option>
+		<option value="red">Red</option>
+		<option value="sunset-orange">Sunset Orange</option>
+		<option value="turquoise">Turquoise</option>
+	</select>
 
 	<label for="start_day">Start Day</label>
 	<select name="start_day">
