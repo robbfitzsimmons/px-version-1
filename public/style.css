@@ -765,6 +765,13 @@ header {
     #mid .left-33 h4 {
       float: left;
       width: 100%; }
+    #mid .left-33 p {
+      float: left;
+      width: 100%; }
+      #mid .left-33 p img {
+        float: left;
+        margin: 0 10px 0 0;
+        width: 25px; }
   #mid .left-50 {
     float: left;
     width: 390px; }
@@ -1316,6 +1323,21 @@ footer {
     background-image: linear-gradient(top, #72db5a, #61ca49);
     border-top: 1px solid #2e9716;
     color: #2e9716; }
+  .flash#warning {
+    -moz-box-shadow: hilite 0 2px 2px 0 #ffff66;
+    -ms-box-shadow: hilite 0 2px 2px 0 #ffff66;
+    -o-box-shadow: hilite 0 2px 2px 0 #ffff66;
+    -webkit-box-shadow: hilite 0 2px 2px 0 #ffff66;
+    box-shadow: hilite 0 2px 2px 0 #ffff66;
+    background: #ffed22;
+    background-image: -moz-linear-gradient(top, #ffdc11, #ffed22);
+    background-image: -ms-linear-gradient(top, #ffdc11, #ffed22);
+    background-image: -o-linear-gradient(top, #ffdc11, #ffed22);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffdc11), to(#ffed22));
+    background-image: -webkit-linear-gradient(top, #ffdc11, #ffed22);
+    background-image: linear-gradient(top, #ffdc11, #ffed22);
+    border-top: 1px solid #dca900;
+    color: #cb9800; }
 
 ::selection {
   background: #c43037;

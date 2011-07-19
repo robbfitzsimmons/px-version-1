@@ -527,6 +527,17 @@ header {
 			float: left;
 			width: 100%;
 		}
+		
+		p {
+			float: left;
+			width: 100%;
+			img {
+				float: left;
+				margin: 0 10px 0 0;
+				width: 25px;
+			}
+		}
+			
 	}
 	
 	.left-50 {
@@ -880,6 +891,13 @@ footer {
 		@include gradient($successcolor + #444, $successcolor + #333);
 		border-top: 1px solid $successcolor;
 		color: $successcolor;
+	}
+	&#warning {
+		$successcolor: #fecb00;
+		@include boxshadow(hilite 0 2px 2px 0 $successcolor + #666);
+		@include gradient($successcolor + #111, $successcolor + #222);
+		border-top: 1px solid $successcolor - #222;
+		color: $successcolor - #333;
 	}
 }
 

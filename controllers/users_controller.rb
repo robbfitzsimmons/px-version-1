@@ -31,8 +31,7 @@ end
 
 get '/signup/step2' do
 	@user = session[:user]
-
-	@user = User.new() if @user.nil?
+	@user = User.new() if @user.class != User
 
 	erb :'users/step2', {:layout => :static_layout}
 end
