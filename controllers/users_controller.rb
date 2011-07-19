@@ -30,7 +30,7 @@ end
 
 # Show a specific user
 get '/users/:id' do
-	@title = "User"
+	@title = "Dashboard"
 	@user = User.get(params[:id])
 	
 	erb :'users/show'	

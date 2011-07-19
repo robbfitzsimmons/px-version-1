@@ -108,7 +108,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,hr,p,input,textarea,bl
 	float: left;
 	line-height: 1em;
 	min-width: $width;
-	padding: 10px 5px;
+	padding: 10px;
 	text-align: center;
 	text-decoration: none;
 	text-shadow: 0 1px 1px #fff;
@@ -136,6 +136,14 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,hr,p,input,textarea,bl
 		color: #7e171e;
 		text-shadow: 0 1px 1px #e35851;
 	}
+}
+
+@mixin container {
+	float: left;
+	@include radius(4px);
+	background: #f5f5f5;
+	border: 1px solid #e8e8e3;
+	padding: 20px;
 }
 
 @mixin barcolor($color) {
@@ -229,31 +237,88 @@ body {
 
 header {
 	float: left;
-	padding: 40px 0 0;
+	padding: 0 0;
 	width: 100%;
 	
-	h1 { /* logo */
-		a {
-			color: $color;
-			float: left;
-			font-family: "Sue Ellen Francisco";
-			font-size: 24px;
-			
-			&:hover {
-				color: red;
+	#logo {
+		float: left;
+		margin: 40px 0;
+		
+		h1 {
+			a {
+				color: $color;
+				float: left;
+				font-family: "Sue Ellen Francisco";
+				font-size: 24px;
+				
+				&:hover {
+					color: red;
+					
+					span {
+						color: $color;
+					}
+				}
 				
 				span {
-					color: $color;
+					color: red;
 				}
-			}
-			
-			span {
-				color: red;
 			}
 		}
 	}
 	
+	#user-info {
+		float: left;
+		margin: 20px 0 10px;
+		width: 500px;
+		
+		p {
+			margin: 0;
+		}
+			
+		a {
+			color: $color;
+			font-size: 14px;
+			font-weight: normal;
+			text-decoration: underline;
+			
+			&:hover {
+				text-decoration: none;
+			}
+		}
+		h2, h3, h4, p {
+			float: left;
+			width: 405px;
+		}
+		
+		h2 {
+			font-size: 24px;
+			color: $color;
+		}
+		
+		h3 {
+			font-size: 14px;
+			font-weight: bold;
+		}
+			
+		h4 {
+			font-size: 14px;
+			color: #ccc;
+			font-weight: normal;
+			line-height: 1em;
+		}
+		
+		img {
+			float: left;
+			height: 80px;
+			margin: 0 15px 15px 0;
+			width: 80px;
+		}
+	}
+	
 	nav {
+		float: right;
+		margin: 40px 0;
+		
 		ul {
 			float: right;
 			
@@ -277,6 +342,25 @@ header {
 				}
 			}
 		}
+		
+		&#dashboard-nav {
+			margin: 20px 0;
+			
+			input {
+				background: transparent;
+				color: $color - #111;
+				cursor: pointer;
+				float: right;
+				font-size: 14px;
+				font-weight: bold;
+				margin: 0;
+				padding: 0;
+				
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
 	}
 }
 
@@ -285,7 +369,6 @@ header {
 	color: #f7f7f7;
 	float: left;
 	line-height: 1em;
-	margin: 40px 0 0;
 	padding: 15px;
 	width: 930px;
 	
@@ -377,6 +460,14 @@ header {
 	.left-33 {
 		float: left;
 		width: 245px;
+		
+		a {
+		
+			&.button {
+				@include button(150px);
+				@include radius(4px);
+			}
+		}
 	}
 	
 	.left-50 {
@@ -426,7 +517,7 @@ header {
 			}
 			
 			a {
-				@include button(118px);
+				@include button(108px);
 				
 				img {
 					height: 22px;
@@ -468,20 +559,22 @@ header {
 		width: 580px;
 		
 		#form-signup {
-			float: left;
-			@include radius(4px);
-			background: #f5f5f5;
-			border: 1px solid #e8e8e3;
-			padding: 20px;
+			@include container;
 			
 			fieldset#terms {
 				label {
+					width: 100%;
 					float: left;
-					padding: 0 0 0 15px;
-				}
-				input {
-					float: left;
-					margin: 0 0 0 160px;
+					input {
+						display: inline;
+						float: left;
+						margin: 0 0 0 160px;
+					}
+					p {
+						float: left;
+						margin: 0 0 0 15px;
+					}
+					
 				}
 			}
 			
@@ -530,6 +623,12 @@ header {
 			a {
 				@extend .right-50;
 			}
+		}
+		
+		article {
+			@include container;
+			margin: 0 0 20px 0;
+			width: 540px;
 		}
 	}
 }

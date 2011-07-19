@@ -31,8 +31,10 @@
 		<input name="user[image]" type="hidden" value="<%= @user.image%>" />
 		
 		<fieldset id="terms">
-			<input name="terms" type="checkbox" />
-			<label for="terms">I agree to the terms.</label>
+			<label>
+				<input name="terms" type="checkbox" />
+				<p>I agree to the terms.</p>
+			</label>
 			<label for="terms" class="error hide">You must agree to the terms.</label>
 		</fieldset>
 	

@@ -21,7 +21,9 @@
 	<body>
 		<div class="container">
 			<header>
-				<h1><a href="/">Pr<span>o</span>ximate Logo Belongs Here</a></h1>
+				<section id="logo">
+					<h1><a href="/">Pr<span>o</span>ximate Logo Belongs Here</a></h1>
+				</section>
 				
 				<nav>
 					<ul>
@@ -31,7 +33,7 @@
 						<li><a href="javascript: void(0)">say hello</a></li>
 						<li>
 						  	<% if current_user %>
-						  		<a href="/users/<%= current_user.id %>" id="login">view profile</a>
+						  		<a href="/users/<%= current_user.id %>" id="login">view dashboard</a>
 						  	<% else %>
 								<a href="/login" id="login">log in</a>
 						  	<% end %>
