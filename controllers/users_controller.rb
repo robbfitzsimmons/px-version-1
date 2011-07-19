@@ -4,6 +4,8 @@ get '/signup' do
 end
 
 post '/signup' do
+
+
 	if params[:email] != "name@email.com"
 		session[:email] = params[:email]
 	else
@@ -21,12 +23,16 @@ post '/signup' do
 	elsif params[:sign_up] == "Facebook"
 		flash[:warning] = "Facebook is not currently supported"
 		redirect '/signup/step2'
+	elsif params[:sign_up] == "Sign Up"
+		redirect '/signup/step2'
 	end
 end
 
 
 get '/signup/step2' do
 	@user = session[:user]
+
+	@user = User.new() if @user.nil?
 
 	erb :'users/step2', {:layout => :static_layout}
 end
