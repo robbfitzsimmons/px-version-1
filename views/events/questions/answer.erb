@@ -56,7 +56,7 @@
 			<br />
 		<% end %>
 
-
+	<input name="answer<%= @i %>[question_id]" type="hidden" value="<%= question.id %>" />
 	<% end %>
 
 	<input name="num_questions" type="hidden" value="<%= @i%>" />

@@ -12,10 +12,15 @@ class Answer
   property :created_at,   	DateTime  # Generated when each resource is created
   property :updated_at,   	DateTime  # Generated when each resource is updated
 
+  # Weird problem where this is created (never used) - so overwrite it and  make it not required
+  property :question_event_id, Integer, :required => false
+
   # Links an answer to a question and a user
   belongs_to :question,   :key => true
   belongs_to :user
 
-  validates_numericality_of :int_answer, :integer_only => true, :gte => 0
+  validates_uniqueness_of :user, :scope => :question_id
+
+  validates_numericality_of :int_answer, :integer_only => true, :gte => 0, :allow_nil => true
 
 end

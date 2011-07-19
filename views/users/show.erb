@@ -46,5 +46,15 @@
 </section>
 
 
+Notifications(<%= @user.new_invites.count + @user.events_with_unanswered_questions.count %>)
+
+<% @user.new_invites.each do |invite| %>
+	<%= invite.event.name %>
+<% end %>
+
+<% @user.events_with_unanswered_questions.each do |event| %>
+	<%= event.name %>
+<% end %>
+
 
 <h6 style="float: left; margin: 40px 0 0; width: 100%; background: #eee;">Find me in views/users/show.erb</h6>

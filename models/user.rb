@@ -55,6 +55,30 @@ class User
     @users = User.all(:limit => 4, :id.not => self.id)
   end
 
+  def events_with_unanswered_questions
+    # Get users events questions
+    all_questions = self.events.questions
+
+    # Get questions the user has answered already
+    questions_user_has_answered = self.answers.questions
+    
+    # Remove questions the user has answered from all the questions leaving unanswered questions
+    #available_teams.delete_if{ |available_team| (available_team.id == keep_game.home_id || available_team.id == keep_game.away_id)}
+    questions_user_has_answered.each do |answered_question|  
+      all_questions.delete_if{ |question| (question == answered_question)}
+    end
+
+    events = Array.new
+    all_questions.each do |question|
+      if !events.include?(question.event)
+        events << question.event
+      end
+    end
+    events.inspect
+    events
+
+  end
+
   # List all invites the user has chosen not to hide
   def new_invites
     self.invites.all(:hide => false)
