@@ -7,10 +7,10 @@
 	<form action="/signup/step2" method="post" id="form-signup">
 	
 		<label for="user[email]">Email</label>
-		<input name="user[email]" type="text" value="<%= @user.email%>" />
+		<input name="user[email]" type="text" value="<%= session[:email] %>" />
 	
 		<label for="user[password]">Password</label>
-		<input name="user[password]" type="password" value="<%= @user.password%>" id="password" />
+		<input name="user[password]" type="password" value="<%= session[:password] %>" id="password" />
 	
 		<label for="passwordconf" id="passwordconf">Password Confirmation</label>
 		<input name="passwordconf" type="password" value="<%= @user.password%>" />

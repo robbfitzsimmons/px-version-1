@@ -11,17 +11,16 @@
 </section>
 
 <section class="right-50">
-	<form>
-		<input type="text" value="name@email.com" class="focus-hide" />
-		<input type="password" value="password" class="focus-hide" />
+	<form action="/signup" method="post">
+		<input name="email" type="text" value="name@email.com" class="focus-hide" />
+		<input name="password" type="password" value="password" class="focus-hide" />
 		
-		<a href="/signup" id="signup">Sign Up</a>
-		<a href="/auth/linked_in" id="linkedin">
+		<!-- <a href="/auth/linked_in" id="linkedin">
 			<img src="images/social_linkedin.gif" alt="" />
-		</a>
-		<a href="javascript: void(0)" id="facebook">
-			<img src="images/social_facebook.gif" alt="" />
-		</a>
+		</a> -->
+		<input name="sign_up" type="submit" value="Sign Up" />
+		<input name="sign_up" type="submit" id="linked_in" value="LinkedIn"><img src="images/social_linkedin.gif" alt="" /></input>
+		<input name="sign_up" type="submit" id="facebook"  value="Facebook"><img src="images/social_facebook.gif" alt="" /></input>
 		
 		<p>You can sign in with your <strong>LinkedIn</strong> or <strong>Facebook</strong> accounts.</p>
 	</form>

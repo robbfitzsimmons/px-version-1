@@ -3,6 +3,27 @@ get '/signup' do
 	erb :'users/sign_up', {:layout => :static_layout}
 end
 
+post '/signup' do
+	if params[:email] != "name@email.com"
+		session[:email] = params[:email]
+	else
+		session[:email] = nil
+	end
+	
+	if params[:password] != "password"	
+		session[:password] = params[:password]
+	else
+		session[:password] = nil
+	end
+
+	if params[:sign_up] == "LinkedIn"
+		redirect '/auth/linked_in'
+	elsif params[:sign_up] == "Facebook"
+		flash[:warning] = "Facebook is not currently supported"
+		redirect '/signup/step2'
+	end
+end
+
 
 get '/signup/step2' do
 	@user = session[:user]
