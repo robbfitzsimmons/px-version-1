@@ -449,8 +449,6 @@ header {
     float: left;
     margin: 20px 0 10px;
     width: 500px; }
-    header #user-info p {
-      margin: 0; }
     header #user-info a {
       color: #3870d1;
       font-size: 14px;
@@ -463,15 +461,23 @@ header {
       width: 405px; }
     header #user-info h2 {
       font-size: 24px;
-      color: #3870d1; }
+      color: #3870d1;
+      line-height: 1em;
+      margin: 0 0 5px 0; }
     header #user-info h3 {
       font-size: 14px;
-      font-weight: bold; }
+      font-weight: bold;
+      line-height: 1em;
+      margin: 0 0 4px 0; }
     header #user-info h4 {
       font-size: 14px;
-      color: #ccc;
+      color: #b8b8b8;
       font-weight: normal;
-      line-height: 1em; }
+      line-height: 1em;
+      margin: 0 0 2px 0; }
+    header #user-info p {
+      line-height: 1em;
+      margin: 0; }
     header #user-info img {
       float: left;
       height: 80px;
@@ -509,6 +515,7 @@ header {
         header nav#dashboard-nav input:hover {
           text-decoration: underline; }
 
+/* end header */
 #top {
   -moz-border-radius-topleft: 10px;
   -moz-border-radius-topright: 10px;
@@ -739,6 +746,13 @@ header {
         border: 1px solid #884f51;
         color: #7e171e;
         text-shadow: 0 1px 1px #e35851; }
+    #mid .left-33 ul {
+      float: left;
+      margin: 20px 0;
+      width: 100%; }
+    #mid .left-33 h4 {
+      float: left;
+      width: 100%; }
   #mid .left-50 {
     float: left;
     width: 390px; }
@@ -772,14 +786,14 @@ header {
           background-position: -93px 0; }
         #mid .left-50 li span#feature5 {
           background-position: -124px 0; }
-  #mid .right-50, #mid .right-67 #form-signup a, #mid .right-67 #form-login a {
+  #mid .right-50, #mid .right-67 form a, #mid .right-67 #form-login a {
     float: right;
     width: 390px; }
-    #mid .right-50 form, #mid .right-67 #form-signup a form, #mid .right-67 #form-login a form {
+    #mid .right-50 form, #mid .right-67 form a form, #mid .right-67 #form-login a form {
       /* hompage form */ }
-      #mid .right-50 form input, #mid .right-67 #form-signup a form input, #mid .right-67 #form-login a form input {
+      #mid .right-50 form input, #mid .right-67 form a form input, #mid .right-67 #form-login a form input {
         width: 354px; }
-      #mid .right-50 form a, #mid .right-67 #form-signup a form a, #mid .right-67 #form-login a form a {
+      #mid .right-50 form a, #mid .right-67 form a form a, #mid .right-67 #form-login a form a {
         background: #eeeeee;
         background-image: -moz-linear-gradient(top, #f6f6f6, #eeeeee);
         background-image: -ms-linear-gradient(top, #f6f6f6, #eeeeee);
@@ -802,13 +816,13 @@ header {
         text-align: center;
         text-decoration: none;
         text-shadow: 0 1px 1px #fff; }
-        #mid .right-50 form a img, #mid .right-67 #form-signup a form a img, #mid .right-67 #form-login a form a img {
+        #mid .right-50 form a img, #mid .right-67 form a form a img, #mid .right-67 #form-login a form a img {
           -moz-box-shadow: 1px 1px 1px 0 white;
           -ms-box-shadow: 1px 1px 1px 0 white;
           -o-box-shadow: 1px 1px 1px 0 white;
           -webkit-box-shadow: 1px 1px 1px 0 white;
           box-shadow: 1px 1px 1px 0 white; }
-        #mid .right-50 form a:hover, #mid .right-67 #form-signup a form a:hover, #mid .right-67 #form-login a form a:hover {
+        #mid .right-50 form a:hover, #mid .right-67 form a form a:hover, #mid .right-67 #form-login a form a:hover {
           -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
           -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
           -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
@@ -824,13 +838,13 @@ header {
           border: 1px solid #884f51;
           color: #7e171e;
           text-shadow: 0 1px 1px #e35851; }
-          #mid .right-50 form a:hover img, #mid .right-67 #form-signup a form a:hover img, #mid .right-67 #form-login a form a:hover img {
+          #mid .right-50 form a:hover img, #mid .right-67 form a form a:hover img, #mid .right-67 #form-login a form a:hover img {
             -moz-box-shadow: 1px 1px 1px 0 #e35851;
             -ms-box-shadow: 1px 1px 1px 0 #e35851;
             -o-box-shadow: 1px 1px 1px 0 #e35851;
             -webkit-box-shadow: 1px 1px 1px 0 #e35851;
             box-shadow: 1px 1px 1px 0 #e35851; }
-        #mid .right-50 form a:active, #mid .right-67 #form-signup a form a:active, #mid .right-67 #form-login a form a:active {
+        #mid .right-50 form a:active, #mid .right-67 form a form a:active, #mid .right-67 #form-login a form a:active {
           background: #df4c4b;
           background-image: -moz-linear-gradient(top, #c43037, #df4c4b);
           background-image: -ms-linear-gradient(top, #c43037, #df4c4b);
@@ -846,10 +860,10 @@ header {
           border: 1px solid #884f51;
           color: #7e171e;
           text-shadow: 0 1px 1px #e35851; }
-        #mid .right-50 form a img, #mid .right-67 #form-signup a form a img, #mid .right-67 #form-login a form a img {
+        #mid .right-50 form a img, #mid .right-67 form a form a img, #mid .right-67 #form-login a form a img {
           height: 22px;
           width: 22px; }
-        #mid .right-50 form a#signup, #mid .right-67 #form-signup a form a#signup, #mid .right-67 #form-login a form a#signup {
+        #mid .right-50 form a#signup, #mid .right-67 form a form a#signup, #mid .right-67 #form-login a form a#signup {
           -moz-border-radius-bottomleft: 4px;
           -moz-border-radius-topleft: 4px;
           -ms-border-bottom-left-radius: 4px;
@@ -861,14 +875,14 @@ header {
           border-bottom-left-radius: 4px;
           border-top-left-radius: 4px;
           padding: 14px 0; }
-        #mid .right-50 form a#linkedin, #mid .right-67 #form-signup a form a#linkedin, #mid .right-67 #form-login a form a#linkedin {
+        #mid .right-50 form a#linkedin, #mid .right-67 form a form a#linkedin, #mid .right-67 #form-login a form a#linkedin {
           border-left: 0;
           border-right: 0;
           width: 130px; }
-          #mid .right-50 form a#linkedin:hover, #mid .right-67 #form-signup a form a#linkedin:hover, #mid .right-67 #form-login a form a#linkedin:hover {
+          #mid .right-50 form a#linkedin:hover, #mid .right-67 form a form a#linkedin:hover, #mid .right-67 #form-login a form a#linkedin:hover {
             border: 1px solid #884f51;
             width: 128px; }
-        #mid .right-50 form a#facebook, #mid .right-67 #form-signup a form a#facebook, #mid .right-67 #form-login a form a#facebook {
+        #mid .right-50 form a#facebook, #mid .right-67 form a form a#facebook, #mid .right-67 #form-login a form a#facebook {
           -moz-border-radius-bottomright: 4px;
           -moz-border-radius-topright: 4px;
           -ms-border-bottom-right-radius: 4px;
@@ -879,7 +893,7 @@ header {
           -webkit-border-top-right-radius: 4px;
           border-bottom-right-radius: 4px;
           border-top-right-radius: 4px; }
-      #mid .right-50 form p, #mid .right-67 #form-signup a form p, #mid .right-67 #form-login a form p {
+      #mid .right-50 form p, #mid .right-67 form a form p, #mid .right-67 #form-login a form p {
         color: #ccc;
         float: left;
         font-size: 14px;
@@ -887,7 +901,7 @@ header {
   #mid .right-67 {
     float: right;
     width: 580px; }
-    #mid .right-67 #form-signup, #mid .right-67 #form-login {
+    #mid .right-67 form {
       float: left;
       -moz-border-radius: 4px;
       -ms-border-radius: 4px;
@@ -897,35 +911,37 @@ header {
       background: #f5f5f5;
       border: 1px solid #e8e8e3;
       padding: 20px; }
-      #mid .right-67 #form-signup fieldset#terms label, #mid .right-67 #form-login fieldset#terms label {
+      #mid .right-67 form fieldset#terms label {
         width: 100%;
         float: left; }
-        #mid .right-67 #form-signup fieldset#terms label input, #mid .right-67 #form-login fieldset#terms label input {
+        #mid .right-67 form fieldset#terms label input {
           display: inline;
           float: left;
           margin: 0 0 0 160px; }
-        #mid .right-67 #form-signup fieldset#terms label p, #mid .right-67 #form-login fieldset#terms label p {
+        #mid .right-67 form fieldset#terms label p {
           float: left;
           margin: 0 0 0 15px; }
-      #mid .right-67 #form-signup label, #mid .right-67 #form-login label {
+      #mid .right-67 form label {
         float: left;
         font-size: 16px;
         height: 35px;
         line-height: 1.2em;
         padding: 18px 0 0;
         width: 160px; }
-        #mid .right-67 #form-signup label#passwordconf, #mid .right-67 #form-login label#passwordconf {
+        #mid .right-67 form label#passwordconf {
           padding: 9px 0 0; }
-        #mid .right-67 #form-signup label.error, #mid .right-67 #form-login label.error {
+        #mid .right-67 form label.error {
           float: left;
           margin: 0 0 15px 160px;
           padding: 0;
           width: 340px; }
-      #mid .right-67 #form-signup input[type=text], #mid .right-67 #form-login input[type=text], #mid .right-67 #form-signup form textarea, #mid form .right-67 #form-signup textarea, #mid .right-67 #form-login form textarea, #mid form .right-67 #form-login textarea,
-      #mid .right-67 #form-signup input[type=password],
-      #mid #mid .right-67 #form-login input[type=password], #mid
-      #mid .right-67 #form-login input[type=password] {
+      #mid .right-67 form input[type=text], #mid .right-67 form textarea,
+      #mid .right-67 form input[type=password],
+      #mid .right-67 form select {
         width: 340px; }
+      #mid .right-67 form select {
+        height: 30px;
+        margin: 18px 0 30px 0; }
     #mid .right-67 #form-login input[type=text], #mid .right-67 #form-login form textarea, #mid form .right-67 #form-login textarea,
     #mid .right-67 #form-login input[type=password] {
       width: 500px; }
@@ -943,7 +959,25 @@ header {
       padding: 20px;
       margin: 0 0 20px 0;
       width: 540px; }
+      #mid .right-67 article h1 {
+        float: left; }
+      #mid .right-67 article span {
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        background: #ffe;
+        border: 1px solid #ddddcc;
+        color: #ccccbb;
+        display: block;
+        float: right;
+        font-size: 14px;
+        margin: 0 0 0 10px;
+        padding: 2px 10px;
+        text-transform: uppercase; }
 
+/* end #mid */
 #bot {
   -moz-border-radius-bottomleft: 10px;
   -moz-border-radius-bottomright: 10px;
@@ -1044,9 +1078,12 @@ header {
 */
 footer {
   float: left;
+  font-size: 16px;
   padding: 20px 0 40px; }
   footer a {
     color: #3870d1; }
+    footer a:hover {
+      text-decoration: underline; }
 
 .flash {
   bottom: 0;

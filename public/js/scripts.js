@@ -26,6 +26,6 @@ $(document).ready(function()
     	f.removeClass('active');
 	});
 	
-	$('.flash').delay(250).slideDown().delay(3000).slideUp();
+	$('.flash').delay(250).slideDown().delay(5000).slideUp();
 
 });

@@ -1,6 +1,7 @@
 
 # Create a new Event Page
 get '/events/new' do
+	@title = "Create New Event"
 	if @event.nil?
 		puts "NEW EVENT"
 		@event = Event.new()

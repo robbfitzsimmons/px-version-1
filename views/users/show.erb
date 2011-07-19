@@ -1,16 +1,15 @@
 <section class="left-33">
-	<h3>Events (<%= @user.user_event_associations.length %>)</h3>
+	<h3>Events</h3>
 	<a href="/events/new" class="button">Create an Event</a>
 	
 	<ul>
 		<li>Filter</li>
-		<li><a href="">All events</a></li>
+		<li><a href="">All events (<%= @user.user_event_associations.length %>)</a></li>
 		<li><a href="">Events I'm attending</a></li>
 		<li><a href="">Events I created</a></li>
 		<li><a href="">Events I'm invited to (<%= @user.new_invites.length %>)</a></li>
 	</ul>
 	
-	<h2>Invites </h2>
 	<% if @user.new_invites.length != 0 %>
 		<% @user.new_invites.each do |invite| %>
 			<p>
@@ -19,11 +18,15 @@
 		<% end %>
 	<% end %>
 	
-	<h2>Matches (<%= @user.people_matches.length %>)</h2>
-	<% @user.people_matches.each do |match| %>
-		<p>
-			<%= match.name %>
-		</p>
+	<% if @user.people_matches.length != 0 %>
+		<h4>Matches (<%= @user.people_matches.length %>)</h4>
+		<% @user.people_matches.each do |match| %>
+			<p>
+				<%= match.name %>
+			</p>
+		<% end %>
+	<% else %>
+		<h4>No matches yet.</h4>
 	<% end %>
 </section>
 
@@ -31,10 +34,14 @@
 	<% if @user.user_event_associations.length != 0 %>
 		<% @user.user_event_associations.each do |assoc| %>
 			<article>
-				<h1><a href="/events/<%= assoc.event.permalink %>"><%= assoc.event.name %></a></h1>
 				<% if assoc.admin %>
-					<strong>Admin</strong>
+					<span>Admin</span>
 				<% end %>
+				<h1><a href="/events/<%= assoc.event.permalink %>"><%= assoc.event.name %></a></h1>
+				<p><%= assoc.event.description %></p>
+				<p><%= assoc.event.location %></p>
+				<p><%= assoc.event.start_date.strftime("%I:%M %p") %></p>
+				<p><%= assoc.event.end_date.strftime("%I:%M %p") %></p>
 			</article>
 		<% end %>
 	<% else %>
@@ -47,4 +54,4 @@
 
 
 
-<h6 style="float: left; margin: 40px 0 0; width: 100%; background: #eee;">Find me in views/users/show.erb</h6>
+<!-- <h6 style="float: left; margin: 40px 0 0; width: 100%; background: #eee;">Find me in views/users/show.erb</h6> -->

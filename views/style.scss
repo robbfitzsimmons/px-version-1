@@ -270,10 +270,6 @@ header {
 		float: left;
 		margin: 20px 0 10px;
 		width: 500px;
-		
-		p {
-			margin: 0;
-		}
 			
 		a {
 			color: $color;
@@ -293,18 +289,29 @@ header {
 		h2 {
 			font-size: 24px;
 			color: $color;
+			line-height: 1em;
+			margin: 0 0 5px 0;
 		}
 		
 		h3 {
 			font-size: 14px;
 			font-weight: bold;
+			line-height: 1em;
+			margin: 0 0 4px 0;
 		}
 			
 		h4 {
 			font-size: 14px;
-			color: #ccc;
+			color: #b8b8b8;
 			font-weight: normal;
 			line-height: 1em;
+			margin: 0 0 2px 0;
+		}
+		
+		p {
+			line-height: 1em;
+			margin: 0;
+			
 		}
 		
 		img {
@@ -362,7 +369,7 @@ header {
 			}
 		}
 	}
-}
+} /* end header */
 
 #top {
 	@include radius-top(10px);
@@ -468,6 +475,17 @@ header {
 				@include radius(4px);
 			}
 		}
+		
+		ul {
+			float: left;
+			margin: 20px 0;
+			width: 100%;
+		}
+		
+		h4 {
+			float: left;
+			width: 100%;
+		}
 	}
 	
 	.left-50 {
@@ -558,7 +576,7 @@ header {
 		float: right;
 		width: 580px;
 		
-		#form-signup {
+		form {
 			@include container;
 			
 			fieldset#terms {
@@ -599,8 +617,14 @@ header {
 			}
 			
 			input[type=text],
-			input[type=password] {
+			input[type=password],
+			select {
 				width: 340px;
+			}
+			
+			select {
+				height: 30px;
+				margin: 18px 0 30px 0;
 			}
 			
 			a {
@@ -629,10 +653,27 @@ header {
 			@include container;
 			margin: 0 0 20px 0;
 			width: 540px;
+			
+			h1 {
+				float: left;
+			}
+			
+			span {
+				@include radius(4px);
+				background: #ffe;
+				border: 1px solid #ffe - #222;
+				color: #ffe - #333;
+				display: block;
+				float: right;
+				font-size: 14px;
+				margin: 0 0 0 10px;
+				padding: 2px 10px;
+				text-transform: uppercase;
+			}
 		}
 	}
-}
-	
+} /* end #mid */
+
 #bot {
 	@include radius-bot(10px);
 	color: #fff;
@@ -731,10 +772,15 @@ header {
 
 footer {
 	float: left;
+	font-size: 16px;
 	padding: 20px 0 40px;
 	
 	a {
 		color: $color;
+		
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 }
 
