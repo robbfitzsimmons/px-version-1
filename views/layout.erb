@@ -34,7 +34,21 @@
 					<ul>
 						<li><a href="/users/<%= current_user.id %>">dashboard</a></li>
 						<li><a href="javascript: void(0)">nametag</a></li>
-						<li><a href="javascript: void(0)">notifications</a></li>
+						<li><a href="javascript: void(0)">notifications <span><%= current_user.new_invites.count + current_user.events_with_unanswered_questions.count %></span></a>
+<!--
+							<ul>
+								<li>
+									<% current_user.new_invites.each do |invite| %>
+										<%= invite.event.name %>
+									<% end %>
+									
+									<% current_user.events_with_unanswered_questions.each do |event| %>
+										<%= event.name %>
+									<% end %>
+								</li>
+							</ul>
+-->
+						</li>
 						<li>
 						  	<% if current_user %>
 						      <form action="/logout" method="post">

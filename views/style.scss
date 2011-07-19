@@ -138,6 +138,34 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,hr,p,input,textarea,bl
 	}
 }
 
+@mixin buttontrio {
+	@include button(130px);
+	padding: 14px 0;
+	
+	&#signup{
+		@include radius(0);
+		@include radius-left(4px);
+	}
+	
+	&#linkedin {
+		@include radius(0);
+		border-left: 0;
+		border-right: 0;
+		width: 130px;
+		
+		&:hover {
+			border: 1px solid #884f51;
+			width: 128px;
+		}
+	}
+	
+	&#facebook {
+		@include radius(0);
+		@include radius-right(4px);
+	}
+
+}
+
 @mixin container {
 	float: left;
 	@include radius(4px);
@@ -187,6 +215,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,hr,p,input,textarea,bl
 /* variables */
 $raleway: 'Raleway', 'Arial', sans-serif;
 $suellen: 'Sue Ellen Francisco', cursive;
+$istok: 'Istok Web';
 
 $color: #3870d1;
 
@@ -199,7 +228,7 @@ html {
 body {
 	background: #fafafa;
 	color: #909090;
-	font-family: 'Istok Web', 'Arial', sans-serif;
+	font-family: $istok, 'Arial', sans-serif;
 	font-size: 18px;
 	line-height: 1.4em;
 	
@@ -281,6 +310,7 @@ header {
 				text-decoration: none;
 			}
 		}
+		
 		h2, h3, h4, p {
 			float: left;
 			width: 405px;
@@ -324,6 +354,7 @@ header {
 	
 	nav {
 		float: right;
+		font-size: 14px;
 		margin: 40px 0;
 		
 		ul {
@@ -336,7 +367,7 @@ header {
 				a, a:visited {
 					color: #909090;
 					float: left;
-					font-size: 14px;
+					min-width: 1px;
 					
 					&#login {
 						color: $color - #111;
@@ -353,7 +384,16 @@ header {
 		&#dashboard-nav {
 			margin: 20px 0;
 			
-			input {
+			li {
+				span {
+					@include radius(2px);
+					background: #f4f4f4;
+					border: 1px solid #f4f4f4 - #111;
+					padding: 1px 4px;
+				}
+			}
+			
+			input { /* login */
 				background: transparent;
 				color: $color - #111;
 				cursor: pointer;
@@ -473,12 +513,13 @@ header {
 			&.button {
 				@include button(150px);
 				@include radius(4px);
+				margin: 0 0 20px 0;
 			}
 		}
 		
 		ul {
 			float: left;
-			margin: 20px 0;
+			margin: 0 0 20px;
 			width: 100%;
 		}
 		
@@ -530,37 +571,13 @@ header {
 		width: 390px;
 		
 		form { /* hompage form */
-			input {
+			input[type=text],
+			input[type=password] {
 				width: 354px;
 			}
 			
-			a {
-				@include button(108px);
-				
-				img {
-					height: 22px;
-					width: 22px;
-				}
-				
-				&#signup{
-					@include radius-left(4px);
-					padding: 14px 0;
-				}
-				
-				&#linkedin {
-					border-left: 0;
-					border-right: 0;
-					width: 130px;
-					
-					&:hover {
-						border: 1px solid #884f51;
-						width: 128px;
-					}
-				}
-				
-				&#facebook {
-					@include radius-right(4px);
-				}
+			input[type=submit] {
+				@include buttontrio;
 			}
 			
 			p {
@@ -622,6 +639,11 @@ header {
 				width: 340px;
 			}
 			
+			input[type=submit] {
+				@include buttontrio;
+				float: right;
+			}
+			
 			select {
 				height: 30px;
 				margin: 18px 0 30px 0;
@@ -654,21 +676,73 @@ header {
 			margin: 0 0 20px 0;
 			width: 540px;
 			
-			h1 {
+			h2, h3, h4 {
 				float: left;
+				width: 100%;
+			}
+			
+			h1 {
+				font-size: 22px;
+			}
+			
+			h2 {
+				font-style: italic;
+				margin: 0 0 5px 0;
+			}
+			
+			h3 {
+				color: #ccc;
+				font-family: $istok;
+				font-size: 14px;
+				text-transform: uppercase;
+			}
+			
+			p {
+				float: left;
+				margin: 0;
+			}
+			
+			img {
+				float: right;
 			}
 			
 			span {
-				@include radius(4px);
-				background: #ffe;
-				border: 1px solid #ffe - #222;
-				color: #ffe - #333;
+				@include radius-right(4px);
+				background: #e8e8e8;
+				color: #bbb;
 				display: block;
 				float: right;
 				font-size: 14px;
 				margin: 0 0 0 10px;
 				padding: 2px 10px;
+				position: relative;
 				text-transform: uppercase;
+				
+				&:before {
+					border-color: transparent #e8e8e8 transparent transparent;
+					border-style: solid;
+					border-width: 14px 14px 14px 0;	
+					content: "";
+					float: left;
+					height: 0;	
+					left: -14px;
+					position: absolute;
+					top: 0;
+					width: 0;
+				}
+				
+				&:after{
+					@include radius(4px);
+					@include boxshadow(0 -1px 1px 0 #ffe - #333);
+					content:"";
+					position:absolute;
+					top:10px;
+					left:0;
+					float:left;
+					width:4px;
+					height:4px;
+					background:#fff;
+				}
 			}
 		}
 	}
