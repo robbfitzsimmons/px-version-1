@@ -9,9 +9,9 @@ class Event
   property :permalink,    String    # A link to take you to the event
 
   before :valid?, :create_permalink
+  validates_with_method :name, :method => :check_name
 
   validates_presence_of :name
-  validates_uniqueness_of :name
   
   property :start_date,   DateTime	#
   property :end_date,     DateTime	#
@@ -43,5 +43,26 @@ class Event
   has n, :activities
   has n, :invites
   has n, :questions
+
+  def check_name
+    event_names = Event.all
+    valid = true
+    event_names.each do |event|
+      if event.name.downcase != self.name.downcase
+        valid = true
+      else
+        valid = false
+        break
+      end # end if
+    end # end do
+
+    
+    if valid == false
+      [ false, "An event called '#{self.name}' is already registered." ]
+    else
+      true
+    end
+  end # end check name
+
   
 end

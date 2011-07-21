@@ -19,12 +19,16 @@ class User
   validates_presence_of :password
   #validates_presence_of :salt
 
-  property :linked_in,	String		#
-  property :facebook,		String		#
-  property :twitter,		String		#
+  property :linked_in,	String,		:length => 500#
+  property :facebook,		String,		:length => 500#
+  property :twitter,		String,		:length => 500#
+
+  property :linked_in_uid,  String,    :length => 500#
+  property :facebook_uid,   String,   :length => 500#
+  property :twitter_uid,    String,    :length => 500#
   
-  property :website,		String		#
-  property :image,			String, :length => 6..500  		# URL Pulled from social service or added using File upload to Amazon (http://ididitmyway.heroku.com/past/2011/1/16/uploading_files_in_sinatra/)
+  property :website,		String,	:length => 500 #
+  property :image,			String, :length => 500  		# URL Pulled from social service or added using File upload to Amazon (http://ididitmyway.heroku.com/past/2011/1/16/uploading_files_in_sinatra/)
   property :location,		String		# Location of the user (ex. Massachusetts)
 
   property :created_at, DateTime  # Generated when each resource is created

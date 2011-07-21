@@ -21,8 +21,7 @@ post '/signup' do
 	if params[:sign_up] == "LinkedIn"
 		redirect '/auth/linked_in'
 	elsif params[:sign_up] == "Facebook"
-		flash[:warning] = "Facebook is not currently supported"
-		redirect '/signup/step2'
+		redirect '/auth/facebook'
 	elsif params[:sign_up] == "Sign Up"
 		redirect '/signup/step2'
 	end
@@ -41,7 +40,12 @@ post '/signup/step2' do
 
 	if @user.save
 		status(202)
+
+		@user.invites = Invite.all(:email => @user.email)
+		@user.save
+
 		session[:user] = @user.id
+		flash[:success] = "Welcome to your dashboard #{@user.name}"
 		redirect "/users/#{@user.id}"
 	else
 		status(412)

@@ -1,12 +1,17 @@
+#require 'pp'
+
 get '/auth/:name/callback' do
 	auth = request.env['omniauth.auth']
 	
-	# PP::pp(auth, $stderr, 50)
+	#puts auth["provider"]
+	#puts PP::pp(auth, $stderr, 50)
 	# Search for a user with the name
 	if(auth["provider"] == "linked_in")
-		@user = User.first(:linked_in => auth["user_info"]["urls"]["LinkedIn"])
+		@user = User.first(:linked_in_uid => auth["uid"])
 	elsif(auth["provider"] == "twitter")
-		@user = User.first(:twitter => auth["user_info"]["urls"]["Twitter"])
+		@user = User.first(:twitter_uid => auth["uid"])
+	elsif(auth["provider"] == "facebook")
+		@user = User.first(:facebook_uid => auth["uid"])
 	end
 	
 	# If user does not exist create a new one
@@ -28,6 +33,7 @@ get '/auth/:name/callback' do
 		# And redirect them to their profile page
 		puts "They exist already"
 		session[:user] = @user.id
+		flash[:success] = "Welcome back #{@user.name}"
 		puts "Logged them in as user #{session[:user]}"
 		redirect "/users/#{@user.id}"
 	end
@@ -35,23 +41,36 @@ get '/auth/:name/callback' do
 	# if it is linked_in and linked_in has not been filled out
 	if (auth["provider"] == "linked_in" && @user.linked_in == nil)
 		puts "ITS LINKED IN"
+		puts auth["uid"]
 		@user.linked_in = auth["user_info"]["urls"]["LinkedIn"]
+		@user.linked_in_uid = auth["uid"]
+		puts @user.linked_in_uid
 		
 		if (@user.website == nil)
 			@user.website = auth["user_info"]["urls"]["Personal Website"]
 		end
-	end
 	
 	# if it is twitter and twitter has not been filled out
-	if (auth["provider"] == "twitter" && @user.twitter == nil)
+	elsif (auth["provider"] == "twitter" && @user.twitter == nil)
 		puts "ITS TWITTER"
 		@user.twitter = auth["user_info"]["urls"]["Twitter"]
+		@user.twitter_uid = auth["uid"]
+			if (@user.website == nil)
+				@user.website = auth["user_info"]["urls"]["Website"]
+			end
+
+	# if it is facebook and facebook has not been filled out
+	elsif (auth["provider"] == "facebook" && @user.facebook == nil)
+		puts "ITS FACEBOOK"
+		@user.facebook = auth["user_info"]["urls"]["Facebook"]
+		@user.facebook_uid = auth["uid"]
+		@user.location = auth["extra"]["user_hash"]["location"]["name"]
+		image = @user.image.split('=')
+		@user.image = image[0]+"=normal"
 			if (@user.website == nil)
 				@user.website = auth["user_info"]["urls"]["Website"]
 			end
 	end
-	
-	puts @user.linked_in
 
 	session[:user] = @user
 

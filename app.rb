@@ -11,7 +11,7 @@ DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite://#{Dir.pwd}/db/proxim
 DataMapper.finalize
 
 # Reset the db/tables and recreate
-# DataMapper.auto_migrate!
+#DataMapper.auto_migrate!
 
 # Create the db/tables if they don't exist
 DataMapper::auto_upgrade!
@@ -22,9 +22,12 @@ use Rack::Flash
 
 
 use OmniAuth::Builder do
-	provider :open_id, OpenID::Store::Filesystem.new('./tmp')
-	provider :twitter, '6kDJ3xRTKjubSoXL1CE41Q', 'FP4UD6lcyyMti5rGm9v3EwfAxIFqIpsDJ84cHlpbTM'
-	provider :linked_in, 'CuqtbGhGfygi_swi36LOR91i-qHQSuMpz6BstFD5lABv3n9qNcRV7Mcfu2ZaKW5g', 'DId-d7qGWoVTcsfLseckYGdD53CObk1Mp9ISDCXEu8d-HC_UrPzLrxiF3I2bKmas'
+	provider :open_id, 		OpenID::Store::Filesystem.new('./tmp')
+	provider :twitter, 		'6kDJ3xRTKjubSoXL1CE41Q', 'FP4UD6lcyyMti5rGm9v3EwfAxIFqIpsDJ84cHlpbTM'
+	provider :linked_in, 	'CuqtbGhGfygi_swi36LOR91i-qHQSuMpz6BstFD5lABv3n9qNcRV7Mcfu2ZaKW5g', 'DId-d7qGWoVTcsfLseckYGdD53CObk1Mp9ISDCXEu8d-HC_UrPzLrxiF3I2bKmas'
+	provider :facebook, 	'174201209313410', 'cbf7277923e7325a66fe5b8ccb17d537'
+
+	# provide :service 'CONSUMER_KEY', 'CONSUMER_SECRET'
 	
 	## https://www.linkedin.com/secure/developer
 	## https://dev.twitter.com/apps/new
@@ -37,5 +40,6 @@ end
 get '/' do
   @title = 'Hey there!'
   
+  session[:user] = nil
   erb :index, {:layout => :static_layout}
 end
