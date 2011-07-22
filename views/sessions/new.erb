@@ -1,0 +1,16 @@
+<section class="left-33">
+	<h3>Create a New Session</h3>
+	
+	<p>If you have no sessions why would people come to your event?</p>
+
+	<p>Find me in views/sessions/new.erb</p>
+	
+</section>
+
+<section class="right-67">
+	<form action="/sessions" method="post">
+		<%= erb :'sessions/form' %>
+		<input type="submit" value="Add" />
+	</form>
+</section>
+

@@ -1,22 +1,20 @@
-<p>Information</p>
+<label for="question[text]">Question</label>
+<input name="question[text]" type="text" value="<%= @question.text%>" />
 
-	<label for="question[text]">Question</label>
-	<input name="question[text]" type="text" value="<%= @question.text%>" />
+<label for="question[type]">Type</label>
+<select name="question[type]">
+	<option selected="<%= @question.type %>" value="radio">Radio</option>
+	<option selected="<%= @question.type %>" value="select">Select</option>
+	<option selected="<%= @question.type %>" value="text">Text</option>
+</select>
 
-	<label for="question[type]">Type</label>
-	<select name="question[type]">
-			<option selected="<%= @question.type %>" value="radio">Radio</option>
-			<option selected="<%= @question.type %>" value="select">Select</option>
-			<option selected="<%= @question.type %>" value="text">Text</option>
-	</select>
+<label for="question[option1]">Option 1</label>
+<input name="question[option1]" type="text" value="<%= @question.option1%>" />
 
-	<label for="question[option1]">Option 1</label>
-	<input name="question[option1]" type="text" value="<%= @question.option1%>" />
+<label for="question[option2]">Option 2</label>
+<input name="question[option2]" type="text" value="<%= @question.option2%>" />
 
-	<label for="question[option2]">Option 2</label>
-	<input name="question[option2]" type="text" value="<%= @question.option2%>" />
+<label for="question[option3]">Option 3</label>
+<input name="question[option3]" type="text" value="<%= @question.option3%>" />
 
-	<label for="question[option3]">Option 3</label>
-	<input name="question[option3]" type="text" value="<%= @question.option3%>" />
-	
-	<br />
+<br />

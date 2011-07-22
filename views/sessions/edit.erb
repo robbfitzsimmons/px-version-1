@@ -1,0 +1,11 @@
+<h6>Find me in views/activities/edit.erb</h6>
+
+<h1>Edit <%= @activity.name %></h1>
+
+<form action="/activities" method="post">
+	<input name="_method" type="hidden" value="put" />
+	 <%= erb :'activities/form' %>
+	<input type="submit" value="Submit" />
+</form>
+
+

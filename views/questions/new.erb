@@ -1,12 +1,15 @@
-<h6>Find me in views/questions/new.erb</h6>
+<section class="left-33">
 
-<h1>Create a New Question</h1>
+<h3>Create a New Question</h3>
 <p>Does everyone speak english at your event?</p>
+<p>Find me in views/questions/new.erb</p>
+	
+</section>
 
-
-<form action="/questions" method="post">
-	<%= erb :'questions/form' %>
-	<input type="submit" value="Add" />
-</form>
-
+<section class="right-67">
+	<form action="/questions" method="post">
+		<%= erb :'questions/form' %>
+		<input type="submit" value="Add" />
+	</form>
+</section>
 

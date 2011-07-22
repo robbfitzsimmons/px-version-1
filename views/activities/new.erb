@@ -1,12 +1,17 @@
-<h6>Find me in views/activities/new.erb</h6>
+<section class="left-33">
+	<h3>Create a New Activity</h3>
+	
+	<p>If you have no activities why would people come to your event?</p>
 
-<h1>Create a New Activity</h1>
-<p>If you have no activities why would people come to your event?</p>
+	<p>Find me in views/activities/new.erb</p>
+	
+</section>
 
-
-<form action="/activities" method="post">
-	<%= erb :'activities/form' %>
-	<input type="submit" value="Add" />
-</form>
-
+<section class="right-67">
+	<form action="/activities" method="post">
+		<input name="session" type="hidden" value="<%= @session.id %>" />
+		<%= erb :'activities/form' %>
+		<input type="submit" value="Add" />
+	</form>
+</section>
 

@@ -1,17 +1,19 @@
-<h6>Find me in views/invites/new.erb</h6>
+<section class="left-33">
 
-<h1>Send Invites to Event</h1>
-<p>If you have noone coming to your event. Invite some people.</p>
+<h3>Send Invites</h3>
+<p>If you have no one coming to your event. Invite some people.</p>
+<p>Find me in views/invites/new.erb</p>
+	
+</section>
 
+<section class="right-67">
+	<form action="/invites" method="post">
 
-<form action="/invites" method="post">
+		<p>Emails seperated by commas :)</p>
 
-	<p>Emails seperated by commas :)</p>
+		<label for="emails">Emails</label>
+		<textarea name="emails" type="text"></textarea>
 
-	<label for="emails">Emails</label>
-	<textarea name="emails" type="text"></textarea>
-
-	<input type="submit" value="Send Invites" />
-</form>
-
-
+		<input type="submit" value="Send Invites" />
+	</form>
+</section>

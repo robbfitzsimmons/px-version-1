@@ -40,9 +40,11 @@ class Event
 
 
   ## Links an event to multiple time_slots and multiple invites and multiple questions
-  has n, :activities
+  has n, :days
   has n, :invites
   has n, :questions
+
+  after :save, :create_days
 
   def check_name
     event_names = Event.all
@@ -63,6 +65,16 @@ class Event
       true
     end
   end # end check name
+
+  def create_days
+    num_days = self.end_date.mjd - self.start_date.mjd + 1
+    1.upto(num_days) { |i|
+      @day = Day.create(:name => "Day #{i}", :date => (self.start_date.to_time + ((i-1) * 86400)).to_datetime, :event => self)
+      @day.errors.each do |e|
+        puts e
+      end
+    }
+  end
 
   
 end

@@ -41,20 +41,19 @@
 
 <h2>Agenda</h2>
 <% if event_admin %>
-	<a href = "/activities/new">Add Activity</a>
+	<a href = "/sessions/new">Add Session</a>
 <% end %>
-<ul>
-<% @event.activities(:order => [:start_date.asc]).each do |activity| %>
-	<li><%= activity.start_date.strftime("%I:%M %p").delete " " %> <%= activity.name %> 
-		<% activity.users.each do |speaker| %>
-			w/ <%= speaker.name %>
-		<% end %>
-		<% if event_admin %>
-			<a href="/activities/edit/<%= activity.id %>">Add Speaker</a>
-		<% end %>
-	</li>
+
+<% @event.days(:order => [:date.asc]).each do |day| %>
+	<h4><%= day.name %> (<%= day.date.strftime("%b %e") %>)</h4> 
+	<% day.sessions(:order => [:start_date.asc]).each do |session| %>
+		<h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= session.name %> (<%= session.activities.count %> Activities<% if event_admin %>/ <a href="/activities/new?sessions=<%= session.id %>">Add</a><% end %>)</h5>
+			<% session.activities(:order => [:start_date.asc]).each do |activity| %>
+				<h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= activity.name %> (<%= activity.start_date.strftime("%l:%M %P").delete(" ") %>-<%= activity.end_date.strftime("%l:%M %P").delete(" ") %>)</h6>
+			<% end %>
+		
+	<% end %>
 <% end %>
-</ul>
 
 <br /><br />
 <h2>Questions</h2>

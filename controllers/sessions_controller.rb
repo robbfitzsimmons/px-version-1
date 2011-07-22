@@ -1,25 +1,43 @@
-get '/login' do
-	@title = "Login"
-	@user = User.new
+# Create a new session Page
+get '/sessions/new' do
+	@title = "Create a New Session"
 
-	erb :'sessions/login', {:layout => :static_layout}
+	@event = Event.get(session[:event])
+	@session = Session.new()
+
+	erb :'sessions/new'
 end
 
-post '/login' do
-	user = User.authenticate(params[:session][:email], params[:session][:password])
-	if user.nil? 
-		# Create an error message and re-render the signin form.
-		flash[:error] = "Log in failed."
-		redirect "/login"
+# Create a new session action
+post '/sessions' do
+	session = Session.new(params[:session])
+
+	day = Day.get(params[:day])
+
+	session.start_date = DateTime.new(day.date.year, day.date.month, day.date.mday, params[:start_hour].to_i, 0)
+	session.end_date = DateTime.new(day.date.year, day.date.month, day.date.mday, params[:end_hour].to_i, 0)
+	session.day = day
+
+
+	if session.save
+		status(202)
+		flash[:success] = "#{session.name} Added Successfully."
+
+		redirect "/events/#{day.event.permalink}"
 	else
-		# Sign the user in and redirect to the user's show page.
-		flash[:success] = "Logged in Successfully."
-		session[:user] = user.id
-		redirect "/users/#{user.id}"
+		status(412)
+		session.errors.each do |e|
+		    puts e
+		end
+		flash[:error] = "Please Try Again."
+		redirect "/sessions/new"
 	end
 end
 
-delete '/logout' do
-	sign_out
-	redirect '/'
+# Create a new session Page
+get '/sessions/edit/:id' do
+	@session = session.get(params[:id])
+	@event = @session.event
+
+	erb :'activities/edit'
 end

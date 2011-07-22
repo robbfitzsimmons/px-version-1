@@ -1,25 +1,34 @@
 # Create a new actvitity Page
 get '/activities/new' do
 	@event = Event.get(session[:event])
+
+	@session = Session.get(params[:sessions])
+
+	puts @session.name
+
+	# need to get the day
 	@activity = Activity.new()
+
+	@title = "Create New Activity"
 
 	erb :'activities/new'
 end
 
 # Create an activity action
 post '/activities' do
+	session = Session.get(params[:session])
 	activity = Activity.new(params[:activity])
-	event = Event.get(session[:event])
+	event = session.day.event
 
-	activity.start_date = DateTime.new(2011, 8, params[:start_day].to_i, params[:start_hour].to_i, 0)
-	activity.end_date = DateTime.new(2011, 8, params[:end_day].to_i, params[:end_hour].to_i, 0)
-	activity.event = event
+	activity.start_date = DateTime.new(session.start_date.year, session.start_date.month, session.start_date.mday, params[:start_hour].to_i, 0)
+	activity.end_date = DateTime.new(session.start_date.year, session.start_date.month, session.start_date.mday, params[:end_hour].to_i, 0)
+	activity.session = session
 	activity.users << User.get(params[:speaker])
 
 
 	if activity.save
 		status(202)
-		flash[:success] = "Activity Added Successfully."
+		flash[:success] = "#{activity.name} Added Successfully."
 
 		redirect "/events/#{event.permalink}"
 	else

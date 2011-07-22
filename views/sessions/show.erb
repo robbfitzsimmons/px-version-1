@@ -1,0 +1,49 @@
+<h1><%= @event.name %></h1>
+<h6>Find me in views/events/show.erb</h6>
+
+<% event_admin = is_event_admin(@event) %>
+
+<% if event_admin %>
+	You are an admin
+<% end %>
+
+<% if session[:invite_event] == @event.id %>
+	<form action="/events/<%= @event.id %>" method="post">
+		<input name="_method" type="hidden" value="put" />
+		<input name="join" type="hidden" value="true" />
+		<input name="invite" type="hidden" value="<%= session[:invite] %>" />
+
+		<input type="submit" value="Join" />
+	</form>
+<% end %>
+
+
+<h2>Attendees</h2>
+<% if event_admin %>
+	<a href = "/events/<%= @event.permalink %>/worksheet">View the Worksheet</a>
+<% end %>
+<ul>
+<% @event.user_event_associations.each do |assoc| %>
+	<li><%= assoc.user.name %></li>
+<% end %>
+</ul>
+
+<% if event_admin %>
+	<h3>Invite People to the event</h3>
+	<a href="/invites/new">Click here</a>
+<% end %>
+
+<h2>Agenda</h2>
+<% if event_admin %>
+	<a href = "/activities/new">Add Activity</a>
+<% end %>
+<ul>
+<% @event.activities.each do |slot| %>
+	<li><%= slot.name %></li>
+<% end %>
+</ul>
+
+<% if event_admin %>
+	<h3>Invite People to the event</h3>
+	<a href="/invites/new">Click here</a>
+<% end %>
