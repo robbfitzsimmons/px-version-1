@@ -40,6 +40,5 @@ end
 get '/' do
   @title = 'Hey there!'
   
-  session[:user] = nil
   erb :index, {:layout => :static_layout}
 end

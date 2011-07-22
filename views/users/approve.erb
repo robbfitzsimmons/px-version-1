@@ -1,0 +1,51 @@
+<section class="left-33">
+	<h3>Great, we got some data!</h3>
+	<p>Please check your information and fill in any empty fields.</p>
+</section>
+
+<section class="right-67">
+	<form action="/users/<%= current_user.id %>" method="post" id="form-signup">
+		<input name="_method" type="hidden" value="put" />
+
+		<% if !@user.description.nil? %>
+			<label for="user[description]">Description</label>
+			<input name="user[description]" type="text" value="<%= @user.description%>" />
+		<% end %>
+		
+		<% if !@user.location.nil? %>
+			<label for="user[location]">Location</label>
+			<input name="user[location]" type="text" value="<%= @user.location%>" />
+		<% end %>
+		
+		<% if !@user.website.nil? %>
+			<label for="user[website]">Website</label>
+			<input name="user[website]" type="text" value="<%= @user.website%>" />
+		<% end %>
+			
+		<% if !@user.linked_in.nil? %>
+			<label for="user[linked_in]">Linked In</label>	
+			<input name="user[linked_in]" type="text" value="<%= @user.linked_in%>" readonly="readonly" />
+			<input name="user[linked_in_uid]" type="hidden" value="<%= @user.linked_in_uid%>" />
+		<% end %>
+
+		<% if !@user.facebook.nil? %>
+			<label for="user[facebook]">Facebook</label>
+			<input name="user[facebook]" type="text" value="<%= @user.facebook%>" readonly="readonly" />
+			<input name="user[facebook_uid]" type="hidden" value="<%= @user.facebook_uid%>" />
+		<% end %>
+
+		<% if !@user.twitter.nil? %>
+			<label for="user[twitter]">Twitter</label>
+			<input name="user[twitter]" type="text" value="<%= @user.twitter%>" readonly="readonly"  />
+			<input name="user[twitter_uid]" type="hidden" value="<%= @user.twitter_uid%>" />
+		<% end %>
+
+		<% if !@user.image.nil? %>
+			<input name="user[image]" type="hidden" value="<%= @user.image%>" />
+		<% end %>
+	
+		<input type="submit" value="Save" />
+	</form>
+</section>
+<script src="/js/validate.js"></script>
+<script src="/js/form.js"></script>

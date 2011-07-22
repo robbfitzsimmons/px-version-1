@@ -62,21 +62,92 @@ end
 get '/users/:id' do
 	@title = "Dashboard"
 	@user = User.get(params[:id])
+
+	session[:connect] = nil
 	
 	erb :'users/show'	
 end
 
-##############################################################
-# Show all users
-get '/users' do
-
-	@title = "All Users"
-	@users = User.all
+get '/users/:id/connect' do
+	@title = "Connect your other Social Accounts"
+	@user = User.get(params[:id])
 	
-	erb :'users/index'	
+	erb :'users/connect'	
+end
+
+post '/connect' do
+
+	session[:connect] = true
+	session[:user_info] = nil
+
+	if params[:connect] == "LinkedIn"
+		redirect '/auth/linked_in'
+	elsif params[:connect] == "Facebook"
+		redirect '/auth/facebook'
+	end
+
+end
+
+get '/users/:id/approve' do
+	@title = "Approve your New Information"
+	@user = session[:user_info]
+	
+	erb :'users/approve'	
 end
 
 
+put '/users/:id' do
+
+	@user = User.get(params[:id])
+
+	if (session[:connect] == true)
+
+		if (params[:user][:description] != nil)
+			@user.description = params[:user][:description]
+		end
+
+		if (params[:user][:location] != nil)
+			@user.location = params[:user][:location]
+		end
+
+		if (params[:user][:linked_in] != nil)
+			@user.linked_in = params[:user][:linked_in]
+			@user.linked_in_uid = params[:user][:linked_in_uid]
+		end
+
+		if (params[:user][:facebook] != nil)
+			@user.facebook = params[:user][:facebook]
+			@user.facebook_uid = params[:user][:facebook]
+		end
+
+		if (params[:user][:twitter] != nil)
+			@user.facebook = params[:user][:twitter]
+			@user.facebook_uid = params[:user][:twitter]
+		end
+
+		if @user.save
+			status(202)
+
+			session[:connect] = nil
+
+			flash[:success] = "Profile Updated"
+			redirect "/users/#{@user.id}"
+
+		else
+			status(412)
+			@user.errors.each do |e|
+		    puts e
+			end
+			flash[:error] = "Please try again."
+			redirect back
+		end
+
+	else
+	end
+
+end
+
+##############################################################
 
 # Show add new user page
 get '/users/new' do

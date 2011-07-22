@@ -1,0 +1,19 @@
+<!-- <a href="/auth/twitter">Sign in with Twitter</a> -->
+<h6>Connect your other Social Networks</h6>
+	<form action="/connect" method="post">
+		
+
+		
+		<% if @user.linked_in_uid == "" %>
+			<input name="connect" id="linkedin" type="submit" value="LinkedIn" />
+		<% end %>
+		<% if @user.facebook == "" %>
+			<input name="connect" id="facebook" type="submit" value="Facebook" />
+		<% end %>
+
+		<% if @user.facebook_uid != "" && @user.linked_in_uid != ""%>
+			You have already linked your Linked In and Facebook accounts to your profile.
+		<% end %>
+
+		<p>You can link your <strong>LinkedIn</strong> or <strong>Facebook</strong> accounts.</p>
+	</form>
