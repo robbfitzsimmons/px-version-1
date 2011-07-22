@@ -143,6 +143,21 @@ put '/users/:id' do
 		end
 
 	else
+		puts "regular puts"
+			
+
+		if @user.update(params[:user])
+			status(202)
+			flash[:success] = "Profile Updated"
+			redirect "/users/#{@user.id}"
+		else
+			status(412)
+			@user.errors.each do |e|
+		    puts e
+			end
+			flash[:error] = "Please try again."
+			redirect back
+		end
 	end
 
 end

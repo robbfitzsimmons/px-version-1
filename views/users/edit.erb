@@ -1,0 +1,18 @@
+<section class="left-33">
+	<h3>Change your name?</h3>
+	
+	<p>Make changes to your profile here.</p>
+
+	<p>Find me in views/users/edit.erb</p>
+	
+</section>
+
+<section class="right-67">
+	<form action="/users/<%= @user.id %>" method="post">
+		<input name="_method" type="hidden" value="put" />
+		 <%= erb :'users/form' %>
+		<input type="submit" value="Submit" />
+	</form>
+</section>
+
+
