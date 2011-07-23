@@ -18,6 +18,7 @@ gem "dm-paperclip", :git => "git://github.com/andrewkolesnikov/dm-paperclip.git"
 
 group :development do
   # gem 'pony'
+  gem "aws-s3"
   gem "dm-sqlite-adapter"
 end
 
