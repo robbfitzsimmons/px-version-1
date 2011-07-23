@@ -37,12 +37,22 @@ class User
 
   property :created_at, DateTime  # Generated when each resource is created
   property :updated_at, DateTime  # Generated when each resource is updated
-
-  has_attached_file :image,
+  if (ENV['RACK_ENV']) == "production"
+    has_attached_file :image,
+                    :storage => :s3,
+                    :styles => { :original => "300x300#",
+                                 :thumb => "80x80#" }
+    S3_CREDENTIALS = { :access_key_id => ENV['S3_KEY'], :secret_access_key => ENV['S3_SECRET'], :bucket => "sharedearth-production"}
+  else
+    has_attached_file :image,
                     :url => "/uploads/:class/:attachment/:id/:style/:basename.:extension",
                     :path => "#{APP_ROOT}/public/uploads/:class/:attachment/:id/:style/:basename.:extension",
                     :styles => { :original => "300x300#",
                                  :thumb => "80x80#" }
+
+
+
+    end
 
   ## Links users to events
   has n, 	 :user_event_associations
