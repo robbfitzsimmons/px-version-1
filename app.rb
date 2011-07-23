@@ -1,14 +1,21 @@
+APP_ROOT = File.expand_path(File.dirname(__FILE__))
+
 # Import all Models, Controllers, Helpers
 Dir.glob("#{Dir.pwd}/models/*.rb") { |m| require "#{m.chomp}" }
 Dir.glob("#{Dir.pwd}/controllers/*.rb") { |m| require "#{m.chomp}" }
 Dir.glob("#{Dir.pwd}/helpers/*.rb") { |m| require "#{m.chomp}" }
 require 'openid/store/filesystem'
+require 'fileutils'
+
+
 
 # Set up database
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite://#{Dir.pwd}/db/proximate.db")
 
 # Initialize (finalize) db
 DataMapper.finalize
+
+#Paperclip.options[:command_path] = "/usr/local/bin/"
 
 # Reset the db/tables and recreate
 #DataMapper.auto_migrate!
@@ -18,8 +25,6 @@ DataMapper::auto_upgrade!
 
 use Rack::Session::Cookie, :secret => 'Xzw8TvIwQVZrnjKXkoI8SRDHhIZ65y'
 use Rack::Flash
-
-
 
 use OmniAuth::Builder do
 	provider :open_id, 		OpenID::Store::Filesystem.new('./tmp')

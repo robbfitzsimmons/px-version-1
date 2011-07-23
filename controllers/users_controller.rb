@@ -144,9 +144,18 @@ put '/users/:id' do
 
 	else
 		puts "regular puts"
-			
 
-		if @user.update(params[:user])
+		@user.attributes = params[:user]
+
+
+		puts params[:user][:location]
+
+		if (!params[:user][:image].nil?)
+			puts "Its not nill"
+			@user.image = make_paperclip_mash(params[:user][:image])
+		end
+
+		if @user.save
 			status(202)
 			flash[:success] = "Profile Updated"
 			redirect "/users/#{@user.id}"
@@ -160,6 +169,15 @@ put '/users/:id' do
 		end
 	end
 
+end
+
+def make_paperclip_mash(file_hash)
+  mash = Mash.new
+  mash['tempfile'] = file_hash[:tempfile]
+  mash['filename'] = file_hash[:filename]
+  mash['content_type'] = file_hash[:type]
+  mash['size'] = file_hash[:tempfile].size
+  mash
 end
 
 ##############################################################

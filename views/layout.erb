@@ -23,7 +23,7 @@
 			
 			<header>
 				<section id="user-info">
-					<img src="<%= !current_user.image.nil? ? current_user.image : "/images/80x80.gif" %>" alt="image" />
+					<img src="<%= !current_user.image.nil? ? current_user.image.url(:thumb) : "/images/80x80.gif" %>" alt="image" />
 			  		<h2><%= current_user.name %></h2>
 			  		<h3><%= current_user.email %></h3>
 			  		<h4><%= current_user.description %></h4>

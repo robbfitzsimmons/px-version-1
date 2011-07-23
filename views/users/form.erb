@@ -1,3 +1,11 @@
+<label for="user[image]">Image:</label>
+<img src="<%= @user.image.url(:thumb) %>" />
+<input style="float: right;" type="file" name="user[image]" /> 
+
+<br />
+<br />
+<br />
+
 <label for="user[email]">Email</label>
 <input name="user[email]" type="text" value="<%= @user.email %>" />
 

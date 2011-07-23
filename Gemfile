@@ -14,6 +14,8 @@ gem "omniauth"
 
 gem "sass" 
 
+gem "dm-paperclip", :git => "git://github.com/andrewkolesnikov/dm-paperclip.git"
+
 group :development do
   # gem 'pony'
   gem "dm-sqlite-adapter"

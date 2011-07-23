@@ -1,7 +1,11 @@
 require 'digest'
+require 'open-uri'
 
 class User
   include DataMapper::Resource
+  include Paperclip::Resource
+
+  attr_accessor :image_url
 
   property :id,					Serial    #
   property :name,       String    #
@@ -28,11 +32,17 @@ class User
   property :twitter_uid,    String,    :length => 500#
   
   property :website,		String,	:length => 500 #
-  property :image,			String, :length => 500  		# URL Pulled from social service or added using File upload to Amazon (http://ididitmyway.heroku.com/past/2011/1/16/uploading_files_in_sinatra/)
+  #property :image,			String, :length => 500  		# URL Pulled from social service or added using File upload to Amazon (http://ididitmyway.heroku.com/past/2011/1/16/uploading_files_in_sinatra/)
   property :location,		String		# Location of the user (ex. Massachusetts)
 
   property :created_at, DateTime  # Generated when each resource is created
   property :updated_at, DateTime  # Generated when each resource is updated
+
+  has_attached_file :image,
+                    :url => "/uploads/:class/:attachment/:id/:style/:basename.:extension",
+                    :path => "#{APP_ROOT}/public/uploads/:class/:attachment/:id/:style/:basename.:extension",
+                    :styles => { :original => "300x300#",
+                                 :thumb => "80x80#" }
 
   ## Links users to events
   has n, 	 :user_event_associations
@@ -48,6 +58,8 @@ class User
   has n,   :answers
 
   before :save, :encrypt_password
+
+  before :valid?, :download_remote_image
 
   # Lists topics a user is speaking in as speeches
   def speeches
@@ -116,4 +128,18 @@ class User
     def 
       secure_hash(string) Digest::SHA2.hexdigest(string)
     end
+
+    def download_remote_image
+      if !image_url.blank?
+        self.image = do_download_remote_image
+      end
+    end
+
+    def do_download_remote_image
+        io = open(URI.parse(image_url))
+        def io.original_filename; base_uri.path.split('/').last; end
+        io.original_filename.blank? ? nil : io
+      rescue # catch url errors with validations instead of exceptions (Errno::ENOENT, OpenURI::HTTPError, etc...)
+      end
+
 end

@@ -28,7 +28,7 @@ get '/auth/:name/callback' do
 				:location     => auth["user_info"]["location"],
 				
 				# For twitter drop the _normal for full size, _bigger works too
-				:image     => auth["user_info"]["image"]
+				:image_url     => auth["user_info"]["image"]
 			}
 
 		else
@@ -68,8 +68,8 @@ get '/auth/:name/callback' do
 			@user.facebook = auth["user_info"]["urls"]["Facebook"]
 			@user.facebook_uid = auth["uid"]
 			@user.location = auth["extra"]["user_hash"]["location"]["name"]
-			image = @user.image.split('=')
-			@user.image = image[0]+"=normal"
+			image = @user.image_url.split('=')
+			@user.image_url = image[0]+"=normal"
 				if (@user.website == nil)
 					@user.website = auth["user_info"]["urls"]["Website"]
 				end
