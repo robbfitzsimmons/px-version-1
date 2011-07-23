@@ -40,15 +40,20 @@ class User
   if (ENV['RACK_ENV']) == "production"
     has_attached_file :image,
                     :storage => :s3,
+                    :bucket         => ENV['S3_BUCKET'],
+                    :s3_credentials => { :access_key_id     => ENV['S3_KEY'], 
+                                       :secret_access_key => ENV['S3_SECRET'] },
                     :styles => { :original => "300x300#",
                                  :thumb => "80x80#" }
-    S3_CREDENTIALS = { :access_key_id => ENV['S3_KEY'], :secret_access_key => ENV['S3_SECRET'], :bucket => "sharedearth-production"}
   else
     has_attached_file :image,
                     :url => "/uploads/:class/:attachment/:id/:style/:basename.:extension",
                     :path => "#{APP_ROOT}/public/uploads/:class/:attachment/:id/:style/:basename.:extension",
                     :styles => { :original => "300x300#",
                                  :thumb => "80x80#" }
+
+
+                 
 
 
 
