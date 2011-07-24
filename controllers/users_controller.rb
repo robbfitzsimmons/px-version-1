@@ -98,7 +98,11 @@ end
 
 put '/users/:id' do
 
+	
+
 	@user = User.get(params[:id])
+
+	puts @user.attribute_dirty?(:password)
 
 	if (session[:connect] == true)
 
@@ -143,19 +147,18 @@ put '/users/:id' do
 		end
 
 	else
-		puts "regular puts"
+		puts @user.attribute_dirty?(:password)
 
 		@user.attributes = params[:user]
-
-
-		puts params[:user][:location]
+		#@user.password = params[:password]
 
 		if (!params[:user][:image].nil?)
-			puts "Its not nill"
 			@user.image = make_paperclip_mash(params[:user][:image])
 		end
 
 		if @user.save
+			puts @user.password
+			puts @user.salt
 			status(202)
 			flash[:success] = "Profile Updated"
 			redirect "/users/#{@user.id}"

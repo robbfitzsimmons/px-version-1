@@ -68,7 +68,7 @@ class User
                     :path => "#{APP_ROOT}/public/uploads/:class/:attachment/:id/:style/:basename.:extension",
                     :styles => { :original => "300x300#",
                                  :thumb => "80x80#" }
-    end
+  end
 
   ## Links users to events
   has n, 	 :user_event_associations
@@ -136,11 +136,12 @@ class User
     return user if user.has_password?(submitted_password)
   end
 
-
   private
     def encrypt_password
-      self.salt = make_salt if new? 
-      self.password = encrypt(password)
+      if self.attribute_dirty?(:password)
+        self.salt = make_salt if new? 
+        self.password = encrypt(password)
+      end
     end
   
     def encrypt(string) 
@@ -166,6 +167,6 @@ class User
         def io.original_filename; base_uri.path.split('/').last; end
         io.original_filename.blank? ? nil : io
       rescue # catch url errors with validations instead of exceptions (Errno::ENOENT, OpenURI::HTTPError, etc...)
-      end
+    end
 
 end
