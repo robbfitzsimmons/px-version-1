@@ -38,11 +38,14 @@ class User
   property :created_at, DateTime  # Generated when each resource is created
   property :updated_at, DateTime  # Generated when each resource is updated
   if (ENV['RACK_ENV']) == "production"
+    #  ENV['S3_BUCKET'],ENV['S3_KEY'], ENV['S3_SECRET']
+    puts "S3"
     has_attached_file :image,
                     :storage => :s3,
-                    :bucket         => ENV['S3_BUCKET'],
-                    :s3_credentials => { :access_key_id     => ENV['S3_KEY'], 
-                                       :secret_access_key => ENV['S3_SECRET'] },
+                    #:s3_permissions => :public_read
+                    :s3_credentials => "#{APP_ROOT}/config/s3.yml",
+                    :path => "/uploads/:attachment/:id/:style/:basename.:extension",
+                    :bucket         => "proximate_test",
                     :styles => { :original => "300x300#",
                                  :thumb => "80x80#" }
   else
@@ -51,12 +54,6 @@ class User
                     :path => "#{APP_ROOT}/public/uploads/:class/:attachment/:id/:style/:basename.:extension",
                     :styles => { :original => "300x300#",
                                  :thumb => "80x80#" }
-
-
-                 
-
-
-
     end
 
   ## Links users to events
@@ -145,7 +142,7 @@ class User
     end
 
     def download_remote_image
-      if !image_url.blank?
+      if !image_url.nil?
         self.image = do_download_remote_image
       end
     end

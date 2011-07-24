@@ -1,6 +1,6 @@
 GIT
-  remote: git://github.com/andrewkolesnikov/dm-paperclip.git
-  revision: fa4fa070038ab15f52fc5da0d5f5ee2cdee70c07
+  remote: git://github.com/pdud/dm-paperclip.git
+  revision: 7b7e385309b381f0ae398a7f03efd23e1bd2de6f
   specs:
     dm-paperclip (2.4.2)
       datamapper

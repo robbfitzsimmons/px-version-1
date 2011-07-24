@@ -10,11 +10,13 @@ gem "dm-migrations"
 gem "dm-validations"
 gem "dm-timestamps"
 
+gem "aws-s3"
+
 gem "omniauth"
 
 gem "sass" 
 
-gem "dm-paperclip", :git => "git://github.com/andrewkolesnikov/dm-paperclip.git"
+gem "dm-paperclip", :git => "git://github.com/pdud/dm-paperclip.git"
 
 group :development do
   # gem 'pony'
