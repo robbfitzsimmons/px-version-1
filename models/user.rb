@@ -43,7 +43,11 @@ class User
     has_attached_file :image,
                     :storage => :s3,
                     #:s3_permissions => :public_read
-                    :s3_credentials => "#{APP_ROOT}/config/s3.yml",
+                    #:s3_credentials => "#{APP_ROOT}/config/s3.yml",
+                    :s3_credentials => {
+                      :access_key_id => ENV['S3_KEY'],
+                      :secret_access_key => ENV['S3_SECRET']
+                    }
                     :path => "/uploads/:attachment/:id/:style/:basename.:extension",
                     :bucket         => "proximate_test",
                     :styles => { :original => "300x300#",
