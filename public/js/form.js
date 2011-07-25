@@ -43,8 +43,7 @@ $(document).ready(function()
 				required: "You must agree to the terms."
 			}
 		}
-	
-	});
+	}); // end form-signup.validate
 
 
 	$("#form-event").validate({
@@ -66,7 +65,31 @@ $(document).ready(function()
 				required: "Please enter a location."
 			}
 		}
-	
-	});
+	}); // end form-event.validate
+
+	$("#form-invites").validate({
+		rules: {
+			'emails': {
+				required: true
+			},
+			'subject': {
+				required: true
+			},
+			'message': {
+				required: true
+			}
+		},
+		messages: {
+			'emails': {
+				required: "Please enter at least one email."
+			},
+			'subject': {
+				required: "Please enter a subject."
+			},
+			'message': {
+				required: "Please enter a message."
+			}
+		}
+	}); // end form-event.validate
 
 });
