@@ -7,7 +7,7 @@ header, footer, article, section, hgroup, nav, figure {
   display: block; }
 
 /* http://meyerweb.com/eric/tools/css/reset */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, hr, p, input, textarea, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, #mid #landing .features article h3, h3, h4, h5, h6, hr, p, input, textarea, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
@@ -84,7 +84,6 @@ body {
     background: #fafafa; }
   .container #mid input.active,
   .container #mid textarea.active {
-    /* 		@include boxshadow2(none, none) */
     -moz-box-shadow: inset 0 2px 2px 0 #dbdfe7, 0 0 4px 0 #3870d1;
     -ms-box-shadow: inset 0 2px 2px 0 #dbdfe7, 0 0 4px 0 #3870d1;
     -o-box-shadow: inset 0 2px 2px 0 #dbdfe7, 0 0 4px 0 #3870d1;
@@ -115,7 +114,6 @@ body {
   .container.dark-gray #mid input[type=text]:hover, .container.dark-gray #mid form textarea:hover, .container.dark-gray #mid input[type=password]:hover, .container.dark-gray #mid textarea:hover {
     background: #fafafa; }
   .container.dark-gray #mid input.active, .container.dark-gray #mid textarea.active {
-    /* 		@include boxshadow2(none, none) */
     -moz-box-shadow: inset 0 2px 2px 0 #d7d7d7, 0 0 4px 0 #777777;
     -ms-box-shadow: inset 0 2px 2px 0 #d7d7d7, 0 0 4px 0 #777777;
     -o-box-shadow: inset 0 2px 2px 0 #d7d7d7, 0 0 4px 0 #777777;
@@ -145,7 +143,6 @@ body {
   .container.dark-gray-blue #mid input[type=text]:hover, .container.dark-gray-blue #mid form textarea:hover, .container.dark-gray-blue #mid input[type=password]:hover, .container.dark-gray-blue #mid textarea:hover {
     background: #fafafa; }
   .container.dark-gray-blue #mid input.active, .container.dark-gray-blue #mid textarea.active {
-    /* 		@include boxshadow2(none, none) */
     -moz-box-shadow: inset 0 2px 2px 0 #ced7dc, 0 0 4px 0 #30627c;
     -ms-box-shadow: inset 0 2px 2px 0 #ced7dc, 0 0 4px 0 #30627c;
     -o-box-shadow: inset 0 2px 2px 0 #ced7dc, 0 0 4px 0 #30627c;
@@ -175,7 +172,6 @@ body {
   .container.forest-green #mid input[type=text]:hover, .container.forest-green #mid form textarea:hover, .container.forest-green #mid input[type=password]:hover, .container.forest-green #mid textarea:hover {
     background: #fafafa; }
   .container.forest-green #mid input.active, .container.forest-green #mid textarea.active {
-    /* 		@include boxshadow2(none, none) */
     -moz-box-shadow: inset 0 2px 2px 0 #d2e5d9, 0 0 4px 0 #016367;
     -ms-box-shadow: inset 0 2px 2px 0 #d2e5d9, 0 0 4px 0 #016367;
     -o-box-shadow: inset 0 2px 2px 0 #d2e5d9, 0 0 4px 0 #016367;
@@ -205,7 +201,6 @@ body {
   .container.light-gray #mid input[type=text]:hover, .container.light-gray #mid form textarea:hover, .container.light-gray #mid input[type=password]:hover, .container.light-gray #mid textarea:hover {
     background: #fafafa; }
   .container.light-gray #mid input.active, .container.light-gray #mid textarea.active {
-    /* 		@include boxshadow2(none, none) */
     -moz-box-shadow: inset 0 2px 2px 0 #d7d7d7, 0 0 4px 0 #cccccc;
     -ms-box-shadow: inset 0 2px 2px 0 #d7d7d7, 0 0 4px 0 #cccccc;
     -o-box-shadow: inset 0 2px 2px 0 #d7d7d7, 0 0 4px 0 #cccccc;
@@ -235,7 +230,6 @@ body {
   .container.lime-popsicle #mid input[type=text]:hover, .container.lime-popsicle #mid form textarea:hover, .container.lime-popsicle #mid input[type=password]:hover, .container.lime-popsicle #mid textarea:hover {
     background: #fafafa; }
   .container.lime-popsicle #mid input.active, .container.lime-popsicle #mid textarea.active {
-    /* 		@include boxshadow2(none, none) */
     -moz-box-shadow: inset 0 2px 2px 0 #e2e6d5, 0 0 4px 0 #99cb02;
     -ms-box-shadow: inset 0 2px 2px 0 #e2e6d5, 0 0 4px 0 #99cb02;
     -o-box-shadow: inset 0 2px 2px 0 #e2e6d5, 0 0 4px 0 #99cb02;
@@ -265,7 +259,6 @@ body {
   .container.mac-n-cheese #mid input[type=text]:hover, .container.mac-n-cheese #mid form textarea:hover, .container.mac-n-cheese #mid input[type=password]:hover, .container.mac-n-cheese #mid textarea:hover {
     background: #fafafa; }
   .container.mac-n-cheese #mid input.active, .container.mac-n-cheese #mid textarea.active {
-    /* 		@include boxshadow2(none, none) */
     -moz-box-shadow: inset 0 2px 2px 0 #e6e2d1, 0 0 4px 0 #fecb00;
     -ms-box-shadow: inset 0 2px 2px 0 #e6e2d1, 0 0 4px 0 #fecb00;
     -o-box-shadow: inset 0 2px 2px 0 #e6e2d1, 0 0 4px 0 #fecb00;
@@ -295,7 +288,6 @@ body {
   .container.pink #mid input[type=text]:hover, .container.pink #mid form textarea:hover, .container.pink #mid input[type=password]:hover, .container.pink #mid textarea:hover {
     background: #fafafa; }
   .container.pink #mid input.active, .container.pink #mid textarea.active {
-    /* 		@include boxshadow2(none, none) */
     -moz-box-shadow: inset 0 2px 2px 0 #e8d9de, 0 0 4px 0 #ff679a;
     -ms-box-shadow: inset 0 2px 2px 0 #e8d9de, 0 0 4px 0 #ff679a;
     -o-box-shadow: inset 0 2px 2px 0 #e8d9de, 0 0 4px 0 #ff679a;
@@ -325,7 +317,6 @@ body {
   .container.purple #mid input[type=text]:hover, .container.purple #mid form textarea:hover, .container.purple #mid input[type=password]:hover, .container.purple #mid textarea:hover {
     background: #fafafa; }
   .container.purple #mid input.active, .container.purple #mid textarea.active {
-    /* 		@include boxshadow2(none, none) */
     -moz-box-shadow: inset 0 2px 2px 0 #edd9ed, 0 0 4px 0 #cf6bcf;
     -ms-box-shadow: inset 0 2px 2px 0 #edd9ed, 0 0 4px 0 #cf6bcf;
     -o-box-shadow: inset 0 2px 2px 0 #edd9ed, 0 0 4px 0 #cf6bcf;
@@ -355,7 +346,6 @@ body {
   .container.red #mid input[type=text]:hover, .container.red #mid form textarea:hover, .container.red #mid input[type=password]:hover, .container.red #mid textarea:hover {
     background: #fafafa; }
   .container.red #mid input.active, .container.red #mid textarea.active {
-    /* 		@include boxshadow2(none, none) */
     -moz-box-shadow: inset 0 2px 2px 0 #ead5d5, 0 0 4px 0 #e70000;
     -ms-box-shadow: inset 0 2px 2px 0 #ead5d5, 0 0 4px 0 #e70000;
     -o-box-shadow: inset 0 2px 2px 0 #ead5d5, 0 0 4px 0 #e70000;
@@ -385,7 +375,6 @@ body {
   .container.sunset-orange #mid input[type=text]:hover, .container.sunset-orange #mid form textarea:hover, .container.sunset-orange #mid input[type=password]:hover, .container.sunset-orange #mid textarea:hover {
     background: #fafafa; }
   .container.sunset-orange #mid input.active, .container.sunset-orange #mid textarea.active {
-    /* 		@include boxshadow2(none, none) */
     -moz-box-shadow: inset 0 2px 2px 0 #ebdfd7, 0 0 4px 0 #ff6600;
     -ms-box-shadow: inset 0 2px 2px 0 #ebdfd7, 0 0 4px 0 #ff6600;
     -o-box-shadow: inset 0 2px 2px 0 #ebdfd7, 0 0 4px 0 #ff6600;
@@ -415,7 +404,6 @@ body {
   .container.turquoise #mid input[type=text]:hover, .container.turquoise #mid form textarea:hover, .container.turquoise #mid input[type=password]:hover, .container.turquoise #mid textarea:hover {
     background: #fafafa; }
   .container.turquoise #mid input.active, .container.turquoise #mid textarea.active {
-    /* 		@include boxshadow2(none, none) */
     -moz-box-shadow: inset 0 2px 2px 0 #deebee, 0 0 4px 0 #29abcd;
     -ms-box-shadow: inset 0 2px 2px 0 #deebee, 0 0 4px 0 #29abcd;
     -o-box-shadow: inset 0 2px 2px 0 #deebee, 0 0 4px 0 #29abcd;
@@ -437,7 +425,7 @@ header {
     header #logo h1 a {
       color: #3870d1;
       float: left;
-      font-family: "Sue Ellen Francisco";
+      font-family: "Sue Ellen Francisco", cursive;
       font-size: 24px; }
       header #logo h1 a:hover {
         color: red; }
@@ -456,10 +444,10 @@ header {
       text-decoration: underline; }
       header #user-info a:hover {
         text-decoration: none; }
-    header #user-info h2, header #user-info h3, header #user-info h4, header #user-info p {
+    header #user-info h2, header #user-info #mid #landing .features article h3, #mid #landing .features article header #user-info h3, header #user-info h3, header #user-info h4, header #user-info p {
       float: left;
       width: 405px; }
-    header #user-info h2 {
+    header #user-info h2, header #user-info #mid #landing .features article h3, #mid #landing .features article header #user-info h3 {
       font-size: 24px;
       color: #3870d1;
       line-height: 1em;
@@ -487,34 +475,81 @@ header {
     float: right;
     font-size: 14px;
     margin: 40px 0; }
-    header nav ul {
-      float: right; }
-      header nav ul li {
+    header nav ul li {
+      float: left;
+      margin: 0 0 0 40px; }
+      header nav ul li a, header nav ul li a:visited {
+        color: #909090;
         float: left;
-        margin: 0 0 0 40px; }
-        header nav ul li a, header nav ul li a:visited {
-          color: #909090;
-          float: left;
-          min-width: 1px; }
-          header nav ul li a#login, header nav ul li a:visited#login {
-            color: #275fc0;
-            font-weight: bold; }
-          header nav ul li a:hover, header nav ul li a:visited:hover {
-            color: #df4c4b;
-            text-decoration: underline; }
+        min-width: 1px; }
+        header nav ul li a#login, header nav ul li a:visited#login {
+          color: #275fc0;
+          font-weight: bold; }
+        header nav ul li a:hover, header nav ul li a:visited:hover {
+          color: #df4c4b;
+          text-decoration: underline; }
     header nav#dashboard-nav {
       margin: 20px 0; }
-      header nav#dashboard-nav li span {
-        -moz-border-radius: 2px;
-        -ms-border-radius: 2px;
-        -o-border-radius: 2px;
-        -webkit-border-radius: 2px;
-        border-radius: 2px;
-        background: #f4f4f4;
-        border: 1px solid #e3e3e3;
-        padding: 1px 4px; }
+      header nav#dashboard-nav li {
+        display: block;
+        float: left; }
+        header nav#dashboard-nav li a#notifications {
+          -moz-border-radius: 2px;
+          -ms-border-radius: 2px;
+          -o-border-radius: 2px;
+          -webkit-border-radius: 2px;
+          border-radius: 2px;
+          background: #f4f4f4;
+          border: 1px solid #e3e3e3;
+          line-height: 1em;
+          padding: 4px 8px; }
+          header nav#dashboard-nav li a#notifications:hover {
+            color: #909090;
+            text-decoration: none; }
+        header nav#dashboard-nav li .level-2 {
+          -moz-border-radius-bottomleft: 4px;
+          -moz-border-radius-bottomright: 4px;
+          -ms-border-bottom-left-radius: 4px;
+          -ms-border-bottom-right-radius: 4px;
+          -o-border-radius-bottomleft: 4px;
+          -o-border-radius-bottomright: 4px;
+          -webkit-border-bottom-left-radius: 4px;
+          -webkit-border-bottom-right-radius: 4px;
+          border-bottom-left-radius: 4px;
+          border-bottom-right-radius: 4px;
+          background: #fff;
+          border-bottom: 1px solid #e3e3e3;
+          border-left: 1px solid #e3e3e3;
+          border-right: 1px solid #e3e3e3;
+          display: none;
+          font-size: 14px;
+          line-height: 1.3em;
+          margin: 22px 0 0;
+          min-width: 1px;
+          position: absolute;
+          width: 270px;
+          z-index: 10; }
+          header nav#dashboard-nav li .level-2 a {
+            float: none;
+            text-decoration: underline; }
+            header nav#dashboard-nav li .level-2 a:hover {
+              text-decoration: none; }
+          header nav#dashboard-nav li .level-2 h6, header nav#dashboard-nav li .level-2 li {
+            float: left;
+            margin: 0;
+            min-width: 1px;
+            padding: 5px 10px;
+            width: 250px; }
+          header nav#dashboard-nav li .level-2 h6 {
+            background: #f4f4f4;
+            border-bottom: 1px solid #e3e3e3;
+            border-top: 1px solid #e3e3e3;
+            color: #3870d1;
+            font-weight: bold; }
+          header nav#dashboard-nav li .level-2 li {
+            border-top: 1px solid #f4f4f4; }
       header nav#dashboard-nav input {
-        /* login */
+        /* log out link */
         background: transparent;
         color: #275fc0;
         cursor: pointer;
@@ -558,6 +593,132 @@ header {
   float: left;
   padding: 45px;
   width: 870px; }
+  #mid #landing h1 {
+    color: #484848;
+    float: left;
+    font-family: "Raleway", "Arial", sans-serif;
+    font-size: 70px;
+    line-height: 70px;
+    margin: 0 auto 20px;
+    text-align: center;
+    width: 100%; }
+  #mid #landing h2, #mid #landing .features article h3 {
+    color: #3870d1;
+    float: left;
+    font-family: "Sue Ellen Francisco", cursive;
+    font-size: 40px;
+    line-height: 1em;
+    margin: 0 auto 40px;
+    text-align: center;
+    text-transform: lowercase;
+    width: 100%; }
+  #mid #landing .features {
+    margin: 0 auto;
+    width: 540px; }
+    #mid #landing .features article {
+      float: left;
+      width: 160px; }
+      #mid #landing .features article.mid {
+        margin: 0 30px; }
+      #mid #landing .features article h3 {
+        font-size: 30px;
+        margin: 0 auto 20px;
+        text-align: left; }
+      #mid #landing .features article p {
+        font-size: 16px; }
+  #mid #landing ul {
+    background: red;
+    margin: 0 auto;
+    width: 230px; }
+    #mid #landing ul li {
+      float: left;
+      margin: 0 15px 0 0; }
+    #mid #landing ul a {
+      -moz-box-shadow: 0 1px 1px 0 #eeeeee;
+      -ms-box-shadow: 0 1px 1px 0 #eeeeee;
+      -o-box-shadow: 0 1px 1px 0 #eeeeee;
+      -webkit-box-shadow: 0 1px 1px 0 #eeeeee;
+      box-shadow: 0 1px 1px 0 #eeeeee;
+      background: #eeeeee;
+      background-image: -moz-linear-gradient(top, #f6f6f6, #eeeeee);
+      background-image: -ms-linear-gradient(top, #f6f6f6, #eeeeee);
+      background-image: -o-linear-gradient(top, #f6f6f6, #eeeeee);
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#eeeeee));
+      background-image: -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
+      background-image: linear-gradient(top, #f6f6f6, #eeeeee);
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      -o-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      border-radius: 4px;
+      border: 1px solid #dbdbdb;
+      color: #b8b8b8;
+      cursor: pointer;
+      float: left;
+      font-size: 18px;
+      line-height: 1em;
+      min-width: 1;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      text-shadow: 0 1px 1px #fff; }
+      #mid #landing ul a img {
+        -moz-box-shadow: 1px 1px 1px 0 white;
+        -ms-box-shadow: 1px 1px 1px 0 white;
+        -o-box-shadow: 1px 1px 1px 0 white;
+        -webkit-box-shadow: 1px 1px 1px 0 white;
+        box-shadow: 1px 1px 1px 0 white; }
+      #mid #landing ul a:hover {
+        -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+        -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+        -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+        -webkit-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+        box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+        background: #c43037;
+        background-image: -moz-linear-gradient(top, #df4c4b, #c43037);
+        background-image: -ms-linear-gradient(top, #df4c4b, #c43037);
+        background-image: -o-linear-gradient(top, #df4c4b, #c43037);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#df4c4b), to(#c43037));
+        background-image: -webkit-linear-gradient(top, #df4c4b, #c43037);
+        background-image: linear-gradient(top, #df4c4b, #c43037);
+        border: 1px solid #884f51;
+        color: #7e171e;
+        text-shadow: 0 1px 1px #e35851; }
+        #mid #landing ul a:hover img {
+          -moz-box-shadow: 1px 1px 1px 0 #e35851;
+          -ms-box-shadow: 1px 1px 1px 0 #e35851;
+          -o-box-shadow: 1px 1px 1px 0 #e35851;
+          -webkit-box-shadow: 1px 1px 1px 0 #e35851;
+          box-shadow: 1px 1px 1px 0 #e35851; }
+      #mid #landing ul a:active {
+        background: #df4c4b;
+        background-image: -moz-linear-gradient(top, #c43037, #df4c4b);
+        background-image: -ms-linear-gradient(top, #c43037, #df4c4b);
+        background-image: -o-linear-gradient(top, #c43037, #df4c4b);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#c43037), to(#df4c4b));
+        background-image: -webkit-linear-gradient(top, #c43037, #df4c4b);
+        background-image: linear-gradient(top, #c43037, #df4c4b);
+        -moz-box-shadow: none;
+        -ms-box-shadow: none;
+        -o-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        border: 1px solid #884f51;
+        color: #7e171e;
+        text-shadow: 0 1px 1px #e35851; }
+  #mid #landing hr {
+    color: #eaeaea;
+    background: #eaeaea;
+    float: left;
+    height: 1px;
+    margin: 60px 0;
+    width: 100%; }
+  #mid #landing form {
+    margin: 0 auto;
+    width: 530px; }
+    #mid #landing form input[type=text], #mid #landing form textarea,
+    #mid #landing form input[type=password] {
+      width: 494px; }
   #mid h3 {
     color: #484848;
     font-family: "Raleway", "Arial", sans-serif;
@@ -570,6 +731,81 @@ header {
     text-decoration: underline; }
     #mid a:hover {
       text-decoration: none; }
+    #mid a.button {
+      -moz-box-shadow: 0 1px 1px 0 #eeeeee;
+      -ms-box-shadow: 0 1px 1px 0 #eeeeee;
+      -o-box-shadow: 0 1px 1px 0 #eeeeee;
+      -webkit-box-shadow: 0 1px 1px 0 #eeeeee;
+      box-shadow: 0 1px 1px 0 #eeeeee;
+      background: #eeeeee;
+      background-image: -moz-linear-gradient(top, #f6f6f6, #eeeeee);
+      background-image: -ms-linear-gradient(top, #f6f6f6, #eeeeee);
+      background-image: -o-linear-gradient(top, #f6f6f6, #eeeeee);
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#eeeeee));
+      background-image: -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
+      background-image: linear-gradient(top, #f6f6f6, #eeeeee);
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      -o-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      border-radius: 4px;
+      border: 1px solid #dbdbdb;
+      color: #b8b8b8;
+      cursor: pointer;
+      float: left;
+      font-size: 18px;
+      line-height: 1em;
+      min-width: 150px;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      text-shadow: 0 1px 1px #fff;
+      float: right;
+      margin: 0 0 20px 0; }
+      #mid a.button img {
+        -moz-box-shadow: 1px 1px 1px 0 white;
+        -ms-box-shadow: 1px 1px 1px 0 white;
+        -o-box-shadow: 1px 1px 1px 0 white;
+        -webkit-box-shadow: 1px 1px 1px 0 white;
+        box-shadow: 1px 1px 1px 0 white; }
+      #mid a.button:hover {
+        -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+        -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+        -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+        -webkit-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+        box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+        background: #c43037;
+        background-image: -moz-linear-gradient(top, #df4c4b, #c43037);
+        background-image: -ms-linear-gradient(top, #df4c4b, #c43037);
+        background-image: -o-linear-gradient(top, #df4c4b, #c43037);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#df4c4b), to(#c43037));
+        background-image: -webkit-linear-gradient(top, #df4c4b, #c43037);
+        background-image: linear-gradient(top, #df4c4b, #c43037);
+        border: 1px solid #884f51;
+        color: #7e171e;
+        text-shadow: 0 1px 1px #e35851; }
+        #mid a.button:hover img {
+          -moz-box-shadow: 1px 1px 1px 0 #e35851;
+          -ms-box-shadow: 1px 1px 1px 0 #e35851;
+          -o-box-shadow: 1px 1px 1px 0 #e35851;
+          -webkit-box-shadow: 1px 1px 1px 0 #e35851;
+          box-shadow: 1px 1px 1px 0 #e35851; }
+      #mid a.button:active {
+        background: #df4c4b;
+        background-image: -moz-linear-gradient(top, #c43037, #df4c4b);
+        background-image: -ms-linear-gradient(top, #c43037, #df4c4b);
+        background-image: -o-linear-gradient(top, #c43037, #df4c4b);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#c43037), to(#df4c4b));
+        background-image: -webkit-linear-gradient(top, #c43037, #df4c4b);
+        background-image: linear-gradient(top, #c43037, #df4c4b);
+        -moz-box-shadow: none;
+        -ms-box-shadow: none;
+        -o-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        border: 1px solid #884f51;
+        color: #7e171e;
+        text-shadow: 0 1px 1px #e35851; }
   #mid form input[type=text], #mid form textarea,
   #mid form input[type=password] {
     -moz-border-radius: 4px;
@@ -602,6 +838,11 @@ header {
       #mid form input[type=password].error:hover {
         background: #f0b7b7; }
   #mid form input[type=submit] {
+    -moz-box-shadow: 0 1px 1px 0 #eeeeee;
+    -ms-box-shadow: 0 1px 1px 0 #eeeeee;
+    -o-box-shadow: 0 1px 1px 0 #eeeeee;
+    -webkit-box-shadow: 0 1px 1px 0 #eeeeee;
+    box-shadow: 0 1px 1px 0 #eeeeee;
     background: #eeeeee;
     background-image: -moz-linear-gradient(top, #f6f6f6, #eeeeee);
     background-image: -ms-linear-gradient(top, #f6f6f6, #eeeeee);
@@ -609,26 +850,22 @@ header {
     background-image: -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#eeeeee));
     background-image: -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
     background-image: linear-gradient(top, #f6f6f6, #eeeeee);
-    -moz-box-shadow: 0 1px 1px 0 #eeeeee;
-    -ms-box-shadow: 0 1px 1px 0 #eeeeee;
-    -o-box-shadow: 0 1px 1px 0 #eeeeee;
-    -webkit-box-shadow: 0 1px 1px 0 #eeeeee;
-    box-shadow: 0 1px 1px 0 #eeeeee;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
     border: 1px solid #dbdbdb;
     color: #b8b8b8;
     cursor: pointer;
     float: left;
+    font-size: 18px;
     line-height: 1em;
     min-width: 110px;
     padding: 10px;
     text-align: center;
     text-decoration: none;
     text-shadow: 0 1px 1px #fff;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
     float: right; }
     #mid form input[type=submit] img {
       -moz-box-shadow: 1px 1px 1px 0 white;
@@ -685,83 +922,15 @@ header {
   #mid .left-33 {
     float: left;
     width: 245px; }
-    #mid .left-33 a.button {
-      background: #eeeeee;
-      background-image: -moz-linear-gradient(top, #f6f6f6, #eeeeee);
-      background-image: -ms-linear-gradient(top, #f6f6f6, #eeeeee);
-      background-image: -o-linear-gradient(top, #f6f6f6, #eeeeee);
-      background-image: -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#eeeeee));
-      background-image: -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
-      background-image: linear-gradient(top, #f6f6f6, #eeeeee);
-      -moz-box-shadow: 0 1px 1px 0 #eeeeee;
-      -ms-box-shadow: 0 1px 1px 0 #eeeeee;
-      -o-box-shadow: 0 1px 1px 0 #eeeeee;
-      -webkit-box-shadow: 0 1px 1px 0 #eeeeee;
-      box-shadow: 0 1px 1px 0 #eeeeee;
-      border: 1px solid #dbdbdb;
-      color: #b8b8b8;
-      cursor: pointer;
-      float: left;
-      line-height: 1em;
-      min-width: 150px;
-      padding: 10px;
-      text-align: center;
-      text-decoration: none;
-      text-shadow: 0 1px 1px #fff;
-      -moz-border-radius: 4px;
-      -ms-border-radius: 4px;
-      -o-border-radius: 4px;
-      -webkit-border-radius: 4px;
-      border-radius: 4px;
-      margin: 0 0 20px 0; }
-      #mid .left-33 a.button img {
-        -moz-box-shadow: 1px 1px 1px 0 white;
-        -ms-box-shadow: 1px 1px 1px 0 white;
-        -o-box-shadow: 1px 1px 1px 0 white;
-        -webkit-box-shadow: 1px 1px 1px 0 white;
-        box-shadow: 1px 1px 1px 0 white; }
-      #mid .left-33 a.button:hover {
-        -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
-        -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
-        -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
-        -webkit-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
-        box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
-        background: #c43037;
-        background-image: -moz-linear-gradient(top, #df4c4b, #c43037);
-        background-image: -ms-linear-gradient(top, #df4c4b, #c43037);
-        background-image: -o-linear-gradient(top, #df4c4b, #c43037);
-        background-image: -webkit-gradient(linear, left top, left bottom, from(#df4c4b), to(#c43037));
-        background-image: -webkit-linear-gradient(top, #df4c4b, #c43037);
-        background-image: linear-gradient(top, #df4c4b, #c43037);
-        border: 1px solid #884f51;
-        color: #7e171e;
-        text-shadow: 0 1px 1px #e35851; }
-        #mid .left-33 a.button:hover img {
-          -moz-box-shadow: 1px 1px 1px 0 #e35851;
-          -ms-box-shadow: 1px 1px 1px 0 #e35851;
-          -o-box-shadow: 1px 1px 1px 0 #e35851;
-          -webkit-box-shadow: 1px 1px 1px 0 #e35851;
-          box-shadow: 1px 1px 1px 0 #e35851; }
-      #mid .left-33 a.button:active {
-        background: #df4c4b;
-        background-image: -moz-linear-gradient(top, #c43037, #df4c4b);
-        background-image: -ms-linear-gradient(top, #c43037, #df4c4b);
-        background-image: -o-linear-gradient(top, #c43037, #df4c4b);
-        background-image: -webkit-gradient(linear, left top, left bottom, from(#c43037), to(#df4c4b));
-        background-image: -webkit-linear-gradient(top, #c43037, #df4c4b);
-        background-image: linear-gradient(top, #c43037, #df4c4b);
-        -moz-box-shadow: none;
-        -ms-box-shadow: none;
-        -o-box-shadow: none;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        border: 1px solid #884f51;
-        color: #7e171e;
-        text-shadow: 0 1px 1px #e35851; }
     #mid .left-33 ul {
       float: left;
       margin: 0 0 20px;
       width: 100%; }
+      #mid .left-33 ul a.filtered {
+        color: #909090;
+        cursor: text;
+        font-weight: bold;
+        text-decoration: none; }
     #mid .left-33 h4 {
       float: left;
       width: 100%; }
@@ -775,7 +944,7 @@ header {
   #mid .left-50 {
     float: left;
     width: 390px; }
-    #mid .left-50 h2 {
+    #mid .left-50 h2, #mid .left-50 #landing .features article h3, #mid #landing .features article .left-50 h3 {
       color: #484848;
       font-family: "Raleway", "Arial", sans-serif;
       font-size: 44px;
@@ -818,6 +987,11 @@ header {
       #mid a form input[type=password] {
         width: 354px; }
       #mid .right-50 form input[type=submit], #mid .right-67 form a form input[type=submit], #mid .right-67 #form-login a form input[type=submit] {
+        -moz-box-shadow: 0 1px 1px 0 #eeeeee;
+        -ms-box-shadow: 0 1px 1px 0 #eeeeee;
+        -o-box-shadow: 0 1px 1px 0 #eeeeee;
+        -webkit-box-shadow: 0 1px 1px 0 #eeeeee;
+        box-shadow: 0 1px 1px 0 #eeeeee;
         background: #eeeeee;
         background-image: -moz-linear-gradient(top, #f6f6f6, #eeeeee);
         background-image: -ms-linear-gradient(top, #f6f6f6, #eeeeee);
@@ -825,22 +999,22 @@ header {
         background-image: -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#eeeeee));
         background-image: -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
         background-image: linear-gradient(top, #f6f6f6, #eeeeee);
-        -moz-box-shadow: 0 1px 1px 0 #eeeeee;
-        -ms-box-shadow: 0 1px 1px 0 #eeeeee;
-        -o-box-shadow: 0 1px 1px 0 #eeeeee;
-        -webkit-box-shadow: 0 1px 1px 0 #eeeeee;
-        box-shadow: 0 1px 1px 0 #eeeeee;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
         border: 1px solid #dbdbdb;
         color: #b8b8b8;
         cursor: pointer;
         float: left;
+        font-size: 18px;
         line-height: 1em;
         min-width: 130px;
         padding: 10px;
         text-align: center;
         text-decoration: none;
-        text-shadow: 0 1px 1px #fff;
-        padding: 14px 0; }
+        text-shadow: 0 1px 1px #fff; }
         #mid .right-50 form input[type=submit] img, #mid .right-67 form a form input[type=submit] img, #mid .right-67 #form-login a form input[type=submit] img {
           -moz-box-shadow: 1px 1px 1px 0 white;
           -ms-box-shadow: 1px 1px 1px 0 white;
@@ -900,20 +1074,122 @@ header {
           -webkit-border-bottom-left-radius: 4px;
           -webkit-border-top-left-radius: 4px;
           border-bottom-left-radius: 4px;
-          border-top-left-radius: 4px; }
+          border-top-left-radius: 4px;
+          height: 48px; }
         #mid .right-50 form input[type=submit]#linkedin, #mid .right-67 form a form input[type=submit]#linkedin, #mid .right-67 #form-login a form input[type=submit]#linkedin {
+          -moz-box-shadow: 0 1px 1px 0 #eeeeee;
+          -ms-box-shadow: 0 1px 1px 0 #eeeeee;
+          -o-box-shadow: 0 1px 1px 0 #eeeeee;
+          -webkit-box-shadow: 0 1px 1px 0 #eeeeee;
+          box-shadow: 0 1px 1px 0 #eeeeee;
+          background: #eeeeee no-repeat center center;
+          background-image: url("images/social_linkedin.gif"), -moz-linear-gradient(top, #f6f6f6, #eeeeee);
+          background-image: url("images/social_linkedin.gif"), -ms-linear-gradient(top, #f6f6f6, #eeeeee);
+          background-image: url("images/social_linkedin.gif"), -o-linear-gradient(top, #f6f6f6, #eeeeee);
+          background-image: url("images/social_linkedin.gif"), -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#eeeeee));
+          background-image: url("images/social_linkedin.gif"), -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
+          background-image: url("images/social_linkedin.gif"), linear-gradient(top, #f6f6f6, #eeeeee);
+          -moz-border-radius: 4px;
+          -ms-border-radius: 4px;
+          -o-border-radius: 4px;
+          -webkit-border-radius: 4px;
+          border-radius: 4px;
+          border: 1px solid #dbdbdb;
+          color: #b8b8b8;
+          cursor: pointer;
+          float: left;
+          font-size: 0;
+          line-height: -9999em;
+          min-width: 130px;
+          overflow: hidden;
+          padding: 23px;
+          text-align: center;
+          text-decoration: none;
+          text-shadow: 0 1px 1px #fff;
           -moz-border-radius: 0;
           -ms-border-radius: 0;
           -o-border-radius: 0;
           -webkit-border-radius: 0;
           border-radius: 0;
           border-left: 0;
-          border-right: 0;
-          width: 130px; }
+          border-right: 0; }
+          #mid .right-50 form input[type=submit]#linkedin img, #mid .right-67 form a form input[type=submit]#linkedin img, #mid .right-67 #form-login a form input[type=submit]#linkedin img {
+            -moz-box-shadow: 1px 1px 1px 0 white;
+            -ms-box-shadow: 1px 1px 1px 0 white;
+            -o-box-shadow: 1px 1px 1px 0 white;
+            -webkit-box-shadow: 1px 1px 1px 0 white;
+            box-shadow: 1px 1px 1px 0 white; }
+          #mid .right-50 form input[type=submit]#linkedin:hover, #mid .right-67 form a form input[type=submit]#linkedin:hover, #mid .right-67 #form-login a form input[type=submit]#linkedin:hover {
+            -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            -webkit-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            background: #c43037 no-repeat center center;
+            background-image: url("images/social_linkedin.gif"), -moz-linear-gradient(top, #df4c4b, #c43037);
+            background-image: url("images/social_linkedin.gif"), -ms-linear-gradient(top, #df4c4b, #c43037);
+            background-image: url("images/social_linkedin.gif"), -o-linear-gradient(top, #df4c4b, #c43037);
+            background-image: url("images/social_linkedin.gif"), -webkit-gradient(linear, left top, left bottom, from(#df4c4b), to(#c43037));
+            background-image: url("images/social_linkedin.gif"), -webkit-linear-gradient(top, #df4c4b, #c43037);
+            background-image: url("images/social_linkedin.gif"), linear-gradient(top, #df4c4b, #c43037);
+            border: 1px solid #884f51;
+            color: #7e171e;
+            text-shadow: 0 1px 1px #e35851; }
+            #mid .right-50 form input[type=submit]#linkedin:hover img, #mid .right-67 form a form input[type=submit]#linkedin:hover img, #mid .right-67 #form-login a form input[type=submit]#linkedin:hover img {
+              -moz-box-shadow: 1px 1px 1px 0 #e35851;
+              -ms-box-shadow: 1px 1px 1px 0 #e35851;
+              -o-box-shadow: 1px 1px 1px 0 #e35851;
+              -webkit-box-shadow: 1px 1px 1px 0 #e35851;
+              box-shadow: 1px 1px 1px 0 #e35851; }
+          #mid .right-50 form input[type=submit]#linkedin:active, #mid .right-67 form a form input[type=submit]#linkedin:active, #mid .right-67 #form-login a form input[type=submit]#linkedin:active {
+            background: #df4c4b no-repeat center center;
+            background-image: url("images/social_linkedin.gif"), -moz-linear-gradient(top, #c43037, #df4c4b);
+            background-image: url("images/social_linkedin.gif"), -ms-linear-gradient(top, #c43037, #df4c4b);
+            background-image: url("images/social_linkedin.gif"), -o-linear-gradient(top, #c43037, #df4c4b);
+            background-image: url("images/social_linkedin.gif"), -webkit-gradient(linear, left top, left bottom, from(#c43037), to(#df4c4b));
+            background-image: url("images/social_linkedin.gif"), -webkit-linear-gradient(top, #c43037, #df4c4b);
+            background-image: url("images/social_linkedin.gif"), linear-gradient(top, #c43037, #df4c4b);
+            -moz-box-shadow: none;
+            -ms-box-shadow: none;
+            -o-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            border: 1px solid #884f51;
+            color: #7e171e;
+            text-shadow: 0 1px 1px #e35851; }
           #mid .right-50 form input[type=submit]#linkedin:hover, #mid .right-67 form a form input[type=submit]#linkedin:hover, #mid .right-67 #form-login a form input[type=submit]#linkedin:hover {
             border: 1px solid #884f51;
             width: 128px; }
         #mid .right-50 form input[type=submit]#facebook, #mid .right-67 form a form input[type=submit]#facebook, #mid .right-67 #form-login a form input[type=submit]#facebook {
+          -moz-box-shadow: 0 1px 1px 0 #eeeeee;
+          -ms-box-shadow: 0 1px 1px 0 #eeeeee;
+          -o-box-shadow: 0 1px 1px 0 #eeeeee;
+          -webkit-box-shadow: 0 1px 1px 0 #eeeeee;
+          box-shadow: 0 1px 1px 0 #eeeeee;
+          background: #eeeeee no-repeat center center;
+          background-image: url("images/social_facebook.gif"), -moz-linear-gradient(top, #f6f6f6, #eeeeee);
+          background-image: url("images/social_facebook.gif"), -ms-linear-gradient(top, #f6f6f6, #eeeeee);
+          background-image: url("images/social_facebook.gif"), -o-linear-gradient(top, #f6f6f6, #eeeeee);
+          background-image: url("images/social_facebook.gif"), -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#eeeeee));
+          background-image: url("images/social_facebook.gif"), -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
+          background-image: url("images/social_facebook.gif"), linear-gradient(top, #f6f6f6, #eeeeee);
+          -moz-border-radius: 4px;
+          -ms-border-radius: 4px;
+          -o-border-radius: 4px;
+          -webkit-border-radius: 4px;
+          border-radius: 4px;
+          border: 1px solid #dbdbdb;
+          color: #b8b8b8;
+          cursor: pointer;
+          float: left;
+          font-size: 0;
+          line-height: -9999em;
+          min-width: 130px;
+          overflow: hidden;
+          padding: 23px;
+          text-align: center;
+          text-decoration: none;
+          text-shadow: 0 1px 1px #fff;
           -moz-border-radius: 0;
           -ms-border-radius: 0;
           -o-border-radius: 0;
@@ -929,6 +1205,50 @@ header {
           -webkit-border-top-right-radius: 4px;
           border-bottom-right-radius: 4px;
           border-top-right-radius: 4px; }
+          #mid .right-50 form input[type=submit]#facebook img, #mid .right-67 form a form input[type=submit]#facebook img, #mid .right-67 #form-login a form input[type=submit]#facebook img {
+            -moz-box-shadow: 1px 1px 1px 0 white;
+            -ms-box-shadow: 1px 1px 1px 0 white;
+            -o-box-shadow: 1px 1px 1px 0 white;
+            -webkit-box-shadow: 1px 1px 1px 0 white;
+            box-shadow: 1px 1px 1px 0 white; }
+          #mid .right-50 form input[type=submit]#facebook:hover, #mid .right-67 form a form input[type=submit]#facebook:hover, #mid .right-67 #form-login a form input[type=submit]#facebook:hover {
+            -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            -webkit-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            background: #c43037 no-repeat center center;
+            background-image: url("images/social_facebook.gif"), -moz-linear-gradient(top, #df4c4b, #c43037);
+            background-image: url("images/social_facebook.gif"), -ms-linear-gradient(top, #df4c4b, #c43037);
+            background-image: url("images/social_facebook.gif"), -o-linear-gradient(top, #df4c4b, #c43037);
+            background-image: url("images/social_facebook.gif"), -webkit-gradient(linear, left top, left bottom, from(#df4c4b), to(#c43037));
+            background-image: url("images/social_facebook.gif"), -webkit-linear-gradient(top, #df4c4b, #c43037);
+            background-image: url("images/social_facebook.gif"), linear-gradient(top, #df4c4b, #c43037);
+            border: 1px solid #884f51;
+            color: #7e171e;
+            text-shadow: 0 1px 1px #e35851; }
+            #mid .right-50 form input[type=submit]#facebook:hover img, #mid .right-67 form a form input[type=submit]#facebook:hover img, #mid .right-67 #form-login a form input[type=submit]#facebook:hover img {
+              -moz-box-shadow: 1px 1px 1px 0 #e35851;
+              -ms-box-shadow: 1px 1px 1px 0 #e35851;
+              -o-box-shadow: 1px 1px 1px 0 #e35851;
+              -webkit-box-shadow: 1px 1px 1px 0 #e35851;
+              box-shadow: 1px 1px 1px 0 #e35851; }
+          #mid .right-50 form input[type=submit]#facebook:active, #mid .right-67 form a form input[type=submit]#facebook:active, #mid .right-67 #form-login a form input[type=submit]#facebook:active {
+            background: #df4c4b no-repeat center center;
+            background-image: url("images/social_facebook.gif"), -moz-linear-gradient(top, #c43037, #df4c4b);
+            background-image: url("images/social_facebook.gif"), -ms-linear-gradient(top, #c43037, #df4c4b);
+            background-image: url("images/social_facebook.gif"), -o-linear-gradient(top, #c43037, #df4c4b);
+            background-image: url("images/social_facebook.gif"), -webkit-gradient(linear, left top, left bottom, from(#c43037), to(#df4c4b));
+            background-image: url("images/social_facebook.gif"), -webkit-linear-gradient(top, #c43037, #df4c4b);
+            background-image: url("images/social_facebook.gif"), linear-gradient(top, #c43037, #df4c4b);
+            -moz-box-shadow: none;
+            -ms-box-shadow: none;
+            -o-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            border: 1px solid #884f51;
+            color: #7e171e;
+            text-shadow: 0 1px 1px #e35851; }
       #mid .right-50 form p, #mid .right-67 form a form p, #mid .right-67 #form-login a form p {
         color: #ccc;
         float: left;
@@ -937,6 +1257,10 @@ header {
   #mid .right-67 {
     float: right;
     width: 580px; }
+    #mid .right-67 ul {
+      float: right; }
+      #mid .right-67 ul li {
+        float: left; }
     #mid .right-67 form {
       float: left;
       -moz-border-radius: 4px;
@@ -976,6 +1300,11 @@ header {
       #mid .right-67 form select {
         width: 340px; }
       #mid .right-67 form input[type=submit] {
+        -moz-box-shadow: 0 1px 1px 0 #eeeeee;
+        -ms-box-shadow: 0 1px 1px 0 #eeeeee;
+        -o-box-shadow: 0 1px 1px 0 #eeeeee;
+        -webkit-box-shadow: 0 1px 1px 0 #eeeeee;
+        box-shadow: 0 1px 1px 0 #eeeeee;
         background: #eeeeee;
         background-image: -moz-linear-gradient(top, #f6f6f6, #eeeeee);
         background-image: -ms-linear-gradient(top, #f6f6f6, #eeeeee);
@@ -983,22 +1312,22 @@ header {
         background-image: -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#eeeeee));
         background-image: -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
         background-image: linear-gradient(top, #f6f6f6, #eeeeee);
-        -moz-box-shadow: 0 1px 1px 0 #eeeeee;
-        -ms-box-shadow: 0 1px 1px 0 #eeeeee;
-        -o-box-shadow: 0 1px 1px 0 #eeeeee;
-        -webkit-box-shadow: 0 1px 1px 0 #eeeeee;
-        box-shadow: 0 1px 1px 0 #eeeeee;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
         border: 1px solid #dbdbdb;
         color: #b8b8b8;
         cursor: pointer;
         float: left;
+        font-size: 18px;
         line-height: 1em;
         min-width: 130px;
         padding: 10px;
         text-align: center;
         text-decoration: none;
         text-shadow: 0 1px 1px #fff;
-        padding: 14px 0;
         float: right; }
         #mid .right-67 form input[type=submit] img {
           -moz-box-shadow: 1px 1px 1px 0 white;
@@ -1059,20 +1388,122 @@ header {
           -webkit-border-bottom-left-radius: 4px;
           -webkit-border-top-left-radius: 4px;
           border-bottom-left-radius: 4px;
-          border-top-left-radius: 4px; }
+          border-top-left-radius: 4px;
+          height: 48px; }
         #mid .right-67 form input[type=submit]#linkedin {
+          -moz-box-shadow: 0 1px 1px 0 #eeeeee;
+          -ms-box-shadow: 0 1px 1px 0 #eeeeee;
+          -o-box-shadow: 0 1px 1px 0 #eeeeee;
+          -webkit-box-shadow: 0 1px 1px 0 #eeeeee;
+          box-shadow: 0 1px 1px 0 #eeeeee;
+          background: #eeeeee no-repeat center center;
+          background-image: url("images/social_linkedin.gif"), -moz-linear-gradient(top, #f6f6f6, #eeeeee);
+          background-image: url("images/social_linkedin.gif"), -ms-linear-gradient(top, #f6f6f6, #eeeeee);
+          background-image: url("images/social_linkedin.gif"), -o-linear-gradient(top, #f6f6f6, #eeeeee);
+          background-image: url("images/social_linkedin.gif"), -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#eeeeee));
+          background-image: url("images/social_linkedin.gif"), -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
+          background-image: url("images/social_linkedin.gif"), linear-gradient(top, #f6f6f6, #eeeeee);
+          -moz-border-radius: 4px;
+          -ms-border-radius: 4px;
+          -o-border-radius: 4px;
+          -webkit-border-radius: 4px;
+          border-radius: 4px;
+          border: 1px solid #dbdbdb;
+          color: #b8b8b8;
+          cursor: pointer;
+          float: left;
+          font-size: 0;
+          line-height: -9999em;
+          min-width: 130px;
+          overflow: hidden;
+          padding: 23px;
+          text-align: center;
+          text-decoration: none;
+          text-shadow: 0 1px 1px #fff;
           -moz-border-radius: 0;
           -ms-border-radius: 0;
           -o-border-radius: 0;
           -webkit-border-radius: 0;
           border-radius: 0;
           border-left: 0;
-          border-right: 0;
-          width: 130px; }
+          border-right: 0; }
+          #mid .right-67 form input[type=submit]#linkedin img {
+            -moz-box-shadow: 1px 1px 1px 0 white;
+            -ms-box-shadow: 1px 1px 1px 0 white;
+            -o-box-shadow: 1px 1px 1px 0 white;
+            -webkit-box-shadow: 1px 1px 1px 0 white;
+            box-shadow: 1px 1px 1px 0 white; }
+          #mid .right-67 form input[type=submit]#linkedin:hover {
+            -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            -webkit-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            background: #c43037 no-repeat center center;
+            background-image: url("images/social_linkedin.gif"), -moz-linear-gradient(top, #df4c4b, #c43037);
+            background-image: url("images/social_linkedin.gif"), -ms-linear-gradient(top, #df4c4b, #c43037);
+            background-image: url("images/social_linkedin.gif"), -o-linear-gradient(top, #df4c4b, #c43037);
+            background-image: url("images/social_linkedin.gif"), -webkit-gradient(linear, left top, left bottom, from(#df4c4b), to(#c43037));
+            background-image: url("images/social_linkedin.gif"), -webkit-linear-gradient(top, #df4c4b, #c43037);
+            background-image: url("images/social_linkedin.gif"), linear-gradient(top, #df4c4b, #c43037);
+            border: 1px solid #884f51;
+            color: #7e171e;
+            text-shadow: 0 1px 1px #e35851; }
+            #mid .right-67 form input[type=submit]#linkedin:hover img {
+              -moz-box-shadow: 1px 1px 1px 0 #e35851;
+              -ms-box-shadow: 1px 1px 1px 0 #e35851;
+              -o-box-shadow: 1px 1px 1px 0 #e35851;
+              -webkit-box-shadow: 1px 1px 1px 0 #e35851;
+              box-shadow: 1px 1px 1px 0 #e35851; }
+          #mid .right-67 form input[type=submit]#linkedin:active {
+            background: #df4c4b no-repeat center center;
+            background-image: url("images/social_linkedin.gif"), -moz-linear-gradient(top, #c43037, #df4c4b);
+            background-image: url("images/social_linkedin.gif"), -ms-linear-gradient(top, #c43037, #df4c4b);
+            background-image: url("images/social_linkedin.gif"), -o-linear-gradient(top, #c43037, #df4c4b);
+            background-image: url("images/social_linkedin.gif"), -webkit-gradient(linear, left top, left bottom, from(#c43037), to(#df4c4b));
+            background-image: url("images/social_linkedin.gif"), -webkit-linear-gradient(top, #c43037, #df4c4b);
+            background-image: url("images/social_linkedin.gif"), linear-gradient(top, #c43037, #df4c4b);
+            -moz-box-shadow: none;
+            -ms-box-shadow: none;
+            -o-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            border: 1px solid #884f51;
+            color: #7e171e;
+            text-shadow: 0 1px 1px #e35851; }
           #mid .right-67 form input[type=submit]#linkedin:hover {
             border: 1px solid #884f51;
             width: 128px; }
         #mid .right-67 form input[type=submit]#facebook {
+          -moz-box-shadow: 0 1px 1px 0 #eeeeee;
+          -ms-box-shadow: 0 1px 1px 0 #eeeeee;
+          -o-box-shadow: 0 1px 1px 0 #eeeeee;
+          -webkit-box-shadow: 0 1px 1px 0 #eeeeee;
+          box-shadow: 0 1px 1px 0 #eeeeee;
+          background: #eeeeee no-repeat center center;
+          background-image: url("images/social_facebook.gif"), -moz-linear-gradient(top, #f6f6f6, #eeeeee);
+          background-image: url("images/social_facebook.gif"), -ms-linear-gradient(top, #f6f6f6, #eeeeee);
+          background-image: url("images/social_facebook.gif"), -o-linear-gradient(top, #f6f6f6, #eeeeee);
+          background-image: url("images/social_facebook.gif"), -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#eeeeee));
+          background-image: url("images/social_facebook.gif"), -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
+          background-image: url("images/social_facebook.gif"), linear-gradient(top, #f6f6f6, #eeeeee);
+          -moz-border-radius: 4px;
+          -ms-border-radius: 4px;
+          -o-border-radius: 4px;
+          -webkit-border-radius: 4px;
+          border-radius: 4px;
+          border: 1px solid #dbdbdb;
+          color: #b8b8b8;
+          cursor: pointer;
+          float: left;
+          font-size: 0;
+          line-height: -9999em;
+          min-width: 130px;
+          overflow: hidden;
+          padding: 23px;
+          text-align: center;
+          text-decoration: none;
+          text-shadow: 0 1px 1px #fff;
           -moz-border-radius: 0;
           -ms-border-radius: 0;
           -o-border-radius: 0;
@@ -1088,6 +1519,50 @@ header {
           -webkit-border-top-right-radius: 4px;
           border-bottom-right-radius: 4px;
           border-top-right-radius: 4px; }
+          #mid .right-67 form input[type=submit]#facebook img {
+            -moz-box-shadow: 1px 1px 1px 0 white;
+            -ms-box-shadow: 1px 1px 1px 0 white;
+            -o-box-shadow: 1px 1px 1px 0 white;
+            -webkit-box-shadow: 1px 1px 1px 0 white;
+            box-shadow: 1px 1px 1px 0 white; }
+          #mid .right-67 form input[type=submit]#facebook:hover {
+            -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            -webkit-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            background: #c43037 no-repeat center center;
+            background-image: url("images/social_facebook.gif"), -moz-linear-gradient(top, #df4c4b, #c43037);
+            background-image: url("images/social_facebook.gif"), -ms-linear-gradient(top, #df4c4b, #c43037);
+            background-image: url("images/social_facebook.gif"), -o-linear-gradient(top, #df4c4b, #c43037);
+            background-image: url("images/social_facebook.gif"), -webkit-gradient(linear, left top, left bottom, from(#df4c4b), to(#c43037));
+            background-image: url("images/social_facebook.gif"), -webkit-linear-gradient(top, #df4c4b, #c43037);
+            background-image: url("images/social_facebook.gif"), linear-gradient(top, #df4c4b, #c43037);
+            border: 1px solid #884f51;
+            color: #7e171e;
+            text-shadow: 0 1px 1px #e35851; }
+            #mid .right-67 form input[type=submit]#facebook:hover img {
+              -moz-box-shadow: 1px 1px 1px 0 #e35851;
+              -ms-box-shadow: 1px 1px 1px 0 #e35851;
+              -o-box-shadow: 1px 1px 1px 0 #e35851;
+              -webkit-box-shadow: 1px 1px 1px 0 #e35851;
+              box-shadow: 1px 1px 1px 0 #e35851; }
+          #mid .right-67 form input[type=submit]#facebook:active {
+            background: #df4c4b no-repeat center center;
+            background-image: url("images/social_facebook.gif"), -moz-linear-gradient(top, #c43037, #df4c4b);
+            background-image: url("images/social_facebook.gif"), -ms-linear-gradient(top, #c43037, #df4c4b);
+            background-image: url("images/social_facebook.gif"), -o-linear-gradient(top, #c43037, #df4c4b);
+            background-image: url("images/social_facebook.gif"), -webkit-gradient(linear, left top, left bottom, from(#c43037), to(#df4c4b));
+            background-image: url("images/social_facebook.gif"), -webkit-linear-gradient(top, #c43037, #df4c4b);
+            background-image: url("images/social_facebook.gif"), linear-gradient(top, #c43037, #df4c4b);
+            -moz-box-shadow: none;
+            -ms-box-shadow: none;
+            -o-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            border: 1px solid #884f51;
+            color: #7e171e;
+            text-shadow: 0 1px 1px #e35851; }
       #mid .right-67 form select {
         height: 30px;
         margin: 18px 0 30px 0; }
@@ -1108,17 +1583,17 @@ header {
       padding: 20px;
       margin: 0 0 20px 0;
       width: 540px; }
-      #mid .right-67 article h2, #mid .right-67 article h3, #mid .right-67 article h4 {
+      #mid .right-67 article h2, #mid .right-67 #landing .features article h3, #mid #landing .features .right-67 article h3, #mid .right-67 article h3, #mid .right-67 article h4 {
         float: left;
         width: 100%; }
       #mid .right-67 article h1 {
         font-size: 22px; }
-      #mid .right-67 article h2 {
+      #mid .right-67 article h2, #mid .right-67 #landing .features article h3, #mid #landing .features .right-67 article h3 {
         font-style: italic;
         margin: 0 0 5px 0; }
       #mid .right-67 article h3 {
         color: #ccc;
-        font-family: "Istok Web";
+        font-family: "Istok Web", "Arial", sans-serif;
         font-size: 14px;
         text-transform: uppercase; }
       #mid .right-67 article p {
@@ -1142,7 +1617,7 @@ header {
         display: block;
         float: right;
         font-size: 14px;
-        margin: 0 0 0 10px;
+        margin: 0 0 0 25px;
         padding: 2px 10px;
         position: relative;
         text-transform: uppercase; }
@@ -1197,7 +1672,7 @@ header {
 #form {
   float: right;
   width: 390px; }
-  #form h2 {
+  #form h2, #form #mid #landing .features article h3, #mid #landing .features article #form h3 {
     font-family: "Raleway", "Arial", sans-serif;
     font-size: 54px;
     line-height: 1.2em; }

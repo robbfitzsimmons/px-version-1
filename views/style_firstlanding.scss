@@ -109,9 +109,8 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,hr,p,input,textarea,bl
 }
 
 @mixin button($width) {
-	@include boxshadow(0 1px 1px 0 #eee);
 	@include gradient(#f6f6f6, #eee);
-	@include radius(4px);
+	@include boxshadow(0 1px 1px 0 #eee);
 	
 	border: 1px solid #dbdbdb;
 	color: #b8b8b8;
@@ -151,9 +150,8 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,hr,p,input,textarea,bl
 }
 
 @mixin button-image($width, $img) {
-	@include boxshadow(0 1px 1px 0 #eee);
 	@include gradient-image(#f6f6f6, #eee, $img);
-	@include radius(4px);
+	@include boxshadow(0 1px 1px 0 #eee);
 	
 	border: 1px solid #dbdbdb;
 	color: #b8b8b8;
@@ -467,7 +465,7 @@ header {
 					margin: 22px 0 0;
 					min-width: 1px;
 					position: absolute;
-					width: 270px;
+					width: 250px;
 					z-index: 10;
 					
 					a {
@@ -484,7 +482,7 @@ header {
 						margin: 0;
 						min-width: 1px;
 						padding: 5px 10px;
-						width: 250px;
+						width: 230px;
 					}
 					
 					h6 {
@@ -545,90 +543,6 @@ header {
 	float: left;
 	padding: 45px;
 	width: 870px;
-	
-	#landing {
-		h1 {
-			color: #484848;
-			float: left;
-			font-family: $raleway;
-			font-size: 70px;
-			line-height: 70px;
-			margin: 0 auto 20px;
-			text-align: center;
-			width: 100%;
-		}
-		
-		h2 {
-			color: $color;
-			float: left;
-			font-family: $suellen;
-			font-size: 40px;
-			line-height: 1em;
-			margin: 0 auto 40px;
-			text-align: center;
-			text-transform: lowercase;
-			width: 100%;
-		}
-
-		.features {
-			margin: 0 auto;
-			width: 540px;
-			
-			article {
-				float: left;
-				width: 160px;
-				
-				&.mid {
-					margin: 0 30px;
-				}
-			
-				h3 {
-					@extend h2;
-					font-size: 30px;
-					margin: 0 auto 20px;
-					text-align: left;
-				}
-				
-				p {
-					font-size: 16px;
-				}
-			}
-		}
-		
-		ul {
-			background: red;
-			margin: 0 auto;
-			width: 230px;
-			
-			li {
-				float: left;
-				margin: 0 15px 0 0;
-			}
-			
-			a {
-				@include button(1);
-			}
-		}
-		
-		hr {
-			color: #eaeaea;
-			background: #eaeaea;
-			float: left;
-			height: 1px;
-			margin: 60px 0;
-			width: 100%;
-		}
-		
-		form {
-			margin: 0 auto;
-			width: 530px;
-			
-			input[type=text],
-			input[type=password] {
-				width: 494px;
-			}
-		}
-	}
 		
 	h3 {
 		color: #484848;
@@ -651,6 +565,7 @@ header {
 		
 		&.button {
 			@include button(150px);
+			@include radius(4px);
 			float: right;
 			margin: 0 0 20px 0;
 		}
@@ -682,6 +597,7 @@ header {
 				
 		input[type=submit] {
 			@include button(110px);
+			@include radius(4px);
 			float: right;
 		}
 		

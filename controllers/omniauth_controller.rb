@@ -3,7 +3,7 @@
 get '/auth/:name/callback' do
 	auth = request.env['omniauth.auth']
 
-	## This involes signup/ login
+	## This involves signup/ login
 	if session[:connect] == false || session[:connect].nil?
 	
 		#puts auth["provider"]
@@ -67,7 +67,9 @@ get '/auth/:name/callback' do
 			puts "ITS FACEBOOK"
 			@user.facebook = auth["user_info"]["urls"]["Facebook"]
 			@user.facebook_uid = auth["uid"]
-			@user.location = auth["extra"]["user_hash"]["location"]["name"]
+			if !auth["extra"]["user_hash"]["location"].nil?
+				@user.location = auth["extra"]["user_hash"]["location"]["name"]
+			end
 			image = @user.image_url.split('=')
 			@user.image_url = image[0]+"=normal"
 				if (@user.website == nil)

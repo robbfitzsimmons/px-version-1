@@ -1,9 +1,10 @@
 <!doctype html>
-<html>
+<html lang="en">
 	<head>
 		<title>Proximate | <%= current_user.name %><%= !@title.nil? ? " | " + @title : "" %></title>
-		<link rel="stylesheet" type="text/css" href="/style.css" />
-		<link href='http://fonts.googleapis.com/css?family=Raleway:100|Sue+Ellen+Francisco|Istok+Web:700italic,400,700,400italic' rel='stylesheet' type='text/css'>
+		<link href="/style.css" rel="stylesheet" type="text/css" />
+		<link href='http://fonts.googleapis.com/css?family=Raleway:100|Sue+Ellen+Francisco|Istok+Web:700italic,400,700,400italic|Shadows+Into+Light&v2' rel='stylesheet' type='text/css'>
+		<link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 	    
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 		
@@ -23,7 +24,7 @@
 			
 			<header>
 				<section id="user-info">
-					<img src="<%= !current_user.image.nil? ? current_user.image.url(:thumb) : "/images/80x80.gif" %>" alt="image" />
+					<img src="<%= !current_user.image.nil? ? current_user.image.url(:thumb) : "/images/80x80.gif" %>" alt="<%= current_user.name %>" />
 			  		<h2><%= current_user.name %></h2>
 			  		<h3><%= current_user.email %></h3>
 			  		<h4><%= current_user.description %></h4>
@@ -32,30 +33,33 @@
 				
 				<nav id="dashboard-nav">
 					<ul>
-						<li><a href="/users/<%= current_user.id %>">dashboard</a></li>
-						<li><a href="javascript: void(0)">nametag</a></li>
-						<li><a href="javascript: void(0)">notifications <span><%= current_user.new_invites.count + current_user.events_with_unanswered_questions.count %></span></a>
-<!--
-							<ul>
-								<li>
+						<li><a href="javascript: void(0)" id="notifications"><%= current_user.new_invites.count + current_user.events_with_unanswered_questions.count %></a>
+							<ul class="level-2">
+								<% if current_user.new_invites.length != 0 %>
+								<h6>Invites (<%= current_user.new_invites.count %>)</h6>
 									<% current_user.new_invites.each do |invite| %>
-										<%= invite.event.name %>
+										<li>
+											<%= invite.event.user_event_associations(:admin => true).user.first.name %> invited you to <a href="/invites/<%= invite.slug %>"><%= invite.event.name %></a>.
+										</li>
 									<% end %>
-									
+								<% end %>
+								<% if current_user.events_with_unanswered_questions.length != 0 %>
+								<h6>Events with Unanswered Questions</h6>
 									<% current_user.events_with_unanswered_questions.each do |event| %>
-										<%= event.name %>
+										<li>
+											Go to <a href="/events/<%= event.permalink %>"><%= event.name %></a>
+										</li>
 									<% end %>
-								</li>
+								<% end %>
 							</ul>
--->
 						</li>
-						<li>
-						  	<% if current_user %>
-						      <form action="/logout" method="post">
-						        <input name="_method" type="hidden" value="delete" />
-						        <input type="submit" value="log out" />
-						      </form>
-						  	<% end %>
+
+						<li><a href="/users/<%= current_user.id %>">dashboard</a></li>
+						<li><a href="javascript: void(0)">nametag</a></li>						<li>
+							<form action="/logout" method="post">
+								<input name="_method" type="hidden" value="delete" />
+								<input type="submit" value="log out" />
+							</form>
 					  	</li>
 					</ul>
 				</nav>
