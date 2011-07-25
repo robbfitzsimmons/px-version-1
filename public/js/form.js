@@ -126,4 +126,30 @@ $(document).ready(function()
 		}
 	}); // end form-session.validate
 
+	$("#form-activity").validate({
+		rules: {
+			'activity[name]': {
+				required: true
+			}
+		},
+		messages: {
+			'activity[name]': {
+				required: "Please enter a name."
+			}
+		}
+	}); // end form-activity.validate
+
+	$("#form-question").validate({
+		rules: {
+			'question[text]': {
+				required: true
+			}
+		},
+		messages: {
+			'question[text]': {
+				required: "Please enter a question."
+			}
+		}
+	}); // end form-questions.validate
+
 });

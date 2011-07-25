@@ -8,10 +8,12 @@
 </section>
 
 <section class="right-67">
-	<form action="/activities" method="post">
+	<form id="form-activity" action="/activities" method="post">
 		<input name="session" type="hidden" value="<%= @session.id %>" />
 		<%= erb :'activities/form' %>
 		<input type="submit" value="Add" />
 	</form>
 </section>
 
+<script src="/js/validate.js"></script>
+<script src="/js/form.js"></script>
