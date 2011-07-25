@@ -38,6 +38,6 @@ def create_permalink
 
      ret.downcase!
 
-     self.permalink = ret[0,16]
+     self.permalink = ret
 
 	end
