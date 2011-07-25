@@ -52,7 +52,7 @@ class User
                     :bucket         => "proximate_test",
                     :styles => { :original => "300x300#",
                                  :thumb => "80x80#" }
-  elsif (ENV['RACK_ENV']) == "development"
+  elsif (ENV['RACK_ENV']) == "OOHHHH"
     puts "S3"
     has_attached_file :image,
                     :storage => :s3,
@@ -70,6 +70,7 @@ class User
                                  :thumb => "80x80#" }
   end
 
+    
   ## Links users to events
   has n, 	 :user_event_associations
   has n,	 :events, :through => :user_event_associations
@@ -87,7 +88,7 @@ class User
   before :save, :encrypt_password
 
   before :valid?, :download_remote_image
-  validates_with_method :image, :method => :validates_image_type
+  validates_with_method :image, :method => :validates_image_type 
   validates_with_method :image, :method => :validates_image_size
 
 
@@ -142,8 +143,9 @@ class User
 
   def validates_image_type
     allowed_mime_types = %w{"image/bmp", "image/gif", "image/jpeg", "image/png"} 
-
-    if allowed_mime_types.one? {|allowed_content_type| allowed_content_type.match(image.content_type.to_s)}
+    if image.size.nil?
+      return true
+    elsif allowed_mime_types.one? {|allowed_content_type| allowed_content_type.match(image.content_type.to_s)}
       return true
     else
       return [false, "The file provided is not an acceptable format."]
@@ -152,13 +154,13 @@ class User
 
   def validates_image_size
     max_size = 1048576
-
-    if image.size < max_size
+    if image.size.nil?
+      return true
+    elsif image.size < max_size
       return true
     else
       return [false, "Image file size is too big."]
     end
-
   end
 
   private
