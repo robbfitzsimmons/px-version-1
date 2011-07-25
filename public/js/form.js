@@ -113,4 +113,17 @@ $(document).ready(function()
 		}
 	}); // end form-edit-profile.validate
 
+	$("#form-session").validate({
+		rules: {
+			'session[name]': {
+				required: true
+			}
+		},
+		messages: {
+			'session[name]': {
+				required: "Please enter a name."
+			}
+		}
+	}); // end form-session.validate
+
 });

@@ -5,6 +5,8 @@ class Session
   property :name,             String    #
   property :description,      String    #
   property :location,         String    #
+
+  validates_presence_of :name
   
   property :start_date,       DateTime	#
   property :end_date,         DateTime	#

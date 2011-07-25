@@ -8,9 +8,11 @@
 </section>
 
 <section class="right-67">
-	<form action="/sessions" method="post">
+	<form id="form-session" action="/sessions" method="post">
 		<%= erb :'sessions/form' %>
 		<input type="submit" value="Add" />
 	</form>
 </section>
 
+<script src="/js/validate.js"></script>
+<script src="/js/form.js"></script>
