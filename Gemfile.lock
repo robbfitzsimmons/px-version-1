@@ -74,7 +74,12 @@ GEM
       multipart-post (~> 1.1.0)
       rack (< 2, >= 1.1.0)
     fastercsv (1.5.4)
+    i18n (0.6.0)
     json (1.4.6)
+    mail (2.3.0)
+      i18n (>= 0.4.0)
+      mime-types (~> 1.16)
+      treetop (~> 1.4.8)
     mime-types (1.16)
     multi_json (0.0.5)
     multipart-post (1.1.2)
@@ -119,6 +124,9 @@ GEM
       oa-more (= 0.2.3)
       oa-oauth (= 0.2.3)
       oa-openid (= 0.2.3)
+    polyglot (0.3.1)
+    pony (1.3)
+      mail (> 2.0)
     pyu-ruby-sasl (0.0.3.3)
     rack (1.3.0)
     rack-flash (0.1.2)
@@ -142,6 +150,8 @@ GEM
       eventmachine (>= 0.12.6)
       rack (>= 1.0.0)
     tilt (1.3.2)
+    treetop (1.4.9)
+      polyglot (>= 0.3.1)
     uuidtools (2.1.2)
     xml-simple (1.1.0)
 
@@ -158,6 +168,7 @@ DEPENDENCIES
   dm-timestamps
   dm-validations
   omniauth
+  pony
   rack
   rack-flash
   sass

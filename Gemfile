@@ -10,9 +10,9 @@ gem "dm-migrations"
 gem "dm-validations"
 gem "dm-timestamps"
 
-gem "aws-s3"
-
 gem "omniauth"
+
+gem "pony"
 
 gem "sass" 
 

@@ -46,26 +46,51 @@ post '/events' do
 	end
 end
 
-# Used for updating an event, including adding a user
-put '/events/:id' do
-	if current_user.nil?
-		flash[:warning] = "You must log in or sign up first."
-		redirect '/signup'
-	end
+put '/events/:id/rsvp' do
 
 	event = Event.get(params[:id])
 
-	if params[:join] == "true"
+	## Attending to Not Attending
+	if !current_user.user_event_associations.first(:event => event).nil?
+		current_user.user_event_associations.first(:event => event).destroy
+		flash[:success] = "You are now not attending #{event.name}."
+
+		redirect "/events/#{event.permalink}"
+	
+	## Not attending to Attending
+	else
 		event.users << current_user
-		puts current_user.name
+
+		if event.save
+			status(202)
+			flash[:success] = "You are now attending #{event.name}."
+			if !session[:invite].nil?
+				invite = Invite.get(session[:invite])
+				invite.update(:hide => true)
+				session[:invite_event] = nil
+			end
+		else
+			status(412)
+			event.errors.each do |e|
+		    puts e
+			end
+			flash[:error] = "Please Try Again."
+		end
+
+		redirect "/events/#{event.permalink}"
+
 	end
+
+end
+
+# Used for updating an event, including adding a user
+put '/events/:id' do
+
+	event = Event.get(params[:id])
 
 	if event.save
 		status(202)
-		flash[:success] = "You are now attending #{event.name}."
-		session[:invite_event] = nil
-		invite = Invite.get(session[:invite])
-		invite.update(:hide => true)
+		flash[:success] = "You have now updated #{event.name}."
 	else
 		status(412)
 		event.errors.each do |e|

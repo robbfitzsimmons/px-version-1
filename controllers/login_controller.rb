@@ -73,6 +73,33 @@ put '/recover/:slug' do
 	
 	if user.update(:password => params[:password])
 		status(202)
+
+		#Send Email
+		@options = {
+	    :to => "Philip Dudley <pdudley89@gmail.com>",
+	    :from => "Philip Dudley <pdudley89@gmail.com>",
+	    :subject=> "Contact Form",
+	    :body => "Budget:",
+	    :via => :smtp, :smtp => {
+	      :host => 'smtp.gmail.com',
+	      :port => '587',
+	      :user => 'pdudley89@gmail.com',
+	      :password => 'totspuRs505',
+	      :auth => :plain,
+	      :domain => "gmail.com"
+	     },
+	    :headers => { "Reply-To" => "pdudley89@gmail.com" }
+	  }
+  
+	  if params[:attachment] &&
+	     (tmpfile = params[:attachment][:tempfile]) &&
+	     (name = params[:attachment][:filename])
+	     
+	    @options[:attachments] = { name => tmpfile.read() }
+	  end
+
+	  Pony.mail(@options)
+
 		recover.update(:used => true)
 		flash[:success] = "Password successfully changed. Please try logging in again."
 		redirect '/'
