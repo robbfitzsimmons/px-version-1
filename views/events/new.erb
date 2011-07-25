@@ -4,7 +4,7 @@
 </section>
 
 <section class="right-67">
-	<form action="/events" method="post">
+	<form id="form-event" action="/events" method="post">
 	
 		<label for="event[name]">Name</label>
 		<input name="event[name]" type="text" value="<%= @event.name%>" />
@@ -54,3 +54,6 @@
 		<input type="submit" value="Create Event" />
 	</form>
 </section>
+
+<script src="/js/validate.js"></script>
+<script src="/js/form.js"></script>

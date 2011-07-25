@@ -45,4 +45,28 @@ $(document).ready(function()
 		}
 	
 	});
+
+
+	$("#form-event").validate({
+		rules: {
+			'event[name]': {
+				required: true,
+				maxlength: 50
+			},
+			'event[location]': {
+				required: true
+			}
+		},
+		messages: {
+			'event[name]': {
+				required: "Please enter an event name.",
+				maxlength: "Name must be at most 50 characters long."
+			},
+			'event[location]': {
+				required: "Please enter a location."
+			}
+		}
+	
+	});
+
 });
