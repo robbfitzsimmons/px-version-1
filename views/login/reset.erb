@@ -1,0 +1,20 @@
+<section class="left-33">
+	<h3>Reset Password</h3>
+	
+	<p>Please enter a new password for your account.</p>
+	
+</section>
+
+<section class="right-67">
+	<form action="/recover/<%= @recover.slug %>" method="post" id="form-recover">
+		<input name="_method" type="hidden" value="put" />
+
+		<label name="password">Password</label>
+		<input name="password" type="password" value="" />
+
+		<label name="password">Password Confirmation</label>
+		<input name="password" type="password" value="" />
+
+		<input name="recover" id="signup" type="submit" value="Reset Password" />
+	</form>
+</section>

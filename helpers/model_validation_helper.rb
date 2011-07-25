@@ -13,12 +13,12 @@ def create_slug
 	# Loop while slug is not unique
 	begin
 		self.slug = (0..(length-1)).map{ rand(36).to_s(36) }.join 
-		invite = Invite.first(:slug => self.slug) 
-	end while(invite != nil)
+		object = self.class.first(:slug => self.slug) 
+	end while(object != nil)
 end
 
 def create_permalink
-		ret = self.name.strip
+	ret = self.name.strip
 
     #blow away apostrophes
     ret.gsub! /['`]/,""
