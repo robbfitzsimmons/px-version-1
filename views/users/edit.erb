@@ -8,11 +8,11 @@
 </section>
 
 <section class="right-67">
-	<form action="/users/<%= @user.id %>" method="post" enctype="multipart/form-data">
+	<form id="form-edit-profile" action="/users/<%= @user.id %>" method="post" enctype="multipart/form-data">
 		<input name="_method" type="hidden" value="put" />
 		 <%= erb :'users/form' %>
 		<input type="submit" value="Submit" />
 	</form>
 </section>
-
-
+<script src="/js/validate.js"></script>
+<script src="/js/form.js"></script>

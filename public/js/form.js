@@ -90,6 +90,27 @@ $(document).ready(function()
 				required: "Please enter a message."
 			}
 		}
-	}); // end form-event.validate
+	}); // end form-invites.validate
+
+	$("#form-edit-profile").validate({
+		rules: {
+			'user[email]': {
+				email: true,
+				required: true
+			},
+			'user[name]': {
+				required: true
+			}
+		},
+		messages: {
+			'user[email]': {
+				email: "Please enter your email.",
+				required: "Please enter your email."
+			},
+			'user[name]': {
+				required: "Please enter your name."
+			}
+		}
+	}); // end form-edit-profile.validate
 
 });
