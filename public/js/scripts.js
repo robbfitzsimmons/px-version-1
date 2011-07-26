@@ -49,16 +49,25 @@ $(document).ready(function()
 		$('.invited').slideUp();
 		$('.attendee').slideDown();
 		$('.admin').slideDown();
+		$('.declined').slideUp();
 	});
 	$('#filter-admin').click(function () {
 		$('.attendee').not('.admin').slideUp();
 		$('.invited').slideUp();
 		$('.admin').slideDown();
+		$('.declined').slideUp();
 	});
 	$('#filter-invited').click(function () {
 		$('.admin').slideUp();
 		$('.attendee').slideUp();
 		$('.invited').slideDown();
+		$('.declined').slideUp();
+	});
+	$('#filter-declined').click(function () {
+		$('.admin').slideUp();
+		$('.attendee').slideUp();
+		$('.invited').slideUp();
+		$('.declined').slideDown();
 	});
 	
 	/* Drop Down */

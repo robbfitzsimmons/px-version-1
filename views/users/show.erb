@@ -4,9 +4,10 @@
 	<h2>Filter</h2>
 	<ul>
 		<li><a href="javascript: void(0)" id="filter-all">All events (<%= @user.user_event_associations.length + @user.new_invites.length %>)</a></li>
-		<li><a href="javascript: void(0)" id="filter-attendee">Events I'm attending (<%= @user.user_event_associations.events.length %>)</a></li>
+		<li><a href="javascript: void(0)" id="filter-attendee">Events I'm attending (<%= @user.user_event_associations(:attending => true).events.length %>)</a></li>
 		<li><a href="javascript: void(0)" id="filter-admin">Events I created (<%= @user.user_event_associations(:admin => true).length %>)</a></li>
 		<li><a href="javascript: void(0)" id="filter-invited">Pending invites (<%= @user.new_invites.length %>)</a></li>
+		<li><a href="javascript: void(0)" id="filter-declined">Invites I declined (<%= @user.user_event_associations(:attending => false).length %>)</a></li>
 	</ul>
 	
 	<% if @user.people_matches.length != 0 %>
@@ -27,7 +28,7 @@
 	
 	<% if @user.user_event_associations.length != 0 %>
 		<% @user.user_event_associations.each do |assoc| %>
-			<article class="all <%= assoc.admin ? 'admin attendee' : 'attendee' %>">
+			<article class="all <%= assoc.admin ? 'admin' : '' %> <%= assoc.attending ? 'attendee' : 'declined' %>">
 				<span class="date">
 					<strong>
 						<%= assoc.event.start_date.strftime("%b") %>
@@ -39,7 +40,11 @@
 					<span class="tag">Admin</span>
 					<span class="tag">Attending</span>
 				<% elsif !assoc.admin %>
-					<span class="tag">Attending</span>
+					<% if assoc.attending %>
+						<span class="tag">Attending</span>
+					<% else %>
+						<span class="tag">Not Attending</span>
+					<% end %>
 				<% end %>
 				<h4><a href="/<%= assoc.event.permalink %>"><%= assoc.event.name %></a></h4>
 				<h5><%= assoc.event.description %></h5>

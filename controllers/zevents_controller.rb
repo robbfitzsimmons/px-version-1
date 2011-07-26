@@ -1,4 +1,3 @@
-
 # Create a new Event Page
 get '/events/new' do
 	@title = "Create New Event"
@@ -26,6 +25,7 @@ post '/events' do
 		@event.user_event_associations.each do |assoc|
 			if assoc.event == @event
 				assoc.admin = true
+				assoc.attending = true
 				assoc.save
 			end
 		end
@@ -53,17 +53,27 @@ put '/events/:id/rsvp' do
 	puts params[:attend]
 
 	if params[:attend] != "Attend"
-		current_user.user_event_associations.first(:event => event).destroy
-		flash[:success] = "You are now not attending #{event.name}."
-		if !session[:invite].nil?
-			invite = Invite.get(session[:invite])
-			invite.update(:hide => true)
-			session[:invite_event] = nil
+		event.users << current_user
+		if event.save
+			current_user.user_event_associations.first(:event => event).update(:attending => false)
+			flash[:success] = "You are now not attending #{event.name}."
+			if !session[:invite].nil?
+				invite = Invite.get(session[:invite])
+				invite.update(:hide => true)
+				session[:invite_event] = nil
+			end
+		else
+			status(412)
+			event.errors.each do |e|
+		    puts e
+			end
+			flash[:error] = "Please Try Again."
 		end
 	else
 		event.users << current_user
 		if event.save
 			status(202)
+			current_user.user_event_associations.first(:event => event).update(:attending => true)
 			flash[:success] = "You are now attending #{event.name}."
 			if !session[:invite].nil?
 				invite = Invite.get(session[:invite])
@@ -77,9 +87,8 @@ put '/events/:id/rsvp' do
 			end
 			flash[:error] = "Please Try Again."
 		end
-		redirect "/#{event.permalink}"
-
 	end
+	redirect "/#{event.permalink}"
 
 end
 
