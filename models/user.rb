@@ -99,7 +99,7 @@ class User
 
   # Lists related people
   def people_matches
-    @users = User.all(:limit => 4, :id.not => self.id)
+    @users = self.events.user_event_associations(:attending => true).users(:limit => 4, :id.not => self.id)
   end
 
   def events_with_unanswered_questions

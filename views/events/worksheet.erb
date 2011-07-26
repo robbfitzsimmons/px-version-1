@@ -1,4 +1,4 @@
-<h1><%= @event.name %> Invites (<%= @event.users.length %>)</h1>
+<h1><%= @event.name %> Invites (<%= @event.invites.length %>)</h1>
 
 <table>
 	<thead>
@@ -6,7 +6,7 @@
 		<th>Email</th>
 		<th>Sent</th>
 		<th>Opened</th>
-		<th>Registered</th>
+		<th>Attending</th>
 		<th>Checked In</th>
 	</thead>
 
@@ -31,7 +31,7 @@
 	    <td>true</td>
 	    <td><%= invite.visited %></td>
 	    <td>
-	    	<%= invite.user.nil? == false && invite.user.user_event_associations.events.include?(@event)  ? "true" : "false" %>
+	    	<%= invite.user.nil? == false && invite.user.user_event_associations(:attending => true).events.include?(@event)  ? "true" : "false" %>
 	    </td>
 	    <td>
 	    	<% if !invite.user.nil? && invite.user.user_event_associations.events.include?(@event)  %>
