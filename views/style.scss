@@ -231,7 +231,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,hr,p,input,textarea,bl
 }
 
 @mixin barcolor($color) {
-	#top, #bot {
+	.top, .bot {
 		@include gradient($color, $color - #111);
 		@include boxshadow(inset 0 1px 1px 0 $color + #222);
 		border: 1px solid $color - #222;
@@ -239,19 +239,19 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,hr,p,input,textarea,bl
 }
 
 @mixin linkcolor($color) {
-	#mid a { color: $color; }
+	.mid a { color: $color; }
 }
 
 @mixin inputactive($color, $bg) {			
-	#mid input[type=text],
-	#mid input[type=password],
-	#mid textarea {
+	.mid input[type=text],
+	.mid input[type=password],
+	.mid textarea {
 		&:hover {
 			background: #fafafa;
 		}
 	}
-	#mid input.active,
-	#mid textarea.active {
+	.mid input.active,
+	.mid textarea.active {
 		@include boxshadow2(inset 0 2px 2px 0 $bg - #111, 0 0 4px 0 $color);
 		background: $bg;
 		border: 1px solid $color + #444;
@@ -526,15 +526,15 @@ header {
 	}
 } /* end header */
 
-#top {
+.top {
 	@include radius-top(10px);
 	color: #f7f7f7;
 	float: left;
 	line-height: 1em;
-	padding: 15px;
-	width: 930px;
+	width: 960px;
 	
-	h3 {
+	h2 {
+		padding: 5px;
 		text-align: center;
 		span {
 			display: block;
@@ -543,15 +543,146 @@ header {
 			text-transform: uppercase;
 		}
 	}
+	
+	p {
+		padding: 15px;
+	}
 }
 
-#mid {
+.mid {
 	background: #fff;
 	border-left: 1px solid #ccc;
 	border-right: 1px solid #ccc;
 	float: left;
 	padding: 45px;
 	width: 870px;
+			
+	.social {
+		background: url('/images/socialicons.gif') no-repeat;
+		display: block;
+		float: left;
+		font-size: 0;
+		height: 35px;
+		line-height: -9999em;
+		margin: 5px 12px 0 0;
+		overflow: hidden;
+		width: 32px;
+		
+		&.email {
+			background-position: -1px 0;
+			&:hover {
+				background-position: -1px -36px;
+			}
+			&:active {
+				background-position: -1px -72px;
+			}
+		}
+		
+		&.www {
+			background-position: -33px 0;
+			&:hover {
+				background-position: -33px -36px;
+			}
+			&:active {
+				background-position: -33px -72px;
+			}
+		}
+		
+		&.linkedin {
+			background-position: -65px 0;
+			&:hover {
+				background-position: -65px -36px;
+			}
+			&:active {
+				background-position: -65px -72px;
+			}
+		}
+		
+		&.facebook {
+			background-position: -97px 0;
+			&:hover {
+				background-position: -97px -36px;
+			}
+			&:active {
+				background-position: -97px -72px;
+			}
+		}
+		
+		&.twitter {
+			background-position: -129px 0;
+			&:hover {
+				background-position: -129px -36px;
+			}
+			&:active {
+				background-position: -129px -72px;
+			}
+		}
+	}
+	.nametag-lg {
+		overflow: hidden;
+		margin: 0 0 20px 0;
+		width: 580px;
+		
+		img {
+			float: left;
+			height: 80px;
+			margin: 0 20px 0 0;
+			width: 80px;
+		}
+		
+		.top {
+			width: 578px;
+		}
+		
+		.mid {
+			padding: 20px;
+			width: 538px;
+		}
+	}
+	
+	.nametag-sm {
+		overflow: hidden;
+		width: 245px;
+		
+		h2 {
+			strong {
+				font-weight: normal;
+				text-transform: uppercase;
+			}
+		}
+		
+		h4 {
+			font-size: 16px;
+		}
+		
+		h5 {
+			font-size: 15px;
+			line-height: 1.3em;
+		}
+		
+		h6 {
+			font-size: 14px;
+		}
+		
+		img {
+			float: left;
+			height: 45px;
+			margin: 0 10px 0 0;
+			width: 45px;
+		}
+		
+		.top {
+			width: 243px;
+		}
+		
+		.mid {
+			padding: 10px;
+			width: 223px;
+		}
+		.bot {
+			height: 15px;
+		}
+	}
 		
 	h3 {
 		color: #484848;
@@ -1090,9 +1221,9 @@ header {
 			}
 		}
 	}
-} /* end #mid */
+} /* end .mid */
 
-#bot {
+.bot {
 	@include radius-bot(10px);
 	color: #fff;
 	float: left;

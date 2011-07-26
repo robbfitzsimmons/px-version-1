@@ -7,7 +7,7 @@ header, footer, article, section, hgroup, nav, figure {
   display: block; }
 
 /* http://meyerweb.com/eric/tools/css/reset */
-html, body, div, span, applet, object, iframe, h1, h2, #mid #landing .features article h3, h3, h4, h5, h6, hr, p, input, textarea, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, .mid #landing .features article h3, h3, h4, h5, h6, hr, p, input, textarea, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
@@ -62,7 +62,7 @@ body {
 .container {
   margin: 0 auto;
   width: 960px; }
-  .container #top, .container #bot {
+  .container .top, .container .bot {
     background: #275fc0;
     background-image: -moz-linear-gradient(top, #3870d1, #275fc0);
     background-image: -ms-linear-gradient(top, #3870d1, #275fc0);
@@ -76,14 +76,14 @@ body {
     -webkit-box-shadow: inset 0 1px 1px 0 #5a92f3;
     box-shadow: inset 0 1px 1px 0 #5a92f3;
     border: 1px solid #164eaf; }
-  .container #mid a {
+  .container .mid a {
     color: #3870d1; }
-  .container #mid input[type=text]:hover, .container #mid form textarea:hover,
-  .container #mid input[type=password]:hover,
-  .container #mid textarea:hover {
+  .container .mid input[type=text]:hover, .container .mid form textarea:hover,
+  .container .mid input[type=password]:hover,
+  .container .mid textarea:hover {
     background: #fafafa; }
-  .container #mid input.active,
-  .container #mid textarea.active {
+  .container .mid input.active,
+  .container .mid textarea.active {
     -moz-box-shadow: inset 0 2px 2px 0 #dbdfe7, 0 0 4px 0 #3870d1;
     -ms-box-shadow: inset 0 2px 2px 0 #dbdfe7, 0 0 4px 0 #3870d1;
     -o-box-shadow: inset 0 2px 2px 0 #dbdfe7, 0 0 4px 0 #3870d1;
@@ -92,10 +92,10 @@ body {
     background: #ecf0f8;
     border: 1px solid #7cb4ff;
     color: #3870d1; }
-    .container #mid input.active:hover,
-    .container #mid textarea.active:hover {
+    .container .mid input.active:hover,
+    .container .mid textarea.active:hover {
       background: #ecf0f8; }
-  .container.dark-gray #top, .container.dark-gray #bot {
+  .container.dark-gray .top, .container.dark-gray .bot {
     background: #666666;
     background-image: -moz-linear-gradient(top, #777777, #666666);
     background-image: -ms-linear-gradient(top, #777777, #666666);
@@ -109,11 +109,11 @@ body {
     -webkit-box-shadow: inset 0 1px 1px 0 #999999;
     box-shadow: inset 0 1px 1px 0 #999999;
     border: 1px solid #555555; }
-  .container.dark-gray #mid a {
+  .container.dark-gray .mid a {
     color: #777777; }
-  .container.dark-gray #mid input[type=text]:hover, .container.dark-gray #mid form textarea:hover, .container.dark-gray #mid input[type=password]:hover, .container.dark-gray #mid textarea:hover {
+  .container.dark-gray .mid input[type=text]:hover, .container.dark-gray .mid form textarea:hover, .container.dark-gray .mid input[type=password]:hover, .container.dark-gray .mid textarea:hover {
     background: #fafafa; }
-  .container.dark-gray #mid input.active, .container.dark-gray #mid textarea.active {
+  .container.dark-gray .mid input.active, .container.dark-gray .mid textarea.active {
     -moz-box-shadow: inset 0 2px 2px 0 #d7d7d7, 0 0 4px 0 #777777;
     -ms-box-shadow: inset 0 2px 2px 0 #d7d7d7, 0 0 4px 0 #777777;
     -o-box-shadow: inset 0 2px 2px 0 #d7d7d7, 0 0 4px 0 #777777;
@@ -122,9 +122,9 @@ body {
     background: #e8e8e8;
     border: 1px solid #bbbbbb;
     color: #777777; }
-    .container.dark-gray #mid input.active:hover, .container.dark-gray #mid textarea.active:hover {
+    .container.dark-gray .mid input.active:hover, .container.dark-gray .mid textarea.active:hover {
       background: #e8e8e8; }
-  .container.dark-gray-blue #top, .container.dark-gray-blue #bot {
+  .container.dark-gray-blue .top, .container.dark-gray-blue .bot {
     background: #1f516b;
     background-image: -moz-linear-gradient(top, #30627c, #1f516b);
     background-image: -ms-linear-gradient(top, #30627c, #1f516b);
@@ -138,11 +138,11 @@ body {
     -webkit-box-shadow: inset 0 1px 1px 0 #52849e;
     box-shadow: inset 0 1px 1px 0 #52849e;
     border: 1px solid #0e405a; }
-  .container.dark-gray-blue #mid a {
+  .container.dark-gray-blue .mid a {
     color: #30627c; }
-  .container.dark-gray-blue #mid input[type=text]:hover, .container.dark-gray-blue #mid form textarea:hover, .container.dark-gray-blue #mid input[type=password]:hover, .container.dark-gray-blue #mid textarea:hover {
+  .container.dark-gray-blue .mid input[type=text]:hover, .container.dark-gray-blue .mid form textarea:hover, .container.dark-gray-blue .mid input[type=password]:hover, .container.dark-gray-blue .mid textarea:hover {
     background: #fafafa; }
-  .container.dark-gray-blue #mid input.active, .container.dark-gray-blue #mid textarea.active {
+  .container.dark-gray-blue .mid input.active, .container.dark-gray-blue .mid textarea.active {
     -moz-box-shadow: inset 0 2px 2px 0 #ced7dc, 0 0 4px 0 #30627c;
     -ms-box-shadow: inset 0 2px 2px 0 #ced7dc, 0 0 4px 0 #30627c;
     -o-box-shadow: inset 0 2px 2px 0 #ced7dc, 0 0 4px 0 #30627c;
@@ -151,9 +151,9 @@ body {
     background: #dfe8ed;
     border: 1px solid #74a6c0;
     color: #30627c; }
-    .container.dark-gray-blue #mid input.active:hover, .container.dark-gray-blue #mid textarea.active:hover {
+    .container.dark-gray-blue .mid input.active:hover, .container.dark-gray-blue .mid textarea.active:hover {
       background: #dfe8ed; }
-  .container.forest-green #top, .container.forest-green #bot {
+  .container.forest-green .top, .container.forest-green .bot {
     background: #005256;
     background-image: -moz-linear-gradient(top, #016367, #005256);
     background-image: -ms-linear-gradient(top, #016367, #005256);
@@ -167,11 +167,11 @@ body {
     -webkit-box-shadow: inset 0 1px 1px 0 #238589;
     box-shadow: inset 0 1px 1px 0 #238589;
     border: 1px solid #004145; }
-  .container.forest-green #mid a {
+  .container.forest-green .mid a {
     color: #016367; }
-  .container.forest-green #mid input[type=text]:hover, .container.forest-green #mid form textarea:hover, .container.forest-green #mid input[type=password]:hover, .container.forest-green #mid textarea:hover {
+  .container.forest-green .mid input[type=text]:hover, .container.forest-green .mid form textarea:hover, .container.forest-green .mid input[type=password]:hover, .container.forest-green .mid textarea:hover {
     background: #fafafa; }
-  .container.forest-green #mid input.active, .container.forest-green #mid textarea.active {
+  .container.forest-green .mid input.active, .container.forest-green .mid textarea.active {
     -moz-box-shadow: inset 0 2px 2px 0 #d2e5d9, 0 0 4px 0 #016367;
     -ms-box-shadow: inset 0 2px 2px 0 #d2e5d9, 0 0 4px 0 #016367;
     -o-box-shadow: inset 0 2px 2px 0 #d2e5d9, 0 0 4px 0 #016367;
@@ -180,9 +180,9 @@ body {
     background: #e3f6ea;
     border: 1px solid #45a7ab;
     color: #016367; }
-    .container.forest-green #mid input.active:hover, .container.forest-green #mid textarea.active:hover {
+    .container.forest-green .mid input.active:hover, .container.forest-green .mid textarea.active:hover {
       background: #e3f6ea; }
-  .container.light-gray #top, .container.light-gray #bot {
+  .container.light-gray .top, .container.light-gray .bot {
     background: #bbbbbb;
     background-image: -moz-linear-gradient(top, #cccccc, #bbbbbb);
     background-image: -ms-linear-gradient(top, #cccccc, #bbbbbb);
@@ -196,11 +196,11 @@ body {
     -webkit-box-shadow: inset 0 1px 1px 0 #eeeeee;
     box-shadow: inset 0 1px 1px 0 #eeeeee;
     border: 1px solid #aaaaaa; }
-  .container.light-gray #mid a {
+  .container.light-gray .mid a {
     color: #cccccc; }
-  .container.light-gray #mid input[type=text]:hover, .container.light-gray #mid form textarea:hover, .container.light-gray #mid input[type=password]:hover, .container.light-gray #mid textarea:hover {
+  .container.light-gray .mid input[type=text]:hover, .container.light-gray .mid form textarea:hover, .container.light-gray .mid input[type=password]:hover, .container.light-gray .mid textarea:hover {
     background: #fafafa; }
-  .container.light-gray #mid input.active, .container.light-gray #mid textarea.active {
+  .container.light-gray .mid input.active, .container.light-gray .mid textarea.active {
     -moz-box-shadow: inset 0 2px 2px 0 #d7d7d7, 0 0 4px 0 #cccccc;
     -ms-box-shadow: inset 0 2px 2px 0 #d7d7d7, 0 0 4px 0 #cccccc;
     -o-box-shadow: inset 0 2px 2px 0 #d7d7d7, 0 0 4px 0 #cccccc;
@@ -209,9 +209,9 @@ body {
     background: #e8e8e8;
     border: 1px solid white;
     color: #cccccc; }
-    .container.light-gray #mid input.active:hover, .container.light-gray #mid textarea.active:hover {
+    .container.light-gray .mid input.active:hover, .container.light-gray .mid textarea.active:hover {
       background: #e8e8e8; }
-  .container.lime-popsicle #top, .container.lime-popsicle #bot {
+  .container.lime-popsicle .top, .container.lime-popsicle .bot {
     background: #88ba00;
     background-image: -moz-linear-gradient(top, #99cb02, #88ba00);
     background-image: -ms-linear-gradient(top, #99cb02, #88ba00);
@@ -225,11 +225,11 @@ body {
     -webkit-box-shadow: inset 0 1px 1px 0 #bbed24;
     box-shadow: inset 0 1px 1px 0 #bbed24;
     border: 1px solid #77a900; }
-  .container.lime-popsicle #mid a {
+  .container.lime-popsicle .mid a {
     color: #99cb02; }
-  .container.lime-popsicle #mid input[type=text]:hover, .container.lime-popsicle #mid form textarea:hover, .container.lime-popsicle #mid input[type=password]:hover, .container.lime-popsicle #mid textarea:hover {
+  .container.lime-popsicle .mid input[type=text]:hover, .container.lime-popsicle .mid form textarea:hover, .container.lime-popsicle .mid input[type=password]:hover, .container.lime-popsicle .mid textarea:hover {
     background: #fafafa; }
-  .container.lime-popsicle #mid input.active, .container.lime-popsicle #mid textarea.active {
+  .container.lime-popsicle .mid input.active, .container.lime-popsicle .mid textarea.active {
     -moz-box-shadow: inset 0 2px 2px 0 #e2e6d5, 0 0 4px 0 #99cb02;
     -ms-box-shadow: inset 0 2px 2px 0 #e2e6d5, 0 0 4px 0 #99cb02;
     -o-box-shadow: inset 0 2px 2px 0 #e2e6d5, 0 0 4px 0 #99cb02;
@@ -238,9 +238,9 @@ body {
     background: #f3f7e6;
     border: 1px solid #ddff46;
     color: #99cb02; }
-    .container.lime-popsicle #mid input.active:hover, .container.lime-popsicle #mid textarea.active:hover {
+    .container.lime-popsicle .mid input.active:hover, .container.lime-popsicle .mid textarea.active:hover {
       background: #f3f7e6; }
-  .container.mac-n-cheese #top, .container.mac-n-cheese #bot {
+  .container.mac-n-cheese .top, .container.mac-n-cheese .bot {
     background: #edba00;
     background-image: -moz-linear-gradient(top, #fecb00, #edba00);
     background-image: -ms-linear-gradient(top, #fecb00, #edba00);
@@ -254,11 +254,11 @@ body {
     -webkit-box-shadow: inset 0 1px 1px 0 #ffed22;
     box-shadow: inset 0 1px 1px 0 #ffed22;
     border: 1px solid #dca900; }
-  .container.mac-n-cheese #mid a {
+  .container.mac-n-cheese .mid a {
     color: #fecb00; }
-  .container.mac-n-cheese #mid input[type=text]:hover, .container.mac-n-cheese #mid form textarea:hover, .container.mac-n-cheese #mid input[type=password]:hover, .container.mac-n-cheese #mid textarea:hover {
+  .container.mac-n-cheese .mid input[type=text]:hover, .container.mac-n-cheese .mid form textarea:hover, .container.mac-n-cheese .mid input[type=password]:hover, .container.mac-n-cheese .mid textarea:hover {
     background: #fafafa; }
-  .container.mac-n-cheese #mid input.active, .container.mac-n-cheese #mid textarea.active {
+  .container.mac-n-cheese .mid input.active, .container.mac-n-cheese .mid textarea.active {
     -moz-box-shadow: inset 0 2px 2px 0 #e6e2d1, 0 0 4px 0 #fecb00;
     -ms-box-shadow: inset 0 2px 2px 0 #e6e2d1, 0 0 4px 0 #fecb00;
     -o-box-shadow: inset 0 2px 2px 0 #e6e2d1, 0 0 4px 0 #fecb00;
@@ -267,9 +267,9 @@ body {
     background: #f7f3e2;
     border: 1px solid #ffff44;
     color: #fecb00; }
-    .container.mac-n-cheese #mid input.active:hover, .container.mac-n-cheese #mid textarea.active:hover {
+    .container.mac-n-cheese .mid input.active:hover, .container.mac-n-cheese .mid textarea.active:hover {
       background: #f7f3e2; }
-  .container.pink #top, .container.pink #bot {
+  .container.pink .top, .container.pink .bot {
     background: #ee5689;
     background-image: -moz-linear-gradient(top, #ff679a, #ee5689);
     background-image: -ms-linear-gradient(top, #ff679a, #ee5689);
@@ -283,11 +283,11 @@ body {
     -webkit-box-shadow: inset 0 1px 1px 0 #ff89bc;
     box-shadow: inset 0 1px 1px 0 #ff89bc;
     border: 1px solid #dd4578; }
-  .container.pink #mid a {
+  .container.pink .mid a {
     color: #ff679a; }
-  .container.pink #mid input[type=text]:hover, .container.pink #mid form textarea:hover, .container.pink #mid input[type=password]:hover, .container.pink #mid textarea:hover {
+  .container.pink .mid input[type=text]:hover, .container.pink .mid form textarea:hover, .container.pink .mid input[type=password]:hover, .container.pink .mid textarea:hover {
     background: #fafafa; }
-  .container.pink #mid input.active, .container.pink #mid textarea.active {
+  .container.pink .mid input.active, .container.pink .mid textarea.active {
     -moz-box-shadow: inset 0 2px 2px 0 #e8d9de, 0 0 4px 0 #ff679a;
     -ms-box-shadow: inset 0 2px 2px 0 #e8d9de, 0 0 4px 0 #ff679a;
     -o-box-shadow: inset 0 2px 2px 0 #e8d9de, 0 0 4px 0 #ff679a;
@@ -296,9 +296,9 @@ body {
     background: #f9eaef;
     border: 1px solid #ffabde;
     color: #ff679a; }
-    .container.pink #mid input.active:hover, .container.pink #mid textarea.active:hover {
+    .container.pink .mid input.active:hover, .container.pink .mid textarea.active:hover {
       background: #f9eaef; }
-  .container.purple #top, .container.purple #bot {
+  .container.purple .top, .container.purple .bot {
     background: #be5abe;
     background-image: -moz-linear-gradient(top, #cf6bcf, #be5abe);
     background-image: -ms-linear-gradient(top, #cf6bcf, #be5abe);
@@ -312,11 +312,11 @@ body {
     -webkit-box-shadow: inset 0 1px 1px 0 #f18df1;
     box-shadow: inset 0 1px 1px 0 #f18df1;
     border: 1px solid #ad49ad; }
-  .container.purple #mid a {
+  .container.purple .mid a {
     color: #cf6bcf; }
-  .container.purple #mid input[type=text]:hover, .container.purple #mid form textarea:hover, .container.purple #mid input[type=password]:hover, .container.purple #mid textarea:hover {
+  .container.purple .mid input[type=text]:hover, .container.purple .mid form textarea:hover, .container.purple .mid input[type=password]:hover, .container.purple .mid textarea:hover {
     background: #fafafa; }
-  .container.purple #mid input.active, .container.purple #mid textarea.active {
+  .container.purple .mid input.active, .container.purple .mid textarea.active {
     -moz-box-shadow: inset 0 2px 2px 0 #edd9ed, 0 0 4px 0 #cf6bcf;
     -ms-box-shadow: inset 0 2px 2px 0 #edd9ed, 0 0 4px 0 #cf6bcf;
     -o-box-shadow: inset 0 2px 2px 0 #edd9ed, 0 0 4px 0 #cf6bcf;
@@ -325,9 +325,9 @@ body {
     background: #feeafe;
     border: 1px solid #ffafff;
     color: #cf6bcf; }
-    .container.purple #mid input.active:hover, .container.purple #mid textarea.active:hover {
+    .container.purple .mid input.active:hover, .container.purple .mid textarea.active:hover {
       background: #feeafe; }
-  .container.red #top, .container.red #bot {
+  .container.red .top, .container.red .bot {
     background: #d60000;
     background-image: -moz-linear-gradient(top, #e70000, #d60000);
     background-image: -ms-linear-gradient(top, #e70000, #d60000);
@@ -341,11 +341,11 @@ body {
     -webkit-box-shadow: inset 0 1px 1px 0 #ff2222;
     box-shadow: inset 0 1px 1px 0 #ff2222;
     border: 1px solid #c50000; }
-  .container.red #mid a {
+  .container.red .mid a {
     color: #e70000; }
-  .container.red #mid input[type=text]:hover, .container.red #mid form textarea:hover, .container.red #mid input[type=password]:hover, .container.red #mid textarea:hover {
+  .container.red .mid input[type=text]:hover, .container.red .mid form textarea:hover, .container.red .mid input[type=password]:hover, .container.red .mid textarea:hover {
     background: #fafafa; }
-  .container.red #mid input.active, .container.red #mid textarea.active {
+  .container.red .mid input.active, .container.red .mid textarea.active {
     -moz-box-shadow: inset 0 2px 2px 0 #ead5d5, 0 0 4px 0 #e70000;
     -ms-box-shadow: inset 0 2px 2px 0 #ead5d5, 0 0 4px 0 #e70000;
     -o-box-shadow: inset 0 2px 2px 0 #ead5d5, 0 0 4px 0 #e70000;
@@ -354,9 +354,9 @@ body {
     background: #fbe6e6;
     border: 1px solid #ff4444;
     color: #e70000; }
-    .container.red #mid input.active:hover, .container.red #mid textarea.active:hover {
+    .container.red .mid input.active:hover, .container.red .mid textarea.active:hover {
       background: #fbe6e6; }
-  .container.sunset-orange #top, .container.sunset-orange #bot {
+  .container.sunset-orange .top, .container.sunset-orange .bot {
     background: #ee5500;
     background-image: -moz-linear-gradient(top, #ff6600, #ee5500);
     background-image: -ms-linear-gradient(top, #ff6600, #ee5500);
@@ -370,11 +370,11 @@ body {
     -webkit-box-shadow: inset 0 1px 1px 0 #ff8822;
     box-shadow: inset 0 1px 1px 0 #ff8822;
     border: 1px solid #dd4400; }
-  .container.sunset-orange #mid a {
+  .container.sunset-orange .mid a {
     color: #ff6600; }
-  .container.sunset-orange #mid input[type=text]:hover, .container.sunset-orange #mid form textarea:hover, .container.sunset-orange #mid input[type=password]:hover, .container.sunset-orange #mid textarea:hover {
+  .container.sunset-orange .mid input[type=text]:hover, .container.sunset-orange .mid form textarea:hover, .container.sunset-orange .mid input[type=password]:hover, .container.sunset-orange .mid textarea:hover {
     background: #fafafa; }
-  .container.sunset-orange #mid input.active, .container.sunset-orange #mid textarea.active {
+  .container.sunset-orange .mid input.active, .container.sunset-orange .mid textarea.active {
     -moz-box-shadow: inset 0 2px 2px 0 #ebdfd7, 0 0 4px 0 #ff6600;
     -ms-box-shadow: inset 0 2px 2px 0 #ebdfd7, 0 0 4px 0 #ff6600;
     -o-box-shadow: inset 0 2px 2px 0 #ebdfd7, 0 0 4px 0 #ff6600;
@@ -383,9 +383,9 @@ body {
     background: #fcf0e8;
     border: 1px solid #ffaa44;
     color: #ff6600; }
-    .container.sunset-orange #mid input.active:hover, .container.sunset-orange #mid textarea.active:hover {
+    .container.sunset-orange .mid input.active:hover, .container.sunset-orange .mid textarea.active:hover {
       background: #fcf0e8; }
-  .container.turquoise #top, .container.turquoise #bot {
+  .container.turquoise .top, .container.turquoise .bot {
     background: #189abc;
     background-image: -moz-linear-gradient(top, #29abcd, #189abc);
     background-image: -ms-linear-gradient(top, #29abcd, #189abc);
@@ -399,11 +399,11 @@ body {
     -webkit-box-shadow: inset 0 1px 1px 0 #4bcdef;
     box-shadow: inset 0 1px 1px 0 #4bcdef;
     border: 1px solid #0789ab; }
-  .container.turquoise #mid a {
+  .container.turquoise .mid a {
     color: #29abcd; }
-  .container.turquoise #mid input[type=text]:hover, .container.turquoise #mid form textarea:hover, .container.turquoise #mid input[type=password]:hover, .container.turquoise #mid textarea:hover {
+  .container.turquoise .mid input[type=text]:hover, .container.turquoise .mid form textarea:hover, .container.turquoise .mid input[type=password]:hover, .container.turquoise .mid textarea:hover {
     background: #fafafa; }
-  .container.turquoise #mid input.active, .container.turquoise #mid textarea.active {
+  .container.turquoise .mid input.active, .container.turquoise .mid textarea.active {
     -moz-box-shadow: inset 0 2px 2px 0 #deebee, 0 0 4px 0 #29abcd;
     -ms-box-shadow: inset 0 2px 2px 0 #deebee, 0 0 4px 0 #29abcd;
     -o-box-shadow: inset 0 2px 2px 0 #deebee, 0 0 4px 0 #29abcd;
@@ -412,7 +412,7 @@ body {
     background: #effcff;
     border: 1px solid #6defff;
     color: #29abcd; }
-    .container.turquoise #mid input.active:hover, .container.turquoise #mid textarea.active:hover {
+    .container.turquoise .mid input.active:hover, .container.turquoise .mid textarea.active:hover {
       background: #effcff; }
 
 header {
@@ -444,10 +444,10 @@ header {
       text-decoration: underline; }
       header #user-info a:hover {
         text-decoration: none; }
-    header #user-info h2, header #user-info #mid #landing .features article h3, #mid #landing .features article header #user-info h3, header #user-info h3, header #user-info h4, header #user-info p {
+    header #user-info h2, header #user-info .mid #landing .features article h3, .mid #landing .features article header #user-info h3, header #user-info h3, header #user-info h4, header #user-info p {
       float: left;
       width: 405px; }
-    header #user-info h2, header #user-info #mid #landing .features article h3, #mid #landing .features article header #user-info h3 {
+    header #user-info h2, header #user-info .mid #landing .features article h3, .mid #landing .features article header #user-info h3 {
       font-size: 24px;
       color: #3870d1;
       line-height: 1em;
@@ -637,7 +637,7 @@ header {
       text-shadow: 0 1px 1px #e35851; }
 
 /* end header */
-#top {
+.top {
   -moz-border-radius-topleft: 10px;
   -moz-border-radius-topright: 10px;
   -ms-border-top-left-radius: 10px;
@@ -651,17 +651,19 @@ header {
   color: #f7f7f7;
   float: left;
   line-height: 1em;
-  padding: 15px;
-  width: 930px; }
-  #top h3 {
+  width: 960px; }
+  .top h2, .top .mid #landing .features article h3, .mid #landing .features article .top h3 {
+    padding: 5px;
     text-align: center; }
-    #top h3 span {
+    .top h2 span, .top .mid #landing .features article h3 span, .mid #landing .features article .top h3 span {
       display: block;
       font-size: 24px;
       line-height: 1em;
       text-transform: uppercase; }
+  .top p {
+    padding: 15px; }
 
-#mid {
+.mid {
   background: #fff;
   border-left: 1px solid #ccc;
   border-right: 1px solid #ccc;
@@ -669,26 +671,105 @@ header {
   padding: 45px;
   width: 870px;
   /* landing */ }
-  #mid h3 {
+  .mid .social {
+    background: url("/images/socialicons.gif") no-repeat;
+    display: block;
+    float: left;
+    font-size: 0;
+    height: 35px;
+    line-height: -9999em;
+    margin: 5px 12px 0 0;
+    overflow: hidden;
+    width: 32px; }
+    .mid .social.email {
+      background-position: -1px 0; }
+      .mid .social.email:hover {
+        background-position: -1px -36px; }
+      .mid .social.email:active {
+        background-position: -1px -72px; }
+    .mid .social.www {
+      background-position: -33px 0; }
+      .mid .social.www:hover {
+        background-position: -33px -36px; }
+      .mid .social.www:active {
+        background-position: -33px -72px; }
+    .mid .social.linkedin {
+      background-position: -65px 0; }
+      .mid .social.linkedin:hover {
+        background-position: -65px -36px; }
+      .mid .social.linkedin:active {
+        background-position: -65px -72px; }
+    .mid .social.facebook {
+      background-position: -97px 0; }
+      .mid .social.facebook:hover {
+        background-position: -97px -36px; }
+      .mid .social.facebook:active {
+        background-position: -97px -72px; }
+    .mid .social.twitter {
+      background-position: -129px 0; }
+      .mid .social.twitter:hover {
+        background-position: -129px -36px; }
+      .mid .social.twitter:active {
+        background-position: -129px -72px; }
+  .mid .nametag-lg {
+    overflow: hidden;
+    margin: 0 0 20px 0;
+    width: 580px; }
+    .mid .nametag-lg img {
+      float: left;
+      height: 80px;
+      margin: 0 20px 0 0;
+      width: 80px; }
+    .mid .nametag-lg .top {
+      width: 578px; }
+    .mid .nametag-lg .mid {
+      padding: 20px;
+      width: 538px; }
+  .mid .nametag-sm {
+    overflow: hidden;
+    width: 245px; }
+    .mid .nametag-sm h2 strong, .mid .nametag-sm #landing .features article h3 strong, .mid #landing .features article .nametag-sm h3 strong {
+      font-weight: normal;
+      text-transform: uppercase; }
+    .mid .nametag-sm h4 {
+      font-size: 16px; }
+    .mid .nametag-sm h5 {
+      font-size: 15px;
+      line-height: 1.3em; }
+    .mid .nametag-sm h6 {
+      font-size: 14px; }
+    .mid .nametag-sm img {
+      float: left;
+      height: 45px;
+      margin: 0 10px 0 0;
+      width: 45px; }
+    .mid .nametag-sm .top {
+      width: 243px; }
+    .mid .nametag-sm .mid {
+      padding: 10px;
+      width: 223px; }
+    .mid .nametag-sm .bot {
+      height: 15px; }
+  .mid h3 {
     color: #484848;
     font-family: "Raleway", "Arial", sans-serif;
     font-size: 36px;
     line-height: 1em;
     margin: 0 0 20px 0; }
-  #mid h4 {
+  .mid h4 {
     color: #484848;
     font-size: 22px;
     line-height: 1.2em; }
-  #mid h5 {
+  .mid h5 {
     font-style: italic;
     line-height: 1.6em; }
-  #mid h6 {
+  .mid h6 {
     color: #ccc;
     font-family: "Istok Web", "Arial", sans-serif;
     font-size: 14px;
     line-height: 1.5em;
     text-transform: uppercase; }
-  #mid span.date {
+  .mid span.date {
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
@@ -704,7 +785,7 @@ header {
     margin: 0 15px 0 0;
     text-align: center;
     width: 40px; }
-    #mid span.date strong {
+    .mid span.date strong {
       -moz-box-shadow: inset 0 2px 2px 0 #f46766;
       -ms-box-shadow: inset 0 2px 2px 0 #f46766;
       -o-box-shadow: inset 0 2px 2px 0 #f46766;
@@ -737,15 +818,15 @@ header {
       text-shadow: 0 1px 1px #e35851;
       text-transform: uppercase;
       width: 40px; }
-  #mid table {
+  .mid table {
     border: 1px solid #d8d8d8;
     float: left;
     margin: 15px 0 0;
     text-align: left;
     width: 100%; }
-    #mid table thead {
+    .mid table thead {
       width: 100%; }
-      #mid table thead th {
+      .mid table thead th {
         background: #eeeeee;
         background-image: -moz-linear-gradient(top, #f6f6f6, #eeeeee);
         background-image: -ms-linear-gradient(top, #f6f6f6, #eeeeee);
@@ -762,13 +843,13 @@ header {
         border: 1px solid #dbdbdb;
         color: #b8b8b8;
         padding: 10px; }
-    #mid table tr td {
+    .mid table tr td {
       padding: 10px; }
-    #mid table tr.even {
+    .mid table tr.even {
       background: #eee; }
-  #mid ul {
+  .mid ul {
     margin: 0 0 15px 0; }
-  #mid ul.table {
+  .mid ul.table {
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
@@ -777,36 +858,36 @@ header {
     border: 1px solid #ccc;
     float: left;
     width: 100%; }
-    #mid ul.table li {
+    .mid ul.table li {
       border-bottom: 1px solid #d8d8d8;
       color: #b8b8b8;
       display: block;
       float: none;
       padding: 10px;
       width: 560px; }
-      #mid ul.table li div {
+      .mid ul.table li div {
         float: left;
         width: 503px; }
-      #mid ul.table li h4 {
+      .mid ul.table li h4 {
         width: 503px; }
-      #mid ul.table li h6 {
+      .mid ul.table li h6 {
         line-height: 1.8em;
         margin: 0 0 15px 0; }
-      #mid ul.table li p {
+      .mid ul.table li p {
         color: #ccc;
         font-family: "Istok Web", "Arial", sans-serif;
         font-size: 14px;
         line-height: 1.8em;
         margin: 0;
         text-transform: uppercase; }
-        #mid ul.table li p span {
+        .mid ul.table li p span {
           float: left;
           width: 140px; }
-      #mid ul.table li.even {
+      .mid ul.table li.even {
         background: #eee; }
-      #mid ul.table li.last {
+      .mid ul.table li.last {
         border: 0; }
-  #mid #landing h1 {
+  .mid #landing h1 {
     color: #484848;
     float: left;
     font-family: "Raleway", "Arial", sans-serif;
@@ -815,7 +896,7 @@ header {
     margin: 0 auto 20px;
     text-align: center;
     width: 100%; }
-  #mid #landing h2, #mid #landing .features article h3 {
+  .mid #landing h2, .mid #landing .features article h3 {
     color: #3870d1;
     float: left;
     font-family: "Sue Ellen Francisco", cursive;
@@ -825,28 +906,28 @@ header {
     text-align: center;
     text-transform: lowercase;
     width: 100%; }
-  #mid #landing .features {
+  .mid #landing .features {
     margin: 0 auto;
     width: 540px; }
-    #mid #landing .features article {
+    .mid #landing .features article {
       float: left;
       width: 160px; }
-      #mid #landing .features article.mid {
+      .mid #landing .features article.mid {
         margin: 0 30px; }
-      #mid #landing .features article h3 {
+      .mid #landing .features article h3 {
         font-size: 30px;
         margin: 0 auto 20px;
         text-align: left; }
-      #mid #landing .features article p {
+      .mid #landing .features article p {
         font-size: 16px; }
-  #mid #landing ul {
+  .mid #landing ul {
     background: red;
     margin: 0 auto;
     width: 230px; }
-    #mid #landing ul li {
+    .mid #landing ul li {
       float: left;
       margin: 0 15px 0 0; }
-    #mid #landing ul a {
+    .mid #landing ul a {
       -moz-box-shadow: 0 1px 1px 0 #eeeeee;
       -ms-box-shadow: 0 1px 1px 0 #eeeeee;
       -o-box-shadow: 0 1px 1px 0 #eeeeee;
@@ -875,13 +956,13 @@ header {
       text-align: center;
       text-decoration: none;
       text-shadow: 0 1px 1px #fff; }
-      #mid #landing ul a img {
+      .mid #landing ul a img {
         -moz-box-shadow: 1px 1px 1px 0 white;
         -ms-box-shadow: 1px 1px 1px 0 white;
         -o-box-shadow: 1px 1px 1px 0 white;
         -webkit-box-shadow: 1px 1px 1px 0 white;
         box-shadow: 1px 1px 1px 0 white; }
-      #mid #landing ul a:hover {
+      .mid #landing ul a:hover {
         -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
         -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
         -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
@@ -897,13 +978,13 @@ header {
         border: 1px solid #884f51;
         color: #7e171e;
         text-shadow: 0 1px 1px #e35851; }
-        #mid #landing ul a:hover img {
+        .mid #landing ul a:hover img {
           -moz-box-shadow: 1px 1px 1px 0 #e35851;
           -ms-box-shadow: 1px 1px 1px 0 #e35851;
           -o-box-shadow: 1px 1px 1px 0 #e35851;
           -webkit-box-shadow: 1px 1px 1px 0 #e35851;
           box-shadow: 1px 1px 1px 0 #e35851; }
-      #mid #landing ul a:active {
+      .mid #landing ul a:active {
         background: #df4c4b;
         background-image: -moz-linear-gradient(top, #c43037, #df4c4b);
         background-image: -ms-linear-gradient(top, #c43037, #df4c4b);
@@ -919,26 +1000,26 @@ header {
         border: 1px solid #884f51;
         color: #7e171e;
         text-shadow: 0 1px 1px #e35851; }
-  #mid #landing hr {
+  .mid #landing hr {
     color: #eaeaea;
     background: #eaeaea;
     float: left;
     height: 1px;
     margin: 60px 0;
     width: 100%; }
-  #mid #landing form {
+  .mid #landing form {
     margin: 0 auto;
     width: 530px; }
-    #mid #landing form input[type=text], #mid #landing form textarea,
-    #mid #landing form input[type=password] {
+    .mid #landing form input[type=text], .mid #landing form textarea,
+    .mid #landing form input[type=password] {
       width: 494px; }
-  #mid p {
+  .mid p {
     margin: 0 0 20px 0; }
-  #mid a {
+  .mid a {
     text-decoration: underline; }
-    #mid a:hover {
+    .mid a:hover {
       text-decoration: none; }
-    #mid a.button {
+    .mid a.button {
       -moz-box-shadow: 0 1px 1px 0 #eeeeee;
       -ms-box-shadow: 0 1px 1px 0 #eeeeee;
       -o-box-shadow: 0 1px 1px 0 #eeeeee;
@@ -969,13 +1050,13 @@ header {
       text-shadow: 0 1px 1px #fff;
       float: right;
       margin: 0 0 20px 0; }
-      #mid a.button img {
+      .mid a.button img {
         -moz-box-shadow: 1px 1px 1px 0 white;
         -ms-box-shadow: 1px 1px 1px 0 white;
         -o-box-shadow: 1px 1px 1px 0 white;
         -webkit-box-shadow: 1px 1px 1px 0 white;
         box-shadow: 1px 1px 1px 0 white; }
-      #mid a.button:hover {
+      .mid a.button:hover {
         -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
         -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
         -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
@@ -991,13 +1072,13 @@ header {
         border: 1px solid #884f51;
         color: #7e171e;
         text-shadow: 0 1px 1px #e35851; }
-        #mid a.button:hover img {
+        .mid a.button:hover img {
           -moz-box-shadow: 1px 1px 1px 0 #e35851;
           -ms-box-shadow: 1px 1px 1px 0 #e35851;
           -o-box-shadow: 1px 1px 1px 0 #e35851;
           -webkit-box-shadow: 1px 1px 1px 0 #e35851;
           box-shadow: 1px 1px 1px 0 #e35851; }
-      #mid a.button:active {
+      .mid a.button:active {
         background: #df4c4b;
         background-image: -moz-linear-gradient(top, #c43037, #df4c4b);
         background-image: -ms-linear-gradient(top, #c43037, #df4c4b);
@@ -1013,10 +1094,10 @@ header {
         border: 1px solid #884f51;
         color: #7e171e;
         text-shadow: 0 1px 1px #e35851; }
-  #mid form fieldset.radio {
+  .mid form fieldset.radio {
     margin: 0 0 25px 0; }
-  #mid form input[type=text], #mid form textarea,
-  #mid form input[type=password] {
+  .mid form input[type=text], .mid form textarea,
+  .mid form input[type=password] {
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
@@ -1033,8 +1114,8 @@ header {
     line-height: 1em;
     margin: 0 0 20px 0;
     padding: 18px; }
-    #mid form input[type=text].error, #mid form textarea.error,
-    #mid form input[type=password].error {
+    .mid form input[type=text].error, .mid form textarea.error,
+    .mid form input[type=password].error {
       -moz-box-shadow: 0 0 4px 0 #862020;
       -ms-box-shadow: 0 0 4px 0 #862020;
       -o-box-shadow: 0 0 4px 0 #862020;
@@ -1043,12 +1124,12 @@ header {
       background: #f0b7b7;
       border-color: #dc8181;
       color: #bf4e4d; }
-      #mid form input[type=text].error:hover, #mid form textarea.error:hover,
-      #mid form input[type=password].error:hover {
+      .mid form input[type=text].error:hover, .mid form textarea.error:hover,
+      .mid form input[type=password].error:hover {
         background: #f0b7b7; }
-  #mid form input[type=radio] {
+  .mid form input[type=radio] {
     margin: 0 10px 0 0; }
-  #mid form input[type=submit] {
+  .mid form input[type=submit] {
     -moz-box-shadow: 0 1px 1px 0 #eeeeee;
     -ms-box-shadow: 0 1px 1px 0 #eeeeee;
     -o-box-shadow: 0 1px 1px 0 #eeeeee;
@@ -1078,13 +1159,13 @@ header {
     text-decoration: none;
     text-shadow: 0 1px 1px #fff;
     float: right; }
-    #mid form input[type=submit] img {
+    .mid form input[type=submit] img {
       -moz-box-shadow: 1px 1px 1px 0 white;
       -ms-box-shadow: 1px 1px 1px 0 white;
       -o-box-shadow: 1px 1px 1px 0 white;
       -webkit-box-shadow: 1px 1px 1px 0 white;
       box-shadow: 1px 1px 1px 0 white; }
-    #mid form input[type=submit]:hover {
+    .mid form input[type=submit]:hover {
       -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
       -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
       -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
@@ -1100,13 +1181,13 @@ header {
       border: 1px solid #884f51;
       color: #7e171e;
       text-shadow: 0 1px 1px #e35851; }
-      #mid form input[type=submit]:hover img {
+      .mid form input[type=submit]:hover img {
         -moz-box-shadow: 1px 1px 1px 0 #e35851;
         -ms-box-shadow: 1px 1px 1px 0 #e35851;
         -o-box-shadow: 1px 1px 1px 0 #e35851;
         -webkit-box-shadow: 1px 1px 1px 0 #e35851;
         box-shadow: 1px 1px 1px 0 #e35851; }
-    #mid form input[type=submit]:active {
+    .mid form input[type=submit]:active {
       background: #df4c4b;
       background-image: -moz-linear-gradient(top, #c43037, #df4c4b);
       background-image: -ms-linear-gradient(top, #c43037, #df4c4b);
@@ -1122,73 +1203,73 @@ header {
       border: 1px solid #884f51;
       color: #7e171e;
       text-shadow: 0 1px 1px #e35851; }
-  #mid form textarea {
+  .mid form textarea {
     height: 46px; }
-  #mid .left-33 {
+  .mid .left-33 {
     float: left;
     width: 245px; }
-    #mid .left-33 ul {
+    .mid .left-33 ul {
       float: left;
       width: 100%; }
-      #mid .left-33 ul a.filtered {
+      .mid .left-33 ul a.filtered {
         color: #909090;
         cursor: text;
         font-weight: bold;
         text-decoration: none; }
-    #mid .left-33 h4 {
+    .mid .left-33 h4 {
       float: left;
       width: 100%; }
-    #mid .left-33 p {
+    .mid .left-33 p {
       float: left;
       width: 100%; }
-      #mid .left-33 p img {
+      .mid .left-33 p img {
         float: left;
         margin: 0 10px 0 0;
         width: 25px; }
-  #mid .left-50 {
+  .mid .left-50 {
     float: left;
     width: 390px; }
-    #mid .left-50 h2, #mid .left-50 #landing .features article h3, #mid #landing .features article .left-50 h3 {
+    .mid .left-50 h2, .mid .left-50 #landing .features article h3, .mid #landing .features article .left-50 h3 {
       color: #484848;
       font-family: "Raleway", "Arial", sans-serif;
       font-size: 44px;
       line-height: 1em;
       margin: 0 0 45px 0; }
-    #mid .left-50 li {
+    .mid .left-50 li {
       color: #909090;
       display: block;
       float: left;
       font-size: 15px;
       margin: 0 0 10px 0;
       width: 100%; }
-      #mid .left-50 li span {
+      .mid .left-50 li span {
         background: url("images/featureicons.jpg") no-repeat -32px 0;
         display: block;
         float: left;
         height: 31px;
         margin: 0 25px 0 0;
         width: 31px; }
-        #mid .left-50 li span#feature1 {
+        .mid .left-50 li span#feature1 {
           background-position: 0 0; }
-        #mid .left-50 li span#feature2 {
+        .mid .left-50 li span#feature2 {
           background-position: -31px 0; }
-        #mid .left-50 li span#feature3 {
+        .mid .left-50 li span#feature3 {
           background-position: -62px 0; }
-        #mid .left-50 li span#feature4 {
+        .mid .left-50 li span#feature4 {
           background-position: -93px 0; }
-        #mid .left-50 li span#feature5 {
+        .mid .left-50 li span#feature5 {
           background-position: -124px 0; }
-  #mid .right-50, #mid .right-67 form a {
+  .mid .right-50, .mid .right-67 form a {
     float: right;
     width: 390px; }
-    #mid .right-50 form, #mid .right-67 form a form {
+    .mid .right-50 form, .mid .right-67 form a form {
       /* hompage form */ }
-      #mid .right-50 form input[type=text], #mid .right-67 form a form input[type=text], #mid .right-50 form textarea, #mid .right-67 form a form textarea,
-      #mid .right-50 form input[type=password],
-      #mid #mid .right-67 form a form input[type=password], #mid .right-67 form
-      #mid a form input[type=password] {
+      .mid .right-50 form input[type=text], .mid .right-67 form a form input[type=text], .mid .right-50 form textarea, .mid .right-67 form a form textarea,
+      .mid .right-50 form input[type=password],
+      .mid .mid .right-67 form a form input[type=password], .mid .right-67 form
+      .mid a form input[type=password] {
         width: 354px; }
-      #mid .right-50 form input[type=submit], #mid .right-67 form a form input[type=submit] {
+      .mid .right-50 form input[type=submit], .mid .right-67 form a form input[type=submit] {
         -moz-box-shadow: 0 1px 1px 0 #eeeeee;
         -ms-box-shadow: 0 1px 1px 0 #eeeeee;
         -o-box-shadow: 0 1px 1px 0 #eeeeee;
@@ -1217,13 +1298,13 @@ header {
         text-align: center;
         text-decoration: none;
         text-shadow: 0 1px 1px #fff; }
-        #mid .right-50 form input[type=submit] img, #mid .right-67 form a form input[type=submit] img {
+        .mid .right-50 form input[type=submit] img, .mid .right-67 form a form input[type=submit] img {
           -moz-box-shadow: 1px 1px 1px 0 white;
           -ms-box-shadow: 1px 1px 1px 0 white;
           -o-box-shadow: 1px 1px 1px 0 white;
           -webkit-box-shadow: 1px 1px 1px 0 white;
           box-shadow: 1px 1px 1px 0 white; }
-        #mid .right-50 form input[type=submit]:hover, #mid .right-67 form a form input[type=submit]:hover {
+        .mid .right-50 form input[type=submit]:hover, .mid .right-67 form a form input[type=submit]:hover {
           -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
           -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
           -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
@@ -1239,13 +1320,13 @@ header {
           border: 1px solid #884f51;
           color: #7e171e;
           text-shadow: 0 1px 1px #e35851; }
-          #mid .right-50 form input[type=submit]:hover img, #mid .right-67 form a form input[type=submit]:hover img {
+          .mid .right-50 form input[type=submit]:hover img, .mid .right-67 form a form input[type=submit]:hover img {
             -moz-box-shadow: 1px 1px 1px 0 #e35851;
             -ms-box-shadow: 1px 1px 1px 0 #e35851;
             -o-box-shadow: 1px 1px 1px 0 #e35851;
             -webkit-box-shadow: 1px 1px 1px 0 #e35851;
             box-shadow: 1px 1px 1px 0 #e35851; }
-        #mid .right-50 form input[type=submit]:active, #mid .right-67 form a form input[type=submit]:active {
+        .mid .right-50 form input[type=submit]:active, .mid .right-67 form a form input[type=submit]:active {
           background: #df4c4b;
           background-image: -moz-linear-gradient(top, #c43037, #df4c4b);
           background-image: -ms-linear-gradient(top, #c43037, #df4c4b);
@@ -1261,7 +1342,7 @@ header {
           border: 1px solid #884f51;
           color: #7e171e;
           text-shadow: 0 1px 1px #e35851; }
-        #mid .right-50 form input[type=submit]#signup, #mid .right-67 form a form input[type=submit]#signup {
+        .mid .right-50 form input[type=submit]#signup, .mid .right-67 form a form input[type=submit]#signup {
           -moz-border-radius: 0;
           -ms-border-radius: 0;
           -o-border-radius: 0;
@@ -1278,7 +1359,7 @@ header {
           border-bottom-left-radius: 4px;
           border-top-left-radius: 4px;
           height: 48px; }
-        #mid .right-50 form input[type=submit]#linkedin, #mid .right-67 form a form input[type=submit]#linkedin {
+        .mid .right-50 form input[type=submit]#linkedin, .mid .right-67 form a form input[type=submit]#linkedin {
           -moz-box-shadow: 0 1px 1px 0 #eeeeee;
           -ms-box-shadow: 0 1px 1px 0 #eeeeee;
           -o-box-shadow: 0 1px 1px 0 #eeeeee;
@@ -1315,13 +1396,13 @@ header {
           border-radius: 0;
           border-left: 0;
           border-right: 0; }
-          #mid .right-50 form input[type=submit]#linkedin img, #mid .right-67 form a form input[type=submit]#linkedin img {
+          .mid .right-50 form input[type=submit]#linkedin img, .mid .right-67 form a form input[type=submit]#linkedin img {
             -moz-box-shadow: 1px 1px 1px 0 white;
             -ms-box-shadow: 1px 1px 1px 0 white;
             -o-box-shadow: 1px 1px 1px 0 white;
             -webkit-box-shadow: 1px 1px 1px 0 white;
             box-shadow: 1px 1px 1px 0 white; }
-          #mid .right-50 form input[type=submit]#linkedin:hover, #mid .right-67 form a form input[type=submit]#linkedin:hover {
+          .mid .right-50 form input[type=submit]#linkedin:hover, .mid .right-67 form a form input[type=submit]#linkedin:hover {
             -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
             -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
             -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
@@ -1337,13 +1418,13 @@ header {
             border: 1px solid #884f51;
             color: #7e171e;
             text-shadow: 0 1px 1px #e35851; }
-            #mid .right-50 form input[type=submit]#linkedin:hover img, #mid .right-67 form a form input[type=submit]#linkedin:hover img {
+            .mid .right-50 form input[type=submit]#linkedin:hover img, .mid .right-67 form a form input[type=submit]#linkedin:hover img {
               -moz-box-shadow: 1px 1px 1px 0 #e35851;
               -ms-box-shadow: 1px 1px 1px 0 #e35851;
               -o-box-shadow: 1px 1px 1px 0 #e35851;
               -webkit-box-shadow: 1px 1px 1px 0 #e35851;
               box-shadow: 1px 1px 1px 0 #e35851; }
-          #mid .right-50 form input[type=submit]#linkedin:active, #mid .right-67 form a form input[type=submit]#linkedin:active {
+          .mid .right-50 form input[type=submit]#linkedin:active, .mid .right-67 form a form input[type=submit]#linkedin:active {
             background: #df4c4b no-repeat center center;
             background-image: url("images/social_linkedin.gif"), -moz-linear-gradient(top, #c43037, #df4c4b);
             background-image: url("images/social_linkedin.gif"), -ms-linear-gradient(top, #c43037, #df4c4b);
@@ -1359,10 +1440,10 @@ header {
             border: 1px solid #884f51;
             color: #7e171e;
             text-shadow: 0 1px 1px #e35851; }
-          #mid .right-50 form input[type=submit]#linkedin:hover, #mid .right-67 form a form input[type=submit]#linkedin:hover {
+          .mid .right-50 form input[type=submit]#linkedin:hover, .mid .right-67 form a form input[type=submit]#linkedin:hover {
             border: 1px solid #884f51;
             width: 128px; }
-        #mid .right-50 form input[type=submit]#facebook, #mid .right-67 form a form input[type=submit]#facebook {
+        .mid .right-50 form input[type=submit]#facebook, .mid .right-67 form a form input[type=submit]#facebook {
           -moz-box-shadow: 0 1px 1px 0 #eeeeee;
           -ms-box-shadow: 0 1px 1px 0 #eeeeee;
           -o-box-shadow: 0 1px 1px 0 #eeeeee;
@@ -1407,13 +1488,13 @@ header {
           -webkit-border-top-right-radius: 4px;
           border-bottom-right-radius: 4px;
           border-top-right-radius: 4px; }
-          #mid .right-50 form input[type=submit]#facebook img, #mid .right-67 form a form input[type=submit]#facebook img {
+          .mid .right-50 form input[type=submit]#facebook img, .mid .right-67 form a form input[type=submit]#facebook img {
             -moz-box-shadow: 1px 1px 1px 0 white;
             -ms-box-shadow: 1px 1px 1px 0 white;
             -o-box-shadow: 1px 1px 1px 0 white;
             -webkit-box-shadow: 1px 1px 1px 0 white;
             box-shadow: 1px 1px 1px 0 white; }
-          #mid .right-50 form input[type=submit]#facebook:hover, #mid .right-67 form a form input[type=submit]#facebook:hover {
+          .mid .right-50 form input[type=submit]#facebook:hover, .mid .right-67 form a form input[type=submit]#facebook:hover {
             -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
             -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
             -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
@@ -1429,13 +1510,13 @@ header {
             border: 1px solid #884f51;
             color: #7e171e;
             text-shadow: 0 1px 1px #e35851; }
-            #mid .right-50 form input[type=submit]#facebook:hover img, #mid .right-67 form a form input[type=submit]#facebook:hover img {
+            .mid .right-50 form input[type=submit]#facebook:hover img, .mid .right-67 form a form input[type=submit]#facebook:hover img {
               -moz-box-shadow: 1px 1px 1px 0 #e35851;
               -ms-box-shadow: 1px 1px 1px 0 #e35851;
               -o-box-shadow: 1px 1px 1px 0 #e35851;
               -webkit-box-shadow: 1px 1px 1px 0 #e35851;
               box-shadow: 1px 1px 1px 0 #e35851; }
-          #mid .right-50 form input[type=submit]#facebook:active, #mid .right-67 form a form input[type=submit]#facebook:active {
+          .mid .right-50 form input[type=submit]#facebook:active, .mid .right-67 form a form input[type=submit]#facebook:active {
             background: #df4c4b no-repeat center center;
             background-image: url("images/social_facebook.gif"), -moz-linear-gradient(top, #c43037, #df4c4b);
             background-image: url("images/social_facebook.gif"), -ms-linear-gradient(top, #c43037, #df4c4b);
@@ -1451,19 +1532,19 @@ header {
             border: 1px solid #884f51;
             color: #7e171e;
             text-shadow: 0 1px 1px #e35851; }
-      #mid .right-50 form p, #mid .right-67 form a form p {
+      .mid .right-50 form p, .mid .right-67 form a form p {
         color: #ccc;
         float: left;
         font-size: 14px;
         margin: 15px 0 0 0; }
-  #mid .right-67 {
+  .mid .right-67 {
     float: right;
     width: 580px; }
-    #mid .right-67 ul {
+    .mid .right-67 ul {
       float: right; }
-      #mid .right-67 ul li {
+      .mid .right-67 ul li {
         float: left; }
-    #mid .right-67 form {
+    .mid .right-67 form {
       float: left;
       -moz-border-radius: 4px;
       -ms-border-radius: 4px;
@@ -1473,40 +1554,40 @@ header {
       background: #f5f5f5;
       border: 1px solid #e8e8e3;
       padding: 20px; }
-      #mid .right-67 form fieldset#terms label {
+      .mid .right-67 form fieldset#terms label {
         width: 100%;
         float: left; }
-        #mid .right-67 form fieldset#terms label input {
+        .mid .right-67 form fieldset#terms label input {
           display: inline;
           float: left;
           margin: 0 0 0 160px; }
-        #mid .right-67 form fieldset#terms label p {
+        .mid .right-67 form fieldset#terms label p {
           float: left;
           margin: 0 0 0 15px; }
-      #mid .right-67 form label {
+      .mid .right-67 form label {
         float: left;
         font-size: 16px;
         height: 35px;
         line-height: 1.2em;
         padding: 18px 0 0;
         width: 160px; }
-        #mid .right-67 form label.two-lines {
+        .mid .right-67 form label.two-lines {
           padding: 9px 0 0; }
-        #mid .right-67 form label.error {
+        .mid .right-67 form label.error {
           color: #df4c4b;
           float: left;
           margin: 0 0 15px 160px;
           padding: 0;
           width: 340px; }
-        #mid .right-67 form label.radio {
+        .mid .right-67 form label.radio {
           float: left;
           height: 15px;
           width: 340px; }
-      #mid .right-67 form input[type=text], #mid .right-67 form textarea,
-      #mid .right-67 form input[type=password],
-      #mid .right-67 form select {
+      .mid .right-67 form input[type=text], .mid .right-67 form textarea,
+      .mid .right-67 form input[type=password],
+      .mid .right-67 form select {
         width: 340px; }
-      #mid .right-67 form input[type=submit] {
+      .mid .right-67 form input[type=submit] {
         -moz-box-shadow: 0 1px 1px 0 #eeeeee;
         -ms-box-shadow: 0 1px 1px 0 #eeeeee;
         -o-box-shadow: 0 1px 1px 0 #eeeeee;
@@ -1536,13 +1617,13 @@ header {
         text-decoration: none;
         text-shadow: 0 1px 1px #fff;
         float: right; }
-        #mid .right-67 form input[type=submit] img {
+        .mid .right-67 form input[type=submit] img {
           -moz-box-shadow: 1px 1px 1px 0 white;
           -ms-box-shadow: 1px 1px 1px 0 white;
           -o-box-shadow: 1px 1px 1px 0 white;
           -webkit-box-shadow: 1px 1px 1px 0 white;
           box-shadow: 1px 1px 1px 0 white; }
-        #mid .right-67 form input[type=submit]:hover {
+        .mid .right-67 form input[type=submit]:hover {
           -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
           -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
           -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
@@ -1558,13 +1639,13 @@ header {
           border: 1px solid #884f51;
           color: #7e171e;
           text-shadow: 0 1px 1px #e35851; }
-          #mid .right-67 form input[type=submit]:hover img {
+          .mid .right-67 form input[type=submit]:hover img {
             -moz-box-shadow: 1px 1px 1px 0 #e35851;
             -ms-box-shadow: 1px 1px 1px 0 #e35851;
             -o-box-shadow: 1px 1px 1px 0 #e35851;
             -webkit-box-shadow: 1px 1px 1px 0 #e35851;
             box-shadow: 1px 1px 1px 0 #e35851; }
-        #mid .right-67 form input[type=submit]:active {
+        .mid .right-67 form input[type=submit]:active {
           background: #df4c4b;
           background-image: -moz-linear-gradient(top, #c43037, #df4c4b);
           background-image: -ms-linear-gradient(top, #c43037, #df4c4b);
@@ -1580,7 +1661,7 @@ header {
           border: 1px solid #884f51;
           color: #7e171e;
           text-shadow: 0 1px 1px #e35851; }
-        #mid .right-67 form input[type=submit]#signup {
+        .mid .right-67 form input[type=submit]#signup {
           -moz-border-radius: 0;
           -ms-border-radius: 0;
           -o-border-radius: 0;
@@ -1597,7 +1678,7 @@ header {
           border-bottom-left-radius: 4px;
           border-top-left-radius: 4px;
           height: 48px; }
-        #mid .right-67 form input[type=submit]#linkedin {
+        .mid .right-67 form input[type=submit]#linkedin {
           -moz-box-shadow: 0 1px 1px 0 #eeeeee;
           -ms-box-shadow: 0 1px 1px 0 #eeeeee;
           -o-box-shadow: 0 1px 1px 0 #eeeeee;
@@ -1634,13 +1715,13 @@ header {
           border-radius: 0;
           border-left: 0;
           border-right: 0; }
-          #mid .right-67 form input[type=submit]#linkedin img {
+          .mid .right-67 form input[type=submit]#linkedin img {
             -moz-box-shadow: 1px 1px 1px 0 white;
             -ms-box-shadow: 1px 1px 1px 0 white;
             -o-box-shadow: 1px 1px 1px 0 white;
             -webkit-box-shadow: 1px 1px 1px 0 white;
             box-shadow: 1px 1px 1px 0 white; }
-          #mid .right-67 form input[type=submit]#linkedin:hover {
+          .mid .right-67 form input[type=submit]#linkedin:hover {
             -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
             -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
             -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
@@ -1656,13 +1737,13 @@ header {
             border: 1px solid #884f51;
             color: #7e171e;
             text-shadow: 0 1px 1px #e35851; }
-            #mid .right-67 form input[type=submit]#linkedin:hover img {
+            .mid .right-67 form input[type=submit]#linkedin:hover img {
               -moz-box-shadow: 1px 1px 1px 0 #e35851;
               -ms-box-shadow: 1px 1px 1px 0 #e35851;
               -o-box-shadow: 1px 1px 1px 0 #e35851;
               -webkit-box-shadow: 1px 1px 1px 0 #e35851;
               box-shadow: 1px 1px 1px 0 #e35851; }
-          #mid .right-67 form input[type=submit]#linkedin:active {
+          .mid .right-67 form input[type=submit]#linkedin:active {
             background: #df4c4b no-repeat center center;
             background-image: url("images/social_linkedin.gif"), -moz-linear-gradient(top, #c43037, #df4c4b);
             background-image: url("images/social_linkedin.gif"), -ms-linear-gradient(top, #c43037, #df4c4b);
@@ -1678,10 +1759,10 @@ header {
             border: 1px solid #884f51;
             color: #7e171e;
             text-shadow: 0 1px 1px #e35851; }
-          #mid .right-67 form input[type=submit]#linkedin:hover {
+          .mid .right-67 form input[type=submit]#linkedin:hover {
             border: 1px solid #884f51;
             width: 128px; }
-        #mid .right-67 form input[type=submit]#facebook {
+        .mid .right-67 form input[type=submit]#facebook {
           -moz-box-shadow: 0 1px 1px 0 #eeeeee;
           -ms-box-shadow: 0 1px 1px 0 #eeeeee;
           -o-box-shadow: 0 1px 1px 0 #eeeeee;
@@ -1726,13 +1807,13 @@ header {
           -webkit-border-top-right-radius: 4px;
           border-bottom-right-radius: 4px;
           border-top-right-radius: 4px; }
-          #mid .right-67 form input[type=submit]#facebook img {
+          .mid .right-67 form input[type=submit]#facebook img {
             -moz-box-shadow: 1px 1px 1px 0 white;
             -ms-box-shadow: 1px 1px 1px 0 white;
             -o-box-shadow: 1px 1px 1px 0 white;
             -webkit-box-shadow: 1px 1px 1px 0 white;
             box-shadow: 1px 1px 1px 0 white; }
-          #mid .right-67 form input[type=submit]#facebook:hover {
+          .mid .right-67 form input[type=submit]#facebook:hover {
             -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
             -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
             -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
@@ -1748,13 +1829,13 @@ header {
             border: 1px solid #884f51;
             color: #7e171e;
             text-shadow: 0 1px 1px #e35851; }
-            #mid .right-67 form input[type=submit]#facebook:hover img {
+            .mid .right-67 form input[type=submit]#facebook:hover img {
               -moz-box-shadow: 1px 1px 1px 0 #e35851;
               -ms-box-shadow: 1px 1px 1px 0 #e35851;
               -o-box-shadow: 1px 1px 1px 0 #e35851;
               -webkit-box-shadow: 1px 1px 1px 0 #e35851;
               box-shadow: 1px 1px 1px 0 #e35851; }
-          #mid .right-67 form input[type=submit]#facebook:active {
+          .mid .right-67 form input[type=submit]#facebook:active {
             background: #df4c4b no-repeat center center;
             background-image: url("images/social_facebook.gif"), -moz-linear-gradient(top, #c43037, #df4c4b);
             background-image: url("images/social_facebook.gif"), -ms-linear-gradient(top, #c43037, #df4c4b);
@@ -1770,13 +1851,13 @@ header {
             border: 1px solid #884f51;
             color: #7e171e;
             text-shadow: 0 1px 1px #e35851; }
-      #mid .right-67 form select {
+      .mid .right-67 form select {
         height: 30px;
         margin: 18px 0 30px 0; }
-    #mid .right-67 #form-login input[type=text], #mid .right-67 #form-login form textarea, #mid form .right-67 #form-login textarea,
-    #mid .right-67 #form-login input[type=password] {
+    .mid .right-67 #form-login input[type=text], .mid .right-67 #form-login form textarea, .mid form .right-67 #form-login textarea,
+    .mid .right-67 #form-login input[type=password] {
       width: 500px; }
-    #mid .right-67 article {
+    .mid .right-67 article {
       float: left;
       -moz-border-radius: 4px;
       -ms-border-radius: 4px;
@@ -1788,15 +1869,15 @@ header {
       padding: 20px;
       margin: 0 0 20px 0;
       width: 540px; }
-      #mid .right-67 article div {
+      .mid .right-67 article div {
         float: left;
         width: 483px; }
-      #mid .right-67 article p {
+      .mid .right-67 article p {
         float: left;
         margin: 0; }
-      #mid .right-67 article img {
+      .mid .right-67 article img {
         float: right; }
-      #mid .right-67 article span.tag {
+      .mid .right-67 article span.tag {
         -moz-border-radius-bottomright: 4px;
         -moz-border-radius-topright: 4px;
         -ms-border-bottom-right-radius: 4px;
@@ -1816,7 +1897,7 @@ header {
         padding: 2px 10px;
         position: relative;
         text-transform: uppercase; }
-        #mid .right-67 article span.tag:before {
+        .mid .right-67 article span.tag:before {
           border-color: transparent #e8e8e8 transparent transparent;
           border-style: solid;
           border-width: 14px 14px 14px 0;
@@ -1827,7 +1908,7 @@ header {
           position: absolute;
           top: 0;
           width: 0; }
-        #mid .right-67 article span.tag:after {
+        .mid .right-67 article span.tag:after {
           -moz-border-radius: 4px;
           -ms-border-radius: 4px;
           -o-border-radius: 4px;
@@ -1847,8 +1928,8 @@ header {
           height: 4px;
           background: #fff; }
 
-/* end #mid */
-#bot {
+/* end .mid */
+.bot {
   -moz-border-radius-bottomleft: 10px;
   -moz-border-radius-bottomright: 10px;
   -ms-border-bottom-left-radius: 10px;
@@ -1867,7 +1948,7 @@ header {
 #form {
   float: right;
   width: 390px; }
-  #form h2, #form #mid #landing .features article h3, #mid #landing .features article #form h3 {
+  #form h2, #form .mid #landing .features article h3, .mid #landing .features article #form h3 {
     font-family: "Raleway", "Arial", sans-serif;
     font-size: 54px;
     line-height: 1.2em; }

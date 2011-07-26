@@ -1,35 +1,69 @@
 <section class="left-33">
-	<h3>Worried how you look?</h3>
-	
-	<p>This is how you look to others.</p>
-	<p>The large format is seen on the event attendees page.</p>
-	<p>The small format is seen on the event dashboard page.</p>
-	<p>If you are unhappy you can edit your <a href="/users/<%= @user.id %>/edit">nametag</a>.</p>
+	<h3>My Nametag</h3>
 
-	<p>Find me in views/users/nametag.erb</p>
+	<p>This is how you look to others. Please note that only members of your events will be able to see your nametag.</p>
+
 	
 </section>
 
 <section class="right-67">
 
-	<img src="<%= @user.image(:thumb) %>" />
+	<div class="nametag-lg">
+		<section class="top">
+			<h2><span>Hello</span> my name is</h2>
+		</section>
+		<section class="mid">
+			<img src="<%= @user.image(:thumb) %>" />
+			<h4><%= @user.name %></h4>
+			<h5><%= @user.description %></h5>
+			<h6><%= @user.location %></h6>
+		
+			<% if !@user.email.blank? %>
+				<a target="_blank" href="mailto:<%= @user.email %>" class="social email">Email</a>
+			<% end %>
+			<% if !@user.website.blank? %>
+				<a target="_blank" href="<%= @user.website %>" class="social www">Website</a>
+			<% end %>
+			<% if !@user.facebook.blank? %>
+				<a target="_blank" href="<%= @user.facebook %>" class="social facebook">Facebook</a>
+			<% end %>
+			<% if !@user.linked_in.blank? %>
+				<a target="_blank" href="<%= @user.linked_in %>" class="social linkedin">LinkedIn</a>
+			<% end %>
+			<% if !@user.twitter.blank? %>
+				<a target="_blank" href="<%= @user.twitter %>" class="social twitter">Twitter</a>
+			<% end %>
+		</section>
+		<section class="bot"></section>
+	</div>
 
-	<h3><%= @user.name %></h3>
-	<h4><%= @user.description %></h4>
-	<h5><%= @user.location %></h4>
-
-	<% if !@user.website.blank? %>
-		<a target="_blank" href="<%= @user.website %>">Website Icon</a>
-	<% end %>
-	<% if !@user.facebook.blank? %>
-		<a target="_blank" href="<%= @user.facebook %>">Facebook Icon</a>
-	<% end %>
-	<% if !@user.linked_in.blank? %>
-		<a target="_blank" href="<%= @user.linked_in %>">LinkedIn Icon</a>
-	<% end %>
-	<% if !@user.twitter.blank? %>
-		<a target="_blank" href="<%= @user.twitter %>">Twitter Icon</a>
-	<% end %>
+	<div class="nametag-sm">
+		<section class="top">
+			<h2><strong>Hello</strong> my name is</h2>
+		</section>
+		<section class="mid">
+			<img src="<%= @user.image(:thumb) %>" />
+			<h4><%= @user.name %></h4>
+			<h5><%= @user.description %></h5>
+		
+			<% if !@user.email.blank? %>
+				<a target="_blank" href="mailto:<%= @user.email %>" class="social email">Email</a>
+			<% end %>
+			<% if !@user.website.blank? %>
+				<a target="_blank" href="<%= @user.website %>" class="social www">Website</a>
+			<% end %>
+			<% if !@user.facebook.blank? %>
+				<a target="_blank" href="<%= @user.facebook %>" class="social facebook">Facebook</a>
+			<% end %>
+			<% if !@user.linked_in.blank? %>
+				<a target="_blank" href="<%= @user.linked_in %>" class="social linkedin">LinkedIn</a>
+			<% end %>
+			<% if !@user.twitter.blank? %>
+				<a target="_blank" href="<%= @user.twitter %>" class="social twitter">Twitter</a>
+			<% end %>
+		</section>
+		<section class="bot"></section>
+	</div>
 
 </section>
 <script src="/js/validate.js"></script>
