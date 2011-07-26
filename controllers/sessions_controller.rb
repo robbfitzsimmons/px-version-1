@@ -23,7 +23,7 @@ post '/sessions' do
 		status(202)
 		flash[:success] = "#{session.name} Added Successfully."
 
-		redirect "/events/#{day.event.permalink}"
+		redirect "/#{day.event.permalink}"
 	else
 		status(412)
 		session.errors.each do |e|

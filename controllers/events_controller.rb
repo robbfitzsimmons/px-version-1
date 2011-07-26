@@ -33,7 +33,7 @@ post '/events' do
 		current_user.save
 		session[:event] = @event.id
 
-		redirect "/events/#{@event.permalink}"
+		redirect "/#{@event.permalink}"
 	else
 		status(412)
 		@event.errors.each do |e|
@@ -55,7 +55,7 @@ put '/events/:id/rsvp' do
 		current_user.user_event_associations.first(:event => event).destroy
 		flash[:success] = "You are now not attending #{event.name}."
 
-		redirect "/events/#{event.permalink}"
+		redirect "/#{event.permalink}"
 	
 	## Not attending to Attending
 	else
@@ -77,7 +77,7 @@ put '/events/:id/rsvp' do
 			flash[:error] = "Please Try Again."
 		end
 
-		redirect "/events/#{event.permalink}"
+		redirect "/#{event.permalink}"
 
 	end
 
@@ -99,11 +99,11 @@ put '/events/:id' do
 		flash[:error] = "Please Try Again."
 	end
 
-	redirect "/events/#{event.permalink}"
+	redirect "/#{event.permalink}"
 end
 
 # Show a specific event
-get '/events/:permalink' do
+get '/:permalink' do
 
 	@event_dashboard = true
 	

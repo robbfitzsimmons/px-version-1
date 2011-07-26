@@ -52,5 +52,5 @@ post '/answers' do
 		flash[:error] = "Questions answered unsuccessfully"
 	end
 
-	redirect "/events/#{@event.permalink}"
+	redirect "/#{@event.permalink}"
 end

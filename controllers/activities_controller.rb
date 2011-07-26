@@ -30,7 +30,7 @@ post '/activities' do
 		status(202)
 		flash[:success] = "#{activity.name} Added Successfully."
 
-		redirect "/events/#{event.permalink}"
+		redirect "/#{event.permalink}"
 	else
 		status(412)
 		activity.errors.each do |e|

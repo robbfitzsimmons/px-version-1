@@ -88,7 +88,7 @@ post '/invites' do
 		flash[:error] = "Invites sent unsuccessfully."
 	end
 
-	redirect "/events/#{current_event.permalink}"
+	redirect "/#{current_event.permalink}"
 end
 
 get '/invites/:slug' do
@@ -100,5 +100,5 @@ get '/invites/:slug' do
 	session[:invite_event] = invite.event.id
 	session[:invite] = invite.id
 
-	redirect "/events/#{invite.event.permalink}"
+	redirect "/#{invite.event.permalink}"
 end
