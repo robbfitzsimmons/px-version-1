@@ -39,26 +39,29 @@ post '/recover' do
 		if recover_password.save
 			status(202)
 
-			#Send Email
-			mail = Mail.new do          
-			  to "#{user.name} <#{user.email}>"         
-			  from 'Proximate Staff <no-reply@proximate.com>'     
-			  subject 'Proximate Password Reset'               
-			end  
+			if (ENV['RACK_ENV']) == "zproduction"
 
-			html_part = Mail::Part.new do |part| 
-	      part.content_type 'text/html; charset=UTF-8' 
-	      part.body("
-	      	<p>Hello #{user.name},</p>
-					<p>Please follow this link to reset your password
-					<a href='http://localhost:9292/recover/#{recover_password.slug}'>http://localhost:9292/recover/#{recover_password.slug}</a></p>
-					<p>Thank you, <br />
-					The Proximate Team
-					</p>
-	      ") 
-   		end 
-    	mail.html_part = html_part
-			mail.deliver
+				#Send Email
+				mail = Mail.new do          
+				  to "#{user.name} <#{user.email}>"         
+				  from 'Proximate Staff <no-reply@proximate.com>'     
+				  subject 'Proximate Password Reset'               
+				end  
+
+				html_part = Mail::Part.new do |part| 
+		      part.content_type 'text/html; charset=UTF-8' 
+		      part.body("
+		      	<p>Hello #{user.name},</p>
+						<p>Please follow this link to reset your password
+						<a href='http://localhost:9292/recover/#{recover_password.slug}'>http://localhost:9292/recover/#{recover_password.slug}</a></p>
+						<p>Thank you, <br />
+						The Proximate Team
+						</p>
+		      ") 
+	   		end 
+	    	mail.html_part = html_part
+				mail.deliver
+			end
 
 			flash[:success] = "Check your email to reset your password."
 			redirect '/'
