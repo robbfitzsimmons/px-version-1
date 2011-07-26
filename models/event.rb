@@ -73,33 +73,39 @@ class Event
   after :save, :create_days
 
   def check_name
-    event_names = Event.all
-    valid = true
-    event_names.each do |event|
-      if event.name.downcase != self.name.downcase
-        valid = true
-      else
-        valid = false
-        break
-      end # end if
-    end # end do
+    if self.attribute_dirty?(:name)
+      event_names = Event.all
+      valid = true
+      event_names.each do |event|
+        if event.name.downcase != self.name.downcase
+          valid = true
+        else
+          valid = false
+          break
+        end # end if
+      end # end do
 
-    
-    if valid == false
-      [ false, "An event called '#{self.name}' is already registered." ]
+      if valid == false
+        [ false, "An event called '#{self.name}' is already registered." ]
+      else
+        true
+      end
     else
-      true
+      return true
     end
   end # end check name
 
   def create_days
-    num_days = self.end_date.mjd - self.start_date.mjd + 1
-    1.upto(num_days) { |i|
-      @day = Day.create(:name => "Day #{i}", :date => (self.start_date.to_time + ((i-1) * 86400)).to_datetime, :event => self)
-      @day.errors.each do |e|
-        puts e
-      end
-    }
+    if self.new?
+      num_days = self.end_date.mjd - self.start_date.mjd + 1
+
+      1.upto(num_days) { |i|
+        @day = Day.create(:name => "Day #{i}", :date => (self.start_date.to_time + ((i-1) * 86400)).to_datetime, :event => self)
+        @day.errors.each do |e|
+          puts e
+        end
+      }
+    end
   end
 
   
