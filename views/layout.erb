@@ -69,6 +69,10 @@
 					<% event_admin = is_event_admin(@event) %>
 
 		  		<p><%= @title %></p>
+
+		  		<% if @user_dashboard %>
+							<a href="/events/new" class="button">Create an Event</a>
+					<% end %>
 		  		
 		  		<% if @event_dashboard %>
 		  			

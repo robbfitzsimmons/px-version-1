@@ -60,6 +60,7 @@ end
 
 # Show a specific user
 get '/users/:id' do
+	@user_dashboard = true
 	@title = "Dashboard"
 	@user = User.get(params[:id])
 
