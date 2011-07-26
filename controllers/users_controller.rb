@@ -175,14 +175,7 @@ put '/users/:id' do
 
 end
 
-def make_paperclip_mash(file_hash)
-  mash = Mash.new
-  mash['tempfile'] = file_hash[:tempfile]
-  mash['filename'] = file_hash[:filename]
-  mash['content_type'] = file_hash[:type]
-  mash['size'] = file_hash[:tempfile].size
-  mash
-end
+
 
 ##############################################################
 

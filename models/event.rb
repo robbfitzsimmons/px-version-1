@@ -1,11 +1,12 @@
 class Event
   include DataMapper::Resource
+  include Paperclip::Resource
 
   property :id,					  Serial    #
   property :name,         String    #
   property :description,  String    #
   property :color,  	  String,   :default => "blue" #
-  property :logo,         String    # URL linking to Amazon File Upload (http://ididitmyway.heroku.com/past/2011/1/16/uploading_files_in_sinatra/)
+  #property :logo,         String    # URL linking to Amazon File Upload (http://ididitmyway.heroku.com/past/2011/1/16/uploading_files_in_sinatra/)
   property :permalink,    String    # A link to take you to the event
 
   before :valid?, :create_permalink
@@ -33,6 +34,31 @@ class Event
   property :created_at,   DateTime  # Generated when each resource is created
   property :updated_at,   DateTime  # Generated when each resource is updated
 
+  if (ENV['RACK_ENV']) == "production"
+    #  ENV['S3_BUCKET'],ENV['S3_KEY'], ENV['S3_SECRET']
+    puts "S3"
+    has_attached_file :image,
+                    :storage => :s3,
+                    #:s3_permissions => :public_read
+                    #:s3_credentials => "#{APP_ROOT}/config/s3.yml",
+                    :s3_credentials => {
+                      :access_key_id => ENV['S3_KEY'],
+                      :secret_access_key => ENV['S3_SECRET']
+                    },
+                    :path => "/:class/:attachment/:id/:style/:basename.:extension",
+                    :bucket         => "proximate_test",
+                    :styles => { :original => "300x300#",
+                                 :thumb => "75x75#" }
+  else
+    has_attached_file :image,
+                    :url => "/uploads/:class/:attachment/:id/:style/:basename.:extension",
+                    :path => "#{APP_ROOT}/public/uploads/:class/:attachment/:id/:style/:basename.:extension",
+                    :styles => { :original => "300x300#",
+                                 :thumb => "75x75#" }
+  end
+
+  validates_with_method :image, :method => :validates_image_type 
+  validates_with_method :image, :method => :validates_image_size
 
   ## Links events to users
   has n,   :user_event_associations

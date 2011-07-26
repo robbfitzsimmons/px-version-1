@@ -14,6 +14,15 @@ def current_event
 	@current_event ||= event_from_session
 end
 
+def make_paperclip_mash(file_hash)
+  mash = Mash.new
+  mash['tempfile'] = file_hash[:tempfile]
+  mash['filename'] = file_hash[:filename]
+  mash['content_type'] = file_hash[:type]
+  mash['size'] = file_hash[:tempfile].size
+  mash
+end
+
 	private
 		def event_from_session 
 			Event.get(session[:event])

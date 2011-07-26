@@ -16,6 +16,10 @@ post '/events' do
 	@event.end_date = DateTime.new(2011, 8, params[:end_day].to_i, 9, 0)
 	@event.users << current_user
 
+	if (!params[:event][:image].nil?)
+			@event.image = make_paperclip_mash(params[:event][:image])
+	end
+
 
 	if @event.save
 		status(202)

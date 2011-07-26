@@ -4,7 +4,7 @@
 </section>
 
 <section class="right-67">
-	<form id="form-event" action="/events" method="post">
+	<form id="form-event" action="/events" method="post" enctype="multipart/form-data">
 	
 		<label for="event[name]">Name</label>
 		<input name="event[name]" type="text" value="<%= @event.name%>" />
@@ -30,6 +30,20 @@
 			<option value="sunset-orange">Sunset Orange</option>
 			<option value="turquoise">Turquoise</option>
 		</select>
+
+		<br />
+		<br />
+		<br />
+
+		<label for="event[image]">Image:</label>
+		<% if @event.image.nil? %>
+			<img src="<%= @event.logo.image(:thumb) %>" />
+		<% end %>
+		<input style="float: right;" type="file" name="event[image]" /> 
+
+		<br />
+		<br />
+		<br />
 	
 		<label for="start_day">Start Day</label>
 		<select name="start_day">

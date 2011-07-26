@@ -40,4 +40,26 @@ def create_permalink
 
      self.permalink = ret
 
-	end
+end
+
+def validates_image_type
+    allowed_mime_types = %w{"image/bmp", "image/gif", "image/jpeg", "image/png"} 
+    if self.image.size.nil?
+      return true
+    elsif allowed_mime_types.one? {|allowed_content_type| allowed_content_type.match(self.image.content_type.to_s)}
+      return true
+    else
+      return [false, "The file provided (#{self.image.content_type.to_s}) is not an acceptable format."]
+    end
+  end
+
+def validates_image_size
+    max_size = 1048576
+    if self.image.size.nil?
+      return true
+    elsif self.image.size < max_size
+      return true
+    else
+      return [false, "Image file size is too big."]
+    end
+end
