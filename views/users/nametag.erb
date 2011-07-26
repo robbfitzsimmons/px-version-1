@@ -18,16 +18,16 @@
 	<h5><%= @user.location %></h4>
 
 	<% if !@user.website.nil? %>
-		<a href="<%= @user.website %>">Website Icon</a>
+		<a target="_blank" href="<%= @user.website %>">Website Icon</a>
 	<% end %>
 	<% if !@user.website.nil? %>
-		<a href="<%= @user.facebook %>">Facebook Icon</a>
+		<a target="_blank" href="<%= @user.facebook %>">Facebook Icon</a>
 	<% end %>
 	<% if !@user.website.nil? %>
-		<a href="<%= @user.linked_in %>">LinkedIn Icon</a>
+		<a target="_blank" href="<%= @user.linked_in %>">LinkedIn Icon</a>
 	<% end %>
 	<% if !@user.website.nil? %>
-		<a href="<%= @user.twitter %>">Twitter Icon</a>
+		<a target="_blank" href="<%= @user.twitter %>">Twitter Icon</a>
 	<% end %>
 
 </section>
