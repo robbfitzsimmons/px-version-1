@@ -578,7 +578,8 @@ header {
   line-height: 1em;
   width: 960px; }
   .top h2, .top .mid #landing .features article h3, .mid #landing .features article .top h3 {
-    padding: 5px; }
+    padding: 5px;
+    text-align: center; }
     .top h2 span, .top .mid #landing .features article h3 span, .mid #landing .features article .top h3 span {
       display: block;
       font-size: 24px;
@@ -685,46 +686,6 @@ header {
   padding: 45px;
   width: 870px;
   /* landing */ }
-  .mid .social {
-    background: url("/images/socialicons.gif") no-repeat;
-    display: block;
-    float: left;
-    font-size: 0;
-    height: 35px;
-    line-height: -9999em;
-    margin: 5px 12px 0 0;
-    overflow: hidden;
-    width: 32px; }
-    .mid .social.email {
-      background-position: -1px 0; }
-      .mid .social.email:hover {
-        background-position: -1px -36px; }
-      .mid .social.email:active {
-        background-position: -1px -72px; }
-    .mid .social.www {
-      background-position: -33px 0; }
-      .mid .social.www:hover {
-        background-position: -33px -36px; }
-      .mid .social.www:active {
-        background-position: -33px -72px; }
-    .mid .social.linkedin {
-      background-position: -65px 0; }
-      .mid .social.linkedin:hover {
-        background-position: -65px -36px; }
-      .mid .social.linkedin:active {
-        background-position: -65px -72px; }
-    .mid .social.facebook {
-      background-position: -97px 0; }
-      .mid .social.facebook:hover {
-        background-position: -97px -36px; }
-      .mid .social.facebook:active {
-        background-position: -97px -72px; }
-    .mid .social.twitter {
-      background-position: -129px 0; }
-      .mid .social.twitter:hover {
-        background-position: -129px -36px; }
-      .mid .social.twitter:active {
-        background-position: -129px -72px; }
   .mid .nametag-lg {
     overflow: hidden;
     margin: 0 0 20px 0;
@@ -740,6 +701,46 @@ header {
     .mid .nametag-lg .mid {
       padding: 20px;
       width: 538px; }
+    .mid .nametag-lg .social {
+      background: url("/images/socialicons.gif") no-repeat;
+      display: block;
+      float: left;
+      font-size: 0;
+      height: 35px;
+      line-height: -9999em;
+      margin: 5px 12px 0 0;
+      overflow: hidden;
+      width: 32px; }
+      .mid .nametag-lg .social.email {
+        background-position: -1px 0; }
+        .mid .nametag-lg .social.email:hover {
+          background-position: -1px -36px; }
+        .mid .nametag-lg .social.email:active {
+          background-position: -1px -72px; }
+      .mid .nametag-lg .social.www {
+        background-position: -33px 0; }
+        .mid .nametag-lg .social.www:hover {
+          background-position: -33px -36px; }
+        .mid .nametag-lg .social.www:active {
+          background-position: -33px -72px; }
+      .mid .nametag-lg .social.linkedin {
+        background-position: -65px 0; }
+        .mid .nametag-lg .social.linkedin:hover {
+          background-position: -65px -36px; }
+        .mid .nametag-lg .social.linkedin:active {
+          background-position: -65px -72px; }
+      .mid .nametag-lg .social.facebook {
+        background-position: -97px 0; }
+        .mid .nametag-lg .social.facebook:hover {
+          background-position: -97px -36px; }
+        .mid .nametag-lg .social.facebook:active {
+          background-position: -97px -72px; }
+      .mid .nametag-lg .social.twitter {
+        background-position: -129px 0; }
+        .mid .nametag-lg .social.twitter:hover {
+          background-position: -129px -36px; }
+        .mid .nametag-lg .social.twitter:active {
+          background-position: -129px -72px; }
   .mid .nametag-sm {
     overflow: hidden;
     margin: 0 0 10px 0;
@@ -756,9 +757,9 @@ header {
       font-size: 14px; }
     .mid .nametag-sm img {
       float: left;
-      height: 50px;
+      height: 56px;
       margin: 0 10px 15px 0;
-      width: 50px; }
+      width: 56px; }
     .mid .nametag-sm .top, .mid .nametag-sm .bot {
       text-align: center;
       width: 243px; }

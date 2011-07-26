@@ -24,13 +24,8 @@
 	<ul>
 	<% @event.user_event_associations(:limit => 5).each do |assoc| %>
 		<div class="nametag-sm">
-			<section class="top">
-				<h2><strong>Hello</strong> my name is</h2>
-			</section>
-			<section class="mid">
 				<img src="<%= assoc.user.image(:thumb) %>" />
 				<h4><%= assoc.user.name %></h4>
-				<h5><%= assoc.user.description %></h5>
 			
 				<% if !assoc.user.email.blank? %>
 					<a target="_blank" href="mailto:<%= assoc.user.email %>" class="social email">Email</a>
@@ -47,8 +42,6 @@
 				<% if !assoc.user.twitter.blank? %>
 					<a target="_blank" href="<%= assoc.user.twitter %>" class="social twitter">Twitter</a>
 				<% end %>
-			</section>
-			<section class="bot"></section>
 		</div>		
 	<% end %>
 	

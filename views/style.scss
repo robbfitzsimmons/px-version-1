@@ -529,6 +529,7 @@ header {
 	
 	h2 {
 		padding: 5px;
+		text-align: center;
 		
 		span {
 			display: block;
@@ -566,67 +567,6 @@ header {
 	padding: 45px;
 	width: 870px;
 			
-	.social {
-		background: url('/images/socialicons.gif') no-repeat;
-		display: block;
-		float: left;
-		font-size: 0;
-		height: 35px;
-		line-height: -9999em;
-		margin: 5px 12px 0 0;
-		overflow: hidden;
-		width: 32px;
-		
-		&.email {
-			background-position: -1px 0;
-			&:hover {
-				background-position: -1px -36px;
-			}
-			&:active {
-				background-position: -1px -72px;
-			}
-		}
-		
-		&.www {
-			background-position: -33px 0;
-			&:hover {
-				background-position: -33px -36px;
-			}
-			&:active {
-				background-position: -33px -72px;
-			}
-		}
-		
-		&.linkedin {
-			background-position: -65px 0;
-			&:hover {
-				background-position: -65px -36px;
-			}
-			&:active {
-				background-position: -65px -72px;
-			}
-		}
-		
-		&.facebook {
-			background-position: -97px 0;
-			&:hover {
-				background-position: -97px -36px;
-			}
-			&:active {
-				background-position: -97px -72px;
-			}
-		}
-		
-		&.twitter {
-			background-position: -129px 0;
-			&:hover {
-				background-position: -129px -36px;
-			}
-			&:active {
-				background-position: -129px -72px;
-			}
-		}
-	}
 	
 	.nametag-lg {
 		overflow: hidden;
@@ -648,6 +588,68 @@ header {
 		.mid {
 			padding: 20px;
 			width: 538px;
+		}
+		
+		.social {
+			background: url('/images/socialicons.gif') no-repeat;
+			display: block;
+			float: left;
+			font-size: 0;
+			height: 35px;
+			line-height: -9999em;
+			margin: 5px 12px 0 0;
+			overflow: hidden;
+			width: 32px;
+			
+			&.email {
+				background-position: -1px 0;
+				&:hover {
+					background-position: -1px -36px;
+				}
+				&:active {
+					background-position: -1px -72px;
+				}
+			}
+			
+			&.www {
+				background-position: -33px 0;
+				&:hover {
+					background-position: -33px -36px;
+				}
+				&:active {
+					background-position: -33px -72px;
+				}
+			}
+			
+			&.linkedin {
+				background-position: -65px 0;
+				&:hover {
+					background-position: -65px -36px;
+				}
+				&:active {
+					background-position: -65px -72px;
+				}
+			}
+			
+			&.facebook {
+				background-position: -97px 0;
+				&:hover {
+					background-position: -97px -36px;
+				}
+				&:active {
+					background-position: -97px -72px;
+				}
+			}
+			
+			&.twitter {
+				background-position: -129px 0;
+				&:hover {
+					background-position: -129px -36px;
+				}
+				&:active {
+					background-position: -129px -72px;
+				}
+			}
 		}
 	}
 	
@@ -678,9 +680,9 @@ header {
 		
 		img {
 			float: left;
-			height: 50px;
+			height: 56px;
 			margin: 0 10px 15px 0;
-			width: 50px;
+			width: 56px;
 		}
 		
 		.top, .bot {
