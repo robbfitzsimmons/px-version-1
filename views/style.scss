@@ -356,7 +356,6 @@ header {
 		float: left;
 		margin: 20px 0 10px;
 		width: 500px;
-			
 		a {
 			color: $color;
 			font-size: 14px;
@@ -519,6 +518,12 @@ header {
 			}
 		}
 	}
+	
+	a.button {
+		@include button(150px);
+		float: right;
+		margin: 0 0 20px 0;
+	}
 } /* end header */
 
 #top {
@@ -564,16 +569,81 @@ header {
 	
 	h5 {
 		font-style: italic;
-		line-height: 1.2em;
-		margin: 0 0 5px 0;
+		line-height: 1.6em;
 	}
 	
 	h6 {
 		color: #ccc;
 		font-family: $istok;
 		font-size: 14px;
-		line-height: 1.2em;
+		line-height: 1.5em;
 		text-transform: uppercase;
+	}
+	
+	span {
+		&.date {
+			@include radius(4px);
+			background: #fafafa;
+			border-bottom: 1px solid #ccc;
+			border-left: 1px solid #ccc;
+			border-right: 1px solid #ccc;
+			float: left;
+			font-size: 18px;
+			line-height: 1em;
+			margin: 0 15px 0 0;
+			text-align: center;
+			width: 40px;
+			
+			strong {
+				@include boxshadow(inset 0 2px 2px 0 #f46766);
+				@include gradient(#df4c4b, #c43037);
+				@include radius-top(4px);
+				border: 1px solid #884f51;
+				color: #7e171e;
+				float: left;
+				font-size: 14px;
+				line-height: 1em;
+				margin: 0 0 4px -1px;
+				padding: 2px 0;
+				text-shadow: 0 1px 1px #e35851;
+				text-transform: uppercase;
+				width: 40px;
+			}
+		}
+	}
+	
+	table {
+		border: 1px solid #d8d8d8;
+		float: left;
+		margin: 15px 0 0;
+		text-align: left;
+		width: 100%;
+		
+		thead {
+			width: 100%;
+			
+			th {
+				@include gradient(#f6f6f6, #eee);
+				@include boxshadow(inset 0 1px 1px 0 #eee);
+				
+				border: 1px solid #dbdbdb;
+				border: 1px solid #dbdbdb;
+				color: #b8b8b8;
+				padding: 10px;
+			}
+		}
+		tr {
+			td {
+				padding: 10px;
+			}
+			&.even {
+				background: #eee;
+			}
+		}
+	}
+	
+	ul {
+		margin: 0 0 15px 0;
 	}
 	
 	ul.table {
@@ -591,19 +661,26 @@ header {
 			width: 560px;
 			
 			div {
-				float: right;
+				float: left;
+				width: 503px;
 			}
 			
 			h4 {
-				margin: 0 445px 10px 0;
-			}
-			
-			h5 {
-				line-height: 1.5em;
+				width: 503px;
 			}
 			
 			h6 {
 				line-height: 1.8em;
+				margin: 0 0 15px 0;
+			}
+			
+			p {
+				color: #ccc;
+				font-family: $istok;
+				font-size: 14px;
+				line-height: 1.8em;
+				margin: 0;
+				text-transform: uppercase;
 
 				span {
 					float: left;
@@ -617,36 +694,6 @@ header {
 			
 			&.last {
 				border: 0;
-			}
-			
-			p.date {
-				@include radius(4px);
-				background: #fafafa;
-				border-bottom: 1px solid #ccc;
-				border-left: 1px solid #ccc;
-				border-right: 1px solid #ccc;
-				float: left;
-				font-size: 18px;
-				line-height: 1em;
-				margin: 0 15px 0 0;
-				text-align: center;
-				width: 40px;
-				
-				span {
-					@include boxshadow(inset 0 2px 2px 0 #f46766);
-					@include gradient(#df4c4b, #c43037);
-					@include radius-top(4px);
-					border: 1px solid #884f51;
-					color: #7e171e;
-					float: left;
-					font-size: 14px;
-					line-height: 1em;
-					margin: 0 0 4px -1px;
-					padding: 2px 0;
-					text-shadow: 0 1px 1px #e35851;
-					text-transform: uppercase;
-					width: 40px;
-				}
 			}
 		}
 	}
@@ -989,6 +1036,11 @@ header {
 			margin: 0 0 20px 0;
 			width: 540px;
 			
+			div {
+				float: left;
+				width: 483px;
+			}
+			
 			p {
 				float: left;
 				margin: 0;
@@ -998,7 +1050,7 @@ header {
 				float: right;
 			}
 			
-			span {
+			span.tag {
 				@include radius-right(4px);
 				background: #e8e8e8;
 				color: #bbb;

@@ -28,17 +28,24 @@
 	<% if @user.user_event_associations.length != 0 %>
 		<% @user.user_event_associations.each do |assoc| %>
 			<article class="all <%= assoc.admin ? 'admin attendee' : 'attendee' %>">
+				<span class="date">
+					<strong>
+						<%= assoc.event.start_date.strftime("%b") %>
+					</strong>
+					<%= assoc.event.start_date.strftime("%e") %><%= assoc.event.start_date != assoc.event.end_date ? '-' + assoc.event.end_date.strftime("%e").delete(" ") : '' %>
+				</span>
+				<div>
 				<% if assoc.admin %>
-					<span>Admin</span>
-					<span>Attending</span>
+					<span class="tag">Admin</span>
+					<span class="tag">Attending</span>
 				<% elsif !assoc.admin %>
-					<span>Attending</span>
+					<span class="tag">Attending</span>
 				<% end %>
 				<h4><a href="/events/<%= assoc.event.permalink %>"><%= assoc.event.name %></a></h4>
 				<h5><%= assoc.event.description %></h5>
 				<h6><%= assoc.event.location %></h6>
-				<p><%= assoc.event.start_date.strftime("%I:%M %p") %> to <%= assoc.event.end_date.strftime("%I:%M %p") %></p>
-				<img src="/images/80x80.gif" alt="" />
+				<img src="<%= assoc.event.logo %>" alt="" />
+				</div>
 			</article>
 		<% end %>
 	<% else %>
@@ -51,7 +58,7 @@
 	<% if @user.new_invites.length != 0 %>
 		<% @user.new_invites.each do |invite| %>
 			<article class="all invited">
-					<span>Invited</span>
+				<span>Invited</span>
 				<h1><a href="/invites/<%= invite.slug %>"><%= invite.event.name %></a></h1>
 			</article>
 		<% end %>

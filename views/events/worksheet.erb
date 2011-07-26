@@ -1,37 +1,48 @@
-<h1><%= @event.name %> Invites</h1>
-<h6>Find me in views/events/worksheet.erb</h6>
+<h1><%= @event.name %> Invites (<%= @event.users.length - 1 %>)</h1>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Sent</th>
-    <th>Opened</th>
-    <th>Registered</th>
-    <th>Checked In</th>
+	<thead>
+		<th>Name</th>
+		<th>Email</th>
+		<th>Sent</th>
+		<th>Opened</th>
+		<th>Registered</th>
+		<th>Checked In</th>
+	</thead>
 
-  </tr>
-
-<% @event.invites.each do |invite| %>
-  <tr>
-    <td>
-    	<%= invite.user.name if invite.user.nil? == false %>
-    </td>
-    <td><%= invite.email %></td>
-    <td>true</td>
-    <td><%= invite.visited %></td>
-    <td>
-    	<%= invite.user.nil? == false && invite.user.user_event_associations.events.include?(@event)  ? "true" : "false" %>
-    </td>
-    <td>
-    	<% if !invite.user.nil? && invite.user.user_event_associations.events.include?(@event)  %>
-    		<% @this_event = invite.user.user_event_associations.first(:event => @event) %>
-    		<%= @this_event.checked_in %>
-    	<% else %>
-    		false
-    	<% end %>
-
-    </td>
-  </tr>
+<% if @event.invites.length == 0 %>
+<tr>
+	<td><em>None yet.</em></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<% else %>
+	<% i = 0 %>
+	<% @event.invites.each do |invite| %>
+	<% i += 1 %>
+	  <tr <%= i%2 == 0 ? "class='even'" : nil %>>
+	    <td>
+	    	<%= invite.user.name if invite.user.nil? == false %>
+	    </td>
+	    <td><%= invite.email %></td>
+	    <td>true</td>
+	    <td><%= invite.visited %></td>
+	    <td>
+	    	<%= invite.user.nil? == false && invite.user.user_event_associations.events.include?(@event)  ? "true" : "false" %>
+	    </td>
+	    <td>
+	    	<% if !invite.user.nil? && invite.user.user_event_associations.events.include?(@event)  %>
+	    		<% @this_event = invite.user.user_event_associations.first(:event => @event) %>
+	    		<%= @this_event.checked_in %>
+	    	<% else %>
+	    		false
+	    	<% end %>
+	
+	    </td>
+	  </tr>
+	<% end %>
 <% end %>
 </table>
