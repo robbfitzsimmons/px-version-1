@@ -44,13 +44,15 @@
 	<% if @user.user_event_associations.length != 0 %>
 		<% @user.user_event_associations.each do |assoc| %>
 			<article class="all <%= assoc.admin ? 'admin' : '' %> <%= assoc.attending ? 'attendee' : 'declined' %>">
-				<span class="date">
-					<strong>
-						<%= assoc.event.start_date.strftime("%b") %>
-					</strong>
-					<%= assoc.event.start_date.strftime("%e") %><%= assoc.event.start_date != assoc.event.end_date ? '-' + assoc.event.end_date.strftime("%e").delete(" ") : '' %>
-				</span>
+				<img src="<%= assoc.event.logo %>" alt="" />
 				<div>
+				<h4><a href="/<%= assoc.event.permalink %>"><%= assoc.event.name %></a></h4>
+				<h5><%= assoc.event.description %></h5>
+				<h6>
+					<%= assoc.event.location %> &bull; 
+					<%= assoc.event.start_date.strftime("%b %e") %><%= assoc.event.start_date != assoc.event.end_date ? '-' + assoc.event.end_date.strftime("%e") : nil %>
+				</h6>
+				</div>
 				<% if assoc.admin %>
 					<span class="tag">Admin</span>
 					<span class="tag">Attending</span>
@@ -61,11 +63,6 @@
 						<span class="tag">Not Attending</span>
 					<% end %>
 				<% end %>
-				<h4><a href="/<%= assoc.event.permalink %>"><%= assoc.event.name %></a></h4>
-				<h5><%= assoc.event.description %></h5>
-				<h6><%= assoc.event.location %></h6>
-				<img src="<%= assoc.event.logo %>" alt="" />
-				</div>
 			</article>
 		<% end %>
 	<% else %>

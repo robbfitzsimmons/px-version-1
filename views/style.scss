@@ -680,9 +680,9 @@ header {
 		
 		img {
 			float: left;
-			height: 56px;
-			margin: 0 10px 5px 0;
-			width: 56px;
+			height: 45px;
+			margin: 0 10px 13px 0;
+			width: 45px;
 		}
 		
 		.top, .bot {
@@ -698,63 +698,64 @@ header {
 			height: 15px;
 		}
 		.social {
-			background: url('/images/socialicons.gif') no-repeat;
+			background: url('/images/socialicons_sm.gif') no-repeat;
 			display: block;
 			float: left;
 			font-size: 0;
-			height: 35px;
+			height: 22px;
 			line-height: -9999em;
-			margin: 5px 12px 0 0;
+			margin: 5px 8px 0 0;
 			overflow: hidden;
-			width: 32px;
+			width: 20px;
 			
 			&.email {
-				background-position: -1px 0;
+				background-position: 0 0;
 				&:hover {
-					background-position: -1px -36px;
+					background-position: 0 -22px;
 				}
 				&:active {
-					background-position: -1px -72px;
+					background-position: 0px -44px;
 				}
 			}
 			
 			&.www {
-				background-position: -33px 0;
+				background-position: -20px 0;
 				&:hover {
-					background-position: -33px -36px;
+					background-position: -20px -22px;
 				}
 				&:active {
-					background-position: -33px -72px;
+					background-position: -20px -44px;
 				}
 			}
 			
 			&.linkedin {
-				background-position: -65px 0;
+				background-position: -40px 0;
+				width: 19px;
 				&:hover {
-					background-position: -65px -36px;
+					background-position: -40px -22px;
 				}
 				&:active {
-					background-position: -65px -72px;
+					background-position: -40px -44px;
 				}
 			}
 			
 			&.facebook {
-				background-position: -97px 0;
+				background-position: -60px 0;
 				&:hover {
-					background-position: -97px -36px;
+					background-position: -60px -22px;
 				}
 				&:active {
-					background-position: -97px -72px;
+					background-position: -60px -44px;
 				}
 			}
 			
 			&.twitter {
-				background-position: -129px 0;
+				background-position: -80px 0;
 				&:hover {
-					background-position: -129px -36px;
+					background-position: -80px -22px;
 				}
 				&:active {
-					background-position: -129px -72px;
+					background-position: -80px -44px;
 				}
 			}
 		}
@@ -1240,7 +1241,7 @@ header {
 			
 			div {
 				float: left;
-				width: 483px;
+				width: 450px;
 			}
 			
 			p {
@@ -1249,7 +1250,10 @@ header {
 			}
 			
 			img {
-				float: right;
+				float: left;
+				height: 75px;
+				margin: 0 15px 0 0;
+				width: 75px;
 			}
 			
 			span.tag {
