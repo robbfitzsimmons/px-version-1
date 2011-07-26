@@ -4,6 +4,7 @@
 	<p>This is how you look to others.</p>
 	<p>The large format is seen on the event attendees page.</p>
 	<p>The small format is seen on the event dashboard page.</p>
+	<p>If you are unhappy you can edit your <a href="/users/<%= @user.id %>/edit">nametag</a>.</p>
 
 	<p>Find me in views/users/nametag.erb</p>
 	
@@ -17,16 +18,16 @@
 	<h4><%= @user.description %></h4>
 	<h5><%= @user.location %></h4>
 
-	<% if !@user.website.nil? %>
+	<% if !@user.website.blank? %>
 		<a target="_blank" href="<%= @user.website %>">Website Icon</a>
 	<% end %>
-	<% if !@user.website.nil? %>
+	<% if !@user.facebook.blank? %>
 		<a target="_blank" href="<%= @user.facebook %>">Facebook Icon</a>
 	<% end %>
-	<% if !@user.website.nil? %>
+	<% if !@user.linked_in.blank? %>
 		<a target="_blank" href="<%= @user.linked_in %>">LinkedIn Icon</a>
 	<% end %>
-	<% if !@user.website.nil? %>
+	<% if !@user.twitter.blank? %>
 		<a target="_blank" href="<%= @user.twitter %>">Twitter Icon</a>
 	<% end %>
 

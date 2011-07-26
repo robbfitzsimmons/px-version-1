@@ -131,18 +131,9 @@ get '/:permalink/questions/answer' do
 		@event = Event.first(:permalink => params[:permalink].downcase)
 		@answer = Answer.new()
 
-		all_questions_this_event = current_user.events.first(:id => @event.id).questions
+		
 
-    # Get questions the user has answered already
-    questions_user_has_answered = current_user.answers.questions(:event => @event)
-    
-    # Remove questions the user has answered from all the questions leaving unanswered questions
-    #available_teams.delete_if{ |available_team| (available_team.id == keep_game.home_id || available_team.id == keep_game.away_id)}
-    questions_user_has_answered.each do |answered_question|  
-      all_questions_this_event.delete_if{ |question| (question == answered_question)}
-    end
-
-    if all_questions_this_event.count == 0
+    if current_user.questions_this_event(@event).count == 0
     	flash[:warning] = "You have already answered all the questions for this event."
     	redirect back
     end

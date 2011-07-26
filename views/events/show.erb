@@ -30,20 +30,23 @@
 	<% end %>
 	</ul>
 	
-	<h2>Questions (<%= @event.questions.count %>)</h2>
-	<% if event_admin %>
-		<a href="/questions/new">Add new</a>
-	<% end %>
-	
-<!--
-	<ul>
-	<% @event.questions(:limit => 2).each do |question| %>
-		<li><%= question.text %></li>
-	<% end %>
-	</ul>
--->
-	<% if @event.questions.count > 0 %>
-		<a href="/<%= @event.permalink %>/questions/answer">Answer Q's</a>
+	<% events_unanswered_questions = current_user.questions_this_event(@event) %>
+	<% if events_unanswered_questions.count != 0 || event_admin %>
+		<h2>Questions (<%= @event.questions.count %>)</h2>
+		<% if event_admin %>
+			<a href="/questions/new">Add new</a>
+		<% end %>
+		
+	<!--
+		<ul>
+		<% @event.questions(:limit => 2).each do |question| %>
+			<li><%= question.text %></li>
+		<% end %>
+		</ul>
+	-->
+		<% if events_unanswered_questions.count != 0 %>
+			<a href="/<%= @event.permalink %>/questions/answer">Answer Q's</a>
+		<% end %>
 	<% end %>
 </section>
 
