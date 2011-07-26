@@ -8,6 +8,16 @@ require 'openid/store/filesystem'
 require 'fileutils'
 
 
+if (ENV['RACK_ENV']) == "production"
+	smtp_conn = Net::SMTP.new('smtp.gmail.com', 25)
+	smtp_conn.enable_starttls          
+	smtp_conn.start('smtp.gmail.com', 'pdudley89@gmail.com', 'totspuRs505', :plain)
+
+	Mail.defaults do                                                   
+	  delivery_method :smtp_connection, { :connection => smtp_conn }   
+	end
+end 
+
 
 # Set up database
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite://#{Dir.pwd}/db/proximate.db")

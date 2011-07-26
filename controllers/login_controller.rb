@@ -29,13 +29,37 @@ get '/recover' do
 end
 
 post '/recover' do
-	if (User.first(:email => params[:email]).nil?)
+	user = User.first(:email => params[:email])
+	puts user.name
+	if user.nil?
 		flash[:error] = "There is no account associated with that email."
 		redirect back
 	else
 		recover_password = PasswordReset.new(:email => params[:email])
 		if recover_password.save
 			status(202)
+
+			#Send Email
+			mail = Mail.new do          
+			  to "#{user.name} <#{user.email}>"         
+			  from 'Proximate Staff <no-reply@proximate.com>'     
+			  subject 'Proximate Password Reset'               
+			end  
+
+			html_part = Mail::Part.new do |part| 
+	      part.content_type 'text/html; charset=UTF-8' 
+	      part.body("
+	      	<p>Hello #{user.name},</p>
+					<p>Please follow this link to reset your password
+					<a href='http://localhost:9292/recover/#{recover_password.slug}'>http://localhost:9292/recover/#{recover_password.slug}</a></p>
+					<p>Thank you, <br />
+					The Proximate Team
+					</p>
+	      ") 
+   		end 
+    	mail.html_part = html_part
+			mail.deliver
+
 			flash[:success] = "Check your email to reset your password."
 			redirect '/'
 		else
@@ -74,31 +98,6 @@ put '/recover/:slug' do
 	if user.update(:password => params[:password])
 		status(202)
 
-		#Send Email
-		@options = {
-	    :to => "Philip Dudley <pdudley89@gmail.com>",
-	    :from => "Philip Dudley <pdudley89@gmail.com>",
-	    :subject=> "Contact Form",
-	    :body => "Budget:",
-	    :via => :smtp, :smtp => {
-	      :host => 'smtp.gmail.com',
-	      :port => '587',
-	      :user => 'pdudley89@gmail.com',
-	      :password => 'totspuRs505',
-	      :auth => :plain,
-	      :domain => "gmail.com"
-	     },
-	    :headers => { "Reply-To" => "pdudley89@gmail.com" }
-	  }
-  
-	  if params[:attachment] &&
-	     (tmpfile = params[:attachment][:tempfile]) &&
-	     (name = params[:attachment][:filename])
-	     
-	    @options[:attachments] = { name => tmpfile.read() }
-	  end
-
-	  Pony.mail(@options)
 
 		recover.update(:used => true)
 		flash[:success] = "Password successfully changed. Please try logging in again."

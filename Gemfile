@@ -12,19 +12,16 @@ gem "dm-timestamps"
 
 gem "omniauth"
 
-gem "pony"
-
 gem "sass" 
 
 gem "dm-paperclip", :git => "git://github.com/pdud/dm-paperclip.git"
 
 group :development do
-  # gem 'pony'
   gem "dm-sqlite-adapter"
 end
 
 group :production do
-  # gem 'pony'
+  gem "mail"
   gem "aws-s3"
   gem "dm-postgres-adapter"			# allows database to work on Heroku
 end
