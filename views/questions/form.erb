@@ -3,9 +3,10 @@
 
 <label for="question[type]">Type</label>
 <select name="question[type]">
-	<option selected="<%= @question.type %>" value="radio">Radio</option>
-	<option selected="<%= @question.type %>" value="select">Select</option>
-	<option selected="<%= @question.type %>" value="text">Text</option>
+	<option selected="selected"></option>
+	<option <%= @question.type == "radio" ? "selected='selected'" : nil %> value="radio">Radio Button</option>
+	<option <%= @question.type == "select" ? "selected='selected'" : nil %> value="select">Drop Down</option>
+	<option <%= @question.type == "text" ? "selected='selected'" : nil %> value="text">Text</option>
 </select>
 
 <label for="question[option1]">Option 1</label>

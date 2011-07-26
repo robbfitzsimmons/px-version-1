@@ -243,10 +243,12 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,hr,p,input,textarea,bl
 }
 
 @mixin inputactive($color, $bg) {			
-	#mid input[type=text]:hover,
-	#mid input[type=password]:hover,
-	#mid textarea:hover {
-		background: #fafafa;
+	#mid input[type=text],
+	#mid input[type=password],
+	#mid textarea {
+		&:hover {
+			background: #fafafa;
+		}
 	}
 	#mid input.active,
 	#mid textarea.active {
@@ -545,6 +547,109 @@ header {
 	float: left;
 	padding: 45px;
 	width: 870px;
+		
+	h3 {
+		color: #484848;
+		font-family: $raleway;
+		font-size: 36px;
+		line-height: 1em;
+		margin: 0 0 20px 0;
+	}
+	
+	h4 {
+		color: #484848;
+		font-size: 22px;
+		line-height: 1.2em;
+	}
+	
+	h5 {
+		font-style: italic;
+		line-height: 1.2em;
+		margin: 0 0 5px 0;
+	}
+	
+	h6 {
+		color: #ccc;
+		font-family: $istok;
+		font-size: 14px;
+		line-height: 1.2em;
+		text-transform: uppercase;
+	}
+	
+	ul.table {
+		@include radius(4px);
+		border: 1px solid #ccc;
+		float: left;
+		width: 100%;
+		
+		li {
+			border-bottom: 1px solid #d8d8d8;
+			color: #b8b8b8;
+			display: block;
+			float: none;
+			padding: 10px;
+			width: 560px;
+			
+			div {
+				float: right;
+			}
+			
+			h4 {
+				margin: 0 445px 10px 0;
+			}
+			
+			h5 {
+				line-height: 1.5em;
+			}
+			
+			h6 {
+				line-height: 1.8em;
+
+				span {
+					float: left;
+					width: 140px;
+				}
+			}
+			
+			&.even {
+				background: #eee;
+			}
+			
+			&.last {
+				border: 0;
+			}
+			
+			p.date {
+				@include radius(4px);
+				background: #fafafa;
+				border-bottom: 1px solid #ccc;
+				border-left: 1px solid #ccc;
+				border-right: 1px solid #ccc;
+				float: left;
+				font-size: 18px;
+				line-height: 1em;
+				margin: 0 15px 0 0;
+				text-align: center;
+				width: 40px;
+				
+				span {
+					@include boxshadow(inset 0 2px 2px 0 #f46766);
+					@include gradient(#df4c4b, #c43037);
+					@include radius-top(4px);
+					border: 1px solid #884f51;
+					color: #7e171e;
+					float: left;
+					font-size: 14px;
+					line-height: 1em;
+					margin: 0 0 4px -1px;
+					padding: 2px 0;
+					text-shadow: 0 1px 1px #e35851;
+					text-transform: uppercase;
+					width: 40px;
+				}
+			}
+		}
+	}
 	
 	#landing {
 		h1 {
@@ -628,15 +733,7 @@ header {
 				width: 494px;
 			}
 		}
-	}
-		
-	h3 {
-		color: #484848;
-		font-family: $raleway;
-		font-size: 36px;
-		line-height: 1em;
-		margin: 0 0 20px 0;
-	}
+	} /* landing */
 	
 	p {
 		margin: 0 0 20px 0;
@@ -657,6 +754,11 @@ header {
 	}
 	
 	form {
+	
+		fieldset.radio {
+			margin: 0 0 25px 0;
+		}
+		
 		input[type=text],
 		input[type=password] {
 			@include radius(4px);
@@ -679,7 +781,11 @@ header {
 				}
 			}
 		}
-				
+		
+		input[type=radio] {
+			margin: 0 10px 0 0;
+		}
+	
 		input[type=submit] {
 			@include button(110px);
 			float: right;
@@ -689,16 +795,6 @@ header {
 			@extend input[type=text];
 			height: 46px;
 		}
-		
-		label {				
-			&.error {
-				color: #df4c4b;
-				float: left;
-				margin: 0 0 15px 160px;
-				padding: 0;
-				width: 340px;
-			}
-		}
 	}
 	
 	.left-33 {
@@ -707,7 +803,6 @@ header {
 		
 		ul {
 			float: left;
-			margin: 0 0 20px;
 			width: 100%;
 			
 			a {
@@ -817,11 +912,13 @@ header {
 				label {
 					width: 100%;
 					float: left;
+					
 					input {
 						display: inline;
 						float: left;
 						margin: 0 0 0 160px;
 					}
+					
 					p {
 						float: left;
 						margin: 0 0 0 15px;
@@ -838,14 +935,21 @@ header {
 				padding: 18px 0 0;
 				width: 160px;
 				
-				&#passwordconf {
+				&.two-lines {
 					padding: 9px 0 0;
 				}
 				
-				&.error {
+				&.error {					
+					color: #df4c4b;
 					float: left;
 					margin: 0 0 15px 160px;
 					padding: 0;
+					width: 340px;
+				}
+				
+				&.radio {
+					float: left;
+					height: 15px;
 					width: 340px;
 				}
 			}
@@ -878,41 +982,12 @@ header {
 			input[type=password] {
 				width: 500px;
 			}
-			
-			label.error {
-				margin: 0;
-			}
-			
-			a {
-				@extend .right-50;
-			}
 		}
 		
 		article {
 			@include container;
 			margin: 0 0 20px 0;
 			width: 540px;
-			
-			h2, h3, h4 {
-				float: left;
-				width: 100%;
-			}
-			
-			h1 {
-				font-size: 22px;
-			}
-			
-			h2 {
-				font-style: italic;
-				margin: 0 0 5px 0;
-			}
-			
-			h3 {
-				color: #ccc;
-				font-family: $istok;
-				font-size: 14px;
-				text-transform: uppercase;
-			}
 			
 			p {
 				float: left;

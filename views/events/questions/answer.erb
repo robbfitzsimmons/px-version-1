@@ -1,64 +1,66 @@
-<h6>Find me in views/events/questions/answer.erb</h6>
+<section class="left-33">
+	<h3>Event Questions</h3>
+	<p>Please answer these questions before attending your event.</p>
+</section>
 
-<h1>Answer the Events Questions</h1>
-<p>We need to know if everyone speaks english</p>
-
-
-<form action="/answers" method="post">
-	<% @i = 0 %>
-	<% @event.questions.each do |question| %>
-	<% @i = @i + 1 %>
-		
-		<% if question.type == "text" %>
-			<label for="answer<%= @i %>[text_answer]"><%= question.text %></label>
-			<input name="answer<%= @i %>[text_answer]" type="text" value="<%= @answer.text_answer%>" />
-			<br/ ><br />
-		<% end %>
-
-		<% if question.type == "radio" %>
-			<label for="answer<%= @i %>[int_answer]"><%= question.text %></label>
-				<% if !question.option1.empty? %>
-					<label>
-						<input name="answer<%= @i %>[int_answer]" type="radio" value="1" /><%= question.option1 %>
-					</label>
-				<% end %>
-				<% if !question.option2.empty? %>
-					<label>
-						<input name="answer<%= @i %>[int_answer]" type="radio" value="2" /><%= question.option2 %>
-					</label>
-				<% end %>
-				<% if !question.option3.empty? %>
-					<label>
-						<input name="answer<%= @i %>[int_answer]" type="radio" value="3" /><%= question.option3 %>
-					</label>
-				<% end %>
-			<br />
-		<% end %>
-
-
-		<% if question.type == "select" %>
-			<label for="answer<%= @i %>[int_answer]"><%= question.text %></label>
-				<select name="answer<%= @i %>[int_answer]">
+<section class="right-67">
+	<form action="/answers" method="post">
+		<% i = 0 %>
+		<% @event.questions.each do |question| %>
+		<% i = i + 1 %>
+			
+			<% if question.type == "text" %>
+				<label for="answer<%= i %>[text_answer]" class="two-lines"><%= question.text %></label>
+				<input name="answer<%= i %>[text_answer]" type="text" value="<%= @answer.text_answer%>" />
+				<br/ ><br />
+			<% end %>
+	
+			<% if question.type == "radio" %>
+				<label for="answer<%= i %>[int_answer]"><%= question.text %></label>
+				<fieldset class="radio">
 					<% if !question.option1.empty? %>
-							<option name="answer<%= @i %>[int_answer]" type="radio" value="1"><%= question.option1 %></option>
+						<label class="radio">
+							<input name="answer<%= i %>[int_answer]" type="radio" value="1" /><%= question.option1 %>
+						</label>
 					<% end %>
 					<% if !question.option2.empty? %>
-						<label>
-							<option name="answer<%= @i %>[int_answer]" type="radio" value="2"><%= question.option2 %></option>
+						<label class="radio">
+							<input name="answer<%= i %>[int_answer]" type="radio" value="2" /><%= question.option2 %>
 						</label>
 					<% end %>
 					<% if !question.option3.empty? %>
-						<label>
-							<option name="answer<%= @i %>[int_answer]" type="radio" value="3"><%= question.option3 %></option>
+						<label class="radio">
+							<input name="answer<%= i %>[int_answer]" type="radio" value="3" /><%= question.option3 %>
 						</label>
 					<% end %>
-				</select>
-			<br />
+				</fieldset>
+			<% end %>
+	
+	
+			<% if question.type == "select" %>
+				<label for="answer<%= i %>[int_answer]"><%= question.text %></label>
+					<select name="answer<%= i %>[int_answer]">
+						<% if !question.option1.empty? %>
+								<option name="answer<%= i %>[int_answer]" type="radio" value="1"><%= question.option1 %></option>
+						<% end %>
+						<% if !question.option2.empty? %>
+							<label>
+								<option name="answer<%= i %>[int_answer]" type="radio" value="2"><%= question.option2 %></option>
+							</label>
+						<% end %>
+						<% if !question.option3.empty? %>
+							<label>
+								<option name="answer<%= i %>[int_answer]" type="radio" value="3"><%= question.option3 %></option>
+							</label>
+						<% end %>
+					</select>
+				<br />
+			<% end %>
+	
+		<input name="answer<%= i %>[question_id]" type="hidden" value="<%= question.id %>" />
 		<% end %>
-
-	<input name="answer<%= @i %>[question_id]" type="hidden" value="<%= question.id %>" />
-	<% end %>
-
-	<input name="num_questions" type="hidden" value="<%= @i%>" />
-	<input type="submit" value="Submit Answers" />
-</form>
+	
+		<input name="num_questions" type="hidden" value="<%= i%>" />
+		<input type="submit" value="Submit Answers" />
+	</form>
+</section>

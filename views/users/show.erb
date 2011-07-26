@@ -1,8 +1,8 @@
 <section class="left-33">
 	<h3>My Events</h3>
 	
+	<h2>Filter</h2>
 	<ul>
-		<li>Filter</li>
 		<li><a href="javascript: void(0)" id="filter-all">All events (<%= @user.user_event_associations.length + @user.new_invites.length %>)</a></li>
 		<li><a href="javascript: void(0)" id="filter-attendee">Events I'm attending (<%= @user.user_event_associations.events.length %>)</a></li>
 		<li><a href="javascript: void(0)" id="filter-admin">Events I created (<%= @user.user_event_associations(:admin => true).length %>)</a></li>
@@ -10,7 +10,7 @@
 	</ul>
 	
 	<% if @user.people_matches.length != 0 %>
-		<h4>Matches (<%= @user.people_matches.length %>)</h4>
+		<h2>Matches (<%= @user.people_matches.length %>)</h2>
 		<% @user.people_matches.each do |match| %>
 			<p>
 				<img src="<%= !match.image.nil? ? match.image : "/images/80x80.gif" %>" alt="<%= match.name %>" />
@@ -34,9 +34,9 @@
 				<% elsif !assoc.admin %>
 					<span>Attending</span>
 				<% end %>
-				<h1><a href="/events/<%= assoc.event.permalink %>"><%= assoc.event.name %></a></h1>
-				<h2><%= assoc.event.description %></h2>
-				<h3><%= assoc.event.location %></h3>
+				<h4><a href="/events/<%= assoc.event.permalink %>"><%= assoc.event.name %></a></h4>
+				<h5><%= assoc.event.description %></h5>
+				<h6><%= assoc.event.location %></h6>
 				<p><%= assoc.event.start_date.strftime("%I:%M %p") %> to <%= assoc.event.end_date.strftime("%I:%M %p") %></p>
 				<img src="/images/80x80.gif" alt="" />
 			</article>

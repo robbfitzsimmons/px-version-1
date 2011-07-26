@@ -1,15 +1,80 @@
-<h1><%= @event.name %></h1>
-<h6>Find me in views/events/show.erb</h6>
-
 <% event_admin = is_event_admin(@event) %>
 
-<% if event_admin %>
-	You are an admin
-<% end %>
+<section class="left-33">
+	<h4><%= @event.name %></h4>
+	<h5><%= @event.description %></h5>
+	<h6>
+		<%= @event.location %> &bull; <%= @event.start_date.strftime("%b %e") %><%= @event.start_date != @event.end_date ? '-' + @event.end_date.strftime("%b %e") : "" %>
+	</h6>
+	<% if event_admin %>
+	<p style="font-size: 14px;"><a href="javascript: void(0)">edit event details</a></p>
+	<% end %>
+	
+	<h2>
+	<% if event_admin %>
+		<a href = "/events/<%= @event.permalink %>/worksheet">Attendees (<%= @event.users.length %>)</a>
+	<% else %>
+		Attendees (<%= @event.users.length %>)
+	<% end %>
+	</h2>
+	
+	<ul>
+	<% @event.user_event_associations(:limit => 5).each do |assoc| %>
+		<li><%= assoc.user.name %></li>
+	<% end %>
+	</ul>
+	
+	<h2>Questions (<%= @event.questions.count %>)</h2>
+	<% if event_admin %>
+		<a href="/questions/new">Add new</a>
+	<% end %>
+	
+<!--
+	<ul>
+	<% @event.questions(:limit => 2).each do |question| %>
+		<li><%= question.text %></li>
+	<% end %>
+	</ul>
+-->
+	<% if @event.questions.count > 0 %>
+		<a href="/<%= @event.permalink %>/questions/answer">Answer Q's</a>
+	<% end %>
+</section>
 
-<br /><br />
+<section class="right-67">
+	
+	<ul class="table">
+		<% i = 0 %>
+		<% @event.days(:order => [:date.asc]).each do |day| %>
+		<% i = i + 1 %>
+		<li <%= i%2 == 0 ? "class='even'" : "class='boo'" %>>
+			<p class="date"><span><%= day.date.strftime("%b") %></span><%= day.date.strftime("%e") %></p>
+			<div>
+				<h4><%= day.name %></h4>
+				
+				<% day.sessions(:order => [:start_date.asc]).each do |session| %>
+					<h5><%= session.name %></h5>
+					
+					<% session.activities(:order => [:start_date.asc]).each do |activity| %>
+						<h6><span><%= activity.start_date.strftime("%l:%M %P").delete(" ") %>-<%= activity.end_date.strftime("%l:%M %P").delete(" ") %></span><%= activity.name %></h6>
+					<% end %>
+					<h6>
+						<% if event_admin %>
+							<a href="/activities/new?sessions=<%= session.id %>">Add Activity</a>
+						<% end %>
+					</h6>
+					
+				<% end %>
+			</div>
+		</li>
+		<% end %>		
+		<% if event_admin %>
+			<li class="last"><a href = "/sessions/new">Add Session</a></li>
+		<% end %>
+	</ul>
+</section>
 
-
+<div style="float: left; width: 100%; border: 1px solid #eee;">
 	<form action="/events/<%= @event.id %>/rsvp" method="post">
 		<input name="_method" type="hidden" value="put" />
 		<input name="join" type="hidden" value="true" />
@@ -18,52 +83,9 @@
 		<input type="submit" value="Join" />
 	</form>
 
-<br /><br />
-
-
-<h2>Attendees</h2>
+	
 <% if event_admin %>
-	<a href = "/events/<%= @event.permalink %>/worksheet">View the Worksheet</a>
-<% end %>
-<ul>
-<% @event.user_event_associations.each do |assoc| %>
-	<li><%= assoc.user.name %></li>
-<% end %>
-</ul>
-
-<% if event_admin %>
-	<br /><br />
 	<h2>Invite People to the event</h2>
 	<a href="/invites/new">Click here</a>
-	<br /><br />
 <% end %>
-
-<h2>Agenda</h2>
-<% if event_admin %>
-	<a href = "/sessions/new">Add Session</a>
-<% end %>
-
-<% @event.days(:order => [:date.asc]).each do |day| %>
-	<h4><%= day.name %> (<%= day.date.strftime("%b %e") %>)</h4> 
-	<% day.sessions(:order => [:start_date.asc]).each do |session| %>
-		<h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= session.name %> (<%= session.activities.count %> Activities<% if event_admin %>/ <a href="/activities/new?sessions=<%= session.id %>">Add</a><% end %>)</h5>
-			<% session.activities(:order => [:start_date.asc]).each do |activity| %>
-				<h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= activity.name %> (<%= activity.start_date.strftime("%l:%M %P").delete(" ") %>-<%= activity.end_date.strftime("%l:%M %P").delete(" ") %>)</h6>
-			<% end %>
-		
-	<% end %>
-<% end %>
-
-<br /><br />
-<h2>Questions</h2>
-<% if event_admin %>
-	<a href="/questions/new">Click here</a>
-<% end %>
-<ul>
-<% @event.questions.each do |question| %>
-	<li><%= question.text %></li>
-<% end %>
-</ul>
-<% if @event.questions.count > 0 %>
-	<a href="/<%= @event.permalink %>/questions/answer">Click here</a>
-<% end %>
+</div>

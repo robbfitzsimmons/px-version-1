@@ -1,5 +1,6 @@
 $(document).ready(function()
 {
+	/* Homepage */
 	$('a.learn-more').click(function() {
 		lm = $('hr.learn-more').offset();
 		$("html, body").animate({scrollTop:lm.top}, 500, "swing");

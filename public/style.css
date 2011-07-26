@@ -592,7 +592,108 @@ header {
   border-right: 1px solid #ccc;
   float: left;
   padding: 45px;
-  width: 870px; }
+  width: 870px;
+  /* landing */ }
+  #mid h3 {
+    color: #484848;
+    font-family: "Raleway", "Arial", sans-serif;
+    font-size: 36px;
+    line-height: 1em;
+    margin: 0 0 20px 0; }
+  #mid h4 {
+    color: #484848;
+    font-size: 22px;
+    line-height: 1.2em; }
+  #mid h5 {
+    font-style: italic;
+    line-height: 1.2em;
+    margin: 0 0 5px 0; }
+  #mid h6 {
+    color: #ccc;
+    font-family: "Istok Web", "Arial", sans-serif;
+    font-size: 14px;
+    line-height: 1.2em;
+    text-transform: uppercase; }
+  #mid ul.table {
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 100%; }
+    #mid ul.table li {
+      border-bottom: 1px solid #d8d8d8;
+      color: #b8b8b8;
+      display: block;
+      float: none;
+      padding: 10px;
+      width: 560px; }
+      #mid ul.table li div {
+        float: right; }
+      #mid ul.table li h4 {
+        margin: 0 445px 10px 0; }
+      #mid ul.table li h5 {
+        line-height: 1.5em; }
+      #mid ul.table li h6 {
+        line-height: 1.8em; }
+        #mid ul.table li h6 span {
+          float: left;
+          width: 140px; }
+      #mid ul.table li.even {
+        background: #eee; }
+      #mid ul.table li.last {
+        border: 0; }
+      #mid ul.table li p.date {
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        background: #fafafa;
+        border-bottom: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        float: left;
+        font-size: 18px;
+        line-height: 1em;
+        margin: 0 15px 0 0;
+        text-align: center;
+        width: 40px; }
+        #mid ul.table li p.date span {
+          -moz-box-shadow: inset 0 2px 2px 0 #f46766;
+          -ms-box-shadow: inset 0 2px 2px 0 #f46766;
+          -o-box-shadow: inset 0 2px 2px 0 #f46766;
+          -webkit-box-shadow: inset 0 2px 2px 0 #f46766;
+          box-shadow: inset 0 2px 2px 0 #f46766;
+          background: #c43037;
+          background-image: -moz-linear-gradient(top, #df4c4b, #c43037);
+          background-image: -ms-linear-gradient(top, #df4c4b, #c43037);
+          background-image: -o-linear-gradient(top, #df4c4b, #c43037);
+          background-image: -webkit-gradient(linear, left top, left bottom, from(#df4c4b), to(#c43037));
+          background-image: -webkit-linear-gradient(top, #df4c4b, #c43037);
+          background-image: linear-gradient(top, #df4c4b, #c43037);
+          -moz-border-radius-topleft: 4px;
+          -moz-border-radius-topright: 4px;
+          -ms-border-top-left-radius: 4px;
+          -ms-border-top-right-radius: 4px;
+          -o-border-radius-topleft: 4px;
+          -o-border-radius-topright: 4px;
+          -webkit-border-top-left-radius: 4px;
+          -webkit-border-top-right-radius: 4px;
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+          border: 1px solid #884f51;
+          color: #7e171e;
+          float: left;
+          font-size: 14px;
+          line-height: 1em;
+          margin: 0 0 4px -1px;
+          padding: 2px 0;
+          text-shadow: 0 1px 1px #e35851;
+          text-transform: uppercase;
+          width: 40px; }
   #mid #landing h1 {
     color: #484848;
     float: left;
@@ -719,12 +820,6 @@ header {
     #mid #landing form input[type=text], #mid #landing form textarea,
     #mid #landing form input[type=password] {
       width: 494px; }
-  #mid h3 {
-    color: #484848;
-    font-family: "Raleway", "Arial", sans-serif;
-    font-size: 36px;
-    line-height: 1em;
-    margin: 0 0 20px 0; }
   #mid p {
     margin: 0 0 20px 0; }
   #mid a {
@@ -806,6 +901,8 @@ header {
         border: 1px solid #884f51;
         color: #7e171e;
         text-shadow: 0 1px 1px #e35851; }
+  #mid form fieldset.radio {
+    margin: 0 0 25px 0; }
   #mid form input[type=text], #mid form textarea,
   #mid form input[type=password] {
     -moz-border-radius: 4px;
@@ -837,6 +934,8 @@ header {
       #mid form input[type=text].error:hover, #mid form textarea.error:hover,
       #mid form input[type=password].error:hover {
         background: #f0b7b7; }
+  #mid form input[type=radio] {
+    margin: 0 10px 0 0; }
   #mid form input[type=submit] {
     -moz-box-shadow: 0 1px 1px 0 #eeeeee;
     -ms-box-shadow: 0 1px 1px 0 #eeeeee;
@@ -913,18 +1012,11 @@ header {
       text-shadow: 0 1px 1px #e35851; }
   #mid form textarea {
     height: 46px; }
-  #mid form label.error {
-    color: #df4c4b;
-    float: left;
-    margin: 0 0 15px 160px;
-    padding: 0;
-    width: 340px; }
   #mid .left-33 {
     float: left;
     width: 245px; }
     #mid .left-33 ul {
       float: left;
-      margin: 0 0 20px;
       width: 100%; }
       #mid .left-33 ul a.filtered {
         color: #909090;
@@ -974,19 +1066,17 @@ header {
           background-position: -93px 0; }
         #mid .left-50 li span#feature5 {
           background-position: -124px 0; }
-  #mid .right-50, #mid .right-67 form a, #mid .right-67 #form-login a {
+  #mid .right-50, #mid .right-67 form a {
     float: right;
     width: 390px; }
-    #mid .right-50 form, #mid .right-67 form a form, #mid .right-67 #form-login a form {
+    #mid .right-50 form, #mid .right-67 form a form {
       /* hompage form */ }
-      #mid .right-50 form input[type=text], #mid .right-67 form a form input[type=text], #mid .right-67 #form-login a form input[type=text], #mid .right-50 form textarea, #mid .right-67 form a form textarea, #mid .right-67 #form-login a form textarea,
+      #mid .right-50 form input[type=text], #mid .right-67 form a form input[type=text], #mid .right-50 form textarea, #mid .right-67 form a form textarea,
       #mid .right-50 form input[type=password],
       #mid #mid .right-67 form a form input[type=password], #mid .right-67 form
-      #mid a form input[type=password],
-      #mid #mid .right-67 #form-login a form input[type=password], #mid .right-67 #form-login
       #mid a form input[type=password] {
         width: 354px; }
-      #mid .right-50 form input[type=submit], #mid .right-67 form a form input[type=submit], #mid .right-67 #form-login a form input[type=submit] {
+      #mid .right-50 form input[type=submit], #mid .right-67 form a form input[type=submit] {
         -moz-box-shadow: 0 1px 1px 0 #eeeeee;
         -ms-box-shadow: 0 1px 1px 0 #eeeeee;
         -o-box-shadow: 0 1px 1px 0 #eeeeee;
@@ -1015,13 +1105,13 @@ header {
         text-align: center;
         text-decoration: none;
         text-shadow: 0 1px 1px #fff; }
-        #mid .right-50 form input[type=submit] img, #mid .right-67 form a form input[type=submit] img, #mid .right-67 #form-login a form input[type=submit] img {
+        #mid .right-50 form input[type=submit] img, #mid .right-67 form a form input[type=submit] img {
           -moz-box-shadow: 1px 1px 1px 0 white;
           -ms-box-shadow: 1px 1px 1px 0 white;
           -o-box-shadow: 1px 1px 1px 0 white;
           -webkit-box-shadow: 1px 1px 1px 0 white;
           box-shadow: 1px 1px 1px 0 white; }
-        #mid .right-50 form input[type=submit]:hover, #mid .right-67 form a form input[type=submit]:hover, #mid .right-67 #form-login a form input[type=submit]:hover {
+        #mid .right-50 form input[type=submit]:hover, #mid .right-67 form a form input[type=submit]:hover {
           -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
           -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
           -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
@@ -1037,13 +1127,13 @@ header {
           border: 1px solid #884f51;
           color: #7e171e;
           text-shadow: 0 1px 1px #e35851; }
-          #mid .right-50 form input[type=submit]:hover img, #mid .right-67 form a form input[type=submit]:hover img, #mid .right-67 #form-login a form input[type=submit]:hover img {
+          #mid .right-50 form input[type=submit]:hover img, #mid .right-67 form a form input[type=submit]:hover img {
             -moz-box-shadow: 1px 1px 1px 0 #e35851;
             -ms-box-shadow: 1px 1px 1px 0 #e35851;
             -o-box-shadow: 1px 1px 1px 0 #e35851;
             -webkit-box-shadow: 1px 1px 1px 0 #e35851;
             box-shadow: 1px 1px 1px 0 #e35851; }
-        #mid .right-50 form input[type=submit]:active, #mid .right-67 form a form input[type=submit]:active, #mid .right-67 #form-login a form input[type=submit]:active {
+        #mid .right-50 form input[type=submit]:active, #mid .right-67 form a form input[type=submit]:active {
           background: #df4c4b;
           background-image: -moz-linear-gradient(top, #c43037, #df4c4b);
           background-image: -ms-linear-gradient(top, #c43037, #df4c4b);
@@ -1059,7 +1149,7 @@ header {
           border: 1px solid #884f51;
           color: #7e171e;
           text-shadow: 0 1px 1px #e35851; }
-        #mid .right-50 form input[type=submit]#signup, #mid .right-67 form a form input[type=submit]#signup, #mid .right-67 #form-login a form input[type=submit]#signup {
+        #mid .right-50 form input[type=submit]#signup, #mid .right-67 form a form input[type=submit]#signup {
           -moz-border-radius: 0;
           -ms-border-radius: 0;
           -o-border-radius: 0;
@@ -1076,7 +1166,7 @@ header {
           border-bottom-left-radius: 4px;
           border-top-left-radius: 4px;
           height: 48px; }
-        #mid .right-50 form input[type=submit]#linkedin, #mid .right-67 form a form input[type=submit]#linkedin, #mid .right-67 #form-login a form input[type=submit]#linkedin {
+        #mid .right-50 form input[type=submit]#linkedin, #mid .right-67 form a form input[type=submit]#linkedin {
           -moz-box-shadow: 0 1px 1px 0 #eeeeee;
           -ms-box-shadow: 0 1px 1px 0 #eeeeee;
           -o-box-shadow: 0 1px 1px 0 #eeeeee;
@@ -1113,13 +1203,13 @@ header {
           border-radius: 0;
           border-left: 0;
           border-right: 0; }
-          #mid .right-50 form input[type=submit]#linkedin img, #mid .right-67 form a form input[type=submit]#linkedin img, #mid .right-67 #form-login a form input[type=submit]#linkedin img {
+          #mid .right-50 form input[type=submit]#linkedin img, #mid .right-67 form a form input[type=submit]#linkedin img {
             -moz-box-shadow: 1px 1px 1px 0 white;
             -ms-box-shadow: 1px 1px 1px 0 white;
             -o-box-shadow: 1px 1px 1px 0 white;
             -webkit-box-shadow: 1px 1px 1px 0 white;
             box-shadow: 1px 1px 1px 0 white; }
-          #mid .right-50 form input[type=submit]#linkedin:hover, #mid .right-67 form a form input[type=submit]#linkedin:hover, #mid .right-67 #form-login a form input[type=submit]#linkedin:hover {
+          #mid .right-50 form input[type=submit]#linkedin:hover, #mid .right-67 form a form input[type=submit]#linkedin:hover {
             -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
             -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
             -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
@@ -1135,13 +1225,13 @@ header {
             border: 1px solid #884f51;
             color: #7e171e;
             text-shadow: 0 1px 1px #e35851; }
-            #mid .right-50 form input[type=submit]#linkedin:hover img, #mid .right-67 form a form input[type=submit]#linkedin:hover img, #mid .right-67 #form-login a form input[type=submit]#linkedin:hover img {
+            #mid .right-50 form input[type=submit]#linkedin:hover img, #mid .right-67 form a form input[type=submit]#linkedin:hover img {
               -moz-box-shadow: 1px 1px 1px 0 #e35851;
               -ms-box-shadow: 1px 1px 1px 0 #e35851;
               -o-box-shadow: 1px 1px 1px 0 #e35851;
               -webkit-box-shadow: 1px 1px 1px 0 #e35851;
               box-shadow: 1px 1px 1px 0 #e35851; }
-          #mid .right-50 form input[type=submit]#linkedin:active, #mid .right-67 form a form input[type=submit]#linkedin:active, #mid .right-67 #form-login a form input[type=submit]#linkedin:active {
+          #mid .right-50 form input[type=submit]#linkedin:active, #mid .right-67 form a form input[type=submit]#linkedin:active {
             background: #df4c4b no-repeat center center;
             background-image: url("images/social_linkedin.gif"), -moz-linear-gradient(top, #c43037, #df4c4b);
             background-image: url("images/social_linkedin.gif"), -ms-linear-gradient(top, #c43037, #df4c4b);
@@ -1157,10 +1247,10 @@ header {
             border: 1px solid #884f51;
             color: #7e171e;
             text-shadow: 0 1px 1px #e35851; }
-          #mid .right-50 form input[type=submit]#linkedin:hover, #mid .right-67 form a form input[type=submit]#linkedin:hover, #mid .right-67 #form-login a form input[type=submit]#linkedin:hover {
+          #mid .right-50 form input[type=submit]#linkedin:hover, #mid .right-67 form a form input[type=submit]#linkedin:hover {
             border: 1px solid #884f51;
             width: 128px; }
-        #mid .right-50 form input[type=submit]#facebook, #mid .right-67 form a form input[type=submit]#facebook, #mid .right-67 #form-login a form input[type=submit]#facebook {
+        #mid .right-50 form input[type=submit]#facebook, #mid .right-67 form a form input[type=submit]#facebook {
           -moz-box-shadow: 0 1px 1px 0 #eeeeee;
           -ms-box-shadow: 0 1px 1px 0 #eeeeee;
           -o-box-shadow: 0 1px 1px 0 #eeeeee;
@@ -1205,13 +1295,13 @@ header {
           -webkit-border-top-right-radius: 4px;
           border-bottom-right-radius: 4px;
           border-top-right-radius: 4px; }
-          #mid .right-50 form input[type=submit]#facebook img, #mid .right-67 form a form input[type=submit]#facebook img, #mid .right-67 #form-login a form input[type=submit]#facebook img {
+          #mid .right-50 form input[type=submit]#facebook img, #mid .right-67 form a form input[type=submit]#facebook img {
             -moz-box-shadow: 1px 1px 1px 0 white;
             -ms-box-shadow: 1px 1px 1px 0 white;
             -o-box-shadow: 1px 1px 1px 0 white;
             -webkit-box-shadow: 1px 1px 1px 0 white;
             box-shadow: 1px 1px 1px 0 white; }
-          #mid .right-50 form input[type=submit]#facebook:hover, #mid .right-67 form a form input[type=submit]#facebook:hover, #mid .right-67 #form-login a form input[type=submit]#facebook:hover {
+          #mid .right-50 form input[type=submit]#facebook:hover, #mid .right-67 form a form input[type=submit]#facebook:hover {
             -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
             -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
             -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
@@ -1227,13 +1317,13 @@ header {
             border: 1px solid #884f51;
             color: #7e171e;
             text-shadow: 0 1px 1px #e35851; }
-            #mid .right-50 form input[type=submit]#facebook:hover img, #mid .right-67 form a form input[type=submit]#facebook:hover img, #mid .right-67 #form-login a form input[type=submit]#facebook:hover img {
+            #mid .right-50 form input[type=submit]#facebook:hover img, #mid .right-67 form a form input[type=submit]#facebook:hover img {
               -moz-box-shadow: 1px 1px 1px 0 #e35851;
               -ms-box-shadow: 1px 1px 1px 0 #e35851;
               -o-box-shadow: 1px 1px 1px 0 #e35851;
               -webkit-box-shadow: 1px 1px 1px 0 #e35851;
               box-shadow: 1px 1px 1px 0 #e35851; }
-          #mid .right-50 form input[type=submit]#facebook:active, #mid .right-67 form a form input[type=submit]#facebook:active, #mid .right-67 #form-login a form input[type=submit]#facebook:active {
+          #mid .right-50 form input[type=submit]#facebook:active, #mid .right-67 form a form input[type=submit]#facebook:active {
             background: #df4c4b no-repeat center center;
             background-image: url("images/social_facebook.gif"), -moz-linear-gradient(top, #c43037, #df4c4b);
             background-image: url("images/social_facebook.gif"), -ms-linear-gradient(top, #c43037, #df4c4b);
@@ -1249,7 +1339,7 @@ header {
             border: 1px solid #884f51;
             color: #7e171e;
             text-shadow: 0 1px 1px #e35851; }
-      #mid .right-50 form p, #mid .right-67 form a form p, #mid .right-67 #form-login a form p {
+      #mid .right-50 form p, #mid .right-67 form a form p {
         color: #ccc;
         float: left;
         font-size: 14px;
@@ -1288,12 +1378,17 @@ header {
         line-height: 1.2em;
         padding: 18px 0 0;
         width: 160px; }
-        #mid .right-67 form label#passwordconf {
+        #mid .right-67 form label.two-lines {
           padding: 9px 0 0; }
         #mid .right-67 form label.error {
+          color: #df4c4b;
           float: left;
           margin: 0 0 15px 160px;
           padding: 0;
+          width: 340px; }
+        #mid .right-67 form label.radio {
+          float: left;
+          height: 15px;
           width: 340px; }
       #mid .right-67 form input[type=text], #mid .right-67 form textarea,
       #mid .right-67 form input[type=password],
@@ -1569,8 +1664,6 @@ header {
     #mid .right-67 #form-login input[type=text], #mid .right-67 #form-login form textarea, #mid form .right-67 #form-login textarea,
     #mid .right-67 #form-login input[type=password] {
       width: 500px; }
-    #mid .right-67 #form-login label.error {
-      margin: 0; }
     #mid .right-67 article {
       float: left;
       -moz-border-radius: 4px;
@@ -1583,19 +1676,6 @@ header {
       padding: 20px;
       margin: 0 0 20px 0;
       width: 540px; }
-      #mid .right-67 article h2, #mid .right-67 #landing .features article h3, #mid #landing .features .right-67 article h3, #mid .right-67 article h3, #mid .right-67 article h4 {
-        float: left;
-        width: 100%; }
-      #mid .right-67 article h1 {
-        font-size: 22px; }
-      #mid .right-67 article h2, #mid .right-67 #landing .features article h3, #mid #landing .features .right-67 article h3 {
-        font-style: italic;
-        margin: 0 0 5px 0; }
-      #mid .right-67 article h3 {
-        color: #ccc;
-        font-family: "Istok Web", "Arial", sans-serif;
-        font-size: 14px;
-        text-transform: uppercase; }
       #mid .right-67 article p {
         float: left;
         margin: 0; }
