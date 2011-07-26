@@ -758,7 +758,7 @@ header {
     .mid .nametag-sm img {
       float: left;
       height: 56px;
-      margin: 0 10px 15px 0;
+      margin: 0 10px 5px 0;
       width: 56px; }
     .mid .nametag-sm .top, .mid .nametag-sm .bot {
       text-align: center;
@@ -768,6 +768,46 @@ header {
       width: 223px; }
     .mid .nametag-sm .bot {
       height: 15px; }
+    .mid .nametag-sm .social {
+      background: url("/images/socialicons.gif") no-repeat;
+      display: block;
+      float: left;
+      font-size: 0;
+      height: 35px;
+      line-height: -9999em;
+      margin: 5px 12px 0 0;
+      overflow: hidden;
+      width: 32px; }
+      .mid .nametag-sm .social.email {
+        background-position: -1px 0; }
+        .mid .nametag-sm .social.email:hover {
+          background-position: -1px -36px; }
+        .mid .nametag-sm .social.email:active {
+          background-position: -1px -72px; }
+      .mid .nametag-sm .social.www {
+        background-position: -33px 0; }
+        .mid .nametag-sm .social.www:hover {
+          background-position: -33px -36px; }
+        .mid .nametag-sm .social.www:active {
+          background-position: -33px -72px; }
+      .mid .nametag-sm .social.linkedin {
+        background-position: -65px 0; }
+        .mid .nametag-sm .social.linkedin:hover {
+          background-position: -65px -36px; }
+        .mid .nametag-sm .social.linkedin:active {
+          background-position: -65px -72px; }
+      .mid .nametag-sm .social.facebook {
+        background-position: -97px 0; }
+        .mid .nametag-sm .social.facebook:hover {
+          background-position: -97px -36px; }
+        .mid .nametag-sm .social.facebook:active {
+          background-position: -97px -72px; }
+      .mid .nametag-sm .social.twitter {
+        background-position: -129px 0; }
+        .mid .nametag-sm .social.twitter:hover {
+          background-position: -129px -36px; }
+        .mid .nametag-sm .social.twitter:active {
+          background-position: -129px -72px; }
   .mid h3 {
     color: #484848;
     font-family: "Raleway", "Arial", sans-serif;
