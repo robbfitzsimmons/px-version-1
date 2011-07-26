@@ -1,0 +1,35 @@
+<section class="left-33">
+	<h3>Worried how you look?</h3>
+	
+	<p>This is how you look to others.</p>
+	<p>The large format is seen on the event attendees page.</p>
+	<p>The small format is seen on the event dashboard page.</p>
+
+	<p>Find me in views/users/nametag.erb</p>
+	
+</section>
+
+<section class="right-67">
+
+	<img src="<%= @user.image(:thumb) %>" />
+
+	<h3><%= @user.name %></h3>
+	<h4><%= @user.description %></h4>
+	<h5><%= @user.location %></h4>
+
+	<% if !@user.website.nil? %>
+		<a href="<%= @user.website %>">Website Icon</a>
+	<% end %>
+	<% if !@user.website.nil? %>
+		<a href="<%= @user.facebook %>">Facebook Icon</a>
+	<% end %>
+	<% if !@user.website.nil? %>
+		<a href="<%= @user.linked_in %>">LinkedIn Icon</a>
+	<% end %>
+	<% if !@user.website.nil? %>
+		<a href="<%= @user.twitter %>">Twitter Icon</a>
+	<% end %>
+
+</section>
+<script src="/js/validate.js"></script>
+<script src="/js/form.js"></script>

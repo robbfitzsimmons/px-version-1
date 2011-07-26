@@ -200,3 +200,11 @@ get '/users/:id/edit' do
 	
 	erb :'users/edit'	
 end
+
+# Show edit user page
+get '/users/:id/nametag' do
+	@user = User.get(params[:id])
+	@title = "#{@user.name}'s' Nametag"
+	
+	erb :'users/nametag'	
+end

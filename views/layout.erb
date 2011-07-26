@@ -55,7 +55,7 @@
 						</li>
 
 						<li><a href="/users/<%= current_user.id %>">dashboard</a></li>
-						<li><a href="javascript: void(0)">nametag</a></li>						<li>
+						<li><a href="/users/<%= current_user.id %>/nametag">nametag</a></li>						<li>
 							<form action="/logout" method="post">
 								<input name="_method" type="hidden" value="delete" />
 								<input type="submit" value="log out" />
