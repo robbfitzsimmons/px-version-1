@@ -41,7 +41,7 @@
 				<% elsif !assoc.admin %>
 					<span class="tag">Attending</span>
 				<% end %>
-				<h4><a href="/events/<%= assoc.event.permalink %>"><%= assoc.event.name %></a></h4>
+				<h4><a href="/<%= assoc.event.permalink %>"><%= assoc.event.name %></a></h4>
 				<h5><%= assoc.event.description %></h5>
 				<h6><%= assoc.event.location %></h6>
 				<img src="<%= assoc.event.logo %>" alt="" />
@@ -58,7 +58,7 @@
 	<% if @user.new_invites.length != 0 %>
 		<% @user.new_invites.each do |invite| %>
 			<article class="all invited">
-				<span>Invited</span>
+				<span class="tag">Invited</span>
 				<h1><a href="/invites/<%= invite.slug %>"><%= invite.event.name %></a></h1>
 			</article>
 		<% end %>

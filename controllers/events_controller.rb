@@ -50,17 +50,18 @@ put '/events/:id/rsvp' do
 
 	event = Event.get(params[:id])
 
-	## Attending to Not Attending
-	if !current_user.user_event_associations.first(:event => event).nil?
+	puts params[:attend]
+
+	if params[:attend] != "Attend"
 		current_user.user_event_associations.first(:event => event).destroy
 		flash[:success] = "You are now not attending #{event.name}."
-
-		redirect "/#{event.permalink}"
-	
-	## Not attending to Attending
+		if !session[:invite].nil?
+			invite = Invite.get(session[:invite])
+			invite.update(:hide => true)
+			session[:invite_event] = nil
+		end
 	else
 		event.users << current_user
-
 		if event.save
 			status(202)
 			flash[:success] = "You are now attending #{event.name}."
@@ -76,7 +77,6 @@ put '/events/:id/rsvp' do
 			end
 			flash[:error] = "Please Try Again."
 		end
-
 		redirect "/#{event.permalink}"
 
 	end

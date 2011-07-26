@@ -164,16 +164,21 @@ class User
   end
 
   def questions_this_event(event)
-    all_questions_this_event = self.events.first(:id => event.id).questions
+    this_event = self.events.first(:id => event.id)
+    if this_event.nil?
+      return Hash.new
+    else
+      all_questions_this_event = self.events.first(:id => event.id).questions
 
-    # Get questions the user has answered already
-    questions_user_has_answered = self.answers.questions(:event => event)
+      # Get questions the user has answered already
+      questions_user_has_answered = self.answers.questions(:event => event)
 
-    # Remove questions the user has answered from all the questions leaving unanswered questions
-    questions_user_has_answered.each do |answered_question|  
-      all_questions_this_event.delete_if{ |question| (question == answered_question)}
-    end
-    all_questions_this_event
+      # Remove questions the user has answered from all the questions leaving unanswered questions
+      questions_user_has_answered.each do |answered_question|  
+        all_questions_this_event.delete_if{ |question| (question == answered_question)}
+      end
+    return all_questions_this_event
+    end  
   end
 
   private

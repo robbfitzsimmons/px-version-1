@@ -64,23 +64,27 @@
 					</ul>
 				</nav>
 			</header>
-			
+
 			<div class="top">
+					<% event_admin = is_event_admin(@event) %>
+
 		  		<p><%= @title %></p>
 		  		
 		  		<% if @event_dashboard %>
 		  			
-		  			<% if is_event_admin(@event) %>
-							<a href="/invites/new">Click here</a>
+		  			<% if event_admin %>
+							<a href="/invites/new">Invite</a>
 						<% end %>
 
-
-	  				<form action="/events/<%= @event.id %>/rsvp" method="post">
-							<input name="_method" type="hidden" value="put" />
-							<input name="join" type="hidden" value="true" />
-							<input name="invite" type="hidden" value="<%= session[:invite] %>" />
-							<input class="button" type="submit" value="Join" />
-						</form>
+						<% if !event_admin %>
+							<form action="/events/<%= @event.id %>/rsvp" method="post">
+								<input name="_method" type="hidden" value="put" />
+								<input name="invite" type="hidden" value="<%= session[:invite] %>" />
+								
+								<input name="attend" id="attend" type="submit" value="Attend" />
+								<input name="attend" id="not_attend" type="submit" value="Not Attend" />
+							</form>
+						<% end %>
 		  		<% end %>
 			</div>
 			
