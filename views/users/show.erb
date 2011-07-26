@@ -14,24 +14,24 @@
 		<h2>Matches (<%= @user.people_matches.length %>)</h2>
 		<% @user.people_matches.each do |match| %>
 		<div class="nametag-sm">
-				<img src="<%= match.image(:thumb) %>" />
-				<h4><%= match.name %></h4>
-			
-				<% if !match.email.blank? %>
-					<a target="_blank" href="mailto:<%= match.email %>" class="social email">Email</a>
-				<% end %>
-				<% if !match.website.blank? %>
-					<a target="_blank" href="<%= match.website %>" class="social www">Website</a>
-				<% end %>
-				<% if !match.facebook.blank? %>
-					<a target="_blank" href="<%= match.facebook %>" class="social facebook">Facebook</a>
-				<% end %>
-				<% if !match.linked_in.blank? %>
-					<a target="_blank" href="<%= match.linked_in %>" class="social linkedin">LinkedIn</a>
-				<% end %>
-				<% if !match.twitter.blank? %>
-					<a target="_blank" href="<%= match.twitter %>" class="social twitter">Twitter</a>
-				<% end %>
+			<img src="<%= match.image(:thumb) %>" />
+			<h4><%= match.name %></h4>
+		
+			<% if !match.email.blank? %>
+				<a target="_blank" href="mailto:<%= match.email %>" class="social email">Email</a>
+			<% end %>
+			<% if !match.website.blank? %>
+				<a target="_blank" href="<%= match.website %>" class="social www">Website</a>
+			<% end %>
+			<% if !match.facebook.blank? %>
+				<a target="_blank" href="<%= match.facebook %>" class="social facebook">Facebook</a>
+			<% end %>
+			<% if !match.linked_in.blank? %>
+				<a target="_blank" href="<%= match.linked_in %>" class="social linkedin">LinkedIn</a>
+			<% end %>
+			<% if !match.twitter.blank? %>
+				<a target="_blank" href="<%= match.twitter %>" class="social twitter">Twitter</a>
+			<% end %>
 		</div>	
 		<% end %>
 	<% else %>
@@ -46,12 +46,12 @@
 			<article class="all <%= assoc.admin ? 'admin' : '' %> <%= assoc.attending ? 'attendee' : 'declined' %>">
 				<img src="<%= assoc.event.image(:thumb) %>" alt="" />
 				<div>
-				<h4><a href="/<%= assoc.event.permalink %>"><%= assoc.event.name %></a></h4>
-				<h5><%= assoc.event.description %></h5>
-				<h6>
-					<%= assoc.event.location %> &bull; 
-					<%= assoc.event.start_date.strftime("%b %e") %><%= assoc.event.start_date != assoc.event.end_date ? '-' + assoc.event.end_date.strftime("%e") : nil %>
-				</h6>
+					<h4><a href="/<%= assoc.event.permalink %>"><%= assoc.event.name %></a></h4>
+					<h5><%= assoc.event.description %></h5>
+					<h6>
+						<%= assoc.event.location %> &bull; 
+						<%= assoc.event.start_date.strftime("%b %e") %><%= assoc.event.start_date != assoc.event.end_date ? '-' + assoc.event.end_date.strftime("%e") : nil %>
+					</h6>
 				</div>
 				<% if assoc.admin %>
 					<span class="tag">Admin</span>
@@ -75,17 +75,13 @@
 	<% if @user.new_invites.length != 0 %>
 		<% @user.new_invites.each do |invite| %>
 			<article class="all invited">
-				<span class="date">
-					<strong>
-						<%= invite.event.start_date.strftime("%b") %>
-					</strong>
-					<%= invite.event.start_date.strftime("%e") %><%= invite.event.start_date != invite.event.end_date ? '-' + invite.event.end_date.strftime("%e").delete(" ") : '' %>
-				</span>
-				<span class="tag">Invited</span>
-				<h4><a href="/invites/<%= invite.slug %>"><%= invite.event.name %></a></h4>
-				<h5><%= invite.event.description %></h5>
-				<h6><%= invite.event.location %></h6>
 				<img src="<%= invite.event.image(:thumb) %>" alt="" />
+				<div>
+					<h4><a href="/invites/<%= invite.slug %>"><%= invite.event.name %></a></h4>
+					<h5><%= invite.event.description %></h5>
+					<h6><%= invite.event.location %></h6>
+				</div>
+				<span class="tag">Invited</span>
 			</article>
 		<% end %>
 	<% end %>

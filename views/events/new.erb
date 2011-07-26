@@ -31,19 +31,11 @@
 			<option value="turquoise">Turquoise</option>
 		</select>
 
-		<br />
-		<br />
-		<br />
-
-		<label for="event[image]">Image:</label>
+		<label for="event[image]">Image</label>
 		<% if @event.image.nil? %>
 			<img src="<%= @event.logo.image(:thumb) %>" />
 		<% end %>
-		<input style="float: right;" type="file" name="event[image]" /> 
-
-		<br />
-		<br />
-		<br />
+		<input type="file" name="event[image]" /> 
 	
 		<label for="start_day">Start Day</label>
 		<select name="start_day">
