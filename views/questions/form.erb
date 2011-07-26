@@ -2,20 +2,24 @@
 <input name="question[text]" type="text" value="<%= @question.text%>" />
 
 <label for="question[type]">Type</label>
-<select name="question[type]">
+<select id="question_type" name="question[type]">
 	<option selected="selected"></option>
 	<option <%= @question.type == "radio" ? "selected='selected'" : nil %> value="radio">Radio Button</option>
 	<option <%= @question.type == "select" ? "selected='selected'" : nil %> value="select">Drop Down</option>
 	<option <%= @question.type == "text" ? "selected='selected'" : nil %> value="text">Text</option>
 </select>
 
-<label for="question[option1]">Option 1</label>
-<input name="question[option1]" type="text" value="<%= @question.option1%>" />
+<div id="question_options" style="display: none">
 
-<label for="question[option2]">Option 2</label>
-<input name="question[option2]" type="text" value="<%= @question.option2%>" />
+	<label for="question[option1]">Option 1</label>
+	<input id="question_option_1" name="question[option1]" type="text" value="<%= @question.option1%>" />
 
-<label for="question[option3]">Option 3</label>
-<input name="question[option3]" type="text" value="<%= @question.option3%>" />
+	<label for="question[option2]">Option 2</label>
+	<input id="question_option_2" name="question[option2]" type="text" value="<%= @question.option2%>" />
+
+	<label for="question[option3]">Option 3</label>
+	<input id="question_option_3" name="question[option3]" type="text" value="<%= @question.option3%>" />
+
+</div>
 
 <br />

@@ -152,4 +152,16 @@ $(document).ready(function()
 		}
 	}); // end form-questions.validate
 
+	$("#question_type").change(function () {
+      if ($("#question_type :selected").val() == "select" || $("#question_type :selected").val() == "radio"){
+      		$("#question_options").slideDown();
+      }
+      else{
+      	// Hide the form and remove any values entered
+      	$("#question_options").slideUp();
+      	$("#question_option_1").val("");
+      	$("#question_option_2").val("");
+      	$("#question_option_3").val("");
+      }
+		});
 });
