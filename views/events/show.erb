@@ -4,7 +4,7 @@
 	<h4><%= @event.name %></h4>
 	<h5><%= @event.description %></h5>
 	<h6>
-		<%= @event.location %> &bull; <%= @event.start_date.strftime("%b %e") %><%= @event.start_date != @event.end_date ? '-' + @event.end_date.strftime("%b %e") : "" %>
+		<%= @event.location %> &bull; <%= @event.start_date.strftime("%b %e") %><%= @event.start_date != @event.end_date ? '-' + @event.end_date.strftime("%e") : "" %>
 	</h6>
 	
 	<p>
@@ -23,8 +23,35 @@
 	
 	<ul>
 	<% @event.user_event_associations(:limit => 5).each do |assoc| %>
-		<li><%= assoc.user.name %></li>
+		<div class="nametag-sm">
+			<section class="top">
+				<h2><strong>Hello</strong> my name is</h2>
+			</section>
+			<section class="mid">
+				<img src="<%= assoc.user.image(:thumb) %>" />
+				<h4><%= assoc.user.name %></h4>
+				<h5><%= assoc.user.description %></h5>
+			
+				<% if !assoc.user.email.blank? %>
+					<a target="_blank" href="mailto:<%= assoc.user.email %>" class="social email">Email</a>
+				<% end %>
+				<% if !assoc.user.website.blank? %>
+					<a target="_blank" href="<%= assoc.user.website %>" class="social www">Website</a>
+				<% end %>
+				<% if !assoc.user.facebook.blank? %>
+					<a target="_blank" href="<%= assoc.user.facebook %>" class="social facebook">Facebook</a>
+				<% end %>
+				<% if !assoc.user.linked_in.blank? %>
+					<a target="_blank" href="<%= assoc.user.linked_in %>" class="social linkedin">LinkedIn</a>
+				<% end %>
+				<% if !assoc.user.twitter.blank? %>
+					<a target="_blank" href="<%= assoc.user.twitter %>" class="social twitter">Twitter</a>
+				<% end %>
+			</section>
+			<section class="bot"></section>
+		</div>		
 	<% end %>
+	
 	<% if event_admin %>
 		<a href = "/events/<%= @event.permalink %>/worksheet">View worksheet</a>
 	<% end %>

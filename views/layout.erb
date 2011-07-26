@@ -47,7 +47,7 @@
 								<h6>Events with Unanswered Questions</h6>
 									<% current_user.events_with_unanswered_questions.each do |event| %>
 										<li>
-											Go to <a href="/events/<%= event.permalink %>"><%= event.name %></a>
+											Go to <a href="/<%= event.permalink %>"><%= event.name %></a>
 										</li>
 									<% end %>
 								<% end %>
@@ -73,7 +73,7 @@
 		  		<% if @event_dashboard %>
 		  			
 		  			<% if event_admin %>
-							<a href="/invites/new">Invite</a>
+							<a href="/invites/new" class="button">Invite People</a>
 						<% end %>
 
 						<% if !event_admin %>
