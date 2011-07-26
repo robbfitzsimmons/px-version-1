@@ -104,6 +104,8 @@ end
 
 # Show a specific event
 get '/events/:permalink' do
+
+	@event_dashboard = true
 	
 	@event = Event.first(:permalink => params[:permalink].downcase)
 	@title = "#{@event.name}"
