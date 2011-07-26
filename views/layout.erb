@@ -55,7 +55,7 @@
 						</li>
 
 						<li><a href="/users/<%= current_user.id %>">dashboard</a></li>
-						<li><a href="javascript: void(0)">nametag</a></li>						<li>
+						<li><a href="/users/<%= current_user.id %>/nametag">nametag</a></li>						<li>
 							<form action="/logout" method="post">
 								<input name="_method" type="hidden" value="delete" />
 								<input type="submit" value="log out" />
@@ -67,6 +67,21 @@
 			
 			<div id="top">
 		  		<p><%= @title %></p>
+		  		
+		  		<% if @event_dashboard %>
+		  			
+		  			<% if is_event_admin(@event) %>
+							<a href="/invites/new">Click here</a>
+						<% end %>
+
+
+	  				<form action="/events/<%= @event.id %>/rsvp" method="post">
+							<input name="_method" type="hidden" value="put" />
+							<input name="join" type="hidden" value="true" />
+							<input name="invite" type="hidden" value="<%= session[:invite] %>" />
+							<input class="button" type="submit" value="Join" />
+						</form>
+		  		<% end %>
 			</div>
 			
 			<div id="mid">
