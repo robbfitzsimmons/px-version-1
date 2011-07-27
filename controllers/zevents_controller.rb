@@ -170,20 +170,32 @@ get '/events/:permalink/worksheet' do
 	erb :'events/worksheet'
 end
 
+# Show the events questions
+get '/:permalink/questions' do
+
+		@event = Event.first(:permalink => params[:permalink].downcase)
+
+    if current_user.questions_this_event(@event).count == 0
+    	flash[:warning] = "You have already answered all the questions for this event."
+    end
+
+	session[:event] = @event.id
+
+	@title = "#{@event.name} Questions"
+
+	erb :'events/questions/questions'
+end
+
 # Show events questions with answer fields for attendee
 get '/:permalink/questions/answer' do
 
 		@event = Event.first(:permalink => params[:permalink].downcase)
 		@answer = Answer.new()
 
-		
-
     if current_user.questions_this_event(@event).count == 0
     	flash[:warning] = "You have already answered all the questions for this event."
     	redirect back
     end
-
-
 
 	session[:event] = @event.id
 
