@@ -20,8 +20,38 @@ post '/activities' do
 	activity = Activity.new(params[:activity])
 	event = session.day.event
 
-	activity.start_date = DateTime.new(session.start_date.year, session.start_date.month, session.start_date.mday, params[:start_hour].to_i, 0)
-	activity.end_date = DateTime.new(session.start_date.year, session.start_date.month, session.start_date.mday, params[:end_hour].to_i, 0)
+	if params[:start_ampm].downcase == "pm"
+		if params[:start_hour].to_i < 12
+			start_hour = params[:start_hour].to_i + 12
+		else
+			start_hour = params[:start_hour].to_i
+		end
+	elsif params[:start_ampm].downcase == "am"
+		if params[:start_hour].to_i == 12
+			start_hour = 0
+		else
+			start_hour = params[:start_hour].to_i
+		end
+	else
+		puts "UHOH"
+	end
+
+	if params[:end_ampm].downcase == "pm"
+		if params[:end_hour].to_i < 12
+			end_hour = params[:end_hour].to_i + 12
+		else
+			start_hour = params[:start_hour].to_i
+		end
+	elsif params[:end_ampm].downcase == "am"
+		if params[:end_hour].to_i == 12
+			end_hour = 0
+		else
+			end_hour = params[:end_hour].to_i
+		end
+	end
+
+	activity.start_date = DateTime.new(session.start_date.year, session.start_date.month, session.start_date.mday, start_hour, params[:start_minute].to_i)
+	activity.end_date = DateTime.new(session.start_date.year, session.start_date.month, session.start_date.mday, end_hour, params[:end_minute].to_i)
 	activity.session = session
 
 	if(params[:speaker] != "None")
