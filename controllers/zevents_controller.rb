@@ -12,7 +12,8 @@ end
 get '/:permalink/edit' do
 	@event = Event.first(:permalink => params[:permalink].downcase)
 	@title = "Edit #{@event.name}"
-
+	@edit = true
+	
 	erb :'events/edit'
 end
 

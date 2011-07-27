@@ -813,7 +813,7 @@
 								return true;
 							} else if (el == document) {
 								c._closeCalendar();
-								$this.blur();
+								el.blur();
 								return false;
 							} else {
 								el = $(el).parent()[0];

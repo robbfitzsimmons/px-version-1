@@ -9,35 +9,38 @@
 
 <label for="event[color]">Event Color</label>
 <select name="event[color]">
-	<option value="blue">Blue</option>
-	<option value="dark-gray">Dark Gray</option>
-	<option value="dark-gray-blue">Dark Gray Blue</option>
-	<option value="forest-green">Forest Green</option>
-	<option value="light-gray">Light Gray</option>
-	<option value="lime-popsicle">Lime Popsicle</option>
-	<option value="mac-n-cheese">Mac 'n' Cheese</option>
-	<option value="pink">Pink</option>
-	<option value="purple">Purple</option>
-	<option value="red">Red</option>
-	<option value="sunset-orange">Sunset Orange</option>
-	<option value="turquoise">Turquoise</option>
+	<option value="blue" <%= @event.color == "blue" ? "selected='selected'" : nil %>>Blue</option>
+	<option value="dark-gray" <%= @event.color == "dark-gray" ? "selected='selected'" : nil %>>Dark Gray</option>
+	<option value="dark-gray-blue" <%= @event.color == "dark-gray-blue" ? "selected='selected'" : nil %>>Dark Gray Blue</option>
+	<option value="forest-green" <%= @event.color == "forest-green" ? "selected='selected'" : nil %>>Forest Green</option>
+	<option value="light-gray" <%= @event.color == "light-gray" ? "selected='selected'" : nil %>>Light Gray</option>
+	<option value="lime-popsicle" <%= @event.color == "lime-popsicle" ? "selected='selected'" : nil %>>Lime Popsicle</option>
+	<option value="mac-n-cheese" <%= @event.color == "mac-n-cheese" ? "selected='selected'" : nil %>>Mac 'n' Cheese</option>
+	<option value="pink" <%= @event.color == "pink" ? "selected='selected'" : nil %>>Pink</option>
+	<option value="purple" <%= @event.color == "purple" ? "selected='selected'" : nil %>>Purple</option>
+	<option value="red" <%= @event.color == "red" ? "selected='selected'" : nil %>>Red</option>
+	<option value="sunset-orange" <%= @event.color == "sunset-orange" ? "selected='selected'" : nil %>>Sunset Orange</option>
+	<option value="turquoise" <%= @event.color == "turquoise" ? "selected='selected'" : nil %>>Turquoise</option>
 </select>
 
-<label for="event[image]">Image:</label>
+<label for="event[image]">Image</label>
 <% if @event.image.nil? %>
 	<img src="<%= @event.logo.image(:thumb) %>" />
 <% end %>
 <input type="file" name="event[image]" />
 
-<label for="start_day">Start Day</label>
-<input type="text" name="start_day" id="start_day" class="date-picker" readonly="readonly" />
-
-<label for="end_day">End Day</label>
-<input type="text" name="end_day" id="end_day" class="date-picker" readonly="readonly" />
-
-<!-- <link rel="stylesheet" type="text/css" href="/css/datepicker.css" /> -->
-<script src="/js/datepicker.js"></script>
-<script src="/js/date.js"></script>
-<!--[if IE]>
-	<script type="text/javascript" src="scripts/jquery.bgiframe.js"></script>
-<![endif]-->
+<% if @edit == false %>
+	<label for="start_day">Start Day</label>
+	<input type="text" name="start_day" id="start_day" class="date-picker" readonly="readonly" />
+	
+	<label for="end_day">End Day</label>
+	<input type="text" name="end_day" id="end_day" class="date-picker" readonly="readonly" />
+	
+	<!-- <link rel="stylesheet" type="text/css" href="/css/datepicker.css" /> -->
+	<script src="/js/datepicker.js"></script>
+	<script src="/js/scripts_datepicker.js"></script>
+	<script src="/js/date.js"></script>
+	<!--[if IE]>
+		<script type="text/javascript" src="scripts/jquery.bgiframe.js"></script>
+	<![endif]-->
+<% end %>
