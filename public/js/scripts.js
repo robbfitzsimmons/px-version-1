@@ -10,7 +10,7 @@ $(document).ready(function()
 		su = $('hr.sign-up').offset();
 		$("html, body").animate({scrollTop:su.top}, 500, "swing");
 	});
-
+	
 	/* Hide default input values on focus */
 	var f;
 	

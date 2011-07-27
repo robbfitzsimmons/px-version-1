@@ -1,6 +1,8 @@
 # Create a new Event Page
 get '/events/new' do
 	@title = "Create New Event"
+	@new = true
+	
 	if @event.nil?
 		@event = Event.new()
 	end
@@ -12,7 +14,6 @@ end
 get '/:permalink/edit' do
 	@event = Event.first(:permalink => params[:permalink].downcase)
 	@title = "Edit #{@event.name}"
-	@edit = true
 	
 	erb :'events/edit'
 end

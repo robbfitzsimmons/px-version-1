@@ -41,7 +41,7 @@ post '/activities' do
 		flash[:error] = "Please Try Again."
 		# Changes url to /activitys rather than activitys/new
 		#erb :'activitys/new'
-		redirect "/activities/new"
+		redirect back
 	end
 end
 

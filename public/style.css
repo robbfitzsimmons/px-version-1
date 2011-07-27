@@ -438,7 +438,6 @@ header {
     width: 500px; }
     header #user-info a {
       color: #3870d1;
-      font-size: 14px;
       font-weight: normal;
       text-decoration: underline; }
       header #user-info a:hover {
@@ -465,6 +464,8 @@ header {
     header #user-info p {
       line-height: 1em;
       margin: 0; }
+      header #user-info p a {
+        font-size: 14px; }
     header #user-info img {
       float: left;
       height: 80px;
@@ -936,8 +937,7 @@ header {
         font-family: "Istok Web", "Arial", sans-serif;
         font-size: 14px;
         line-height: 1.8em;
-        margin: 0;
-        text-transform: uppercase; }
+        margin: 0; }
         .mid ul.table li p span {
           float: left;
           width: 140px; }
@@ -1629,6 +1629,11 @@ header {
         line-height: 1.2em;
         padding: 18px 0 0;
         width: 160px; }
+        .mid .right-67 form label span {
+          color: #ccc;
+          float: left;
+          font-size: 14px;
+          width: 90%; }
         .mid .right-67 form label.two-lines {
           padding: 9px 0 0; }
         .mid .right-67 form label.error {
@@ -1645,6 +1650,8 @@ header {
       .mid .right-67 form input[type=password],
       .mid .right-67 form select {
         width: 340px; }
+      .mid .right-67 form input.time-picker {
+        width: 50px; }
       .mid .right-67 form input[type=submit] {
         -moz-box-shadow: 0 1px 1px 0 #eeeeee;
         -ms-box-shadow: 0 1px 1px 0 #eeeeee;

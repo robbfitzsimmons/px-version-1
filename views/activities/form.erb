@@ -2,36 +2,26 @@
 <input name="activity[name]" type="text" value="<%= @activity.name%>" />
 
 <label for="activity[description]">Description</label>
-<input name="activity[description]" type="text" value="<%= @activity.description%>" />
+<input name="activity[description]" maxlength="50" type="text" value="<%= @activity.description%>" />
 
 <label for="activity[location]">Location</label>
-<input name="activity[location]" type="text" value="<%= @activity.location%>" />
+<input name="activity[location]" maxlength="50" type="text" value="<%= @activity.location%>" />
 
 <label for="start_hour">Start Hour</label>
-<select name="start_hour">
-	 <% i = 0 %>
-	 <% while i <= 23 %>
-			<option value="<%= i %>"><%= i %></option>
-			<% -i += 1 %>
-	<% end %>
-</select>
+<input name="start_hour" class="time-picker" type="text" maxlength="2" value="12" /> :
+<input name="start_minute" class="time-picker" type="text" maxlength="2" value="00" />
+<input name="start_ampm" class="time-picker" type="text" maxlength="2" value="PM" />
+
 
 <label for="end_hour">End Hour</label>
-<select name="end_hour">
-	 <% i = 0 %>
-	 <% while i <= 23 %>
-			<option value="<%= i %>"><%= i %></option>
-			<% -i += 1 %>
-	<% end %>
-</select>
+<input name="end_hour" class="time-picker" type="text" maxlength="2" value="1" /> :
+<input name="end_minute" class="time-picker" type="text" maxlength="2" value="00" />
+<input name="end_ampm" class="time-picker" type="text" maxlength="2" value="PM" />
 
 <label for="speaker">Speaker</label>
 <select name="speaker">
 	<option value="None">None</option>
 	<% @event.users.each do |user| %>
-			<option value="<%= user.id %>"><%= user.name %></option>
-			<% -i += 1 %>
+		<option value="<%= user.id %>"><%= user.name %></option>
 	<% end %>
 </select>
-
-<br />

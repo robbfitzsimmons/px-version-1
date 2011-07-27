@@ -356,9 +356,9 @@ header {
 		float: left;
 		margin: 20px 0 10px;
 		width: 500px;
+		
 		a {
 			color: $color;
-			font-size: 14px;
 			font-weight: normal;
 			text-decoration: underline;
 			
@@ -397,6 +397,10 @@ header {
 		p {
 			line-height: 1em;
 			margin: 0;
+			
+			a {
+				font-size: 14px;
+			}
 			
 		}
 		
@@ -888,7 +892,6 @@ header {
 				font-size: 14px;
 				line-height: 1.8em;
 				margin: 0;
-				text-transform: uppercase;
 
 				span {
 					float: left;
@@ -1190,6 +1193,13 @@ header {
 				padding: 18px 0 0;
 				width: 160px;
 				
+				span {
+					color: #ccc;
+					float: left;
+					font-size: 14px;
+					width: 90%;
+				}
+				
 				&.two-lines {
 					padding: 9px 0 0;
 				}
@@ -1213,6 +1223,10 @@ header {
 			input[type=password],
 			select {
 				width: 340px;
+			}
+			
+			input.time-picker {
+				width: 50px;
 			}
 			
 			input[type=submit] {

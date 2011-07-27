@@ -1,17 +1,16 @@
 <section class="left-33">
-
-<h3>Send Invites</h3>
-<p>If you have no one coming to your event. Invite some people.</p>
-<p>Find me in views/invites/new.erb</p>
-	
+	<h3>Send Invites</h3>
+	<p>Invite guests to your event.</p>
 </section>
 
 <section class="right-67">
 	<form id="form-invites" action="/invites" method="post">
 
-		<p>Emails seperated by commas :)</p>
 
-		<label for="emails">Emails</label>
+		<label for="emails">
+			Emails
+			<span>Separated by commas</span>
+		</label>
 		<textarea name="emails" type="text"></textarea>
 
 		<label for="subject">Subject</label>

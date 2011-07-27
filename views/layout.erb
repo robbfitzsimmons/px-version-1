@@ -24,8 +24,8 @@
 			
 			<header>
 				<section id="user-info">
-					<img src="<%= !current_user.image.nil? ? current_user.image.url(:thumb) : "/images/80x80.gif" %>" alt="<%= current_user.name %>" />
-			  		<h2><%= current_user.name %></h2>
+					<a href="/users/<%= current_user.id %>/nametag"><img src="<%= !current_user.image.nil? ? current_user.image.url(:thumb) : "/images/80x80.gif" %>" alt="<%= current_user.name %>" /></a>
+			  		<h2><a href="/users/<%= current_user.id %>/nametag"><%= current_user.name %></a></h2>
 			  		<h3><%= current_user.email %></h3>
 			  		<h4><%= current_user.description %></h4>
 			  		<p><a href="/users/<%= current_user.id %>/edit">edit nametag</a></p>

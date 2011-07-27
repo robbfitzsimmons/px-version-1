@@ -86,6 +86,12 @@
 					
 					<% session.activities(:order => [:start_date.asc]).each do |activity| %>
 						<p><span><%= activity.start_date.strftime("%l:%M %P").delete(" ") %>-<%= activity.end_date.strftime("%l:%M %P").delete(" ") %></span><%= activity.name %></p>
+						<% if !activity.description.blank? %>
+							<p><span>&nbsp;</span><%= activity.description %></p>
+						<% end %>
+						<% if !activity.location.blank? %>
+							<p><span>&nbsp;</span><%= activity.location %></p>
+						<% end %>
 					<% end %>
 					<p>
 						<% if event_admin %>
