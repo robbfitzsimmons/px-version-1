@@ -78,22 +78,29 @@
 		  		<% if @event_dashboard %>
 		  			
 		  			<% if event_admin %>
-							<a href="/invites/new" class="button">Invite People</a>
-						<% end %>
+						<a href="/invites/new" class="button">Invite People</a>
+					<% end %>
 
-						<% if !event_admin %>
-							<form action="/events/<%= @event.id %>/rsvp" method="post">
-								<input name="_method" type="hidden" value="put" />
-								<input name="invite" type="hidden" value="<%= session[:invite] %>" />
-								
-								<% if !current_user.user_event_associations(:attending => false).events.first(:id => @event.id).nil? %>
-									<input name="attend" class="button" id="attend" type="submit" value="Attend" />
-								<% end %>
-								
-								<% if !current_user.user_event_associations(:attending => true).events.first(:id => @event.id).nil? %>
-									<input name="attend" class="button" id="not_attend" type="submit" value="Decline" />
-								<% end %>							</form>
-						<% end %>
+					<% if !event_admin %>
+						<form action="/events/<%= @event.id %>/rsvp" method="post">
+							<input name="_method" type="hidden" value="put" />
+							<input name="invite" type="hidden" value="<%= session[:invite] %>" />
+							
+							<% if !current_user.user_event_associations(:attending => false).events.first(:id => @event.id).nil? %>
+								<input name="attend" class="button" id="attend" type="submit" value="Attend" />
+							<% end %>
+							
+							<% if !current_user.user_event_associations(:attending => true).events.first(:id => @event.id).nil? %>
+								<input name="attend" class="button" id="not_attend" type="submit" value="Decline" />
+							<% end %>
+							
+							<% if !current_user.invites(:event => @event, :hide => false).first.nil?  %>
+								<input name="attend" class="button" id="not_attend" type="submit" value="Decline" />
+								<input name="attend" class="button" id="attend" type="submit" value="Attend" />
+							<% end %>
+
+						</form>
+					<% end %>
 		  		<% end %>
 			</div>
 			

@@ -759,7 +759,8 @@ header {
     margin: 0 0 10px 0;
     width: 245px; }
     .mid .nametag-sm div {
-      float: left; }
+      float: left;
+      width: 168px; }
     .mid .nametag-sm h2 strong, .mid .nametag-sm #landing .features article h3 strong, .mid #landing .features article .nametag-sm h3 strong {
       font-weight: normal;
       text-transform: uppercase; }

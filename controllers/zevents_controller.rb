@@ -36,7 +36,7 @@ post '/events' do
 
 	if @event.save
 		status(202)
-		flash[:success] = "Event Added Successfully."
+		flash[:success] = "Event added successfully."
 
 		# Make Admin of their Created Event
 		@event.user_event_associations.each do |assoc|
@@ -56,7 +56,7 @@ post '/events' do
 		@event.errors.each do |e|
 		    puts e
 		end
-		flash[:error] = "Please Try Again."
+		flash[:error] = "Please try again."
 		# Changes url to /events rather than events/new
 		#erb :'events/new'
 		redirect "/events/new"
@@ -73,7 +73,7 @@ put '/events/:id/rsvp' do
 		event.users << current_user
 		if event.save
 			current_user.user_event_associations.first(:event => event).update(:attending => false)
-			flash[:success] = "You are now not attending #{event.name}."
+			flash[:success] = "You are now not attending <em>#{event.name}</em>."
 			if !session[:invite].nil?
 				invite = Invite.get(session[:invite])
 				invite.update(:hide => true)
@@ -84,14 +84,14 @@ put '/events/:id/rsvp' do
 			event.errors.each do |e|
 		    puts e
 			end
-			flash[:error] = "Please Try Again."
+			flash[:error] = "Please try again."
 		end
 	else
 		event.users << current_user
 		if event.save
 			status(202)
 			current_user.user_event_associations.first(:event => event).update(:attending => true)
-			flash[:success] = "You are now attending #{event.name}."
+			flash[:success] = "You are now attending <em>#{event.name}</em>."
 			if !session[:invite].nil?
 				invite = Invite.get(session[:invite])
 				invite.update(:hide => true)
@@ -102,7 +102,7 @@ put '/events/:id/rsvp' do
 			event.errors.each do |e|
 		    puts e
 			end
-			flash[:error] = "Please Try Again."
+			flash[:error] = "Please try again."
 		end
 	end
 	redirect "/#{event.permalink}"
