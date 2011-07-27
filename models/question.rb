@@ -21,6 +21,6 @@ class Question
   has n,   :answers
 
   ## Links questions to events
-  belongs_to :event, :key => true
+  belongs_to :event
 
 end
