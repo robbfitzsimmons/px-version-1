@@ -9,7 +9,9 @@
 		<li><a href="javascript: void(0)" id="filter-invited">Pending invites (<%= @user.new_invites.length %>)</a></li>
 		<li><a href="javascript: void(0)" id="filter-declined">Invites I declined (<%= @user.user_event_associations(:attending => false).length %>)</a></li>
 	</ul>
-	
+
+	<hr />
+		
 	<% if @user.people_matches.length != 0 %>
 		<h2>Matches (<%= @user.people_matches.length %>)</h2>
 		<% @user.people_matches.each do |match| %>

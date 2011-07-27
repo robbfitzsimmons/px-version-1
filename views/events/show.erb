@@ -7,15 +7,15 @@
 		<%= @event.location %> &bull; <%= @event.start_date.strftime("%b %e") %><%= @event.start_date != @event.end_date ? '-' + @event.end_date.strftime("%e") : "" %>
 	</h6>
 	
-	<p>
-		<% if event_admin %>
-			<a href="/<%= @event.permalink %>/edit">edit event details</a>
-		<% end %>
-	</p>
+	<% if event_admin %>
+		<a href="/<%= @event.permalink %>/edit">edit event details</a>
+	<% end %>
+	
+	<hr />
 	
 	<h2>
 	<% if event_admin %>
-		<a href = "/events/<%= @event.permalink %>/worksheet">Attendees (<%= @event.user_event_associations(:attending => true).length %>)</a>
+		<a href = "/<%= @event.permalink %>/attendees">Attendees (<%= @event.user_event_associations(:attending => true).length %>)</a>
 	<% else %>
 		Attendees (<%= @event.user_event_associations(:attending => true).length %>)
 	<% end %>
@@ -44,11 +44,13 @@
 				<% end %>
 		</div>		
 	<% end %>
+	</ul>
 	
 	<% if event_admin %>
 		<a href = "/events/<%= @event.permalink %>/worksheet">View worksheet</a>
 	<% end %>
-	</ul>
+	
+	<hr />
 	
 	<% events_unanswered_questions = current_user.questions_this_event(@event) %>
 	<% if events_unanswered_questions.count != 0 || event_admin %>

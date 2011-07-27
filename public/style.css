@@ -686,6 +686,15 @@ header {
   padding: 45px;
   width: 870px;
   /* landing */ }
+  .mid hr {
+    color: #eaeaea;
+    background: #eaeaea;
+    float: left;
+    height: 1px;
+    margin: 20px 0;
+    width: 100%; }
+    .mid hr.landing {
+      margin: 60px 0; }
   .mid .nametag-lg {
     overflow: hidden;
     margin: 0 0 20px 0;
@@ -906,8 +915,6 @@ header {
       padding: 10px; }
     .mid table tr.even {
       background: #eee; }
-  .mid ul {
-    margin: 0 0 15px 0; }
   .mid ul.table {
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
@@ -1058,13 +1065,6 @@ header {
         border: 1px solid #884f51;
         color: #7e171e;
         text-shadow: 0 1px 1px #e35851; }
-  .mid #landing hr {
-    color: #eaeaea;
-    background: #eaeaea;
-    float: left;
-    height: 1px;
-    margin: 60px 0;
-    width: 100%; }
   .mid #landing form {
     margin: 0 auto;
     width: 530px; }
