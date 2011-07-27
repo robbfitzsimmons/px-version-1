@@ -38,7 +38,7 @@ post '/activities' do
 		if params[:end_hour].to_i < 12
 			end_hour = params[:end_hour].to_i + 12
 		else
-			start_hour = params[:start_hour].to_i
+			end_hour = params[:end_hour].to_i
 		end
 	elsif params[:end_ampm].downcase == "am"
 		if params[:end_hour].to_i == 12
