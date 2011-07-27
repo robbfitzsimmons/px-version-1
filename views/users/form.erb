@@ -1,10 +1,5 @@
-<label for="user[image]">Image:</label>
-<img src="<%= @user.image.url(:thumb) %>" />
-<input style="float: right;" type="file" name="user[image]" /> 
-
-<br />
-<br />
-<br />
+<label for="user[image]">Image</label>
+<input type="file" name="user[image]" /> 
 
 <label for="user[email]">Email</label>
 <input name="user[email]" type="text" value="<%= @user.email %>" />
@@ -13,17 +8,16 @@
 <input name="user[name]" type="text" value="<%= @user.name %>" />
 
 <label for="user[description]">Description</label>
-<input name="user[description]" type="text" value="<%= @user.description%>" />
+<input name="user[description]" type="text" value="<%= @user.description %>" />
 
 <label for="user[location]">Location</label>
-<input name="user[location]" type="text" value="<%= @user.location%>" />
+<input name="user[location]" type="text" value="<%= @user.location %>" />
 
 <label for="user[website]">Website</label>
-<input name="user[website]" type="text" value="<%= @user.website%>" />
+<input name="user[website]" type="text" value="<%= @user.website %>" />
 
-<p>Social Networks - <a href="/users/<%= @user.id %>/connect">Add</a></p>
 <label for="user[linked_in]">Linked In</label>
-<input name="user[linked_in]" type="text" readonly="readonly" value="<%= @user.linked_in%>" />
+<input name="user[linked_in]" type="text" readonly="readonly" value="<%= @user.linked_in %>" />
 
 <label for="user[facebook]">Facebook</label>
-<input name="user[facebook]" type="text" readonly="readonly" value="<%= @user.facebook%>" />
+<input name="user[facebook]" type="text" readonly="readonly" value="<%= @user.facebook %>" />

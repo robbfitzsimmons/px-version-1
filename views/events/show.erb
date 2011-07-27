@@ -47,28 +47,25 @@
 	</ul>
 	
 	<% if event_admin %>
-		<a href = "/events/<%= @event.permalink %>/worksheet">View worksheet</a>
+		<a href="/events/<%= @event.permalink %>/worksheet">View worksheet</a>
 	<% end %>
-	
-	<hr />
 	
 	<% events_unanswered_questions = current_user.questions_this_event(@event) %>
 	<% if events_unanswered_questions.count != 0 || event_admin %>
+		<hr />
+	
 		<h2>Questions (<%= @event.questions.count %>)</h2>
-		<% if event_admin %>
-			<a href="/questions/new">Add new</a>
-		<% end %>
 		
-	<!--
 		<ul>
-		<% @event.questions(:limit => 2).each do |question| %>
-			<li><%= question.text %></li>
-		<% end %>
+
+			<% if events_unanswered_questions.count != 0 %>
+				<li><a href="/<%= @event.permalink %>/questions/answer">Answer Questions</a></li>
+			<% end %>
+			
+			<% if event_admin %>
+				<li><a href="/questions/new">Add new</a></li>
+			<% end %>
 		</ul>
-	-->
-		<% if events_unanswered_questions.count != 0 %>
-			<a href="/<%= @event.permalink %>/questions/answer">Answer Q's</a>
-		<% end %>
 	<% end %>
 </section>
 

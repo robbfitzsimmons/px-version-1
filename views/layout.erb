@@ -55,7 +55,8 @@
 						</li>
 
 						<li><a href="/users/<%= current_user.id %>">dashboard</a></li>
-						<li><a href="/users/<%= current_user.id %>/nametag">nametag</a></li>						<li>
+						<li><a href="/users/<%= current_user.id %>/nametag">nametag</a></li>
+						<li>
 							<form action="/logout" method="post">
 								<input name="_method" type="hidden" value="delete" />
 								<input type="submit" value="log out" />
@@ -85,9 +86,13 @@
 								<input name="_method" type="hidden" value="put" />
 								<input name="invite" type="hidden" value="<%= session[:invite] %>" />
 								
-								<input name="attend" id="attend" type="submit" value="Attend" />
-								<input name="attend" id="not_attend" type="submit" value="Not Attend" />
-							</form>
+								<% if !current_user.user_event_associations(:attending => false).events.first(:id => @event.id).nil? %>
+									<input name="attend" class="button" id="attend" type="submit" value="Attend" />
+								<% end %>
+								
+								<% if !current_user.user_event_associations(:attending => true).events.first(:id => @event.id).nil? %>
+									<input name="attend" class="button" id="not_attend" type="submit" value="Decline" />
+								<% end %>							</form>
 						<% end %>
 		  		<% end %>
 			</div>
