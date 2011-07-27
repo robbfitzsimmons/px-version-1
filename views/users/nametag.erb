@@ -7,64 +7,8 @@
 </section>
 
 <section class="right-67">
-
-	<div class="nametag-lg">
-		<section class="top">
-			<h2><span>Hello</span> my name is</h2>
-		</section>
-		<section class="mid">
-			<img src="<%= @user.image(:thumb) %>" />
-			<h4><%= @user.name %></h4>
-			<h5><%= @user.description %></h5>
-			<h6><%= @user.location %></h6>
-		
-			<% if !@user.email.blank? %>
-				<a target="_blank" href="mailto:<%= @user.email %>" class="social email">Email</a>
-			<% end %>
-			<% if !@user.website.blank? %>
-				<a target="_blank" href="<%= @user.website %>" class="social www">Website</a>
-			<% end %>
-			<% if !@user.facebook.blank? %>
-				<a target="_blank" href="<%= @user.facebook %>" class="social facebook">Facebook</a>
-			<% end %>
-			<% if !@user.linked_in.blank? %>
-				<a target="_blank" href="<%= @user.linked_in %>" class="social linkedin">LinkedIn</a>
-			<% end %>
-			<% if !@user.twitter.blank? %>
-				<a target="_blank" href="<%= @user.twitter %>" class="social twitter">Twitter</a>
-			<% end %>
-		</section>
-		<section class="bot"></section>
-	</div>
-
-	<div class="nametag-sm">
-		<section class="top">
-			<h2><strong>Hello</strong> my name is</h2>
-		</section>
-		<section class="mid">
-			<img src="<%= @user.image(:thumb) %>" />
-			<h4><%= @user.name %></h4>
-			<h5><%= @user.description %></h5>
-		
-			<% if !@user.email.blank? %>
-				<a target="_blank" href="mailto:<%= @user.email %>" class="social email">Email</a>
-			<% end %>
-			<% if !@user.website.blank? %>
-				<a target="_blank" href="<%= @user.website %>" class="social www">Website</a>
-			<% end %>
-			<% if !@user.facebook.blank? %>
-				<a target="_blank" href="<%= @user.facebook %>" class="social facebook">Facebook</a>
-			<% end %>
-			<% if !@user.linked_in.blank? %>
-				<a target="_blank" href="<%= @user.linked_in %>" class="social linkedin">LinkedIn</a>
-			<% end %>
-			<% if !@user.twitter.blank? %>
-				<a target="_blank" href="<%= @user.twitter %>" class="social twitter">Twitter</a>
-			<% end %>
-		</section>
-		<section class="bot"></section>
-	</div>
-
+	<%= partial :'nametag_lg', @user  %>
+	<%= partial :'nametag_small', @user  %>
 </section>
 <script src="/js/validate.js"></script>
 <script src="/js/form.js"></script>

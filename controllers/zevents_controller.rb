@@ -10,7 +10,7 @@ end
 
 # Edit an event Page
 get '/:permalink/edit' do
-	@event = Event.first(:permalink => params[:permalink])
+	@event = Event.first(:permalink => params[:permalink].downcase)
 	@title = "Edit #{@event.name}"
 
 	erb :'events/edit'
@@ -145,6 +145,15 @@ get '/:permalink' do
 		session[:event] = @event.id
 	end
 	erb :'events/show'	
+end
+
+# Show a specific event
+get '/:permalink/attendees' do
+	
+	@event = Event.first(:permalink => params[:permalink].downcase)
+	@title = "#{@event.name} Attendees (#{@event.user_event_associations(:attending => true).count})"
+
+	erb :'events/attendees'	
 end
 
 # Show events worksheet (list of invites/ checked in)
