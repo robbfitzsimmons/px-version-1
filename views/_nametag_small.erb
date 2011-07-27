@@ -1,0 +1,27 @@
+<div class="nametag-sm">
+		<section class="top">
+			<h2><strong>Hello</strong> my name is</h2>
+		</section>
+		<section class="mid">
+			<img src="<%= nametagsmall.image(:thumb) %>" />
+			<h4><%= nametagsmall.name %></h4>
+			<h5><%= nametagsmall.description %></h5>
+		
+			<% if !nametagsmall.email.blank? %>
+				<a target="_blank" href="mailto:<%= nametagsmall.email %>" class="social email">Email</a>
+			<% end %>
+			<% if !nametagsmall.website.blank? %>
+				<a target="_blank" href="<%= nametagsmall.website %>" class="social www">Website</a>
+			<% end %>
+			<% if !nametagsmall.facebook.blank? %>
+				<a target="_blank" href="<%= nametagsmall.facebook %>" class="social facebook">Facebook</a>
+			<% end %>
+			<% if !nametagsmall.linked_in.blank? %>
+				<a target="_blank" href="<%= nametagsmall.linked_in %>" class="social linkedin">LinkedIn</a>
+			<% end %>
+			<% if !nametagsmall.twitter.blank? %>
+				<a target="_blank" href="<%= nametagsmall.twitter %>" class="social twitter">Twitter</a>
+			<% end %>
+		</section>
+		<section class="bot"></section>
+	</div>

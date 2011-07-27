@@ -1,0 +1,2 @@
+<% @users = @event.user_event_associations(:attending => true).users %>
+<%= partial :'nametag_small', @users  %>

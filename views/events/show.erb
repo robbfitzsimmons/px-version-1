@@ -9,7 +9,7 @@
 	
 	<p>
 		<% if event_admin %>
-			<a href="javascript: void(0)">edit event details</a>
+			<a href="/<%= @event.permalink %>/edit">edit event details</a>
 		<% end %>
 	</p>
 	
@@ -102,20 +102,3 @@
 		<% end %>
 	</ul>
 </section>
-
-<div style="float: left; width: 100%; border: 1px solid #eee;">
-	<% if !event_admin %>
-	<form action="/events/<%= @event.id %>/rsvp" method="post">
-		<input name="_method" type="hidden" value="put" />
-		<input name="join" type="hidden" value="true" />
-		<input name="invite" type="hidden" value="<%= session[:invite] %>" />
-
-		<input type="submit" value="Join" />
-	</form>
-	<% end %>
-	
-<% if event_admin %>
-	<h2>Invite People to the event</h2>
-	<a href="/invites/new">Click here</a>
-<% end %>
-</div>

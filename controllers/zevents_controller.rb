@@ -8,6 +8,14 @@ get '/events/new' do
 	erb :'events/new'
 end
 
+# Edit an event Page
+get '/:permalink/edit' do
+	@event = Event.first(:permalink => params[:permalink].downcase)
+	@title = "Edit #{@event.name}"
+
+	erb :'events/edit'
+end
+
 # Create an event action
 post '/events' do
 	@event = Event.new(params[:event])
@@ -96,23 +104,33 @@ put '/events/:id/rsvp' do
 
 end
 
-# Used for updating an event, including adding a user
+# Used for updating an event
 put '/events/:id' do
+
+	puts "put"
 
 	event = Event.get(params[:id])
 
+	puts event.name
+
+	event.attributes = params[:event]
+
+	if (!params[:event][:image].nil?)
+		event.image = make_paperclip_mash(params[:event][:image])
+	end
+
 	if event.save
 		status(202)
-		flash[:success] = "You have now updated #{event.name}."
+		flash[:success] = "Event Updated"
+		redirect "/#{event.permalink}"
 	else
 		status(412)
 		event.errors.each do |e|
-		    puts e
+	    puts e
 		end
-		flash[:error] = "Please Try Again."
+		flash[:error] = "Please try again."
+		redirect back
 	end
-
-	redirect "/#{event.permalink}"
 end
 
 # Show a specific event
@@ -127,6 +145,15 @@ get '/:permalink' do
 		session[:event] = @event.id
 	end
 	erb :'events/show'	
+end
+
+# Show a specific event
+get '/:permalink/attendees' do
+	
+	@event = Event.first(:permalink => params[:permalink].downcase)
+	@title = "#{@event.name} Attendees (#{@event.user_event_associations(:attending => true).count})"
+
+	erb :'events/attendees'	
 end
 
 # Show events worksheet (list of invites/ checked in)
