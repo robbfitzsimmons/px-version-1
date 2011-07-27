@@ -1,12 +1,24 @@
-get ':permalink/answers' do
+get '/:permalink/answers' do
 	@event = Event.first(:permalink => params[:permalink])
 
 	@questions = @event.questions
-	@answers = Array.new
+	@answers = Hash.new()
+	@choices = Hash.new()
 	i = 0
 	@questions.each do |question|
 		@answers[i] = question.answers
+		if @answers[i].first.text_answer.nil?
+			puts "Its int#{@answers[i].first.int_answer}"
+			@choices[i] = Hash.new()
+			@choices[i][0] = question.answers(:int_answer => 1).count
+			@choices[i][1] = question.answers(:int_answer => 2).count
+			@choices[i][2] = question.answers(:int_answer => 3).count
+		end
+		puts @answers[i]
+		i = i + 1
 	end
+
+	puts @answers[0].inspect
 
 	erb :'answers/results'
 
