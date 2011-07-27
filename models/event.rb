@@ -73,7 +73,11 @@ class Event
   after :save, :create_days
 
   def check_name
+
+    dissallowed_names = %w{"login", "signup", "recover", "users", "invites", "activities", "questions", "events", "sessions"} 
+
     if self.attribute_dirty?(:name)
+      self.name = self.name.squeeze(" ").strip
       event_names = Event.all
       valid = true
       event_names.each do |event|
@@ -84,6 +88,11 @@ class Event
           break
         end # end if
       end # end do
+
+      if dissallowed_names.one? {|dissallowed_name| dissallowed_name.match(self.name)}
+        valid = false
+      end
+
 
       if valid == false
         [ false, "An event called '#{self.name}' is already registered." ]
@@ -96,7 +105,7 @@ class Event
   end # end check name
 
   def create_days
-    if self.new?
+    if self.days.count == 0
       num_days = self.end_date.mjd - self.start_date.mjd + 1
 
       1.upto(num_days) { |i|

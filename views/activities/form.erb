@@ -27,6 +27,7 @@
 
 <label for="speaker">Speaker</label>
 <select name="speaker">
+	<option value="None">None</option>
 	<% @event.users.each do |user| %>
 			<option value="<%= user.id %>"><%= user.name %></option>
 			<% -i += 1 %>

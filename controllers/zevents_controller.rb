@@ -20,8 +20,11 @@ end
 post '/events' do
 	@event = Event.new(params[:event])
 
-	@event.start_date = DateTime.new(2011, 8, params[:start_day].to_i, 9, 0)
-	@event.end_date = DateTime.new(2011, 8, params[:end_day].to_i, 9, 0)
+	start_day = params[:start_day].split("/")
+	end_day = params[:end_day].split("/")
+
+	@event.start_date = DateTime.new(start_day[2].to_i, start_day[0].to_i, start_day[1].to_i, 9, 0)
+	@event.end_date = DateTime.new(start_day[2].to_i, start_day[0].to_i, start_day[1].to_i, 9, 0)
 	@event.users << current_user
 
 	if (!params[:event][:image].nil?)

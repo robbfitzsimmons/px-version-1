@@ -17,7 +17,7 @@ post '/questions' do
 	if question.save
 		status(202)
 		flash[:success] = "Question Added Successfully."
-		redirect "/events/#{event.permalink}"
+		redirect "/#{event.permalink}"
 	else
 		status(412)
 		question.errors.each do |e|

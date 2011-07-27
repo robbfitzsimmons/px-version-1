@@ -23,8 +23,10 @@ post '/activities' do
 	activity.start_date = DateTime.new(session.start_date.year, session.start_date.month, session.start_date.mday, params[:start_hour].to_i, 0)
 	activity.end_date = DateTime.new(session.start_date.year, session.start_date.month, session.start_date.mday, params[:end_hour].to_i, 0)
 	activity.session = session
-	activity.users << User.get(params[:speaker])
 
+	if(params[:speaker] != "None")
+		activity.users << User.get(params[:speaker])
+	end
 
 	if activity.save
 		status(202)

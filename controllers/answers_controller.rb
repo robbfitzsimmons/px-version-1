@@ -1,3 +1,17 @@
+get ':permalink/answers' do
+	@event = Event.first(:permalink => params[:permalink])
+
+	@questions = @event.questions
+	@answers = Array.new
+	i = 0
+	@questions.each do |question|
+		@answers[i] = question.answers
+	end
+
+	erb :'answers/results'
+
+end
+
 post '/answers' do
 
 	# Get the event
