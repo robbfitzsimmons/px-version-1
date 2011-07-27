@@ -2,13 +2,13 @@ $(document).ready(function()
 {
 	/* Homepage */
 	$('a.learn-more').click(function() {
-		lm = $('hr.learn-more').offset();
-		$("html, body").animate({scrollTop:lm.top}, 500, "swing");
+		lm = $('#learn-more').offset();
+		$("html, body").animate({scrollTop:lm.top-105}, 500, "swing");
 	});
 	
 	$('a.sign-up').click(function() {
-		su = $('hr.sign-up').offset();
-		$("html, body").animate({scrollTop:su.top}, 500, "swing");
+		su = $('#sign-up').offset();
+		$("html, body").animate({scrollTop:su.top-105}, 500, "swing");
 	});
 	
 	/* Hide default input values on focus */

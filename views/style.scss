@@ -326,6 +326,13 @@ header {
 	padding: 0 0;
 	width: 100%;
 	
+	&.sticky {
+		background: #fafafa;
+		position: fixed;
+		top: 0;
+		width: 962px;
+	}
+	
 	#logo {
 		float: left;
 		margin: 40px 0;
@@ -531,6 +538,10 @@ header {
 	line-height: 1em;
 	width: 960px;
 	
+	&.sticky {
+		margin: 105px 0 0;
+	}
+	
 	h2 {
 		padding: 5px;
 		text-align: center;
@@ -583,10 +594,6 @@ header {
 		height: 1px;
 		margin: 20px 0;
 		width: 100%;
-		
-		&.landing {
-			margin: 60px 0;
-		}
 	}	
 	
 	.nametag-lg {
@@ -935,7 +942,7 @@ header {
 		}
 	}
 	
-	#landing {
+	.landing {
 		h1 {
 			color: #484848;
 			float: left;
@@ -985,7 +992,6 @@ header {
 		}
 		
 		ul {
-			background: red;
 			margin: 0 auto;
 			width: 230px;
 			
@@ -1006,6 +1012,10 @@ header {
 			input[type=text],
 			input[type=password] {
 				width: 494px;
+			}
+			
+			input[type=submit] {
+				@include buttontrio;
 			}
 		}
 	} /* landing */

@@ -6,7 +6,7 @@ header, footer, article, section, hgroup, nav, figure {
   display: block; }
 
 /* http://meyerweb.com/eric/tools/css/reset */
-html, body, div, span, applet, object, iframe, h1, h2, .mid #landing .features article h3, h3, h4, h5, h6, hr, p, input, textarea, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, .mid .landing .features article h3, h3, h4, h5, h6, hr, p, input, textarea, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
@@ -418,6 +418,11 @@ header {
   float: left;
   padding: 0 0;
   width: 100%; }
+  header.sticky {
+    background: #fafafa;
+    position: fixed;
+    top: 0;
+    width: 962px; }
   header #logo {
     float: left;
     margin: 40px 0; }
@@ -442,10 +447,10 @@ header {
       text-decoration: underline; }
       header #user-info a:hover {
         text-decoration: none; }
-    header #user-info h2, header #user-info .mid #landing .features article h3, .mid #landing .features article header #user-info h3, header #user-info h3, header #user-info h4, header #user-info p {
+    header #user-info h2, header #user-info .mid .landing .features article h3, .mid .landing .features article header #user-info h3, header #user-info h3, header #user-info h4, header #user-info p {
       float: left;
       width: 405px; }
-    header #user-info h2, header #user-info .mid #landing .features article h3, .mid #landing .features article header #user-info h3 {
+    header #user-info h2, header #user-info .mid .landing .features article h3, .mid .landing .features article header #user-info h3 {
       font-size: 24px;
       color: #3870d1;
       line-height: 1em;
@@ -577,10 +582,12 @@ header {
   float: left;
   line-height: 1em;
   width: 960px; }
-  .top h2, .top .mid #landing .features article h3, .mid #landing .features article .top h3 {
+  .top.sticky {
+    margin: 105px 0 0; }
+  .top h2, .top .mid .landing .features article h3, .mid .landing .features article .top h3 {
     padding: 5px;
     text-align: center; }
-    .top h2 span, .top .mid #landing .features article h3 span, .mid #landing .features article .top h3 span {
+    .top h2 span, .top .mid .landing .features article h3 span, .mid .landing .features article .top h3 span {
       display: block;
       font-size: 24px;
       line-height: 1em;
@@ -695,8 +702,6 @@ header {
     height: 1px;
     margin: 20px 0;
     width: 100%; }
-    .mid hr.landing {
-      margin: 60px 0; }
   .mid .nametag-lg {
     overflow: hidden;
     margin: 0 0 20px 0;
@@ -761,7 +766,7 @@ header {
     .mid .nametag-sm div {
       float: left;
       width: 168px; }
-    .mid .nametag-sm h2 strong, .mid .nametag-sm #landing .features article h3 strong, .mid #landing .features article .nametag-sm h3 strong {
+    .mid .nametag-sm h2 strong, .mid .nametag-sm .landing .features article h3 strong, .mid .landing .features article .nametag-sm h3 strong {
       font-weight: normal;
       text-transform: uppercase; }
     .mid .nametag-sm h4 {
@@ -962,7 +967,7 @@ header {
         background: #eee; }
       .mid ul.table li.last {
         border: 0; }
-  .mid #landing h1 {
+  .mid .landing h1 {
     color: #484848;
     float: left;
     font-family: "Raleway", "Arial", sans-serif;
@@ -971,7 +976,7 @@ header {
     margin: 0 auto 20px;
     text-align: center;
     width: 100%; }
-  .mid #landing h2, .mid #landing .features article h3 {
+  .mid .landing h2, .mid .landing .features article h3 {
     color: #3870d1;
     float: left;
     font-family: "Sue Ellen Francisco", cursive;
@@ -981,28 +986,27 @@ header {
     text-align: center;
     text-transform: lowercase;
     width: 100%; }
-  .mid #landing .features {
+  .mid .landing .features {
     margin: 0 auto;
     width: 540px; }
-    .mid #landing .features article {
+    .mid .landing .features article {
       float: left;
       width: 160px; }
-      .mid #landing .features article.middle {
+      .mid .landing .features article.middle {
         margin: 0 30px; }
-      .mid #landing .features article h3 {
+      .mid .landing .features article h3 {
         font-size: 30px;
         margin: 0 auto 20px;
         text-align: left; }
-      .mid #landing .features article p {
+      .mid .landing .features article p {
         font-size: 16px; }
-  .mid #landing ul {
-    background: red;
+  .mid .landing ul {
     margin: 0 auto;
     width: 230px; }
-    .mid #landing ul li {
+    .mid .landing ul li {
       float: left;
       margin: 0 15px 0 0; }
-    .mid #landing ul a {
+    .mid .landing ul a {
       -moz-box-shadow: 0 1px 1px 0 #eeeeee;
       -ms-box-shadow: 0 1px 1px 0 #eeeeee;
       -o-box-shadow: 0 1px 1px 0 #eeeeee;
@@ -1031,13 +1035,13 @@ header {
       text-align: center;
       text-decoration: none;
       text-shadow: 0 1px 1px #fff; }
-      .mid #landing ul a img {
+      .mid .landing ul a img {
         -moz-box-shadow: 1px 1px 1px 0 white;
         -ms-box-shadow: 1px 1px 1px 0 white;
         -o-box-shadow: 1px 1px 1px 0 white;
         -webkit-box-shadow: 1px 1px 1px 0 white;
         box-shadow: 1px 1px 1px 0 white; }
-      .mid #landing ul a:hover {
+      .mid .landing ul a:hover {
         -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
         -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
         -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
@@ -1053,13 +1057,13 @@ header {
         border: 1px solid #884f51;
         color: #7e171e;
         text-shadow: 0 1px 1px #e35851; }
-        .mid #landing ul a:hover img {
+        .mid .landing ul a:hover img {
           -moz-box-shadow: 1px 1px 1px 0 #e35851;
           -ms-box-shadow: 1px 1px 1px 0 #e35851;
           -o-box-shadow: 1px 1px 1px 0 #e35851;
           -webkit-box-shadow: 1px 1px 1px 0 #e35851;
           box-shadow: 1px 1px 1px 0 #e35851; }
-      .mid #landing ul a:active {
+      .mid .landing ul a:active {
         background: #df4c4b;
         background-image: -moz-linear-gradient(top, #c43037, #df4c4b);
         background-image: -ms-linear-gradient(top, #c43037, #df4c4b);
@@ -1075,12 +1079,275 @@ header {
         border: 1px solid #884f51;
         color: #7e171e;
         text-shadow: 0 1px 1px #e35851; }
-  .mid #landing form {
+  .mid .landing form {
     margin: 0 auto;
     width: 530px; }
-    .mid #landing form input[type=text], .mid #landing form textarea,
-    .mid #landing form input[type=password] {
+    .mid .landing form input[type=text], .mid .landing form textarea,
+    .mid .landing form input[type=password] {
       width: 494px; }
+    .mid .landing form input[type=submit] {
+      -moz-box-shadow: 0 1px 1px 0 #eeeeee;
+      -ms-box-shadow: 0 1px 1px 0 #eeeeee;
+      -o-box-shadow: 0 1px 1px 0 #eeeeee;
+      -webkit-box-shadow: 0 1px 1px 0 #eeeeee;
+      box-shadow: 0 1px 1px 0 #eeeeee;
+      background: #eeeeee;
+      background-image: -moz-linear-gradient(top, #f6f6f6, #eeeeee);
+      background-image: -ms-linear-gradient(top, #f6f6f6, #eeeeee);
+      background-image: -o-linear-gradient(top, #f6f6f6, #eeeeee);
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#eeeeee));
+      background-image: -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
+      background-image: linear-gradient(top, #f6f6f6, #eeeeee);
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      -o-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      border-radius: 4px;
+      border: 1px solid #dbdbdb;
+      color: #b8b8b8;
+      cursor: pointer;
+      float: left;
+      font-size: 18px;
+      line-height: 1em;
+      min-width: 130px;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      text-shadow: 0 1px 1px #fff; }
+      .mid .landing form input[type=submit] img {
+        -moz-box-shadow: 1px 1px 1px 0 white;
+        -ms-box-shadow: 1px 1px 1px 0 white;
+        -o-box-shadow: 1px 1px 1px 0 white;
+        -webkit-box-shadow: 1px 1px 1px 0 white;
+        box-shadow: 1px 1px 1px 0 white; }
+      .mid .landing form input[type=submit]:hover {
+        -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+        -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+        -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+        -webkit-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+        box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+        background: #c43037;
+        background-image: -moz-linear-gradient(top, #df4c4b, #c43037);
+        background-image: -ms-linear-gradient(top, #df4c4b, #c43037);
+        background-image: -o-linear-gradient(top, #df4c4b, #c43037);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#df4c4b), to(#c43037));
+        background-image: -webkit-linear-gradient(top, #df4c4b, #c43037);
+        background-image: linear-gradient(top, #df4c4b, #c43037);
+        border: 1px solid #884f51;
+        color: #7e171e;
+        text-shadow: 0 1px 1px #e35851; }
+        .mid .landing form input[type=submit]:hover img {
+          -moz-box-shadow: 1px 1px 1px 0 #e35851;
+          -ms-box-shadow: 1px 1px 1px 0 #e35851;
+          -o-box-shadow: 1px 1px 1px 0 #e35851;
+          -webkit-box-shadow: 1px 1px 1px 0 #e35851;
+          box-shadow: 1px 1px 1px 0 #e35851; }
+      .mid .landing form input[type=submit]:active {
+        background: #df4c4b;
+        background-image: -moz-linear-gradient(top, #c43037, #df4c4b);
+        background-image: -ms-linear-gradient(top, #c43037, #df4c4b);
+        background-image: -o-linear-gradient(top, #c43037, #df4c4b);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#c43037), to(#df4c4b));
+        background-image: -webkit-linear-gradient(top, #c43037, #df4c4b);
+        background-image: linear-gradient(top, #c43037, #df4c4b);
+        -moz-box-shadow: none;
+        -ms-box-shadow: none;
+        -o-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        border: 1px solid #884f51;
+        color: #7e171e;
+        text-shadow: 0 1px 1px #e35851; }
+      .mid .landing form input[type=submit]#signup {
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-radius: 0;
+        -moz-border-radius-bottomleft: 4px;
+        -moz-border-radius-topleft: 4px;
+        -ms-border-bottom-left-radius: 4px;
+        -ms-border-top-left-radius: 4px;
+        -o-border-radius-bottomleft: 4px;
+        -o-border-radius-topleft: 4px;
+        -webkit-border-bottom-left-radius: 4px;
+        -webkit-border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        border-top-left-radius: 4px;
+        height: 48px; }
+      .mid .landing form input[type=submit]#linkedin {
+        -moz-box-shadow: 0 1px 1px 0 #eeeeee;
+        -ms-box-shadow: 0 1px 1px 0 #eeeeee;
+        -o-box-shadow: 0 1px 1px 0 #eeeeee;
+        -webkit-box-shadow: 0 1px 1px 0 #eeeeee;
+        box-shadow: 0 1px 1px 0 #eeeeee;
+        background: #eeeeee no-repeat center center;
+        background-image: url("images/social_linkedin.gif"), -moz-linear-gradient(top, #f6f6f6, #eeeeee);
+        background-image: url("images/social_linkedin.gif"), -ms-linear-gradient(top, #f6f6f6, #eeeeee);
+        background-image: url("images/social_linkedin.gif"), -o-linear-gradient(top, #f6f6f6, #eeeeee);
+        background-image: url("images/social_linkedin.gif"), -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#eeeeee));
+        background-image: url("images/social_linkedin.gif"), -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
+        background-image: url("images/social_linkedin.gif"), linear-gradient(top, #f6f6f6, #eeeeee);
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        border: 1px solid #dbdbdb;
+        color: #b8b8b8;
+        cursor: pointer;
+        float: left;
+        font-size: 0;
+        line-height: -9999em;
+        min-width: 130px;
+        overflow: hidden;
+        padding: 23px;
+        text-align: center;
+        text-decoration: none;
+        text-shadow: 0 1px 1px #fff;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-radius: 0;
+        border-left: 0;
+        border-right: 0; }
+        .mid .landing form input[type=submit]#linkedin img {
+          -moz-box-shadow: 1px 1px 1px 0 white;
+          -ms-box-shadow: 1px 1px 1px 0 white;
+          -o-box-shadow: 1px 1px 1px 0 white;
+          -webkit-box-shadow: 1px 1px 1px 0 white;
+          box-shadow: 1px 1px 1px 0 white; }
+        .mid .landing form input[type=submit]#linkedin:hover {
+          -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+          -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+          -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+          -webkit-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+          box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+          background: #c43037 no-repeat center center;
+          background-image: url("images/social_linkedin.gif"), -moz-linear-gradient(top, #df4c4b, #c43037);
+          background-image: url("images/social_linkedin.gif"), -ms-linear-gradient(top, #df4c4b, #c43037);
+          background-image: url("images/social_linkedin.gif"), -o-linear-gradient(top, #df4c4b, #c43037);
+          background-image: url("images/social_linkedin.gif"), -webkit-gradient(linear, left top, left bottom, from(#df4c4b), to(#c43037));
+          background-image: url("images/social_linkedin.gif"), -webkit-linear-gradient(top, #df4c4b, #c43037);
+          background-image: url("images/social_linkedin.gif"), linear-gradient(top, #df4c4b, #c43037);
+          border: 1px solid #884f51;
+          color: #7e171e;
+          text-shadow: 0 1px 1px #e35851; }
+          .mid .landing form input[type=submit]#linkedin:hover img {
+            -moz-box-shadow: 1px 1px 1px 0 #e35851;
+            -ms-box-shadow: 1px 1px 1px 0 #e35851;
+            -o-box-shadow: 1px 1px 1px 0 #e35851;
+            -webkit-box-shadow: 1px 1px 1px 0 #e35851;
+            box-shadow: 1px 1px 1px 0 #e35851; }
+        .mid .landing form input[type=submit]#linkedin:active {
+          background: #df4c4b no-repeat center center;
+          background-image: url("images/social_linkedin.gif"), -moz-linear-gradient(top, #c43037, #df4c4b);
+          background-image: url("images/social_linkedin.gif"), -ms-linear-gradient(top, #c43037, #df4c4b);
+          background-image: url("images/social_linkedin.gif"), -o-linear-gradient(top, #c43037, #df4c4b);
+          background-image: url("images/social_linkedin.gif"), -webkit-gradient(linear, left top, left bottom, from(#c43037), to(#df4c4b));
+          background-image: url("images/social_linkedin.gif"), -webkit-linear-gradient(top, #c43037, #df4c4b);
+          background-image: url("images/social_linkedin.gif"), linear-gradient(top, #c43037, #df4c4b);
+          -moz-box-shadow: none;
+          -ms-box-shadow: none;
+          -o-box-shadow: none;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+          border: 1px solid #884f51;
+          color: #7e171e;
+          text-shadow: 0 1px 1px #e35851; }
+        .mid .landing form input[type=submit]#linkedin:hover {
+          border: 1px solid #884f51;
+          width: 128px; }
+      .mid .landing form input[type=submit]#facebook {
+        -moz-box-shadow: 0 1px 1px 0 #eeeeee;
+        -ms-box-shadow: 0 1px 1px 0 #eeeeee;
+        -o-box-shadow: 0 1px 1px 0 #eeeeee;
+        -webkit-box-shadow: 0 1px 1px 0 #eeeeee;
+        box-shadow: 0 1px 1px 0 #eeeeee;
+        background: #eeeeee no-repeat center center;
+        background-image: url("images/social_facebook.gif"), -moz-linear-gradient(top, #f6f6f6, #eeeeee);
+        background-image: url("images/social_facebook.gif"), -ms-linear-gradient(top, #f6f6f6, #eeeeee);
+        background-image: url("images/social_facebook.gif"), -o-linear-gradient(top, #f6f6f6, #eeeeee);
+        background-image: url("images/social_facebook.gif"), -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#eeeeee));
+        background-image: url("images/social_facebook.gif"), -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
+        background-image: url("images/social_facebook.gif"), linear-gradient(top, #f6f6f6, #eeeeee);
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        border: 1px solid #dbdbdb;
+        color: #b8b8b8;
+        cursor: pointer;
+        float: left;
+        font-size: 0;
+        line-height: -9999em;
+        min-width: 130px;
+        overflow: hidden;
+        padding: 23px;
+        text-align: center;
+        text-decoration: none;
+        text-shadow: 0 1px 1px #fff;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-radius: 0;
+        -moz-border-radius-bottomright: 4px;
+        -moz-border-radius-topright: 4px;
+        -ms-border-bottom-right-radius: 4px;
+        -ms-border-top-right-radius: 4px;
+        -o-border-radius-bottomright: 4px;
+        -o-border-radius-topright: 4px;
+        -webkit-border-bottom-right-radius: 4px;
+        -webkit-border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        border-top-right-radius: 4px; }
+        .mid .landing form input[type=submit]#facebook img {
+          -moz-box-shadow: 1px 1px 1px 0 white;
+          -ms-box-shadow: 1px 1px 1px 0 white;
+          -o-box-shadow: 1px 1px 1px 0 white;
+          -webkit-box-shadow: 1px 1px 1px 0 white;
+          box-shadow: 1px 1px 1px 0 white; }
+        .mid .landing form input[type=submit]#facebook:hover {
+          -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+          -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+          -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+          -webkit-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+          box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+          background: #c43037 no-repeat center center;
+          background-image: url("images/social_facebook.gif"), -moz-linear-gradient(top, #df4c4b, #c43037);
+          background-image: url("images/social_facebook.gif"), -ms-linear-gradient(top, #df4c4b, #c43037);
+          background-image: url("images/social_facebook.gif"), -o-linear-gradient(top, #df4c4b, #c43037);
+          background-image: url("images/social_facebook.gif"), -webkit-gradient(linear, left top, left bottom, from(#df4c4b), to(#c43037));
+          background-image: url("images/social_facebook.gif"), -webkit-linear-gradient(top, #df4c4b, #c43037);
+          background-image: url("images/social_facebook.gif"), linear-gradient(top, #df4c4b, #c43037);
+          border: 1px solid #884f51;
+          color: #7e171e;
+          text-shadow: 0 1px 1px #e35851; }
+          .mid .landing form input[type=submit]#facebook:hover img {
+            -moz-box-shadow: 1px 1px 1px 0 #e35851;
+            -ms-box-shadow: 1px 1px 1px 0 #e35851;
+            -o-box-shadow: 1px 1px 1px 0 #e35851;
+            -webkit-box-shadow: 1px 1px 1px 0 #e35851;
+            box-shadow: 1px 1px 1px 0 #e35851; }
+        .mid .landing form input[type=submit]#facebook:active {
+          background: #df4c4b no-repeat center center;
+          background-image: url("images/social_facebook.gif"), -moz-linear-gradient(top, #c43037, #df4c4b);
+          background-image: url("images/social_facebook.gif"), -ms-linear-gradient(top, #c43037, #df4c4b);
+          background-image: url("images/social_facebook.gif"), -o-linear-gradient(top, #c43037, #df4c4b);
+          background-image: url("images/social_facebook.gif"), -webkit-gradient(linear, left top, left bottom, from(#c43037), to(#df4c4b));
+          background-image: url("images/social_facebook.gif"), -webkit-linear-gradient(top, #c43037, #df4c4b);
+          background-image: url("images/social_facebook.gif"), linear-gradient(top, #c43037, #df4c4b);
+          -moz-box-shadow: none;
+          -ms-box-shadow: none;
+          -o-box-shadow: none;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+          border: 1px solid #884f51;
+          color: #7e171e;
+          text-shadow: 0 1px 1px #e35851; }
   .mid p {
     margin: 0 0 20px 0; }
   .mid a {
@@ -1279,7 +1546,7 @@ header {
   .mid .left-33 {
     float: left;
     width: 245px; }
-    .mid .left-33 h2, .mid .left-33 #landing .features article h3, .mid #landing .features article .left-33 h3 {
+    .mid .left-33 h2, .mid .left-33 .landing .features article h3, .mid .landing .features article .left-33 h3 {
       font-size: 14px;
       font-weight: bold;
       margin: 0 0 10px 0;
@@ -1304,7 +1571,7 @@ header {
   .mid .left-50 {
     float: left;
     width: 390px; }
-    .mid .left-50 h2, .mid .left-50 #landing .features article h3, .mid #landing .features article .left-50 h3 {
+    .mid .left-50 h2, .mid .left-50 .landing .features article h3, .mid .landing .features article .left-50 h3 {
       color: #484848;
       font-family: "Raleway", "Arial", sans-serif;
       font-size: 44px;
@@ -2087,7 +2354,7 @@ header {
 #form {
   float: right;
   width: 390px; }
-  #form h2, #form .mid #landing .features article h3, .mid #landing .features article #form h3 {
+  #form h2, #form .mid .landing .features article h3, .mid .landing .features article #form h3 {
     font-family: "Raleway", "Arial", sans-serif;
     font-size: 54px;
     line-height: 1.2em; }
@@ -2244,7 +2511,7 @@ div.dp-popup {
   line-height: 1.2em;
   position: relative;
   width: 217px; }
-  div.dp-popup h2, div.dp-popup .mid #landing .features article h3, .mid #landing .features article div.dp-popup h3 {
+  div.dp-popup h2, div.dp-popup .mid .landing .features article h3, .mid .landing .features article div.dp-popup h3 {
     -moz-border-radius-topleft: 4px;
     -moz-border-radius-topright: 4px;
     -ms-border-top-left-radius: 4px;

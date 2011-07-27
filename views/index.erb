@@ -21,17 +21,22 @@
 	</head>
 	<body>
 		<div class="container">
-			<header>
+			<header class="sticky">
 				<section id="logo">
 					<h1><a href="/">Pr<span>o</span>ximate Logo Belongs Here</a></h1>
 				</section>
 				
 				<nav>
 					<ul>
+						<li><a href="javascript: void(0)" class="learn-more">learn more</a></li>
+<!--
+
 						<li><a href="javascript: void(0)">how to use</a></li>
 						<li><a href="javascript: void(0)">plans & pricing</a></li>
 						<li><a href="javascript: void(0)">blog</a></li>
+-->
 						<li><a href="javascript: void(0)">say hello</a></li>
+						<li><a href="javascript: void(0)" class="sign-up">sign up</a></li>
 						<li>
 						  	<% if current_user %>
 						  		<a href="/users/<%= current_user.id %>" id="login">view dashboard</a>
@@ -43,12 +48,12 @@
 				</nav>
 			</header>
 			
-			<div class="top">
+			<div class="top sticky">
 				<h2><span>Hello</span> my name is</h2>
 			</div>
 			
-			<div class="mid">
-				<section id="landing">
+			<div class="mid" style="padding: 90px 45px;">
+				<section class="landing">
 					<h1>Get to know the<br />people around you</h1>
 					<h2>With a customized social network for your event</h2>
 					
@@ -56,9 +61,17 @@
 						<li><a href="javascript: void(0)" class="learn-more">Learn More</a></li>
 						<li><a href="javascript: void(0)" class="sign-up">Sign Up</a></li>
 					</ul>
-					
-					<hr class="landing learn-more" />
-					
+				</section>
+			</div>
+			
+			<div class="bot"></div>
+			
+			<div class="top sticky" id="learn-more">
+				<h2><span>Hello</span> my name is</h2>
+			</div>
+			
+			<div class="mid">
+				<section class="landing">
 					<h1>Event Organizers</h1>
 					
 					<section class="features">
@@ -92,9 +105,17 @@
 							<p>Meet people <em>you</em> want to meet. Not just those in line at the bar.</p>
 						</article>
 					</section>
-					
-					<hr class="landing sign-up" />
-					
+				</section>
+			</div>
+			
+			<div class="bot"></div>
+			
+			<div class="top sticky" id="sign-up">
+				<h2><span>Hello</span> my name is</h2>
+			</div>
+			
+			<div class="mid">
+				<section class="landing">
 					<h1>Sign Up</h1>
 					<h2>You can sign up with your LinkedIn or Facebook account</h2>
 					
@@ -110,7 +131,7 @@
 
 			</div>
 			
-			<div class="bot"></div>
+			<div class="bot" style="margin: 0 0 60px 0;"></div>
 			
 			<footer>
 				<span  class='st_twitter_hcount' displayText='Tweet'></span><span  class='st_facebook_hcount' displayText='Facebook'></span><span  class='st_linkedin_hcount' displayText='LinkedIn'></span><span  class='st_fblike_hcount' ></span>
