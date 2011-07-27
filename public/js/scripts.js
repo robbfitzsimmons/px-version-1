@@ -17,19 +17,15 @@ $(document).ready(function()
 	$("input.focus-hide").focus(function() {
 		f = $(this),
 			def = f.val();
-
+			
     	if (f.val() == def) { 
 			f.val("");
     	}
-    	
 	}).blur(function() {
-    
     	if (f.val() == "") { 
 			f.val(def);
     	}
-    	
 	});
-	
 	$("input, textarea").focus(function() {
 		f = $(this);
 		
@@ -37,6 +33,33 @@ $(document).ready(function()
 	}).blur(function() {
     	f.removeClass('active');
 	});
+	
+	/* Date Picker */
+	Date.firstDayOfWeek = 0;
+	Date.format = 'mm/dd/yyyy';
+	$('.date-picker').datePicker({clickInput:true});
+	$('#start_day').bind(
+		'dpClosed',
+		function(e, selectedDates)
+		{
+			var d = selectedDates[0];
+			if (d) {
+				d = new Date(d);
+				$('#end_day').dpSetStartDate(d.addDays(0).asString());
+			}
+		}
+	);
+	$('#end_day').bind(
+		'dpClosed',
+		function(e, selectedDates)
+		{
+			var d = selectedDates[0];
+			if (d) {
+				d = new Date(d);
+				$('#start_day').dpSetEndDate(d.addDays(0).asString());
+			}
+		}
+	);
 	
 	/* Error messages */
 	$('.flash').delay(250).slideDown().delay(5000).slideUp();
