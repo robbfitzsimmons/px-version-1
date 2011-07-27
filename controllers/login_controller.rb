@@ -2,10 +2,18 @@ get '/login' do
 	@title = "Login"
 	@user = User.new
 
-	erb :'sessions/login', {:layout => :static_layout}
+	erb :'login/login', {:layout => :static_layout}
 end
 
 post '/login' do
+
+	puts "Login param is #{params[:login]}"
+	if params[:login] == "LinkedIn"
+		redirect '/auth/linked_in'
+	elsif params[:login] == "Facebook"
+		redirect '/auth/facebook'
+	end
+
 	user = User.authenticate(params[:session][:email], params[:session][:password])
 	if user.nil? 
 		# Create an error message and re-render the signin form.
