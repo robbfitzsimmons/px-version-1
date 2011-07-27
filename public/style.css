@@ -701,6 +701,8 @@ header {
     overflow: hidden;
     margin: 0 0 20px 0;
     width: 580px; }
+    .mid .nametag-lg div {
+      float: left; }
     .mid .nametag-lg img {
       float: left;
       height: 80px;
@@ -756,11 +758,14 @@ header {
     overflow: hidden;
     margin: 0 0 10px 0;
     width: 245px; }
+    .mid .nametag-sm div {
+      float: left; }
     .mid .nametag-sm h2 strong, .mid .nametag-sm #landing .features article h3 strong, .mid #landing .features article .nametag-sm h3 strong {
       font-weight: normal;
       text-transform: uppercase; }
     .mid .nametag-sm h4 {
-      font-size: 16px; }
+      font-size: 16px;
+      margin: 0 0 1px 0; }
     .mid .nametag-sm h5 {
       font-size: 15px;
       line-height: 1.3em; }
@@ -769,7 +774,7 @@ header {
     .mid .nametag-sm img {
       float: left;
       height: 45px;
-      margin: 0 10px 23px 0;
+      margin: 0 10px 0 0;
       width: 45px; }
     .mid .nametag-sm .top, .mid .nametag-sm .bot {
       text-align: center;
@@ -1664,7 +1669,7 @@ header {
       .mid .right-67 form select {
         width: 340px; }
       .mid .right-67 form input.time-picker {
-        width: 50px; }
+        width: 55px; }
       .mid .right-67 form input[type=submit] {
         -moz-box-shadow: 0 1px 1px 0 #eeeeee;
         -ms-box-shadow: 0 1px 1px 0 #eeeeee;

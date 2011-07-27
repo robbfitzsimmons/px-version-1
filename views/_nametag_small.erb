@@ -1,9 +1,10 @@
 <div class="nametag-sm">
-		<section class="top">
-			<h2><strong>Hello</strong> my name is</h2>
-		</section>
-		<section class="mid">
-			<img src="<%= nametagsmall.image(:thumb) %>" />
+	<section class="top">
+		<h2><strong>Hello</strong> my name is</h2>
+	</section>
+	<section class="mid">
+		<img src="<%= nametagsmall.image(:thumb) %>" />
+		<div>
 			<h4><%= nametagsmall.name %></h4>
 			<h5><%= nametagsmall.description %></h5>
 		
@@ -22,6 +23,7 @@
 			<% if !nametagsmall.twitter.blank? %>
 				<a target="_blank" href="<%= nametagsmall.twitter %>" class="social twitter">Twitter</a>
 			<% end %>
-		</section>
-		<section class="bot"></section>
-	</div>
+		</div>
+	</section>
+	<section class="bot"></section>
+</div>

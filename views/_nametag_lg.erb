@@ -4,25 +4,27 @@
 	</section>
 	<section class="mid">
 		<img src="<%= nametaglg.image(:thumb) %>" />
-		<h4><%= nametaglg.name %></h4>
-		<h5><%= nametaglg.description %></h5>
-		<h6><%= nametaglg.location %></h6>
-	
-		<% if !nametaglg.email.blank? %>
-			<a target="_blank" href="mailto:<%= nametaglg.email %>" class="social email">Email</a>
-		<% end %>
-		<% if !nametaglg.website.blank? %>
-			<a target="_blank" href="<%= nametaglg.website %>" class="social www">Website</a>
-		<% end %>
-		<% if !nametaglg.facebook.blank? %>
-			<a target="_blank" href="<%= nametaglg.facebook %>" class="social facebook">Facebook</a>
-		<% end %>
-		<% if !nametaglg.linked_in.blank? %>
-			<a target="_blank" href="<%= nametaglg.linked_in %>" class="social linkedin">LinkedIn</a>
-		<% end %>
-		<% if !nametaglg.twitter.blank? %>
-			<a target="_blank" href="<%= nametaglg.twitter %>" class="social twitter">Twitter</a>
-		<% end %>
+		<div>
+			<h4><%= nametaglg.name %></h4>
+			<h5><%= nametaglg.description %></h5>
+			<h6><%= nametaglg.location %></h6>
+		
+			<% if !nametaglg.email.blank? %>
+				<a target="_blank" href="mailto:<%= nametaglg.email %>" class="social email">Email</a>
+			<% end %>
+			<% if !nametaglg.website.blank? %>
+				<a target="_blank" href="<%= nametaglg.website %>" class="social www">Website</a>
+			<% end %>
+			<% if !nametaglg.facebook.blank? %>
+				<a target="_blank" href="<%= nametaglg.facebook %>" class="social facebook">Facebook</a>
+			<% end %>
+			<% if !nametaglg.linked_in.blank? %>
+				<a target="_blank" href="<%= nametaglg.linked_in %>" class="social linkedin">LinkedIn</a>
+			<% end %>
+			<% if !nametaglg.twitter.blank? %>
+				<a target="_blank" href="<%= nametaglg.twitter %>" class="social twitter">Twitter</a>
+			<% end %>
+		</div>
 	</section>
 	<section class="bot"></section>
 </div>
