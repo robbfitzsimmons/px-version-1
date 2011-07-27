@@ -26,5 +26,24 @@
 		<input type="submit" class="button" value="Submit" />
 	</form>
 </section>
+
 <script src="/js/validate.js"></script>
 <script src="/js/form.js"></script>
+<script src="/js/jquery.autocomplete.min.js"></script>
+<script src="/js/jquery.tagsinput.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/jquery.autocomplete.css">
+<link rel="stylesheet" type="text/css" href="/css/jquery.tagsinput.css">
+<script>
+ $(document).ready(function(){
+ 		var data = "<% @all_interests.each do |interest| %><%= interest.name %>,<% end %>".split(",");
+
+		$('#interests').tagsInput({
+		'autocomplete_url': data,
+		autocomplete:{selectFirst:true,width:'100px',autoFill:true},
+		height:'100px',
+		width:'340px',
+		unique:true,
+		defaultText:''
+		});
+  });
+</script>

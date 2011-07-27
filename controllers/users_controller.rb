@@ -27,6 +27,10 @@ post '/signup' do
 	end
 end
 
+get '/interests' do
+
+
+end
 
 get '/signup/step2' do
 	@user = session[:user]
@@ -102,6 +106,33 @@ put '/users/:id' do
 	
 
 	@user = User.get(params[:id])
+	@old_interests = @user.interests
+
+	@interests = params[:interests].squeeze(" ").strip.split(",")
+	@interests.each do |interest|
+		@old_interests.delete_if{ |old_interest| (old_interest.name == interest)}
+	end
+	# Old interests now contains interests that are to be removed
+	@old_interests.each do |old_interest|
+		@link = InterestUser.get(old_interest.id, @user.id)
+
+		## If No one else likes it, remove the interest, if someone does just remove it for this user
+		if @link.interest.users.count == 1
+			@link.interest.destroy
+		else
+			@user.interests.delete_if{ |interest| (old_interest.name == interest.name)}
+			@user.save
+		end
+
+
+	end
+
+	@interests.each do |interest|
+		@user.interests << Interest.first_or_create(:name => interest)
+	end
+
+
+
 
 	puts @user.attribute_dirty?(:password)
 
@@ -191,6 +222,8 @@ end
 get '/users/:id/edit' do
 	@title = "Edit User"
 	@user = User.get(params[:id])
+
+	@all_interests = Interest.all
 	
 	erb :'users/edit'	
 end

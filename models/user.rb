@@ -84,6 +84,8 @@ class User
 
   has n,   :answers
 
+  ## Links a user to interests
+  has n, :interests, :through => Resource
 
   before :save, :encrypt_password
 
