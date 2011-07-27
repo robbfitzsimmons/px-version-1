@@ -57,7 +57,5 @@ get '/style.css' do
 end
 
 get '/' do
-  @title = 'Hey there!'
-  
-  erb :index, {:layout => :static_layout}
+  erb :index, {:layout => false}
 end

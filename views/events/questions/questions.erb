@@ -14,7 +14,7 @@
 				
 				<% if question.type == "text" %>
 					<label for="answer<%= i %>[text_answer]" class="two-lines"><%= question.text %></label>
-					<input name="answer<%= i %>[text_answer]" type="text" value="<%= @answer.text_answer%>" />
+					<input name="answer<%= i %>[text_answer]" type="text" value="" />
 					<br/ ><br />
 				<% end %>
 		
@@ -57,7 +57,6 @@
 								</label>
 							<% end %>
 						</select>
-					<br />
 				<% end %>
 		
 			<input name="answer<%= i %>[question_id]" type="hidden" value="<%= question.id %>" />

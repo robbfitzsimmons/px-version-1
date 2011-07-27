@@ -1,3 +1,9 @@
+<article class="progress">
+	<p>Your nametag is 90% complete. <a href="/users/<%= @user.id %>/edit">Add a photo now!</a></p>
+	<div style="width: 90%;"></div>
+	<span>90%</span>
+</article>
+	
 <section class="left-33">
 	<h3>My Events</h3>
 	
@@ -42,7 +48,6 @@
 </section>
 
 <section class="right-67">
-	
 	<% if @user.user_event_associations.length != 0 %>
 		<% @user.user_event_associations.each do |assoc| %>
 			<article class="all <%= assoc.admin ? 'admin' : '' %> <%= assoc.attending ? 'attendee' : 'declined' %>">

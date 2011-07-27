@@ -1,59 +1,127 @@
-<section id="landing">
-	<h1>Get to know the<br />people around you</h1>
-	<h2>With a customized social network for your event</h2>
-	
-	<ul>
-		<li><a href="javascript: void(0)" class="learn-more">Learn More</a></li>
-		<li><a href="javascript: void(0)" class="sign-up">Sign Up</a></li>
-	</ul>
-	
-	<hr class="landing learn-more" />
-	
-	<h1>Event Organizers</h1>
-	
-	<section class="features">
-		<article>
-			<h3>Online Presence</h3>
-			<p>Extend and expand your conference's online presence.</p>
-		</article>
-		<article class="middle">
-			<h3>Better Networking</h3>
-			<p>Help attendees network based on criteria you select.</p>
-		</article>
-		<article>
-			<h3>Social Network</h3>
-			<p>Create a secure, robust social network for your event.</p>
-		</article>
-	</section>
-	
-	<h1>Attendees</h1>
-	
-	<section class="features">
-		<article>
-			<h3>Fast Sign Up</h3>
-			<p>Fast (90 sec) sign up. Finally remember that guy's name.</p>
-		</article>
-		<article class="middle">
-			<h3>Save a Tree</h3>
-			<p>Kill business cards. Save a tree, make a contact.</p>
-		</article>
-		<article>
-			<h3>Meet People</h3>
-			<p>Meet people <em>you</em> want to meet. Not just those in line at the bar.</p>
-		</article>
-	</section>
-	
-	<hr class="landing sign-up" />
-	
-	<h1>Sign Up</h1>
-	<h2>You can sign up with your LinkedIn or Facebook account</h2>
-	
-	<form action="/signup" method="post">
-		<input name="email" type="text" value="name@email.com" class="focus-hide" />
-		<input name="password" type="password" value="password" class="focus-hide" />
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Hello, my name is Proximate.</title>
+		<link href="/style.css" rel="stylesheet" type="text/css" />
+		<link href='http://fonts.googleapis.com/css?family=Raleway:100|Sue+Ellen+Francisco|Istok+Web:700italic,400,700,400italic' rel='stylesheet' type='text/css'>
+		<link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 		
-		<input name="sign_up" id="signup" type="submit" value="Sign Up" />
-		<input name="sign_up" id="linkedin" type="submit" value="LinkedIn" />
-		<input name="sign_up" id="facebook" type="submit" value="Facebook" />
-	</form>
-</section>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		
+		<!--[if IE]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<style type="text/css">
+				.clear {
+					display: block;
+					zoom: 1;
+				}
+			</style>
+		<![endif]-->
+
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<section id="logo">
+					<h1><a href="/">Pr<span>o</span>ximate Logo Belongs Here</a></h1>
+				</section>
+				
+				<nav>
+					<ul>
+						<li><a href="javascript: void(0)">how to use</a></li>
+						<li><a href="javascript: void(0)">plans & pricing</a></li>
+						<li><a href="javascript: void(0)">blog</a></li>
+						<li><a href="javascript: void(0)">say hello</a></li>
+						<li>
+						  	<% if current_user %>
+						  		<a href="/users/<%= current_user.id %>" id="login">view dashboard</a>
+						  	<% else %>
+								<a href="/login" id="login">log in</a>
+						  	<% end %>
+						</li>
+					</ul>
+				</nav>
+			</header>
+			
+			<div class="top">
+				<h2><span>Hello</span> my name is</h2>
+			</div>
+			
+			<div class="mid">
+				<section id="landing">
+					<h1>Get to know the<br />people around you</h1>
+					<h2>With a customized social network for your event</h2>
+					
+					<ul>
+						<li><a href="javascript: void(0)" class="learn-more">Learn More</a></li>
+						<li><a href="javascript: void(0)" class="sign-up">Sign Up</a></li>
+					</ul>
+					
+					<hr class="landing learn-more" />
+					
+					<h1>Event Organizers</h1>
+					
+					<section class="features">
+						<article>
+							<h3>Online Presence</h3>
+							<p>Extend and expand your conference's online presence.</p>
+						</article>
+						<article class="middle">
+							<h3>Better Networking</h3>
+							<p>Help attendees network based on criteria you select.</p>
+						</article>
+						<article>
+							<h3>Social Network</h3>
+							<p>Create a secure, robust social network for your event.</p>
+						</article>
+					</section>
+					
+					<h1>Attendees</h1>
+					
+					<section class="features">
+						<article>
+							<h3>Fast Sign Up</h3>
+							<p>Fast (90 sec) sign up. Finally remember that guy's name.</p>
+						</article>
+						<article class="middle">
+							<h3>Save a Tree</h3>
+							<p>Kill business cards. Save a tree, make a contact.</p>
+						</article>
+						<article>
+							<h3>Meet People</h3>
+							<p>Meet people <em>you</em> want to meet. Not just those in line at the bar.</p>
+						</article>
+					</section>
+					
+					<hr class="landing sign-up" />
+					
+					<h1>Sign Up</h1>
+					<h2>You can sign up with your LinkedIn or Facebook account</h2>
+					
+					<form action="/signup" method="post">
+						<input name="email" type="text" value="name@email.com" class="focus-hide" />
+						<input name="password" type="password" value="password" class="focus-hide" />
+						
+						<input name="sign_up" id="signup" type="submit" value="Sign Up" />
+						<input name="sign_up" id="linkedin" type="submit" value="LinkedIn" />
+						<input name="sign_up" id="facebook" type="submit" value="Facebook" />
+					</form>
+				</section>
+
+			</div>
+			
+			<div class="bot"></div>
+			
+			<footer>
+				<span  class='st_twitter_hcount' displayText='Tweet'></span><span  class='st_facebook_hcount' displayText='Facebook'></span><span  class='st_linkedin_hcount' displayText='LinkedIn'></span><span  class='st_fblike_hcount' ></span>
+			</footer>
+			
+		</div> <!-- //container -->
+			
+	    <%= erb :flash %>
+		<script src="/js/scripts.js"></script>
+		<script type="text/javascript">var switchTo5x=true;</script>
+		<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+		<script type="text/javascript">stLight.options({publisher:'d4421eb4-bd0a-4665-ba3d-bfad0daebe1b'});</script>
+	</body>
+</html>

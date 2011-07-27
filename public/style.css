@@ -1967,7 +1967,8 @@ header {
       width: 540px; }
       .mid .right-67 article div {
         float: left;
-        width: 320px; }
+        width: 320px;
+        /* for containing event info on dashboard */ }
       .mid .right-67 article p {
         float: left;
         margin: 0; }
@@ -2026,6 +2027,45 @@ header {
           width: 4px;
           height: 4px;
           background: #fff; }
+  .mid article.progress {
+    float: left;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: #f5f5f5;
+    border: 1px solid #e8e8e3;
+    padding: 20px;
+    float: left;
+    margin: 0 0 45px 0;
+    width: 832px; }
+    .mid article.progress p {
+      font-size: 14px;
+      line-height: 1em;
+      margin: 0 0 10px 0; }
+    .mid article.progress div {
+      -moz-box-shadow: inset 0 1px 0 0 #eeeeee, 0 1px 1px 0 #cccccc;
+      -ms-box-shadow: inset 0 1px 0 0 #eeeeee, 0 1px 1px 0 #cccccc;
+      -o-box-shadow: inset 0 1px 0 0 #eeeeee, 0 1px 1px 0 #cccccc;
+      -webkit-box-shadow: inset 0 1px 0 0 #eeeeee, 0 1px 1px 0 #cccccc;
+      box-shadow: inset 0 1px 0 0 #eeeeee, 0 1px 1px 0 #cccccc;
+      background: #c43037;
+      background-image: -moz-linear-gradient(top, #df4c4b, #c43037);
+      background-image: -ms-linear-gradient(top, #df4c4b, #c43037);
+      background-image: -o-linear-gradient(top, #df4c4b, #c43037);
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#df4c4b), to(#c43037));
+      background-image: -webkit-linear-gradient(top, #df4c4b, #c43037);
+      background-image: linear-gradient(top, #df4c4b, #c43037);
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      -o-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      border-radius: 4px;
+      background: url("images/stripes.png");
+      float: left;
+      height: 20px;
+      margin: 0 20px 0 0; }
 
 /* end .mid */
 .bot {

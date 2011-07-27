@@ -1,4 +1,5 @@
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
 <section class="left-33">
 	<h3>Event Answers</h3>
 	<p>Here are the answers for your event. Answers are shown in a chart if they are a drop down or radio button style. </p>
@@ -8,10 +9,12 @@
 	<% for i in 0..(@questions.count-1)  %>
 	<% @answers[i].each do |answer| %>
 		<% if answer.int_answer.nil? %>
-			<br /><%= @answers[i].first.question.text %><br />
-			<%= answer.text_answer %><br/>
+			<article>
+				<h4><%= @answers[i].first.question.text %></h4>
+				<%= answer.text_answer %>
+			</article>
 		<% else %>
-			<h2><%= @answers[i].first.question.text %>?</h2>
+			<h4><%= @answers[i].first.question.text %>?</h4>
 			<script type="text/javascript">
 	      google.load("visualization", "1", {packages:["corechart"]});
 	      google.setOnLoadCallback(drawChart);

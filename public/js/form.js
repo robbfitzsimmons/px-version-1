@@ -104,6 +104,12 @@ $(document).ready(function()
 			},
 			'user[name]': {
 				required: true
+			},
+			'user[description]': {
+				maxlength: 50
+			},
+			'user[location]': {
+				maxlength: 50
 			}
 		},
 		messages: {
@@ -113,6 +119,12 @@ $(document).ready(function()
 			},
 			'user[name]': {
 				required: "Please enter your name."
+			},
+			'user[description]': {
+				maxlength: "Please enter up to 50 characters."
+			},
+			'user[location]': {
+				maxlength: "Please enter up to 50 characters."
 			}
 		}
 	}); // end form-edit-profile.validate
@@ -272,14 +284,33 @@ $(document).ready(function()
 	}); // end form-activity.validate
 
 	$("#form-question").validate({
+		ignore: ':hidden',
 		rules: {
 			'question[text]': {
+				required: true
+			},
+			'question[type]': {
+				required: true
+			},
+			'question[option1]': {
+				required: true
+			},
+			'question[option2]': {
 				required: true
 			}
 		},
 		messages: {
 			'question[text]': {
 				required: "Please enter a question."
+			},
+			'question[type]': {
+				required: "Please select a question type."
+			},
+			'question[option1]': {
+				required: "Please provide at least two options."
+			},
+			'question[option2]': {
+				required: "Please provide at least two options."
 			}
 		}
 	}); // end form-questions.validate

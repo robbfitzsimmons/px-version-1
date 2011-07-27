@@ -1305,7 +1305,7 @@ header {
 			
 			div {
 				float: left;
-				width: 320px;
+				width: 320px; /* for containing event info on dashboard */
 			}
 			
 			p {
@@ -1360,6 +1360,36 @@ header {
 			}
 		}
 	}
+	
+	
+		
+	article.progress {
+		@include container;
+		float: left;
+		margin: 0 0 45px 0;
+		width: 832px;
+		
+		p {
+			font-size: 14px;
+			line-height: 1em;
+			margin: 0 0 10px 0;
+		}
+		
+		div {
+			@include boxshadow2(inset 0 1px 0 0 #eee, 0 1px 1px 0 #ccc);
+			@include gradient(#df4c4b, #c43037);
+			@include radius(4px);
+			background: url('images/stripes.png');
+			float: left;
+			height: 20px;
+			margin: 0 20px 0 0;
+		}
+		
+		span {
+			
+		}
+	}
+	
 } /* end .mid */
 
 .bot {

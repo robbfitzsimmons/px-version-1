@@ -126,7 +126,7 @@ put '/events/:id' do
 
 	if event.save
 		status(202)
-		flash[:success] = "Event Updated"
+		flash[:success] = "Event updated successfully."
 		redirect "/#{event.permalink}"
 	else
 		status(412)
@@ -144,7 +144,7 @@ get '/:permalink' do
 	@event_dashboard = true
 	
 	@event = Event.first(:permalink => params[:permalink].downcase)
-	@title = "#{@event.name}"
+	@title = "Event: #{@event.name}"
 
 	if is_event_admin(@event)
 		session[:event] = @event.id

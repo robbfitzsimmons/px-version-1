@@ -1,6 +1,7 @@
 get '/:permalink/answers' do
 	@event = Event.first(:permalink => params[:permalink])
-
+	
+	@title = "Event Answers"
 	@questions = @event.questions
 	@answers = Hash.new()
 	@choices = Hash.new()
