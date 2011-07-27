@@ -11,7 +11,7 @@
 			Emails
 			<span>Separated by commas</span>
 		</label>
-		<textarea name="emails" type="text"></textarea>
+		<input id="email-invites" name="emails" type="text" data-seperator="," />
 
 		<label for="subject">Subject</label>
 		<input name="subject" type="text" />
@@ -22,6 +22,19 @@
 		<input type="submit" value="Send Invites" />
 	</form>
 </section>
-
+<script src="/js/jquery.tagsinput.min.js"></script>
 <script src="/js/validate.js"></script>
 <script src="/js/form.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/jquery.tagsinput.css">
+
+
+<script>
+  $('#email-invites').tagsInput({
+   //'autocomplete_url': url_to_autocomplete_api,
+   //'autocomplete': { option: value, option: value},
+   'height':'100px',
+   'width':'340px',
+   'unique':true,
+   'defaultText':''
+	});
+</script>
