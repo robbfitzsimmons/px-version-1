@@ -3,7 +3,7 @@
 	
 	<h2>Filter</h2>
 	<ul>
-		<li><a href="javascript: void(0)" id="filter-all">All events (<%= @user.user_event_associations.length + @user.new_invites.length %>)</a></li>
+		<li><a href="javascript: void(0)" id="filter-all" class="filtered">All events (<%= @user.user_event_associations.length + @user.new_invites.length %>)</a></li>
 		<li><a href="javascript: void(0)" id="filter-attendee">Events I'm attending (<%= @user.user_event_associations(:attending => true).events.length %>)</a></li>
 		<li><a href="javascript: void(0)" id="filter-admin">Events I created (<%= @user.user_event_associations(:admin => true).length %>)</a></li>
 		<li><a href="javascript: void(0)" id="filter-invited">Pending invites (<%= @user.new_invites.length %>)</a></li>

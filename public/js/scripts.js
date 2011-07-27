@@ -40,30 +40,40 @@ $(document).ready(function()
 	/* Events filter */
 	$('#filter-all').click(function () {
 		$('.all').slideDown();
+		$(this).parent().parent().find('a').removeClass('filtered');
+		$(this).addClass('filtered');
 	});
 	$('#filter-attendee').click(function () {
 		$('.invited').slideUp();
 		$('.attendee').slideDown();
 		$('.admin').slideDown();
 		$('.declined').slideUp();
+		$(this).parent().parent().find('a').removeClass('filtered');
+		$(this).addClass('filtered');
 	});
 	$('#filter-admin').click(function () {
 		$('.attendee').not('.admin').slideUp();
 		$('.invited').slideUp();
 		$('.admin').slideDown();
 		$('.declined').slideUp();
+		$(this).parent().parent().find('a').removeClass('filtered');
+		$(this).addClass('filtered');
 	});
 	$('#filter-invited').click(function () {
 		$('.admin').slideUp();
 		$('.attendee').slideUp();
 		$('.invited').slideDown();
 		$('.declined').slideUp();
+		$(this).parent().parent().find('a').removeClass('filtered');
+		$(this).addClass('filtered');
 	});
 	$('#filter-declined').click(function () {
 		$('.admin').slideUp();
 		$('.attendee').slideUp();
 		$('.invited').slideUp();
 		$('.declined').slideDown();
+		$(this).parent().parent().find('a').removeClass('filtered');
+		$(this).addClass('filtered');
 	});
 	
 	/* Drop Down */
