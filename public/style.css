@@ -769,7 +769,7 @@ header {
     .mid .nametag-sm img {
       float: left;
       height: 45px;
-      margin: 0 10px 13px 0;
+      margin: 0 10px 23px 0;
       width: 45px; }
     .mid .nametag-sm .top, .mid .nametag-sm .bot {
       text-align: center;
@@ -829,10 +829,12 @@ header {
   .mid h4 {
     color: #484848;
     font-size: 24px;
-    line-height: 1.2em; }
+    line-height: 1.2em;
+    margin: 0 0 5px 0; }
   .mid h5 {
     font-style: italic;
-    line-height: 1.6em; }
+    line-height: 1.2em;
+    margin: 0 0 5px 0; }
   .mid h6 {
     color: #ccc;
     font-family: "Istok Web", "Arial", sans-serif;

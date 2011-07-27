@@ -1,6 +1,6 @@
 # Create a new session Page
 get '/sessions/new' do
-	@title = "Create a New Session"
+	@title = "Create New Session"
 
 	@event = Event.get(session[:event])
 	@session = Session.new()
@@ -51,7 +51,7 @@ post '/sessions' do
 
 	if session.save
 		status(202)
-		flash[:success] = "#{session.name} Added Successfully."
+		flash[:success] = "<em>#{session.name}</em> added successfully."
 
 		redirect "/#{day.event.permalink}"
 	else
@@ -59,7 +59,7 @@ post '/sessions' do
 		session.errors.each do |e|
 		    puts e
 		end
-		flash[:error] = "Please Try Again."
+		flash[:error] = "Please try again."
 		redirect "/sessions/new"
 	end
 end

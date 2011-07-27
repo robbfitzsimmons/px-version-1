@@ -1,6 +1,6 @@
 # Send an invite page
 get '/invites/new' do
-	
+	@title = 'Send Invites'
 	@invite = Invite.new()
 	@event = current_event
 
@@ -83,7 +83,7 @@ post '/invites' do
 	if success == 1
 		flash[:success] = "Invites sent successfully."
 	elsif success == 2
-		flash[:warning] = "Some invites sent unsuccessfully, please check the attendee worksheet."
+		flash[:warning] = "Some invites sent unsuccessfully. Please check the attendee worksheet."
 	elsif success == 3
 		flash[:error] = "Invites sent unsuccessfully."
 	end

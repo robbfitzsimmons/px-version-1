@@ -58,7 +58,7 @@ post '/activities' do
 
 	if activity.save
 		status(202)
-		flash[:success] = "#{activity.name} Added Successfully."
+		flash[:success] = "<em>#{activity.name}</em> added successfully."
 
 		redirect "/#{event.permalink}"
 	else
@@ -66,7 +66,7 @@ post '/activities' do
 		activity.errors.each do |e|
 		    puts e
 		end
-		flash[:error] = "Please Try Again."
+		flash[:error] = "Please try again."
 		# Changes url to /activitys rather than activitys/new
 		#erb :'activitys/new'
 		redirect back

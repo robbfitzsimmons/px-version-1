@@ -8,7 +8,6 @@ get '/:permalink/answers' do
 	@questions.each do |question|
 		@answers[i] = question.answers
 		if @answers[i].first.text_answer.nil?
-			puts "Its int#{@answers[i].first.int_answer}"
 			@choices[i] = Hash.new()
 			@choices[i][0] = question.answers(:int_answer => 1).count
 			@choices[i][1] = question.answers(:int_answer => 2).count
@@ -71,11 +70,11 @@ post '/answers' do
 	}
 
 	if success == 1
-		flash[:success] = "Questions answered successfully"
+		flash[:success] = "Questions answered successfully."
 	elsif success == 2
-		flash[:warning] = "Some questions answered unsuccessfully"
+		flash[:warning] = "Some questions answered unsuccessfully."
 	elsif success == 3
-		flash[:error] = "Questions answered unsuccessfully"
+		flash[:error] = "Questions answered unsuccessfully. Please try again."
 	end
 
 	redirect "/#{@event.permalink}"

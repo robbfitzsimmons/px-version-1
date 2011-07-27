@@ -36,7 +36,7 @@ get '/auth/:name/callback' do
 			# And redirect them to their profile page
 			puts "They exist already"
 			session[:user] = @user.id
-			flash[:success] = "Welcome back #{@user.name}"
+			flash[:success] = "Welcome back, <em>#{@user.name}</em>."
 			puts "Logged them in as user #{session[:user]}"
 			redirect "/users/#{@user.id}"
 		end
@@ -110,7 +110,7 @@ get '/auth/:name/callback' do
 
 		session[:user_info] = @user
 
-		flash[:success] = "When you save your #{auth["provider"].capitalize} account will be added."
+		flash[:success] = "When you save, your #{auth["provider"].capitalize} account will be added."
 
 
 		redirect "/users/#{current_user.id}/approve"

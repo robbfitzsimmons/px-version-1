@@ -45,7 +45,7 @@ post '/signup/step2' do
 		@user.save
 
 		session[:user] = @user.id
-		flash[:success] = "Welcome to your dashboard #{@user.name}"
+		flash[:success] = "Welcome to your dashboard, <em>#{@user.name}</em>."
 		redirect "/users/#{@user.id}"
 	else
 		status(412)
@@ -70,7 +70,7 @@ get '/users/:id' do
 end
 
 get '/users/:id/connect' do
-	@title = "Connect your other Social Accounts"
+	@title = "Connect Your Social Accounts"
 	@user = User.get(params[:id])
 	
 	erb :'users/connect'	
@@ -135,7 +135,7 @@ put '/users/:id' do
 
 			session[:connect] = nil
 
-			flash[:success] = "Profile Updated"
+			flash[:success] = "Profile updated successfully."
 			redirect "/users/#{@user.id}"
 
 		else
@@ -161,7 +161,7 @@ put '/users/:id' do
 			puts @user.password
 			puts @user.salt
 			status(202)
-			flash[:success] = "Profile Updated"
+			flash[:success] = "Profile updated successfully."
 			redirect "/users/#{@user.id}"
 		else
 			status(412)
@@ -198,7 +198,7 @@ end
 # Show edit user page
 get '/users/:id/nametag' do
 	@user = User.get(params[:id])
-	@title = "#{@user.name}'s' Nametag"
+	@title = "#{@user.name}'s Nametag"
 	
 	erb :'users/nametag'	
 end
