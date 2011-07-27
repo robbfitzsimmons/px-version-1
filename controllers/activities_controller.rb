@@ -32,8 +32,6 @@ post '/activities' do
 		else
 			start_hour = params[:start_hour].to_i
 		end
-	else
-		puts "UHOH"
 	end
 
 	if params[:end_ampm].downcase == "pm"

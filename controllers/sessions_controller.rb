@@ -14,8 +14,38 @@ post '/sessions' do
 
 	day = Day.get(params[:day])
 
-	session.start_date = DateTime.new(day.date.year, day.date.month, day.date.mday, params[:start_hour].to_i, 0)
-	session.end_date = DateTime.new(day.date.year, day.date.month, day.date.mday, params[:end_hour].to_i, 0)
+
+	if params[:start_ampm].downcase == "pm"
+		if params[:start_hour].to_i < 12
+			start_hour = params[:start_hour].to_i + 12
+		else
+			start_hour = params[:start_hour].to_i
+		end
+	elsif params[:start_ampm].downcase == "am"
+		if params[:start_hour].to_i == 12
+			start_hour = 0
+		else
+			start_hour = params[:start_hour].to_i
+		end
+	end
+
+	if params[:end_ampm].downcase == "pm"
+		if params[:end_hour].to_i < 12
+			end_hour = params[:end_hour].to_i + 12
+		else
+			start_hour = params[:start_hour].to_i
+		end
+	elsif params[:end_ampm].downcase == "am"
+		if params[:end_hour].to_i == 12
+			end_hour = 0
+		else
+			end_hour = params[:end_hour].to_i
+		end
+	end
+
+	session.start_date = DateTime.new(day.date.year, day.date.month, day.date.mday, start_hour, params[:start_minute].to_i)
+	session.end_date = DateTime.new(day.date.year, day.date.month, day.date.mday, end_hour, params[:end_minute].to_i)
+
 	session.day = day
 
 
