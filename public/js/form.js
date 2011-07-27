@@ -121,11 +121,75 @@ $(document).ready(function()
 		rules: {
 			'session[name]': {
 				required: true
+			},
+			start_hour: {
+				digits: true,
+				max: 12,
+				min: 1,
+				required: true
+			},
+			end_hour: {
+				digits: true,
+				max: 12,
+				min: 1,
+				required: true
+			},
+			start_minute: {
+				digits: true,
+				max: 59,
+				min: 0,
+				required: true
+			},
+			end_minute: {
+				digits: true,
+				max: 59,
+				min: 0,
+				required: true
+			},
+			start_ampm: {
+				accept: "[am, pm, AM, PM]",
+				required: true
+			},
+			end_ampm: {
+				accept: "[am, pm, AM, PM]",
+				required: true
 			}
 		},
 		messages: {
 			'session[name]': {
 				required: "Please enter a name."
+			},
+			start_hour: {
+				digits: "Please enter the start hour.",
+				max: "Please enter the start hour.",
+				min: "Please enter the start hour.",
+				required: "Please enter the start hour."
+			},
+			end_hour: {
+				digits: "Please enter the end hour.",
+				max: "Please enter the end hour.",
+				min: "Please enter the end hour.",
+				required: "Please enter the end hour."
+			},
+			start_minute: {
+				digits: "Please enter the start minute.",
+				max: "Please enter the start minute.",
+				min: "Please enter the start minute.",
+				required: "Please enter the start minute.",
+			},
+			end_minute: {
+				digits: "Please enter the end minute.",
+				max: "Please enter the end minute.",
+				min: "Please enter the end minute.",
+				required: "Please enter the end minute."
+			},
+			start_ampm: {
+				accept: "Please indicate AM or PM.",
+				required: "Please indicate AM or PM."
+			},
+			end_ampm: {
+				accept: "Please indicate AM or PM.",
+				required: "Please indicate AM or PM."
 			}
 		}
 	}); // end form-session.validate
