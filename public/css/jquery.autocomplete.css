@@ -42,6 +42,8 @@
 	background-color: #eee;
 }
 
+/* The color of the rollover of can use up and down arrows on
+ Make it the color of the event*/
 .ac_over {
 	background-color: #eee;
 	color: #909090;
