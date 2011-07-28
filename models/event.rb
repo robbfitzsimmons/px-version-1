@@ -46,7 +46,7 @@ class Event
                       :secret_access_key => ENV['S3_SECRET']
                     },
                     :path => "/:class/:attachment/:id/:style/:basename.:extension",
-                    :bucket         => "proximate_test",
+                    :bucket         => "proximate_dev",
                     :styles => { :original => "300x300#",
                                  :thumb => "75x75#" }
   else
