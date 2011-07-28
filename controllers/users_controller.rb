@@ -76,13 +76,16 @@ get '/users/:id' do
 	count += 1 if (!@user.name.blank?)					#2
 	count += 1 if (!@user.description.blank?)		#3
 	count += 1 if (!@user.location.blank?)			#4
-	count += 1 if (!@user.website.blank?)				#5
-	count += 1 if (!@user.interests.empty?)			#6
-	count += 1 if (!@user.facebook.blank?)			#7
-	count += 1 if (!@user.linked_in.blank?)			#8
-	count += 1 if (@user.image.url != "/images/original/missing.png")	#9
+	count += 1 if (!@user.education.blank?)			#5
+	count += 1 if (!@user.work.blank?)					#6
+	count += 1 if (!@user.website.blank?)				#7
+	count += 1 if (!@user.interests.empty?)			#8
+	count += 1 if (!@user.organizations.empty?)	#9
+	count += 1 if (!@user.facebook.blank?)			#10
+	count += 1 if (!@user.linked_in.blank?)			#11
+	count += 1 if (@user.image.url != "/images/original/missing.png")	#12
 
-	@progress = ((count/9.0) * 100).round(0) 
+	@progress = ((count/12.0) * 100).round(0) 
 
 	session[:connect] = nil
 	
@@ -122,8 +125,9 @@ put '/users/:id' do
 	
 
 	@user = User.get(params[:id])
-	@old_interests = @user.interests
 
+	## Handle Interests
+	@old_interests = @user.interests
 	if !params[:interests].nil?
 		@interests = params[:interests].squeeze(" ").strip.split(",")
 		@interests.each do |interest|
@@ -140,12 +144,33 @@ put '/users/:id' do
 				@user.interests.delete_if{ |interest| (old_interest.name == interest.name)}
 				@user.save
 			end
-
-
 		end
-
 		@interests.each do |interest|
 			@user.interests << Interest.first_or_create(:name => interest)
+		end
+	end
+
+	## Handle Organizations
+	@old_organizations = @user.organizations
+	if !params[:organizations].nil?
+		@organizations = params[:organizations].squeeze(" ").strip.split(",")
+		@organizations.each do |organization|
+			@old_organizations.delete_if{ |old_organization| (old_organization.name == organization)}
+		end
+		# Old organizations now contains organizations that are to be removed
+		@old_organizations.each do |old_organization|
+			@link = OrganizationUser.get(old_organization.id, @user.id)
+
+			## If No one else likes it, remove the organization, if someone does just remove it for this user
+			if @link.organization.users.count == 1
+				@link.organization.destroy
+			else
+				@user.organizations.delete_if{ |organization| (old_organization.name == organization.name)}
+				@user.save
+			end
+		end
+		@organizations.each do |organization|
+			@user.organizations << Organization.first_or_create(:name => organization)
 		end
 	end
 
@@ -242,6 +267,7 @@ get '/users/:id/edit' do
 	@user = User.get(params[:id])
 
 	@all_interests = Interest.all
+	@all_organizations = Organization.all
 	
 	erb :'users/edit'	
 end
