@@ -227,6 +227,3 @@ get '/:permalink/questions/answer' do
 
 	erb :'events/questions/answer'
 end
-
-
-
