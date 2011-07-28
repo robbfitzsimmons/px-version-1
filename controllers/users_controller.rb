@@ -68,6 +68,15 @@ get '/users/:id' do
 	@title = "Dashboard"
 	@user = User.get(params[:id])
 
+	@matches = @user.people_matches
+	@match1 = @matches[0] unless @matches[0].nil?
+	@match2 = @matches[1] unless @matches[1].nil?
+	@match3 = @matches[2] unless @matches[2].nil?
+	@match4 = @matches[3] unless@matches[3].nil?
+
+	puts @match2.name
+
+
 	count = 0
 
 	count += 1 if (!@user.email.blank?)					#1

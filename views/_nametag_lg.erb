@@ -12,7 +12,9 @@
 				<% nametaglg.interests.each do |interest| %>
 					<%= interest.name + ',' if nametaglg.interests.last != interest %>
 				<% end %>
-				<%= nametaglg.interests.last.name %>
+				<% if nametaglg.interests.count != 0 %>
+					<%= nametaglg.interests.last.name %>
+				<% end %>
 			</p>
 		
 			<% if !nametaglg.email.blank? %>

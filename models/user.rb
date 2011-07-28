@@ -101,7 +101,9 @@ class User
 
   # Lists related people
   def people_matches
+    @users = []
     @users = self.events.user_event_associations(:attending => true).users(:limit => 4, :id.not => self.id)
+    @users
   end
 
   def events_with_unanswered_questions
