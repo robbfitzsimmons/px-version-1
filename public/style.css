@@ -704,10 +704,9 @@ header {
     width: 100%; }
   .mid .nametag-lg {
     overflow: hidden;
-    margin: 0 0 20px 0;
     width: 580px; }
     .mid .nametag-lg div {
-      float: left;
+      float: right;
       width: 438px; }
     .mid .nametag-lg img {
       float: left;
@@ -716,18 +715,22 @@ header {
       width: 80px; }
     .mid .nametag-lg p {
       font-size: 14px;
-      margin: 0; }
-      .mid .nametag-lg p span {
-        color: #ccc;
-        float: left;
-        font-size: 14px;
-        width: 100px; }
+      line-height: 1.3em;
+      margin: 0 0 5px 0; }
     .mid .nametag-lg .top, .mid .nametag-lg .bot {
       text-align: center;
       width: 578px; }
     .mid .nametag-lg .mid {
       padding: 20px;
       width: 538px; }
+      .mid .nametag-lg .mid span {
+        clear: both;
+        color: #ccc;
+        float: left;
+        font-size: 14px;
+        line-height: 1.3em;
+        margin: 0 20px 0 0;
+        width: 80px; }
     .mid .nametag-lg .social {
       background: url("/images/socialicons.gif") no-repeat;
       display: block;

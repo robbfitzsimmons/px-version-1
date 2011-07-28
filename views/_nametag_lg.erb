@@ -8,6 +8,20 @@
 			<h4><%= nametaglg.name %></h4>
 			<h5><%= nametaglg.description %></h5>
 			<h6><%= nametaglg.location %></h6>
+		</div>
+		
+		<hr />
+		
+		<% if !nametaglg.work.blank? %>
+		<span>Work</span>
+		<div>
+			<p><%= nametaglg.work %></p>
+		</div>
+		<% end %>
+		
+		<% if nametaglg.interests.length != 0 %>
+		<span>Interests</span>
+		<div>
 			<p>
 				<% nametaglg.interests.each do |interest| %>
 					<%= interest.name + ',' if nametaglg.interests.last != interest %>
@@ -16,7 +30,25 @@
 					<%= nametaglg.interests.last.name %>
 				<% end %>
 			</p>
+		</div>
+		<% end %>
 		
+		<% if nametaglg.organizations.length != 0 %>		
+			<span>Organizations</span>
+			<div>
+				<p>
+					<% nametaglg.organizations.each do |organization| %>
+						<%= organization.name + ',' if nametaglg.organizations.last != organization %>
+					<% end %>
+					<% if nametaglg.organizations.count != 0 %>
+						<%= nametaglg.organizations.last.name %>
+					<% end %>
+				</p>
+			</div>
+		<% end %>
+		
+		<span>Links</span>
+		<div>
 			<% if !nametaglg.email.blank? %>
 				<a target="_blank" href="mailto:<%= nametaglg.email %>" class="social email">Email</a>
 			<% end %>

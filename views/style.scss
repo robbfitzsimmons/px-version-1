@@ -598,11 +598,10 @@ header {
 	
 	.nametag-lg {
 		overflow: hidden;
-		margin: 0 0 20px 0;
 		width: 580px;
 		
 		div {
-			float: left;
+			float: right;
 			width: 438px;
 		}
 		
@@ -612,17 +611,11 @@ header {
 			margin: 0 20px 0 0;
 			width: 80px;
 		}
-		
+
 		p {
 			font-size: 14px;
-			margin: 0;
-			
-			span {
-				color: #ccc;
-				float: left;
-				font-size: 14px;
-				width: 100px;
-			}
+			line-height: 1.3em;
+			margin: 0 0 5px 0;
 		}
 		
 		.top, .bot {
@@ -633,6 +626,17 @@ header {
 		.mid {
 			padding: 20px;
 			width: 538px;
+			
+			
+			span {
+				clear: both;
+				color: #ccc;
+				float: left;
+				font-size: 14px;
+				line-height: 1.3em;
+				margin: 0 20px 0 0;
+				width: 80px;
+			}
 		}
 		
 		.social {

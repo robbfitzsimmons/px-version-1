@@ -110,6 +110,9 @@ $(document).ready(function()
 			},
 			'user[location]': {
 				maxlength: 50
+			},
+			'user[website]': {
+				url: true
 			}
 		},
 		messages: {
