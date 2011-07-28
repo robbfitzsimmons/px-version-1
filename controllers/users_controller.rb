@@ -68,6 +68,21 @@ get '/users/:id' do
 	@title = "Dashboard"
 	@user = User.get(params[:id])
 
+	count = 0
+
+	count += 1 if (!@user.email.blank?)
+	count += 1 if (!@user.name.blank?)
+	count += 1 if (!@user.location.blank?)
+	count += 1 if (!@user.description.blank?)
+	count += 1 if (!@user.location.blank?)
+	count += 1 if (!@user.website.blank?)
+	count += 1 if (!@user.interests.empty?)
+	count += 1 if (!@user.facebook.blank?)
+	count += 1 if (!@user.linked_in.blank?)
+	count += 1 if (@user.image.url != "/images/original/missing.png")
+
+	@progress = ((count/10.0) * 100).round(0) 
+
 	session[:connect] = nil
 	
 	erb :'users/show'	
@@ -108,27 +123,29 @@ put '/users/:id' do
 	@user = User.get(params[:id])
 	@old_interests = @user.interests
 
-	@interests = params[:interests].squeeze(" ").strip.split(",")
-	@interests.each do |interest|
-		@old_interests.delete_if{ |old_interest| (old_interest.name == interest)}
-	end
-	# Old interests now contains interests that are to be removed
-	@old_interests.each do |old_interest|
-		@link = InterestUser.get(old_interest.id, @user.id)
+	if !params[:interests].nil?
+		@interests = params[:interests].squeeze(" ").strip.split(",")
+		@interests.each do |interest|
+			@old_interests.delete_if{ |old_interest| (old_interest.name == interest)}
+		end
+		# Old interests now contains interests that are to be removed
+		@old_interests.each do |old_interest|
+			@link = InterestUser.get(old_interest.id, @user.id)
 
-		## If No one else likes it, remove the interest, if someone does just remove it for this user
-		if @link.interest.users.count == 1
-			@link.interest.destroy
-		else
-			@user.interests.delete_if{ |interest| (old_interest.name == interest.name)}
-			@user.save
+			## If No one else likes it, remove the interest, if someone does just remove it for this user
+			if @link.interest.users.count == 1
+				@link.interest.destroy
+			else
+				@user.interests.delete_if{ |interest| (old_interest.name == interest.name)}
+				@user.save
+			end
+
+
 		end
 
-
-	end
-
-	@interests.each do |interest|
-		@user.interests << Interest.first_or_create(:name => interest)
+		@interests.each do |interest|
+			@user.interests << Interest.first_or_create(:name => interest)
+		end
 	end
 
 
