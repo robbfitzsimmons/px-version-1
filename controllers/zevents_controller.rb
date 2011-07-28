@@ -141,10 +141,38 @@ end
 # Show a specific event
 get '/:permalink' do
 
+
 	@event_dashboard = true
 	
 	@event = Event.first(:permalink => params[:permalink].downcase)
 	@title = "Event: #{@event.name}"
+
+	count = 0
+
+	count += 1 if (!@event.name.blank?)					#1
+	count += 1 if (!@event.description.blank?)					#2
+	count += 1 if (!@event.location.blank?)		#3
+	count += 1 if (!@event.start_date.blank?)			#4
+	count += 1 if (!@event.color.blank?)			#5
+	count += 1 if (@event.image.url != "/images/original/missing.png")	#6
+	count += 1 if  (!@event.invites.empty?)	#7
+
+	i = 0.0
+	@event.days.each do |day|
+		count += 1 if (!day.sessions.empty?)
+		i += 1.0
+	end
+
+	if !@event.days.sessions.nil?
+		@event.days.sessions.each do |session|
+			count += 1 if (!session.activities.empty?)
+			i += 1.0
+		end
+	end
+
+	total = 7.0 + i
+
+	@progress = ((count/total) * 100).round(0) 
 
 	if is_event_admin(@event)
 		session[:event] = @event.id
