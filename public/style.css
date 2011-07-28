@@ -1553,7 +1553,8 @@ header {
       color: #7e171e;
       text-shadow: 0 1px 1px #e35851; }
   .mid form textarea {
-    height: 46px; }
+    height: 120px;
+    line-height: 1.3em; }
   .mid .left-33 {
     float: left;
     width: 245px; }

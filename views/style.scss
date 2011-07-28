@@ -1098,7 +1098,8 @@ header {
 		
 		textarea {
 			@extend input[type=text];
-			height: 46px;
+			height: 120px;
+			line-height: 1.3em;
 		}
 	}
 	
