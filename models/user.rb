@@ -50,7 +50,7 @@ class User
                     #:s3_credentials => "#{APP_ROOT}/config/s3.yml",
                     :s3_credentials => {
                       :access_key_id => ENV['S3_KEY'],
-                      :secret_access_key => test
+                      :secret_access_key => 'test'
                     },
                     :path => "/:class/:attachment/:id/:style/:basename.:extension",
                     :bucket         => "proximate_dev",
