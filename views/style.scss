@@ -603,6 +603,7 @@ header {
 		
 		div {
 			float: left;
+			width: 438px;
 		}
 		
 		img {
@@ -610,6 +611,18 @@ header {
 			height: 80px;
 			margin: 0 20px 0 0;
 			width: 80px;
+		}
+		
+		p {
+			font-size: 14px;
+			margin: 0;
+			
+			span {
+				color: #ccc;
+				float: left;
+				font-size: 14px;
+				width: 100px;
+			}
 		}
 		
 		.top, .bot {
@@ -686,6 +699,7 @@ header {
 	}
 	
 	.nametag-sm {
+		float: left;
 		overflow: hidden;
 		margin: 0 0 10px 0;
 		width: 245px;
@@ -1315,7 +1329,7 @@ header {
 			
 			div {
 				float: left;
-				width: 320px; /* for containing event info on dashboard */
+				width: 319px; /* for containing event info on dashboard */
 			}
 			
 			p {

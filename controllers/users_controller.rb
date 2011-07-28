@@ -108,7 +108,7 @@ post '/connect' do
 end
 
 get '/users/:id/approve' do
-	@title = "Approve your New Information"
+	@title = "Approve New Information"
 	@user = session[:user_info]
 	
 	erb :'users/approve'	
@@ -236,7 +236,7 @@ end
 
 # Show edit user page
 get '/users/:id/edit' do
-	@title = "Edit User"
+	@title = "Edit Nametag"
 	@user = User.get(params[:id])
 
 	@all_interests = Interest.all

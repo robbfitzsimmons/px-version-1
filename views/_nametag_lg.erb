@@ -8,6 +8,12 @@
 			<h4><%= nametaglg.name %></h4>
 			<h5><%= nametaglg.description %></h5>
 			<h6><%= nametaglg.location %></h6>
+			<p><!-- <span>Interests</span> -->
+				<% nametaglg.interests.each do |interest| %>
+					<%= interest.name + ',' if nametaglg.interests.last != interest %>
+				<% end %>
+				<%= nametaglg.interests.last.name %>
+			</p>
 		
 			<% if !nametaglg.email.blank? %>
 				<a target="_blank" href="mailto:<%= nametaglg.email %>" class="social email">Email</a>

@@ -14,37 +14,38 @@
 				<%= answer.text_answer %>
 			</article>
 		<% else %>
-			<h4><%= @answers[i].first.question.text %>?</h4>
-			<script type="text/javascript">
-	      google.load("visualization", "1", {packages:["corechart"]});
-	      google.setOnLoadCallback(drawChart);
-	      function drawChart() {
-	        var data = new google.visualization.DataTable();
-	        data.addColumn('string', 'Task');
-	        data.addColumn('number', 'Hours per Day');
-	        data.addRows(5);
-	        
-	        <% if !answer.question.option1.blank? %>
-	        	data.setValue(0, 0, '<%= answer.question.option1 %>');
-	        	data.setValue(0, 1, <%= @choices[i][0] %>);
-					<% end %>
-	        
-	         <% if !answer.question.option2.blank? %>
-	        	data.setValue(1, 0, '<%= answer.question.option2 %>');
-	        	data.setValue(1, 1, <%= @choices[i][1] %>);
-					<% end %>
-	        
-	         <% if !answer.question.option3.blank? %>
-	        	data.setValue(2, 0, '<%= answer.question.option3 %>');
-	        	data.setValue(2, 1, <%= @choices[i][2] %>);
-					<% end %>
-
-	        var chart = new google.visualization.PieChart(document.getElementById('question-<%= @answers[i].first.question.id %>'));
-	        chart.draw(data, {width: 580, height: 300, title: '', colors: ['#80d89f', '#d88080'], is3D: true});
-		      }
-	    	</script>
-	    	<div id="question-<%= @answers[i].first.question.id %>"></div>
-				<br/>
+			<article>
+				<h4><%= @answers[i].first.question.text %>?</h4>
+				<script type="text/javascript">
+		      google.load("visualization", "1", {packages:["corechart"]});
+		      google.setOnLoadCallback(drawChart);
+		      function drawChart() {
+		        var data = new google.visualization.DataTable();
+		        data.addColumn('string', 'Task');
+		        data.addColumn('number', 'Hours per Day');
+		        data.addRows(5);
+		        
+		        <% if !answer.question.option1.blank? %>
+		        	data.setValue(0, 0, '<%= answer.question.option1 %>');
+		        	data.setValue(0, 1, <%= @choices[i][0] %>);
+						<% end %>
+		        
+		         <% if !answer.question.option2.blank? %>
+		        	data.setValue(1, 0, '<%= answer.question.option2 %>');
+		        	data.setValue(1, 1, <%= @choices[i][1] %>);
+						<% end %>
+		        
+		         <% if !answer.question.option3.blank? %>
+		        	data.setValue(2, 0, '<%= answer.question.option3 %>');
+		        	data.setValue(2, 1, <%= @choices[i][2] %>);
+						<% end %>
+	
+		        var chart = new google.visualization.PieChart(document.getElementById('question-<%= @answers[i].first.question.id %>'));
+		        chart.draw(data, {width: 580, height: 300, title: '', colors: ['#80d89f', '#d88080'], is3D: true});
+			      }
+		    	</script>
+		    	<div id="question-<%= @answers[i].first.question.id %>"></div>
+			</article>
 			<% end %>
 		<% end %>
 		<br />

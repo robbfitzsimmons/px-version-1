@@ -39,11 +39,7 @@
 	<hr />
 	
 	<h2>
-	<% if event_admin %>
 		<a href = "/<%= @event.permalink %>/attendees">Attendees (<%= @event.user_event_associations(:attending => true).length %>)</a>
-	<% else %>
-		Attendees (<%= @event.user_event_associations(:attending => true).length %>)
-	<% end %>
 	</h2>
 	
 	<ul>

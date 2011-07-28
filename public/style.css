@@ -707,12 +707,21 @@ header {
     margin: 0 0 20px 0;
     width: 580px; }
     .mid .nametag-lg div {
-      float: left; }
+      float: left;
+      width: 438px; }
     .mid .nametag-lg img {
       float: left;
       height: 80px;
       margin: 0 20px 0 0;
       width: 80px; }
+    .mid .nametag-lg p {
+      font-size: 14px;
+      margin: 0; }
+      .mid .nametag-lg p span {
+        color: #ccc;
+        float: left;
+        font-size: 14px;
+        width: 100px; }
     .mid .nametag-lg .top, .mid .nametag-lg .bot {
       text-align: center;
       width: 578px; }
@@ -760,6 +769,7 @@ header {
         .mid .nametag-lg .social.twitter:active {
           background-position: -129px -72px; }
   .mid .nametag-sm {
+    float: left;
     overflow: hidden;
     margin: 0 0 10px 0;
     width: 245px; }
@@ -2234,7 +2244,7 @@ header {
       width: 540px; }
       .mid .right-67 article div {
         float: left;
-        width: 320px;
+        width: 319px;
         /* for containing event info on dashboard */ }
       .mid .right-67 article p {
         float: left;
