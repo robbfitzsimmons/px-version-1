@@ -9,7 +9,7 @@
 
 		<label for="emails">
 			Emails
-			<span>Separated by commas</span>
+			<span>Type an email, then press enter or comma</span>
 		</label>
 		<input id="email-invites" name="emails" type="text" data-seperator="," />
 
@@ -25,16 +25,14 @@
 <script src="/js/jquery.tagsinput.min.js"></script>
 <script src="/js/validate.js"></script>
 <script src="/js/form.js"></script>
-<link rel="stylesheet" type="text/css" href="/css/jquery.tagsinput.css">
-
 
 <script>
-  $('#email-invites').tagsInput({
-   //'autocomplete_url': url_to_autocomplete_api,
-   //'autocomplete': { option: value, option: value},
-   'height':'100px',
-   'width':'340px',
-   'unique':true,
-   'defaultText':''
+	$('#email-invites').tagsInput({
+		//'autocomplete_url': url_to_autocomplete_api,
+		//'autocomplete': { option: value, option: value},
+		'height':'100px',
+		'width':'340px',
+		'unique':true,
+		'defaultText':''
 	});
 </script>

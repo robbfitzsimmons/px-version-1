@@ -201,11 +201,7 @@ end
 # Show the events questions
 get '/:permalink/questions' do
 
-		@event = Event.first(:permalink => params[:permalink].downcase)
-
-    if current_user.questions_this_event(@event).count == 0
-    	flash[:warning] = "You have already answered all the questions for this event."
-    end
+	@event = Event.first(:permalink => params[:permalink].downcase)
 
 	session[:event] = @event.id
 

@@ -22,5 +22,8 @@
 <label for="user[facebook]">Facebook</label>
 <input name="user[facebook]" type="text" readonly="readonly" value="<%= @user.facebook %>" />
 
-<label for="interests">Interests</label>
+<label for="interests">
+	Interests
+	<span>Type an interest, then press enter or comma</span>
+</label>
 <input id="interests" name="interests" type="text" value="<% @user.interests.each do |interest| %><%= interest.name %>,<% end %>" data-seperator="," />
