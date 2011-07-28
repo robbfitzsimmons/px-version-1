@@ -47,3 +47,18 @@
 		});
   });
 </script>
+
+<script>
+ $(document).ready(function(){
+ 		var data = "<% @all_organizations.each do |organization| %><%= organization.name %>,<% end %>".split(",");
+
+		$('#organizations').tagsInput({
+		'autocomplete_url': data,
+		autocomplete:{selectFirst:true,width:'100px',autoFill:true},
+		height:'100px',
+		width:'340px',
+		unique:true,
+		defaultText:''
+		});
+  });
+</script>

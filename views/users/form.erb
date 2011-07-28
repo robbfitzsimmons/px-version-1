@@ -13,6 +13,9 @@
 <label for="user[location]">Location</label>
 <input name="user[location]" type="text" value="<%= @user.location %>" />
 
+<label for="user[work]">Work</label>
+<input name="user[work]" type="text" value="<%= @user.work %>" />
+
 <label for="user[website]">Website</label>
 <input name="user[website]" type="text" value="<%= @user.website %>" />
 
@@ -27,3 +30,9 @@
 	<span>Type an interest, then press enter or comma</span>
 </label>
 <input id="interests" name="interests" type="text" value="<% @user.interests.each do |interest| %><%= interest.name %>,<% end %>" data-seperator="," />
+
+<label for="organizations">
+	Organization
+	<span>Type an organization, then press enter or comma</span>
+</label>
+<input id="organizations" name="organizations" type="text" value="<% @user.organizations.each do |organization| %><%= organization.name %>,<% end %>" data-seperator="," />
