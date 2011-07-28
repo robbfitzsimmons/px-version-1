@@ -25,7 +25,7 @@ DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite://#{Dir.pwd}/db/proxim
 # Initialize (finalize) db
 DataMapper.finalize
 
-Paperclip.options[:command_path] = "/usr/local/bin/"
+#Paperclip.options[:command_path] = "/usr/local/bin/"
 
 # Reset the db/tables and recreate
 #DataMapper.auto_migrate!
