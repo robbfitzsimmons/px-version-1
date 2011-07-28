@@ -105,7 +105,7 @@ class Event
   end # end check name
 
   def create_days
-    if self.days.count == 0
+    if self.days.count != self.end_date.mjd - self.start_date.mjd + 1
       num_days = self.end_date.mjd - self.start_date.mjd + 1
 
       1.upto(num_days) { |i|

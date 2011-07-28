@@ -26,7 +26,7 @@ post '/events' do
 	end_day = params[:end_day].split("/")
 
 	@event.start_date = DateTime.new(start_day[2].to_i, start_day[0].to_i, start_day[1].to_i, 9, 0)
-	@event.end_date = DateTime.new(start_day[2].to_i, start_day[0].to_i, start_day[1].to_i, 9, 0)
+	@event.end_date = DateTime.new(end_day[2].to_i, end_day[0].to_i, end_day[1].to_i, 9, 0)
 	@event.users << current_user
 
 	if (!params[:event][:image].nil?)

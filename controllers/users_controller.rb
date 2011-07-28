@@ -70,18 +70,17 @@ get '/users/:id' do
 
 	count = 0
 
-	count += 1 if (!@user.email.blank?)
-	count += 1 if (!@user.name.blank?)
-	count += 1 if (!@user.location.blank?)
-	count += 1 if (!@user.description.blank?)
-	count += 1 if (!@user.location.blank?)
-	count += 1 if (!@user.website.blank?)
-	count += 1 if (!@user.interests.empty?)
-	count += 1 if (!@user.facebook.blank?)
-	count += 1 if (!@user.linked_in.blank?)
-	count += 1 if (@user.image.url != "/images/original/missing.png")
+	count += 1 if (!@user.email.blank?)					#1
+	count += 1 if (!@user.name.blank?)					#2
+	count += 1 if (!@user.description.blank?)		#3
+	count += 1 if (!@user.location.blank?)			#4
+	count += 1 if (!@user.website.blank?)				#5
+	count += 1 if (!@user.interests.empty?)			#6
+	count += 1 if (!@user.facebook.blank?)			#7
+	count += 1 if (!@user.linked_in.blank?)			#8
+	count += 1 if (@user.image.url != "/images/original/missing.png")	#9
 
-	@progress = ((count/10.0) * 100).round(0) 
+	@progress = ((count/9.0) * 100).round(0) 
 
 	session[:connect] = nil
 	
