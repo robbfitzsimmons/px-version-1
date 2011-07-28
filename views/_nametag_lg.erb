@@ -12,6 +12,13 @@
 		
 		<hr />
 		
+		<% if !nametaglg.education.blank? %>
+		<span>Education</span>
+		<div>
+			<p><%= nametaglg.education %></p>
+		</div>
+		<% end %>
+		
 		<% if !nametaglg.work.blank? %>
 		<span>Work</span>
 		<div>
