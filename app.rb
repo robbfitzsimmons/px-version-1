@@ -23,12 +23,12 @@ end
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite://#{Dir.pwd}/db/proximate.db")
 
 # Initialize (finalize) db
-#DataMapper.finalize
+DataMapper.finalize
 
 Paperclip.options[:command_path] = "/usr/local/bin/"
 
 # Reset the db/tables and recreate
-DataMapper.auto_migrate!
+#DataMapper.auto_migrate!
 
 # Create the db/tables if they don't exist
 DataMapper::auto_upgrade!
