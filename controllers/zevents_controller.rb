@@ -194,6 +194,7 @@ end
 # Show a specific event
 get '/:permalink/attendees' do
 	
+	@attendee = true
 	@event = Event.first(:permalink => params[:permalink].downcase)
 	@title = "#{@event.name} Attendees (#{@event.user_event_associations(:attending => true).count})"
 
