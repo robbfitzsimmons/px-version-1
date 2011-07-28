@@ -47,10 +47,11 @@
 	</h2>
 	
 	<ul>
-	<% @event.user_event_associations(:attending => true).each do |assoc| %>
+	<% i = 0 %>
+	<% @attendees.each do |assoc| %>
 		<div class="nametag-sm">
 				<img src="<%= assoc.user.image(:thumb) %>" />
-				<h4><%= assoc.user.name %></h4>
+				<h4><a href="#" data-reveal-id="modal-<%= i %>"><%= assoc.user.name %></a></h4>
 			
 				<% if !assoc.user.email.blank? %>
 					<a target="_blank" href="mailto:<%= assoc.user.email %>" class="social email">Email</a>
@@ -67,6 +68,7 @@
 				<% if !assoc.user.twitter.blank? %>
 					<a target="_blank" href="<%= assoc.user.twitter %>" class="social twitter">Twitter</a>
 				<% end %>
+				<% i += 1 %>
 		</div>		
 	<% end %>
 	</ul>
@@ -133,3 +135,18 @@
 		<% end %>
 	</ul>
 </section>
+
+<% i = 0 %>
+<% @attendees.each do |attendee| %>
+	<div id="modal-<%= i %>" class="reveal-modal">
+     <%= partial :'nametag_lg', attendee.user  %>
+     <a class="close-reveal-modal">&#215;</a>
+     <% i += 1 %>
+</div>	
+<% end %>
+
+
+
+
+<link rel="stylesheet" href="/css/reveal.css">
+<script src="/js/jquery.reveal.js" type="text/javascript"></script>

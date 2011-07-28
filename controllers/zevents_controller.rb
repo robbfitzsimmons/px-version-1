@@ -147,6 +147,17 @@ get '/:permalink' do
 	@event = Event.first(:permalink => params[:permalink].downcase)
 	@title = "Event: #{@event.name}"
 
+	all_attendees = @event.user_event_associations(:attending => true)
+	@attendees = []
+	if all_attendees.count < 4
+		@attendees = all_attendees
+	else
+		while(@attendees.count < 4) do 
+			random = rand(all_attendees.length)
+		  @attendees << all_attendees[random] if (!@attendees.include? all_attendees[random])
+		end
+	end
+
 	count = 0
 
 	count += 1 if (!@event.name.blank?)					#1
