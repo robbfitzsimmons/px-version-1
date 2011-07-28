@@ -626,8 +626,7 @@ header {
 		.mid {
 			padding: 20px;
 			width: 538px;
-			
-			
+
 			span {
 				clear: both;
 				color: #ccc;
@@ -838,6 +837,10 @@ header {
 		line-height: 1.2em;
 		margin: 0 0 5px 0;
 
+		span {
+			color: #ccc;
+			font-size: 14px;
+		}
 	}
 	
 	h6 {
@@ -926,11 +929,11 @@ header {
 			
 			div {
 				float: left;
-				width: 503px;
+				width: 490px;
 			}
 			
 			h4 {
-				width: 503px;
+				width: 490px;
 			}
 			
 			h6 {
@@ -1145,6 +1148,11 @@ header {
 		a {
 			font-size: 14px;
 			line-height: 1.3em;
+		}
+		
+		img.event-image {
+			height: 75px;
+			width: 75px;
 		}
 
 	}

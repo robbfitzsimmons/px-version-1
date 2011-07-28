@@ -860,6 +860,9 @@ header {
     font-style: italic;
     line-height: 1.2em;
     margin: 0 0 5px 0; }
+    .mid h5 span {
+      color: #ccc;
+      font-size: 14px; }
   .mid h6 {
     color: #ccc;
     font-family: "Istok Web", "Arial", sans-serif;
@@ -962,9 +965,9 @@ header {
       width: 560px; }
       .mid ul.table li div {
         float: left;
-        width: 503px; }
+        width: 490px; }
       .mid ul.table li h4 {
-        width: 503px; }
+        width: 490px; }
       .mid ul.table li h6 {
         line-height: 1.8em;
         margin: 0 0 15px 0; }
@@ -1583,6 +1586,9 @@ header {
     .mid .left-33 a {
       font-size: 14px;
       line-height: 1.3em; }
+    .mid .left-33 img.event-image {
+      height: 75px;
+      width: 75px; }
   .mid .left-50 {
     float: left;
     width: 390px; }

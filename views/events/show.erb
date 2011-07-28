@@ -2,30 +2,31 @@
 
 <% if event_admin %>
 
-		<% if @progress < 100 %>
-		<article class="progress">
-			<p>Your event is <strong><%= @progress %>%</strong> complete.
-				<% if @event.description.blank? %>
-					<a href="/<%= @event.permalink %>/edit">Add event details now!</a>
-				<% elsif (@event.days.sessions.empty?) %>	
-					<a href="/sessions/new">Add a session now!</a>
-				<% elsif (@event.days.sessions.activities.empty?) %>	
-					Add an activity to a session now!
-				<% elsif (@event.invites.empty?) %>	
-					<a href="/invites/new">Invite people to your event now!</a>
-				<% elsif (@event.image.url == "/images/original/missing.png") %>
-					<a href="/<%= @event.permalink %>/edit">Add a photo now!</a>
-				<% end %>
-			</p>
-			<div>
-				<span style="width: <%= @progress %>%;"></span>
-			</div>
-		</article>
-	<% end %>
+	<% if @progress < 100 %>
+	<article class="progress">
+		<p>Your event is <strong><%= @progress %>%</strong> complete.
+			<% if @event.description.blank? %>
+				<a href="/<%= @event.permalink %>/edit">Add event details now!</a>
+			<% elsif (@event.days.sessions.empty?) %>	
+				<a href="/sessions/new">Add a session now!</a>
+			<% elsif (@event.days.sessions.activities.empty?) %>	
+				Add an activity to a session now!
+			<% elsif (@event.invites.empty?) %>	
+				<a href="/invites/new">Invite people to your event now!</a>
+			<% elsif (@event.image.url == "/images/original/missing.png") %>
+				<a href="/<%= @event.permalink %>/edit">Add a photo now!</a>
+			<% end %>
+		</p>
+		<div>
+			<span style="width: <%= @progress %>%;"></span>
+		</div>
+	</article>
+<% end %>
 
 <% end %>
 
 <section class="left-33">
+	<img class="event-image" src="<%= @event.image.url %>" alt="<%= @event.name %>" />
 	<h4><%= @event.name %></h4>
 	<h5><%= @event.description %></h5>
 	<h6>
@@ -108,7 +109,9 @@
 				<h4><%= day.name %></h4>
 				
 				<% day.sessions(:order => [:start_date.asc]).each do |session| %>
-					<h5><%= session.name %></h5>
+					<hr />
+					<h5><%= session.name %> <span><%= !session.description.blank? ? '&nbsp;' + session.description : nil %></span></h5>
+					<h5><span><% session.location %></span></h5>
 					
 					<% session.activities(:order => [:start_date.asc]).each do |activity| %>
 						<p><span><%= activity.start_date.strftime("%l:%M %P").delete(" ") %>-<%= activity.end_date.strftime("%l:%M %P").delete(" ") %></span><%= activity.name %></p>
