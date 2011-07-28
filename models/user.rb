@@ -47,13 +47,13 @@ class User
     has_attached_file :image,
                     :storage => :s3,
                     #:s3_permissions => :public_read
-                    #:s3_credentials => "#{APP_ROOT}/config/s3.yml",
-                    :s3_credentials => {
-                      :access_key_id => ENV['S3_KEY'],
-                      :secret_access_key => 'test'
-                    },
+                    :s3_credentials => "#{APP_ROOT}/config/s3.yml",
+                    #:s3_credentials => {
+                     # :access_key_id => ENV['S3_KEY'],
+                      #:secret_access_key => ENV['S3_SECRET']
+                    #},
                     :path => "/:class/:attachment/:id/:style/:basename.:extension",
-                    :bucket         => "proximate_dev",
+                    :bucket         => "proximate_test",
                     :styles => { :original => "300x300#",
                                  :thumb => "80x80#" }
   elsif (ENV['RACK_ENV']) == "OOHHHH"
