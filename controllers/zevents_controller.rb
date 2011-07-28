@@ -141,6 +141,8 @@ end
 # Show a specific event
 get '/:permalink' do
 
+	pass if request.path_info == "/login"
+
 
 	@event_dashboard = true
 	
