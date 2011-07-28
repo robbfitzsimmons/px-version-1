@@ -1,8 +1,14 @@
 get '/:permalink/answers' do
 	@event = Event.first(:permalink => params[:permalink])
-	
+
+	if @event.questions.answers.count == 0
+		flash[:warning] = "No answers recieved yet, check back soon or answer them yourself."
+		redirect back
+	end
+
 	@title = "Event Answers"
 	@questions = @event.questions
+
 	@answers = Hash.new()
 	@choices = Hash.new()
 	i = 0
