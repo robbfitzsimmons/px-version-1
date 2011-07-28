@@ -771,7 +771,7 @@ header {
   .mid .nametag-sm {
     float: left;
     overflow: hidden;
-    margin: 0 0 10px 0;
+    margin: 0 20px 20px 0;
     width: 245px; }
     .mid .nametag-sm div {
       float: left;
@@ -796,6 +796,7 @@ header {
       text-align: center;
       width: 243px; }
     .mid .nametag-sm .mid {
+      height: 90px;
       padding: 10px;
       width: 223px; }
     .mid .nametag-sm .bot {

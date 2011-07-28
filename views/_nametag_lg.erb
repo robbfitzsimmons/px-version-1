@@ -8,7 +8,7 @@
 			<h4><%= nametaglg.name %></h4>
 			<h5><%= nametaglg.description %></h5>
 			<h6><%= nametaglg.location %></h6>
-			<p><!-- <span>Interests</span> -->
+			<p>
 				<% nametaglg.interests.each do |interest| %>
 					<%= interest.name + ',' if nametaglg.interests.last != interest %>
 				<% end %>

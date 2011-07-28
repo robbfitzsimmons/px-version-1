@@ -17,13 +17,13 @@
 			<article>
 				<h4><%= @answers[i].first.question.text %>?</h4>
 				<script type="text/javascript">
-		      google.load("visualization", "1", {packages:["corechart"]});
-		      google.setOnLoadCallback(drawChart);
-		      function drawChart() {
-		        var data = new google.visualization.DataTable();
-		        data.addColumn('string', 'Task');
-		        data.addColumn('number', 'Hours per Day');
-		        data.addRows(5);
+					google.load("visualization", "1", {packages:["corechart"]});
+					google.setOnLoadCallback(drawChart);
+					function drawChart() {
+					var data = new google.visualization.DataTable();
+					data.addColumn('string', 'Task');
+					data.addColumn('number', 'Hours per Day');
+					data.addRows(5);
 		        
 		        <% if !answer.question.option1.blank? %>
 		        	data.setValue(0, 0, '<%= answer.question.option1 %>');
@@ -41,8 +41,15 @@
 						<% end %>
 	
 		        var chart = new google.visualization.PieChart(document.getElementById('question-<%= @answers[i].first.question.id %>'));
-		        chart.draw(data, {width: 580, height: 300, title: '', colors: ['#80d89f', '#d88080'], is3D: true});
-			      }
+		        chart.draw(data, {
+		        	backgroundColor: '#f5f5f5',
+		        	width: 540,
+		        	height: 200,
+		        	title: '',
+		        	colors: ['#80d89f', '#d88080'],
+		        	is3D: true,
+		        	chartArea:{left:0,top:0,width:"100%",height:"100%"}
+		        }); }
 		    	</script>
 		    	<div id="question-<%= @answers[i].first.question.id %>"></div>
 			</article>

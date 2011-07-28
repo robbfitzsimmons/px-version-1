@@ -83,8 +83,10 @@
 					<h4><a href="/<%= assoc.event.permalink %>"><%= assoc.event.name %></a></h4>
 					<h5><%= assoc.event.description %></h5>
 					<h6>
-						<%= assoc.event.location %> &bull; 
-						<%= assoc.event.start_date.strftime("%b %e") %><%= assoc.event.start_date != assoc.event.end_date ? '-' + assoc.event.end_date.strftime("%e") : nil %>
+						<%= assoc.event.location %>
+						&bull;
+						<% @start = assoc.event.start_date.strftime("%b %e") %>
+						<%= @start %><%= @start != assoc.event.end_date.strftime("%b %e") ? '-' + assoc.event.end_date.strftime("%b %e") : "" %>
 					</h6>
 				</div>
 				<% if assoc.admin %>
