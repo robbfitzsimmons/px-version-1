@@ -12,6 +12,8 @@ class User
   property :description,String    #
   property :email,       String    #
 
+  property :curator,       Boolean, :default => false    # Future for paid subscriptions
+
   validates_presence_of :name
   validates_presence_of :email
   validates_format_of :email, :as => :email_address
