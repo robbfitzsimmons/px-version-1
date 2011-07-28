@@ -4,7 +4,7 @@
 
 		<% if @progress < 100 %>
 		<article class="progress">
-			<p>Your event is <%= @progress %>% complete.
+			<p>Your event is <strong><%= @progress %>%</strong> complete.
 				<% if @event.description.blank? %>
 					<a href="/<%= @event.permalink %>/edit">Add event details now!</a>
 				<% elsif (@event.days.sessions.empty?) %>	
@@ -17,8 +17,9 @@
 					<a href="/<%= @event.permalink %>/edit">Add a photo now!</a>
 				<% end %>
 			</p>
-			<div style="width: <%= @progress %>%;"></div>
-			<span><%= @progress %>%</span>
+			<div>
+				<span style="width: <%= @progress %>%;"></span>
+			</div>
 		</article>
 	<% end %>
 

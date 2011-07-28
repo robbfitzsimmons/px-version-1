@@ -2312,27 +2312,45 @@ header {
       line-height: 1em;
       margin: 0 0 10px 0; }
     .mid article.progress div {
-      -moz-box-shadow: inset 0 1px 0 0 #eeeeee, 0 1px 1px 0 #cccccc;
-      -ms-box-shadow: inset 0 1px 0 0 #eeeeee, 0 1px 1px 0 #cccccc;
-      -o-box-shadow: inset 0 1px 0 0 #eeeeee, 0 1px 1px 0 #cccccc;
-      -webkit-box-shadow: inset 0 1px 0 0 #eeeeee, 0 1px 1px 0 #cccccc;
-      box-shadow: inset 0 1px 0 0 #eeeeee, 0 1px 1px 0 #cccccc;
-      background: #c43037;
-      background-image: -moz-linear-gradient(top, #df4c4b, #c43037);
-      background-image: -ms-linear-gradient(top, #df4c4b, #c43037);
-      background-image: -o-linear-gradient(top, #df4c4b, #c43037);
-      background-image: -webkit-gradient(linear, left top, left bottom, from(#df4c4b), to(#c43037));
-      background-image: -webkit-linear-gradient(top, #df4c4b, #c43037);
-      background-image: linear-gradient(top, #df4c4b, #c43037);
       -moz-border-radius: 4px;
       -ms-border-radius: 4px;
       -o-border-radius: 4px;
       -webkit-border-radius: 4px;
       border-radius: 4px;
-      background: url("images/stripes.png");
+      background: #eee;
+      border: 1px solid #e4e4e4;
       float: left;
-      height: 20px;
-      margin: 0 20px 0 0; }
+      padding: 2px 2px 3px;
+      width: 815px; }
+      .mid article.progress div span {
+        -moz-box-shadow: inset 0 1px 0 0 #eeeeee, 0 1px 1px 0 #cccccc;
+        -ms-box-shadow: inset 0 1px 0 0 #eeeeee, 0 1px 1px 0 #cccccc;
+        -o-box-shadow: inset 0 1px 0 0 #eeeeee, 0 1px 1px 0 #cccccc;
+        -webkit-box-shadow: inset 0 1px 0 0 #eeeeee, 0 1px 1px 0 #cccccc;
+        box-shadow: inset 0 1px 0 0 #eeeeee, 0 1px 1px 0 #cccccc;
+        background: #c43037;
+        background-image: -moz-linear-gradient(top, #df4c4b, #c43037);
+        background-image: -ms-linear-gradient(top, #df4c4b, #c43037);
+        background-image: -o-linear-gradient(top, #df4c4b, #c43037);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#df4c4b), to(#c43037));
+        background-image: -webkit-linear-gradient(top, #df4c4b, #c43037);
+        background-image: linear-gradient(top, #df4c4b, #c43037);
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        background: url("images/stripes.png");
+        float: left;
+        height: 20px;
+        margin: 0 10px 0 0; }
+      .mid article.progress div strong {
+        color: #ccc;
+        float: left;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 1em;
+        margin: 4px 0 0; }
 
 /* end .mid */
 .bot {

@@ -1,6 +1,6 @@
 	<% if @progress < 100 %>
 		<article class="progress">
-			<p>Your nametag is <%= @progress %>% complete. 
+			<p>Your nametag is <strong><%= @progress %>%</strong> complete. 
 				<% if (@user.image.url == "/images/original/missing.png") %>
 					<a href="/users/<%= @user.id %>/edit">Add a photo now!</a>
 				<% elsif @user.facebook.blank? || @user.linked_in.blank? %>
@@ -9,8 +9,9 @@
 					<a href="/users/<%= @user.id %>/edit">Add some personal info now!</a>
 				<% end %>
 			</p>
-			<div style="width: <%= @progress %>%;"></div>
-			<span><%= @progress %>%</span>
+			<div>
+				<span style="width: <%= @progress %>%;"></span>
+			</div>
 		</article>
 	<% end %>
 
