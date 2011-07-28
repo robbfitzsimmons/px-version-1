@@ -25,17 +25,23 @@ Hope to see you there!
 		<input type="submit" value="Send Invites" />
 	</form>
 </section>
+<script src="/js/jquery.autocomplete.min.js"></script>
 <script src="/js/jquery.tagsinput.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/jquery.autocomplete.css">
 <script src="/js/validate.js"></script>
 <script src="/js/form.js"></script>
 
 <script>
-	$('#email-invites').tagsInput({
-		//'autocomplete_url': url_to_autocomplete_api,
-		//'autocomplete': { option: value, option: value},
-		'height':'100px',
-		'width':'340px',
-		'unique':true,
-		'defaultText':''
-	});
+	 $(document).ready(function(){
+ 		var data = "<% current_user.events.users.each do |user| %><%= user.email %>,<% end %>".split(",");
+
+		$('#email-invites').tagsInput({
+			'autocomplete_url': data,
+			autocomplete:{selectFirst:true,width:'100px',autoFill:true},
+			height:'100px',
+			width:'340px',
+			unique:true,
+			defaultText:''
+		});
+  });
 </script>
