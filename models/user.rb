@@ -87,6 +87,9 @@ class User
   ## Links a user to interests
   has n, :interests, :through => Resource
 
+  ## Links a user to organizations
+  has n, :organizations, :through => Resource
+
   before :save, :encrypt_password
 
   before :valid?, :download_remote_image
