@@ -59,8 +59,23 @@
 </section>
 
 <section class="right-67">
+	<% if @user.new_invites.length != 0 %>
+		<% @user.new_invites.each do |invite| %>
+			<article class="all invited">
+				<img src="<%= invite.event.image(:thumb) %>" alt="" />
+				<div>
+					<h4><a href="/invites/<%= invite.slug %>"><%= invite.event.name %></a></h4>
+					<h5><%= invite.event.description %></h5>
+					<h6><%= invite.event.location %></h6>
+				</div>
+				<span class="tag">Invited</span>
+			</article>
+		<% end %>
+	<% end %>
+
 	<% if @user.user_event_associations.length != 0 %>
-		<% @user.user_event_associations.each do |assoc| %>
+		<% @user.events(:order => [ :start_date.asc ]).each do |event| %>
+			<% assoc = event.user_event_associations(:user => @user).first %>
 			<article class="all <%= assoc.admin ? 'admin' : '' %> <%= assoc.attending ? 'attendee' : 'declined' %>">
 				<img src="<%= assoc.event.image(:thumb) %>" alt="" />
 				<div>
@@ -90,17 +105,4 @@
 		</article>
 	<% end %>
 	
-	<% if @user.new_invites.length != 0 %>
-		<% @user.new_invites.each do |invite| %>
-			<article class="all invited">
-				<img src="<%= invite.event.image(:thumb) %>" alt="" />
-				<div>
-					<h4><a href="/invites/<%= invite.slug %>"><%= invite.event.name %></a></h4>
-					<h5><%= invite.event.description %></h5>
-					<h6><%= invite.event.location %></h6>
-				</div>
-				<span class="tag">Invited</span>
-			</article>
-		<% end %>
-	<% end %>
 </section>
