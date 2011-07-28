@@ -980,6 +980,8 @@ header {
         .mid ul.table li p span {
           float: left;
           width: 140px; }
+        .mid ul.table li p strong {
+          font-size: 18px; }
       .mid ul.table li.even {
         background: #eee; }
       .mid ul.table li.last {
