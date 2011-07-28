@@ -5,7 +5,11 @@
 	<section class="mid">
 		<img src="<%= nametagsmall.image(:thumb) %>" />
 		<div>
-			<h4><%= nametagsmall.name %></h4>
+			<h4>
+				<% if @attendee %><a href="#" data-reveal-id="modal-<%= nametagsmall.id %>"><% end %>
+					<%= nametagsmall.name %>
+				<% if @attendee %></a><% end %>
+				</h4>
 			<h5><%= nametagsmall.description %></h5>
 		
 			<% if !nametagsmall.email.blank? %>
