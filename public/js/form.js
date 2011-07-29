@@ -56,6 +56,9 @@ $(document).ready(function()
 				required: true,
 				maxlength: 50
 			},
+			'event[description]': {
+				maxlength: 250
+			},
 			'event[location]': {
 				required: true
 			}
@@ -64,6 +67,9 @@ $(document).ready(function()
 			'event[name]': {
 				required: "Please enter an event name.",
 				maxlength: "Name must be at most 50 characters long."
+			},
+			'event[description]': {
+				maxlength: "Please enter a description up to 250 characters long."
 			},
 			'event[location]': {
 				required: "Please enter a location."

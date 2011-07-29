@@ -81,7 +81,23 @@ body {
   .container .mid input[type=password]:hover,
   .container .mid textarea:hover {
     background: #fafafa; }
-  .container .mid input.active,
+  .container .mid input[type=text].error, .container .mid form textarea.error,
+  .container .mid input[type=password].error,
+  .container .mid textarea.error {
+    -moz-box-shadow: 0 0 4px 0 #862020;
+    -ms-box-shadow: 0 0 4px 0 #862020;
+    -o-box-shadow: 0 0 4px 0 #862020;
+    -webkit-box-shadow: 0 0 4px 0 #862020;
+    box-shadow: 0 0 4px 0 #862020;
+    background: #f0b7b7;
+    border-color: #dc8181;
+    color: #bf4e4d; }
+    .container .mid input[type=text].error:hover, .container .mid form textarea.error:hover,
+    .container .mid input[type=password].error:hover,
+    .container .mid textarea.error:hover {
+      background: #f0b7b7; }
+  .container .mid input[type=text].active, .container .mid form textarea.active,
+  .container .mid input[type=password].active,
   .container .mid textarea.active {
     -moz-box-shadow: inset 0 2px 2px 0 #dbdfe7, 0 0 4px 0 #3870d1;
     -ms-box-shadow: inset 0 2px 2px 0 #dbdfe7, 0 0 4px 0 #3870d1;
@@ -91,7 +107,8 @@ body {
     background: #ecf0f8;
     border: 1px solid #7cb4ff;
     color: #3870d1; }
-    .container .mid input.active:hover,
+    .container .mid input[type=text].active:hover, .container .mid form textarea.active:hover,
+    .container .mid input[type=password].active:hover,
     .container .mid textarea.active:hover {
       background: #ecf0f8; }
   .container.dark-gray .top, .container.dark-gray .bot {
@@ -112,7 +129,18 @@ body {
     color: #777777; }
   .container.dark-gray .mid input[type=text]:hover, .container.dark-gray .mid form textarea:hover, .container.dark-gray .mid input[type=password]:hover, .container.dark-gray .mid textarea:hover {
     background: #fafafa; }
-  .container.dark-gray .mid input.active, .container.dark-gray .mid textarea.active {
+  .container.dark-gray .mid input[type=text].error, .container.dark-gray .mid form textarea.error, .container.dark-gray .mid input[type=password].error, .container.dark-gray .mid textarea.error {
+    -moz-box-shadow: 0 0 4px 0 #862020;
+    -ms-box-shadow: 0 0 4px 0 #862020;
+    -o-box-shadow: 0 0 4px 0 #862020;
+    -webkit-box-shadow: 0 0 4px 0 #862020;
+    box-shadow: 0 0 4px 0 #862020;
+    background: #f0b7b7;
+    border-color: #dc8181;
+    color: #bf4e4d; }
+    .container.dark-gray .mid input[type=text].error:hover, .container.dark-gray .mid form textarea.error:hover, .container.dark-gray .mid input[type=password].error:hover, .container.dark-gray .mid textarea.error:hover {
+      background: #f0b7b7; }
+  .container.dark-gray .mid input[type=text].active, .container.dark-gray .mid form textarea.active, .container.dark-gray .mid input[type=password].active, .container.dark-gray .mid textarea.active {
     -moz-box-shadow: inset 0 2px 2px 0 #d7d7d7, 0 0 4px 0 #777777;
     -ms-box-shadow: inset 0 2px 2px 0 #d7d7d7, 0 0 4px 0 #777777;
     -o-box-shadow: inset 0 2px 2px 0 #d7d7d7, 0 0 4px 0 #777777;
@@ -121,7 +149,7 @@ body {
     background: #e8e8e8;
     border: 1px solid #bbbbbb;
     color: #777777; }
-    .container.dark-gray .mid input.active:hover, .container.dark-gray .mid textarea.active:hover {
+    .container.dark-gray .mid input[type=text].active:hover, .container.dark-gray .mid form textarea.active:hover, .container.dark-gray .mid input[type=password].active:hover, .container.dark-gray .mid textarea.active:hover {
       background: #e8e8e8; }
   .container.dark-gray-blue .top, .container.dark-gray-blue .bot {
     background: #1f516b;
@@ -141,7 +169,18 @@ body {
     color: #30627c; }
   .container.dark-gray-blue .mid input[type=text]:hover, .container.dark-gray-blue .mid form textarea:hover, .container.dark-gray-blue .mid input[type=password]:hover, .container.dark-gray-blue .mid textarea:hover {
     background: #fafafa; }
-  .container.dark-gray-blue .mid input.active, .container.dark-gray-blue .mid textarea.active {
+  .container.dark-gray-blue .mid input[type=text].error, .container.dark-gray-blue .mid form textarea.error, .container.dark-gray-blue .mid input[type=password].error, .container.dark-gray-blue .mid textarea.error {
+    -moz-box-shadow: 0 0 4px 0 #862020;
+    -ms-box-shadow: 0 0 4px 0 #862020;
+    -o-box-shadow: 0 0 4px 0 #862020;
+    -webkit-box-shadow: 0 0 4px 0 #862020;
+    box-shadow: 0 0 4px 0 #862020;
+    background: #f0b7b7;
+    border-color: #dc8181;
+    color: #bf4e4d; }
+    .container.dark-gray-blue .mid input[type=text].error:hover, .container.dark-gray-blue .mid form textarea.error:hover, .container.dark-gray-blue .mid input[type=password].error:hover, .container.dark-gray-blue .mid textarea.error:hover {
+      background: #f0b7b7; }
+  .container.dark-gray-blue .mid input[type=text].active, .container.dark-gray-blue .mid form textarea.active, .container.dark-gray-blue .mid input[type=password].active, .container.dark-gray-blue .mid textarea.active {
     -moz-box-shadow: inset 0 2px 2px 0 #ced7dc, 0 0 4px 0 #30627c;
     -ms-box-shadow: inset 0 2px 2px 0 #ced7dc, 0 0 4px 0 #30627c;
     -o-box-shadow: inset 0 2px 2px 0 #ced7dc, 0 0 4px 0 #30627c;
@@ -150,7 +189,7 @@ body {
     background: #dfe8ed;
     border: 1px solid #74a6c0;
     color: #30627c; }
-    .container.dark-gray-blue .mid input.active:hover, .container.dark-gray-blue .mid textarea.active:hover {
+    .container.dark-gray-blue .mid input[type=text].active:hover, .container.dark-gray-blue .mid form textarea.active:hover, .container.dark-gray-blue .mid input[type=password].active:hover, .container.dark-gray-blue .mid textarea.active:hover {
       background: #dfe8ed; }
   .container.forest-green .top, .container.forest-green .bot {
     background: #005256;
@@ -170,7 +209,18 @@ body {
     color: #016367; }
   .container.forest-green .mid input[type=text]:hover, .container.forest-green .mid form textarea:hover, .container.forest-green .mid input[type=password]:hover, .container.forest-green .mid textarea:hover {
     background: #fafafa; }
-  .container.forest-green .mid input.active, .container.forest-green .mid textarea.active {
+  .container.forest-green .mid input[type=text].error, .container.forest-green .mid form textarea.error, .container.forest-green .mid input[type=password].error, .container.forest-green .mid textarea.error {
+    -moz-box-shadow: 0 0 4px 0 #862020;
+    -ms-box-shadow: 0 0 4px 0 #862020;
+    -o-box-shadow: 0 0 4px 0 #862020;
+    -webkit-box-shadow: 0 0 4px 0 #862020;
+    box-shadow: 0 0 4px 0 #862020;
+    background: #f0b7b7;
+    border-color: #dc8181;
+    color: #bf4e4d; }
+    .container.forest-green .mid input[type=text].error:hover, .container.forest-green .mid form textarea.error:hover, .container.forest-green .mid input[type=password].error:hover, .container.forest-green .mid textarea.error:hover {
+      background: #f0b7b7; }
+  .container.forest-green .mid input[type=text].active, .container.forest-green .mid form textarea.active, .container.forest-green .mid input[type=password].active, .container.forest-green .mid textarea.active {
     -moz-box-shadow: inset 0 2px 2px 0 #d2e5d9, 0 0 4px 0 #016367;
     -ms-box-shadow: inset 0 2px 2px 0 #d2e5d9, 0 0 4px 0 #016367;
     -o-box-shadow: inset 0 2px 2px 0 #d2e5d9, 0 0 4px 0 #016367;
@@ -179,7 +229,7 @@ body {
     background: #e3f6ea;
     border: 1px solid #45a7ab;
     color: #016367; }
-    .container.forest-green .mid input.active:hover, .container.forest-green .mid textarea.active:hover {
+    .container.forest-green .mid input[type=text].active:hover, .container.forest-green .mid form textarea.active:hover, .container.forest-green .mid input[type=password].active:hover, .container.forest-green .mid textarea.active:hover {
       background: #e3f6ea; }
   .container.light-gray .top, .container.light-gray .bot {
     background: #bbbbbb;
@@ -199,7 +249,18 @@ body {
     color: #cccccc; }
   .container.light-gray .mid input[type=text]:hover, .container.light-gray .mid form textarea:hover, .container.light-gray .mid input[type=password]:hover, .container.light-gray .mid textarea:hover {
     background: #fafafa; }
-  .container.light-gray .mid input.active, .container.light-gray .mid textarea.active {
+  .container.light-gray .mid input[type=text].error, .container.light-gray .mid form textarea.error, .container.light-gray .mid input[type=password].error, .container.light-gray .mid textarea.error {
+    -moz-box-shadow: 0 0 4px 0 #862020;
+    -ms-box-shadow: 0 0 4px 0 #862020;
+    -o-box-shadow: 0 0 4px 0 #862020;
+    -webkit-box-shadow: 0 0 4px 0 #862020;
+    box-shadow: 0 0 4px 0 #862020;
+    background: #f0b7b7;
+    border-color: #dc8181;
+    color: #bf4e4d; }
+    .container.light-gray .mid input[type=text].error:hover, .container.light-gray .mid form textarea.error:hover, .container.light-gray .mid input[type=password].error:hover, .container.light-gray .mid textarea.error:hover {
+      background: #f0b7b7; }
+  .container.light-gray .mid input[type=text].active, .container.light-gray .mid form textarea.active, .container.light-gray .mid input[type=password].active, .container.light-gray .mid textarea.active {
     -moz-box-shadow: inset 0 2px 2px 0 #d7d7d7, 0 0 4px 0 #cccccc;
     -ms-box-shadow: inset 0 2px 2px 0 #d7d7d7, 0 0 4px 0 #cccccc;
     -o-box-shadow: inset 0 2px 2px 0 #d7d7d7, 0 0 4px 0 #cccccc;
@@ -208,7 +269,7 @@ body {
     background: #e8e8e8;
     border: 1px solid white;
     color: #cccccc; }
-    .container.light-gray .mid input.active:hover, .container.light-gray .mid textarea.active:hover {
+    .container.light-gray .mid input[type=text].active:hover, .container.light-gray .mid form textarea.active:hover, .container.light-gray .mid input[type=password].active:hover, .container.light-gray .mid textarea.active:hover {
       background: #e8e8e8; }
   .container.lime-popsicle .top, .container.lime-popsicle .bot {
     background: #88ba00;
@@ -228,7 +289,18 @@ body {
     color: #99cb02; }
   .container.lime-popsicle .mid input[type=text]:hover, .container.lime-popsicle .mid form textarea:hover, .container.lime-popsicle .mid input[type=password]:hover, .container.lime-popsicle .mid textarea:hover {
     background: #fafafa; }
-  .container.lime-popsicle .mid input.active, .container.lime-popsicle .mid textarea.active {
+  .container.lime-popsicle .mid input[type=text].error, .container.lime-popsicle .mid form textarea.error, .container.lime-popsicle .mid input[type=password].error, .container.lime-popsicle .mid textarea.error {
+    -moz-box-shadow: 0 0 4px 0 #862020;
+    -ms-box-shadow: 0 0 4px 0 #862020;
+    -o-box-shadow: 0 0 4px 0 #862020;
+    -webkit-box-shadow: 0 0 4px 0 #862020;
+    box-shadow: 0 0 4px 0 #862020;
+    background: #f0b7b7;
+    border-color: #dc8181;
+    color: #bf4e4d; }
+    .container.lime-popsicle .mid input[type=text].error:hover, .container.lime-popsicle .mid form textarea.error:hover, .container.lime-popsicle .mid input[type=password].error:hover, .container.lime-popsicle .mid textarea.error:hover {
+      background: #f0b7b7; }
+  .container.lime-popsicle .mid input[type=text].active, .container.lime-popsicle .mid form textarea.active, .container.lime-popsicle .mid input[type=password].active, .container.lime-popsicle .mid textarea.active {
     -moz-box-shadow: inset 0 2px 2px 0 #e2e6d5, 0 0 4px 0 #99cb02;
     -ms-box-shadow: inset 0 2px 2px 0 #e2e6d5, 0 0 4px 0 #99cb02;
     -o-box-shadow: inset 0 2px 2px 0 #e2e6d5, 0 0 4px 0 #99cb02;
@@ -237,7 +309,7 @@ body {
     background: #f3f7e6;
     border: 1px solid #ddff46;
     color: #99cb02; }
-    .container.lime-popsicle .mid input.active:hover, .container.lime-popsicle .mid textarea.active:hover {
+    .container.lime-popsicle .mid input[type=text].active:hover, .container.lime-popsicle .mid form textarea.active:hover, .container.lime-popsicle .mid input[type=password].active:hover, .container.lime-popsicle .mid textarea.active:hover {
       background: #f3f7e6; }
   .container.mac-n-cheese .top, .container.mac-n-cheese .bot {
     background: #edba00;
@@ -257,7 +329,18 @@ body {
     color: #fecb00; }
   .container.mac-n-cheese .mid input[type=text]:hover, .container.mac-n-cheese .mid form textarea:hover, .container.mac-n-cheese .mid input[type=password]:hover, .container.mac-n-cheese .mid textarea:hover {
     background: #fafafa; }
-  .container.mac-n-cheese .mid input.active, .container.mac-n-cheese .mid textarea.active {
+  .container.mac-n-cheese .mid input[type=text].error, .container.mac-n-cheese .mid form textarea.error, .container.mac-n-cheese .mid input[type=password].error, .container.mac-n-cheese .mid textarea.error {
+    -moz-box-shadow: 0 0 4px 0 #862020;
+    -ms-box-shadow: 0 0 4px 0 #862020;
+    -o-box-shadow: 0 0 4px 0 #862020;
+    -webkit-box-shadow: 0 0 4px 0 #862020;
+    box-shadow: 0 0 4px 0 #862020;
+    background: #f0b7b7;
+    border-color: #dc8181;
+    color: #bf4e4d; }
+    .container.mac-n-cheese .mid input[type=text].error:hover, .container.mac-n-cheese .mid form textarea.error:hover, .container.mac-n-cheese .mid input[type=password].error:hover, .container.mac-n-cheese .mid textarea.error:hover {
+      background: #f0b7b7; }
+  .container.mac-n-cheese .mid input[type=text].active, .container.mac-n-cheese .mid form textarea.active, .container.mac-n-cheese .mid input[type=password].active, .container.mac-n-cheese .mid textarea.active {
     -moz-box-shadow: inset 0 2px 2px 0 #e6e2d1, 0 0 4px 0 #fecb00;
     -ms-box-shadow: inset 0 2px 2px 0 #e6e2d1, 0 0 4px 0 #fecb00;
     -o-box-shadow: inset 0 2px 2px 0 #e6e2d1, 0 0 4px 0 #fecb00;
@@ -266,7 +349,7 @@ body {
     background: #f7f3e2;
     border: 1px solid #ffff44;
     color: #fecb00; }
-    .container.mac-n-cheese .mid input.active:hover, .container.mac-n-cheese .mid textarea.active:hover {
+    .container.mac-n-cheese .mid input[type=text].active:hover, .container.mac-n-cheese .mid form textarea.active:hover, .container.mac-n-cheese .mid input[type=password].active:hover, .container.mac-n-cheese .mid textarea.active:hover {
       background: #f7f3e2; }
   .container.pink .top, .container.pink .bot {
     background: #ee5689;
@@ -286,7 +369,18 @@ body {
     color: #ff679a; }
   .container.pink .mid input[type=text]:hover, .container.pink .mid form textarea:hover, .container.pink .mid input[type=password]:hover, .container.pink .mid textarea:hover {
     background: #fafafa; }
-  .container.pink .mid input.active, .container.pink .mid textarea.active {
+  .container.pink .mid input[type=text].error, .container.pink .mid form textarea.error, .container.pink .mid input[type=password].error, .container.pink .mid textarea.error {
+    -moz-box-shadow: 0 0 4px 0 #862020;
+    -ms-box-shadow: 0 0 4px 0 #862020;
+    -o-box-shadow: 0 0 4px 0 #862020;
+    -webkit-box-shadow: 0 0 4px 0 #862020;
+    box-shadow: 0 0 4px 0 #862020;
+    background: #f0b7b7;
+    border-color: #dc8181;
+    color: #bf4e4d; }
+    .container.pink .mid input[type=text].error:hover, .container.pink .mid form textarea.error:hover, .container.pink .mid input[type=password].error:hover, .container.pink .mid textarea.error:hover {
+      background: #f0b7b7; }
+  .container.pink .mid input[type=text].active, .container.pink .mid form textarea.active, .container.pink .mid input[type=password].active, .container.pink .mid textarea.active {
     -moz-box-shadow: inset 0 2px 2px 0 #e8d9de, 0 0 4px 0 #ff679a;
     -ms-box-shadow: inset 0 2px 2px 0 #e8d9de, 0 0 4px 0 #ff679a;
     -o-box-shadow: inset 0 2px 2px 0 #e8d9de, 0 0 4px 0 #ff679a;
@@ -295,7 +389,7 @@ body {
     background: #f9eaef;
     border: 1px solid #ffabde;
     color: #ff679a; }
-    .container.pink .mid input.active:hover, .container.pink .mid textarea.active:hover {
+    .container.pink .mid input[type=text].active:hover, .container.pink .mid form textarea.active:hover, .container.pink .mid input[type=password].active:hover, .container.pink .mid textarea.active:hover {
       background: #f9eaef; }
   .container.purple .top, .container.purple .bot {
     background: #be5abe;
@@ -315,7 +409,18 @@ body {
     color: #cf6bcf; }
   .container.purple .mid input[type=text]:hover, .container.purple .mid form textarea:hover, .container.purple .mid input[type=password]:hover, .container.purple .mid textarea:hover {
     background: #fafafa; }
-  .container.purple .mid input.active, .container.purple .mid textarea.active {
+  .container.purple .mid input[type=text].error, .container.purple .mid form textarea.error, .container.purple .mid input[type=password].error, .container.purple .mid textarea.error {
+    -moz-box-shadow: 0 0 4px 0 #862020;
+    -ms-box-shadow: 0 0 4px 0 #862020;
+    -o-box-shadow: 0 0 4px 0 #862020;
+    -webkit-box-shadow: 0 0 4px 0 #862020;
+    box-shadow: 0 0 4px 0 #862020;
+    background: #f0b7b7;
+    border-color: #dc8181;
+    color: #bf4e4d; }
+    .container.purple .mid input[type=text].error:hover, .container.purple .mid form textarea.error:hover, .container.purple .mid input[type=password].error:hover, .container.purple .mid textarea.error:hover {
+      background: #f0b7b7; }
+  .container.purple .mid input[type=text].active, .container.purple .mid form textarea.active, .container.purple .mid input[type=password].active, .container.purple .mid textarea.active {
     -moz-box-shadow: inset 0 2px 2px 0 #edd9ed, 0 0 4px 0 #cf6bcf;
     -ms-box-shadow: inset 0 2px 2px 0 #edd9ed, 0 0 4px 0 #cf6bcf;
     -o-box-shadow: inset 0 2px 2px 0 #edd9ed, 0 0 4px 0 #cf6bcf;
@@ -324,7 +429,7 @@ body {
     background: #feeafe;
     border: 1px solid #ffafff;
     color: #cf6bcf; }
-    .container.purple .mid input.active:hover, .container.purple .mid textarea.active:hover {
+    .container.purple .mid input[type=text].active:hover, .container.purple .mid form textarea.active:hover, .container.purple .mid input[type=password].active:hover, .container.purple .mid textarea.active:hover {
       background: #feeafe; }
   .container.red .top, .container.red .bot {
     background: #d60000;
@@ -344,7 +449,18 @@ body {
     color: #e70000; }
   .container.red .mid input[type=text]:hover, .container.red .mid form textarea:hover, .container.red .mid input[type=password]:hover, .container.red .mid textarea:hover {
     background: #fafafa; }
-  .container.red .mid input.active, .container.red .mid textarea.active {
+  .container.red .mid input[type=text].error, .container.red .mid form textarea.error, .container.red .mid input[type=password].error, .container.red .mid textarea.error {
+    -moz-box-shadow: 0 0 4px 0 #862020;
+    -ms-box-shadow: 0 0 4px 0 #862020;
+    -o-box-shadow: 0 0 4px 0 #862020;
+    -webkit-box-shadow: 0 0 4px 0 #862020;
+    box-shadow: 0 0 4px 0 #862020;
+    background: #f0b7b7;
+    border-color: #dc8181;
+    color: #bf4e4d; }
+    .container.red .mid input[type=text].error:hover, .container.red .mid form textarea.error:hover, .container.red .mid input[type=password].error:hover, .container.red .mid textarea.error:hover {
+      background: #f0b7b7; }
+  .container.red .mid input[type=text].active, .container.red .mid form textarea.active, .container.red .mid input[type=password].active, .container.red .mid textarea.active {
     -moz-box-shadow: inset 0 2px 2px 0 #ead5d5, 0 0 4px 0 #e70000;
     -ms-box-shadow: inset 0 2px 2px 0 #ead5d5, 0 0 4px 0 #e70000;
     -o-box-shadow: inset 0 2px 2px 0 #ead5d5, 0 0 4px 0 #e70000;
@@ -353,7 +469,7 @@ body {
     background: #fbe6e6;
     border: 1px solid #ff4444;
     color: #e70000; }
-    .container.red .mid input.active:hover, .container.red .mid textarea.active:hover {
+    .container.red .mid input[type=text].active:hover, .container.red .mid form textarea.active:hover, .container.red .mid input[type=password].active:hover, .container.red .mid textarea.active:hover {
       background: #fbe6e6; }
   .container.sunset-orange .top, .container.sunset-orange .bot {
     background: #ee5500;
@@ -373,7 +489,18 @@ body {
     color: #ff6600; }
   .container.sunset-orange .mid input[type=text]:hover, .container.sunset-orange .mid form textarea:hover, .container.sunset-orange .mid input[type=password]:hover, .container.sunset-orange .mid textarea:hover {
     background: #fafafa; }
-  .container.sunset-orange .mid input.active, .container.sunset-orange .mid textarea.active {
+  .container.sunset-orange .mid input[type=text].error, .container.sunset-orange .mid form textarea.error, .container.sunset-orange .mid input[type=password].error, .container.sunset-orange .mid textarea.error {
+    -moz-box-shadow: 0 0 4px 0 #862020;
+    -ms-box-shadow: 0 0 4px 0 #862020;
+    -o-box-shadow: 0 0 4px 0 #862020;
+    -webkit-box-shadow: 0 0 4px 0 #862020;
+    box-shadow: 0 0 4px 0 #862020;
+    background: #f0b7b7;
+    border-color: #dc8181;
+    color: #bf4e4d; }
+    .container.sunset-orange .mid input[type=text].error:hover, .container.sunset-orange .mid form textarea.error:hover, .container.sunset-orange .mid input[type=password].error:hover, .container.sunset-orange .mid textarea.error:hover {
+      background: #f0b7b7; }
+  .container.sunset-orange .mid input[type=text].active, .container.sunset-orange .mid form textarea.active, .container.sunset-orange .mid input[type=password].active, .container.sunset-orange .mid textarea.active {
     -moz-box-shadow: inset 0 2px 2px 0 #ebdfd7, 0 0 4px 0 #ff6600;
     -ms-box-shadow: inset 0 2px 2px 0 #ebdfd7, 0 0 4px 0 #ff6600;
     -o-box-shadow: inset 0 2px 2px 0 #ebdfd7, 0 0 4px 0 #ff6600;
@@ -382,7 +509,7 @@ body {
     background: #fcf0e8;
     border: 1px solid #ffaa44;
     color: #ff6600; }
-    .container.sunset-orange .mid input.active:hover, .container.sunset-orange .mid textarea.active:hover {
+    .container.sunset-orange .mid input[type=text].active:hover, .container.sunset-orange .mid form textarea.active:hover, .container.sunset-orange .mid input[type=password].active:hover, .container.sunset-orange .mid textarea.active:hover {
       background: #fcf0e8; }
   .container.turquoise .top, .container.turquoise .bot {
     background: #189abc;
@@ -402,7 +529,18 @@ body {
     color: #29abcd; }
   .container.turquoise .mid input[type=text]:hover, .container.turquoise .mid form textarea:hover, .container.turquoise .mid input[type=password]:hover, .container.turquoise .mid textarea:hover {
     background: #fafafa; }
-  .container.turquoise .mid input.active, .container.turquoise .mid textarea.active {
+  .container.turquoise .mid input[type=text].error, .container.turquoise .mid form textarea.error, .container.turquoise .mid input[type=password].error, .container.turquoise .mid textarea.error {
+    -moz-box-shadow: 0 0 4px 0 #862020;
+    -ms-box-shadow: 0 0 4px 0 #862020;
+    -o-box-shadow: 0 0 4px 0 #862020;
+    -webkit-box-shadow: 0 0 4px 0 #862020;
+    box-shadow: 0 0 4px 0 #862020;
+    background: #f0b7b7;
+    border-color: #dc8181;
+    color: #bf4e4d; }
+    .container.turquoise .mid input[type=text].error:hover, .container.turquoise .mid form textarea.error:hover, .container.turquoise .mid input[type=password].error:hover, .container.turquoise .mid textarea.error:hover {
+      background: #f0b7b7; }
+  .container.turquoise .mid input[type=text].active, .container.turquoise .mid form textarea.active, .container.turquoise .mid input[type=password].active, .container.turquoise .mid textarea.active {
     -moz-box-shadow: inset 0 2px 2px 0 #deebee, 0 0 4px 0 #29abcd;
     -ms-box-shadow: inset 0 2px 2px 0 #deebee, 0 0 4px 0 #29abcd;
     -o-box-shadow: inset 0 2px 2px 0 #deebee, 0 0 4px 0 #29abcd;
@@ -411,7 +549,7 @@ body {
     background: #effcff;
     border: 1px solid #6defff;
     color: #29abcd; }
-    .container.turquoise .mid input.active:hover, .container.turquoise .mid textarea.active:hover {
+    .container.turquoise .mid input[type=text].active:hover, .container.turquoise .mid form textarea.active:hover, .container.turquoise .mid input[type=password].active:hover, .container.turquoise .mid textarea.active:hover {
       background: #effcff; }
 
 header {
@@ -421,8 +559,7 @@ header {
   header.sticky {
     background: #fafafa;
     position: fixed;
-    top: 0;
-    width: 962px; }
+    top: 0; }
   header #logo {
     float: left;
     margin: 40px 0; }
@@ -455,6 +592,10 @@ header {
       color: #3870d1;
       line-height: 1em;
       margin: 0 0 5px 0; }
+      header #user-info h2 a, header #user-info .mid .landing .features article h3 a, .mid .landing .features article header #user-info h3 a {
+        text-decoration: none; }
+        header #user-info h2 a:hover, header #user-info .mid .landing .features article h3 a:hover, .mid .landing .features article header #user-info h3 a:hover {
+          text-decoration: underline; }
     header #user-info h3 {
       font-size: 14px;
       font-weight: bold;
@@ -486,8 +627,16 @@ header {
       header nav ul li a, header nav ul li a:visited {
         color: #909090;
         float: left;
-        min-width: 1px; }
-        header nav ul li a#login, header nav ul li a:visited#login {
+        min-width: 1px;
+        padding: 0 10px;
+        					/*
+        
+        					&.active {
+        						color: #df4c4b;
+        						font-weight: bold;
+        					}
+        */ }
+        header nav ul li a.log-in, header nav ul li a:visited.log-in {
           color: #275fc0;
           font-weight: bold; }
         header nav ul li a:hover, header nav ul li a:visited:hover {
@@ -497,7 +646,8 @@ header {
       margin: 20px 0; }
       header nav#dashboard-nav li {
         display: block;
-        float: left; }
+        float: left;
+        height: 24px; }
         header nav#dashboard-nav li a#notifications {
           -moz-border-radius: 2px;
           -ms-border-radius: 2px;
@@ -556,12 +706,14 @@ header {
       header nav#dashboard-nav input {
         /* log out link */
         background: transparent;
+        border: none;
         color: #275fc0;
         cursor: pointer;
-        float: right;
+        /* 				float: right; */
         font-size: 14px;
         font-weight: bold;
-        margin: 0;
+        line-height: 1.3em;
+        margin: 2px 0;
         padding: 0; }
         header nav#dashboard-nav input:hover {
           text-decoration: underline; }
@@ -991,10 +1143,14 @@ header {
     float: left;
     font-family: "Raleway", "Arial", sans-serif;
     font-size: 70px;
-    line-height: 70px;
+    line-height: 1em;
     margin: 0 auto 20px;
     text-align: center;
     width: 100%; }
+    .mid .landing h1.learn-more {
+      font-size: 55px;
+      line-height: 1em;
+      margin: 0 auto 15px; }
   .mid .landing h2, .mid .landing .features article h3 {
     color: #3870d1;
     float: left;
@@ -1019,13 +1175,10 @@ header {
         text-align: left; }
       .mid .landing .features article p {
         font-size: 16px; }
-  .mid .landing ul {
+  .mid .landing .buttons {
     margin: 0 auto;
-    width: 230px; }
-    .mid .landing ul li {
-      float: left;
-      margin: 0 15px 0 0; }
-    .mid .landing ul a {
+    width: 267px; }
+    .mid .landing .buttons a {
       -moz-box-shadow: 0 1px 1px 0 #eeeeee;
       -ms-box-shadow: 0 1px 1px 0 #eeeeee;
       -o-box-shadow: 0 1px 1px 0 #eeeeee;
@@ -1049,18 +1202,18 @@ header {
       float: left;
       font-size: 18px;
       line-height: 1em;
-      min-width: 1;
+      min-width: 100px;
       padding: 10px;
       text-align: center;
       text-decoration: none;
       text-shadow: 0 1px 1px #fff; }
-      .mid .landing ul a img {
+      .mid .landing .buttons a img {
         -moz-box-shadow: 1px 1px 1px 0 white;
         -ms-box-shadow: 1px 1px 1px 0 white;
         -o-box-shadow: 1px 1px 1px 0 white;
         -webkit-box-shadow: 1px 1px 1px 0 white;
         box-shadow: 1px 1px 1px 0 white; }
-      .mid .landing ul a:hover {
+      .mid .landing .buttons a:hover {
         -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
         -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
         -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
@@ -1076,13 +1229,89 @@ header {
         border: 1px solid #884f51;
         color: #7e171e;
         text-shadow: 0 1px 1px #e35851; }
-        .mid .landing ul a:hover img {
+        .mid .landing .buttons a:hover img {
           -moz-box-shadow: 1px 1px 1px 0 #e35851;
           -ms-box-shadow: 1px 1px 1px 0 #e35851;
           -o-box-shadow: 1px 1px 1px 0 #e35851;
           -webkit-box-shadow: 1px 1px 1px 0 #e35851;
           box-shadow: 1px 1px 1px 0 #e35851; }
-      .mid .landing ul a:active {
+      .mid .landing .buttons a:active {
+        background: #df4c4b;
+        background-image: -moz-linear-gradient(top, #c43037, #df4c4b);
+        background-image: -ms-linear-gradient(top, #c43037, #df4c4b);
+        background-image: -o-linear-gradient(top, #c43037, #df4c4b);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#c43037), to(#df4c4b));
+        background-image: -webkit-linear-gradient(top, #c43037, #df4c4b);
+        background-image: linear-gradient(top, #c43037, #df4c4b);
+        -moz-box-shadow: none;
+        -ms-box-shadow: none;
+        -o-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        border: 1px solid #884f51;
+        color: #7e171e;
+        text-shadow: 0 1px 1px #e35851; }
+  .mid .landing .button {
+    margin: 0 auto;
+    width: 133px; }
+    .mid .landing .button a {
+      -moz-box-shadow: 0 1px 1px 0 #eeeeee;
+      -ms-box-shadow: 0 1px 1px 0 #eeeeee;
+      -o-box-shadow: 0 1px 1px 0 #eeeeee;
+      -webkit-box-shadow: 0 1px 1px 0 #eeeeee;
+      box-shadow: 0 1px 1px 0 #eeeeee;
+      background: #eeeeee;
+      background-image: -moz-linear-gradient(top, #f6f6f6, #eeeeee);
+      background-image: -ms-linear-gradient(top, #f6f6f6, #eeeeee);
+      background-image: -o-linear-gradient(top, #f6f6f6, #eeeeee);
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#eeeeee));
+      background-image: -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
+      background-image: linear-gradient(top, #f6f6f6, #eeeeee);
+      -moz-border-radius: 4px;
+      -ms-border-radius: 4px;
+      -o-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      border-radius: 4px;
+      border: 1px solid #dbdbdb;
+      color: #b8b8b8;
+      cursor: pointer;
+      float: left;
+      font-size: 18px;
+      line-height: 1em;
+      min-width: 100px;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      text-shadow: 0 1px 1px #fff; }
+      .mid .landing .button a img {
+        -moz-box-shadow: 1px 1px 1px 0 white;
+        -ms-box-shadow: 1px 1px 1px 0 white;
+        -o-box-shadow: 1px 1px 1px 0 white;
+        -webkit-box-shadow: 1px 1px 1px 0 white;
+        box-shadow: 1px 1px 1px 0 white; }
+      .mid .landing .button a:hover {
+        -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+        -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+        -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+        -webkit-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+        box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+        background: #c43037;
+        background-image: -moz-linear-gradient(top, #df4c4b, #c43037);
+        background-image: -ms-linear-gradient(top, #df4c4b, #c43037);
+        background-image: -o-linear-gradient(top, #df4c4b, #c43037);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#df4c4b), to(#c43037));
+        background-image: -webkit-linear-gradient(top, #df4c4b, #c43037);
+        background-image: linear-gradient(top, #df4c4b, #c43037);
+        border: 1px solid #884f51;
+        color: #7e171e;
+        text-shadow: 0 1px 1px #e35851; }
+        .mid .landing .button a:hover img {
+          -moz-box-shadow: 1px 1px 1px 0 #e35851;
+          -ms-box-shadow: 1px 1px 1px 0 #e35851;
+          -o-box-shadow: 1px 1px 1px 0 #e35851;
+          -webkit-box-shadow: 1px 1px 1px 0 #e35851;
+          box-shadow: 1px 1px 1px 0 #e35851; }
+      .mid .landing .button a:active {
         background: #df4c4b;
         background-image: -moz-linear-gradient(top, #c43037, #df4c4b);
         background-image: -ms-linear-gradient(top, #c43037, #df4c4b);
@@ -1128,7 +1357,7 @@ header {
       float: left;
       font-size: 18px;
       line-height: 1em;
-      min-width: 130px;
+      min-width: 175px;
       padding: 10px;
       text-align: center;
       text-decoration: none;
@@ -1218,7 +1447,7 @@ header {
         float: left;
         font-size: 0;
         line-height: -9999em;
-        min-width: 130px;
+        min-width: 175px;
         overflow: hidden;
         padding: 23px;
         text-align: center;
@@ -1277,7 +1506,7 @@ header {
           text-shadow: 0 1px 1px #e35851; }
         .mid .landing form input[type=submit]#linkedin:hover {
           border: 1px solid #884f51;
-          width: 128px; }
+          width: 173px; }
       .mid .landing form input[type=submit]#facebook {
         -moz-box-shadow: 0 1px 1px 0 #eeeeee;
         -ms-box-shadow: 0 1px 1px 0 #eeeeee;
@@ -1302,7 +1531,7 @@ header {
         float: left;
         font-size: 0;
         line-height: -9999em;
-        min-width: 130px;
+        min-width: 175px;
         overflow: hidden;
         padding: 23px;
         text-align: center;
@@ -1451,7 +1680,8 @@ header {
   .mid form fieldset.radio {
     margin: 0 0 25px 0; }
   .mid form input[type=text], .mid form textarea,
-  .mid form input[type=password] {
+  .mid form input[type=password],
+  .mid form input.file {
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
@@ -1464,26 +1694,13 @@ header {
     box-shadow: inset 0 2px 2px 0 #f7f7f7, 0 0 0 0 white;
     border: 1px solid #dedede;
     color: #bbb;
-    height: 16px;
+    height: 21px;
     line-height: 1em;
     margin: 0 0 20px 0;
-    padding: 18px; }
-    .mid form input[type=text].error, .mid form textarea.error,
-    .mid form input[type=password].error {
-      -moz-box-shadow: 0 0 4px 0 #862020;
-      -ms-box-shadow: 0 0 4px 0 #862020;
-      -o-box-shadow: 0 0 4px 0 #862020;
-      -webkit-box-shadow: 0 0 4px 0 #862020;
-      box-shadow: 0 0 4px 0 #862020;
-      background: #f0b7b7;
-      border-color: #dc8181;
-      color: #bf4e4d; }
-      .mid form input[type=text].error:hover, .mid form textarea.error:hover,
-      .mid form input[type=password].error:hover {
-        background: #f0b7b7; }
+    padding: 13px 18px; }
   .mid form input[type=file] {
-    height: 53px;
-    margin: 8px 0 12px 0; }
+    /* 			height: 53px; */
+    margin: 8px 0 30px 0; }
   .mid form input[type=radio] {
     margin: 0 10px 0 0; }
   .mid form input[type=submit] {
@@ -2391,6 +2608,8 @@ header {
   float: left;
   height: 25px;
   width: 100%; }
+  .bot.sticky {
+    margin: 0 0 300px 0; }
 
 #form {
   float: right;
@@ -2474,6 +2693,25 @@ header {
 	}
 }
 */
+.share {
+  -moz-border-radius-bottomright: 10px;
+  -moz-border-radius-topright: 10px;
+  -ms-border-bottom-right-radius: 10px;
+  -ms-border-top-right-radius: 10px;
+  -o-border-radius-bottomright: 10px;
+  -o-border-radius-topright: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  background: #eee;
+  border: 1px solid #e4e4e4;
+  left: 0;
+  padding: 10px 5px;
+  position: fixed;
+  text-align: center;
+  top: 35%; }
+
 footer {
   float: left;
   font-size: 16px;

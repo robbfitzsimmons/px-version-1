@@ -11,6 +11,16 @@ $(document).ready(function()
 		$("html, body").animate({scrollTop:su.top-105}, 500, "swing");
 	});
 	
+	$('a.log-in').click(function() {
+		li = $('#log-in').offset();
+		$("html, body").animate({scrollTop:li.top-105}, 500, "swing");
+	});
+	
+	$('a.say-hello').click(function() {
+		sh = $('#say-hello').offset();
+		$("html, body").animate({scrollTop:sh.top-105}, 500, "swing");
+	});
+	
 	/* Hide default input values on focus */
 	var f;
 	
@@ -33,6 +43,14 @@ $(document).ready(function()
 	}).blur(function() {
     	f.removeClass('active');
 	});
+	
+	/* Input type=file */
+	 $("input[type=file]").filestyle({ 
+	     image: "/images/camera.png",
+	     imageheight : 16,
+	     imagewidth : 16,
+	     width : 250
+	 });
 	
 	/* Error messages */
 	$('.flash').delay(250).slideDown().delay(5000).slideUp();
