@@ -268,8 +268,8 @@ get '/users/:id/edit' do
 	@title = "Edit Nametag"
 	@user = User.get(params[:id])
 
-	@all_interests = Interest.all
-	@all_organizations = Organization.all
+	@all_interests = Interest.all(:order => [ :name.asc])
+	@all_organizations = Organization.all(:order => [ :name.asc])
 	
 	erb :'users/edit'	
 end
