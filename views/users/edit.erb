@@ -3,16 +3,18 @@
 	
 	<p>Make changes to your profile here. This information will appear on your nametag, which is available to members of your attending events.</p>
 	<% if @user.linked_in.blank? %>
-		<form action="/connect" method="post">
+		<form id="connect-linked-in" action="/connect" method="post">
 			<label style="float: left; margin: 0 0 15px 0; width: 100%;">
-			Connect with <input name="connect" type="submit" value="LinkedIn" />
+			<input name="connect" type="hidden" value="LinkedIn" />
+			Connect with <input id="connect-linked-in" name="connect" type="submit" value="LinkedIn" />
 			</label>
 		</form>
 	<% end %>
 	<% if @user.facebook.blank? %>
-		<form action="/connect" method="post">
+		<form id="connect-facebook" action="/connect" method="post">
 			<label>
-			Connect with <input name="connect" type="submit" value="Facebook" />
+			<input name="connect" type="hidden" value="Facebook" />
+			Connect with <input id="connect-facebook" name="connect" type="submit" value="Facebook" />
 			</label>
 		</form>
 	<% end %>

@@ -54,7 +54,7 @@
 							</ul>
 						</li>
 
-						<li><a href="/users/<%= current_user.id %>">dashboard</a></li>
+						<li><a id="dashboard" href="/users/<%= current_user.id %>">dashboard</a></li>
 						<li><a href="/users/<%= current_user.id %>/nametag">nametag</a></li>
 						<li>
 							<form action="/logout" method="post">
@@ -107,6 +107,21 @@
 			<div class="mid">
 			    <%= yield %>
 
+			  <div id="modal-confirm" class="reveal-modal">
+					<div class="nametag-lg">
+						<section class="top">
+							<h2><span>Hello</span> my name is</h2>
+						</section>
+						<section class="mid">
+							<h2>Are you sure you want to leave this page?</h2>
+							<p>You have unsaved changes to your profile.</p>
+							<a class="button" id="leave-page" href="/">Leave This Page</a>
+							<a class="button close-confirm" id="stay-page" href="javascript: void(0)">Stay on This Page</a>
+							<p>hello</p>
+						</section>
+						<section class="bot"></section>
+					</div>
+				</div>
 			</div>
 			
 			<div class="bot"></div>
@@ -119,5 +134,10 @@
 		
 	    <%= erb :flash %>
 		<script src="/js/scripts.js"></script>
+		<script src="/js/jquery.reveal.js" type="text/javascript"></script>
+
+
+		
+			
 	</body>
 </html>

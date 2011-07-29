@@ -104,6 +104,8 @@ post '/connect' do
 	session[:connect] = true
 	session[:user_info] = nil
 
+	puts "CPNNECT"
+
 	if params[:connect] == "LinkedIn"
 		redirect '/auth/linked_in'
 	elsif params[:connect] == "Facebook"
