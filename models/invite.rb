@@ -6,6 +6,8 @@ class Invite
   property :slug,         String                       # Unique indentifier URL
   property :visited,      Boolean, :default => false    # Has the slug been visited?
   property :hide,         Boolean, :default => false
+
+  before :valid?, :remove_html
   
   before :valid?, :create_slug
 

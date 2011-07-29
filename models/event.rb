@@ -4,10 +4,12 @@ class Event
 
   property :id,					  Serial    #
   property :name,         String    #
-  property :description,  String    #
+  property :description,  String, :length => 250
   property :color,  	  String,   :default => "blue" #
   #property :logo,         String    # URL linking to Amazon File Upload (http://ididitmyway.heroku.com/past/2011/1/16/uploading_files_in_sinatra/)
   property :permalink,    String    # A link to take you to the event
+
+  before :valid?, :remove_html
 
   before :valid?, :create_permalink
   validates_with_method :name, :method => :check_name

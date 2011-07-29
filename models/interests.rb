@@ -9,6 +9,8 @@ class Interest
   property :created_at,   DateTime  # Generated when each resource is created
   property :updated_at,   DateTime  # Generated when each resource is updated
 
+  before :valid?, :remove_html
+
   ## Links an interest to a user
   has n, :users, :through => Resource
 

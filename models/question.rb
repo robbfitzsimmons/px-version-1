@@ -5,6 +5,8 @@ class Question
   property :type,         String    # Type of Question (Radio, Text, Select)
   property :text,         String    # Question's text
 
+  before :valid?, :remove_html
+
   validates_presence_of :type
   validates_presence_of :text
   

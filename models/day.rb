@@ -13,6 +13,8 @@ class Day
   property :created_at,       DateTime  # Generated when each resource is created
   property :updated_at,       DateTime  # Generated when each resource is updated
 
+  before :valid?, :remove_html
+
   ## Links a day to an event
   belongs_to :event
 
