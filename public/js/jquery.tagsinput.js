@@ -33,13 +33,11 @@
                             .css({
                                 "width": settings.imagewidth + "px",
                                 "height": settings.imageheight + "px",
-                                "background": "url(" + settings.image + ") 0px 0px no-repeat",
+                                "background": "url(" + settings.image + ") 0 0 no-repeat",
                                 "background-position": "right",
                                 "display": "inline",
-                                "position": "relative",
-                                "left": "-32px",
-                                "z-index" : "34243",
-                                "margin" : "0 -40px 0 0"
+                                "position": "absolute",
+                                "overflow": "hidden"
                             });
                             
             var filename = $('<input class="file">')

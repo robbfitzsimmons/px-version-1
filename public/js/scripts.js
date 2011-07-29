@@ -49,13 +49,13 @@ $(document).ready(function()
     	f.removeClass('active');
 	});
 	
-	// /* Input type=file */
-	//  $("input[type=file]").filestyle({ 
-	//      image: "/images/camera.png",
-	//      imageheight : 16,
-	//      imagewidth : 16,
-	//      width : 250
-	//  });
+	/* Input type=file */
+	 $("input[type=file]").filestyle({ 
+	     image: "/images/camera.png",
+	     imageheight : 27,
+	     imagewidth : 16,
+	     width : 340
+	 });
 	
 	/* Error messages */
 	$('.flash').delay(250).slideDown().delay(5000).slideUp();
