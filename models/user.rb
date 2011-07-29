@@ -7,6 +7,8 @@ class User
 
   attr_accessor :image_url
 
+  before :valid?, :remove_html
+
   property :id,					Serial    #
   property :name,       String    #
   property :description,String    #

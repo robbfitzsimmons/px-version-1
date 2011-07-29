@@ -6,6 +6,8 @@ class Session
   property :description,      String    #
   property :location,         String    #
 
+  before :valid?, :remove_html
+
   validates_presence_of :name
   
   property :start_date,       DateTime	#

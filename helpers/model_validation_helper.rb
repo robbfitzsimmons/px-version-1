@@ -1,3 +1,19 @@
+class String
+  def strip_tags
+      self.gsub( %r{</?[^>]+?>}, '' )
+  end
+end
+
+def remove_html
+  self.attributes.each do |attribute, value|
+    if value.class == String
+      value = value.strip_tags
+
+      self.attribute_set(attribute, value)
+    end
+  end
+end
+
 # Checks that the end date of an event is after the start
 def valid_end_date?
   if @end_date >= @start_date

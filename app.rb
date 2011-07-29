@@ -1,9 +1,10 @@
 APP_ROOT = File.expand_path(File.dirname(__FILE__))
 
 # Import all Models, Controllers, Helpers
+Dir.glob("#{Dir.pwd}/helpers/*.rb") { |m| require "#{m.chomp}" }
 Dir.glob("#{Dir.pwd}/models/*.rb") { |m| require "#{m.chomp}" }
 Dir.glob("#{Dir.pwd}/controllers/*.rb") { |m| require "#{m.chomp}" }
-Dir.glob("#{Dir.pwd}/helpers/*.rb") { |m| require "#{m.chomp}" }
+
 require 'openid/store/filesystem'
 require 'fileutils'
 

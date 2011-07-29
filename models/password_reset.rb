@@ -6,6 +6,7 @@ class PasswordReset
   property :slug,         String                       # Unique indentifier URL
   property :used,      Boolean, :default => false      # Has the slug been visited?
   
+  before :valid?, :remove_html
   before :valid?, :create_slug
 
   validates_presence_of :email

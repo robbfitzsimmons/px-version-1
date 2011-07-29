@@ -4,6 +4,8 @@ class Organization
   property :id,					  Serial                       #
   property :name,         String
 
+  before :valid?, :remove_html
+
   validates_uniqueness_of :name
 
   property :created_at,   DateTime  # Generated when each resource is created

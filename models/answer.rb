@@ -9,6 +9,8 @@ class Answer
   property :text_answer,    String    # An answer to question_id, that is a String
   property :int_answer, 		Integer		# An answer to question_id, that is an int (or boolean)
 
+  before :valid?, :remove_html
+
   property :created_at,   	DateTime  # Generated when each resource is created
   property :updated_at,   	DateTime  # Generated when each resource is updated
 
