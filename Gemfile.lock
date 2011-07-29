@@ -9,6 +9,12 @@ GIT
 GEM
   remote: http://rubygems.org/
   specs:
+    ParseTree (3.0.7)
+      RubyInline (>= 3.7.0)
+      sexp_processor (>= 3.0.0)
+    RubyInline (3.9.0)
+      ZenTest (~> 4.3)
+    ZenTest (4.6.0)
     addressable (2.2.6)
     aws-s3 (0.6.2)
       builder
@@ -50,6 +56,10 @@ GEM
     dm-sqlite-adapter (1.1.0)
       dm-do-adapter (~> 1.1.0)
       do_sqlite3 (~> 0.10.2)
+    dm-sweatshop (1.1.0)
+      ParseTree (~> 3.0.7)
+      dm-core (~> 1.1.0)
+      randexp (~> 0.1.5)
     dm-timestamps (1.1.0)
       dm-core (~> 1.1.0)
     dm-transactions (1.1.0)
@@ -132,6 +142,8 @@ GEM
     rack-openid (1.2.0)
       rack (>= 1.1.0)
       ruby-openid (>= 2.1.8)
+    randexp (0.1.5)
+      ParseTree
     rest-client (1.6.3)
       mime-types (>= 1.16)
     ruby-openid (2.1.8)
@@ -139,6 +151,7 @@ GEM
       ruby-openid (>= 2.1.7)
     rubyntlm (0.1.1)
     sass (3.1.4)
+    sexp_processor (3.0.5)
     sinatra (1.2.6)
       rack (~> 1.1)
       tilt (< 2.0, >= 1.2.2)
@@ -163,6 +176,7 @@ DEPENDENCIES
   dm-paperclip!
   dm-postgres-adapter
   dm-sqlite-adapter
+  dm-sweatshop
   dm-timestamps
   dm-validations
   mail

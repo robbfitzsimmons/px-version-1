@@ -24,13 +24,15 @@ end
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite://#{Dir.pwd}/db/proximate.db")
 
 # Initialize (finalize) db
-DataMapper.finalize
+#DataMapper.finalize
 
 # Reset the db/tables and recreate
 #DataMapper.auto_migrate!
 
 # Create the db/tables if they don't exist
 DataMapper::auto_upgrade!
+
+require "#{Dir.pwd}/factories/factory.rb"
 
 use Rack::Session::Cookie, :secret => 'Xzw8TvIwQVZrnjKXkoI8SRDHhIZ65y'
 use Rack::Flash

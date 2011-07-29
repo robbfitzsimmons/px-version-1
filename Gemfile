@@ -10,6 +10,8 @@ gem "dm-migrations"
 gem "dm-validations"
 gem "dm-timestamps"
 
+
+
 gem "omniauth"
 
 gem "sass" 
@@ -18,6 +20,7 @@ gem "dm-paperclip", :git => "git://github.com/pdud/dm-paperclip.git"
 
 group :development do
   gem "dm-sqlite-adapter"
+  gem "dm-sweatshop"
 end
 
 group :production do
