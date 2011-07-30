@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Proximate Styles 1.0
  * Author: Sarah Canieso
  */
@@ -628,7 +629,6 @@ header {
         color: #909090;
         float: left;
         min-width: 1px;
-        padding: 0 10px;
         					/*
         
         					&.active {
@@ -691,6 +691,7 @@ header {
               text-decoration: none; }
           header nav#dashboard-nav li .level-2 h6, header nav#dashboard-nav li .level-2 li {
             float: left;
+            height: 16px;
             margin: 0;
             min-width: 1px;
             padding: 5px 10px;
@@ -1699,7 +1700,6 @@ header {
     margin: 0 0 20px 0;
     padding: 13px 18px; }
   .mid form input[type=file] {
-    /* 			height: 53px; */
     margin: 8px 0 30px 0; }
   .mid form input[type=radio] {
     margin: 0 10px 0 0; }
@@ -2609,6 +2609,7 @@ header {
   height: 25px;
   width: 100%; }
   .bot.sticky {
+    float: left;
     margin: 0 0 300px 0; }
 
 #form {

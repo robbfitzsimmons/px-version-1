@@ -453,7 +453,6 @@ header {
 					color: #909090;
 					float: left;
 					min-width: 1px;
-					padding: 0 10px;
 					
 					&.log-in {
 						color: $color - #111;
@@ -521,6 +520,7 @@ header {
 					
 					h6, li {
 						float: left;
+						height: 16px;
 						margin: 0;
 						min-width: 1px;
 						padding: 5px 10px;
@@ -1125,7 +1125,6 @@ header {
 		}
 		
 		input[type=file] {
-/* 			height: 53px; */
 			margin: 8px 0 30px 0;
 
 		}
@@ -1486,6 +1485,7 @@ header {
 	width: 100%;
 	
 	&.sticky {
+	float: left;
 		margin: 0 0 300px 0;
 	}
 }

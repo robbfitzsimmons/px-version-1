@@ -35,7 +35,7 @@
 						  	<% if current_user %>
 						  		<a href="/users/<%= current_user.id %>" class="log-in">view dashboard</a>
 						  	<% else %>
-								<a href="javascript: void(0)" class="log-in">log in</a>
+								<a href="javascript: void(0)" class="log-in" id="log-in-link">log in</a>
 						  	<% end %>
 						</li>
 					</ul>
@@ -193,6 +193,8 @@
 			</div>
 			
 			<div class="bot sticky"></div>
+			
+			<div style="height: 300px; float: left; width: 100%;"></div>
 			
 		</div> <!-- //container -->
 		
