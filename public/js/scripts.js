@@ -1,9 +1,7 @@
 $(document).ready(function()
 {
-	
 	var warning = false;
 	var modal_active = false;
-
 
 	/* Homepage */
 	$('a.learn-more').click(function() {
@@ -16,7 +14,7 @@ $(document).ready(function()
 		$("html, body").animate({scrollTop:su.top-105}, 500, "swing");
 	});
 	
-	$('a.log-in').click(function() {
+	$('a#log-in-link').click(function() {
 		li = $('#log-in').offset();
 		$("html, body").animate({scrollTop:li.top-105}, 500, "swing");
 	});
