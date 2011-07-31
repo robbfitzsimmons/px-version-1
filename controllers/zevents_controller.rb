@@ -143,7 +143,6 @@ get '/:permalink' do
 
 	pass if request.path_info == "/login"
 
-
 	@event_dashboard = true
 	
 	@event = Event.first(:permalink => params[:permalink].downcase)

@@ -40,9 +40,13 @@
 			<input name="user[twitter_uid]" type="hidden" value="<%= @user.twitter_uid%>" />
 		<% end %>
 
-		<% if !@user.image.nil? %>
-			<input name="user[image]" type="hidden" value="<%= @user.image%>" />
+		<% if !@user.image_url.empty? %>
+			<label for="user[image_url]">Image</label>
+			<img src="<%= @user.image_url %>" alt="@user.name" />
+			<input name="user[image_url]" type="hidden" value="<%= @user.image_url%>" />
 		<% end %>
+
+		<div class="clear"></div>
 	
 		<input type="submit" value="Save" />
 	</form>

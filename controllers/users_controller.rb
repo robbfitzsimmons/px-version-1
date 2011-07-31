@@ -104,8 +104,6 @@ post '/connect' do
 	session[:connect] = true
 	session[:user_info] = nil
 
-	puts "CPNNECT"
-
 	if params[:connect] == "LinkedIn"
 		redirect '/auth/linked_in'
 	elsif params[:connect] == "Facebook"
@@ -182,6 +180,10 @@ put '/users/:id' do
 	puts @user.attribute_dirty?(:password)
 
 	if (session[:connect] == true)
+
+		if (params[:user][:image_url] != nil)
+			@user.image_url = params[:user][:image_url]
+		end
 
 		if (params[:user][:description] != nil)
 			@user.description = params[:user][:description]
