@@ -690,10 +690,8 @@ header {
             header nav#dashboard-nav li .level-2 a:hover {
               text-decoration: none; }
           header nav#dashboard-nav li .level-2 h6, header nav#dashboard-nav li .level-2 li {
-            float: left;
-            height: 16px;
             margin: 0;
-            min-width: 1px;
+            min-height: 16px;
             padding: 5px 10px;
             width: 250px; }
           header nav#dashboard-nav li .level-2 h6 {
@@ -703,7 +701,8 @@ header {
             color: #3870d1;
             font-weight: bold; }
           header nav#dashboard-nav li .level-2 li {
-            border-top: 1px solid #f4f4f4; }
+            border-top: 1px solid #f4f4f4;
+            height: 100%; }
       header nav#dashboard-nav input {
         /* log out link */
         background: transparent;
@@ -1443,11 +1442,11 @@ header {
         -webkit-border-radius: 4px;
         border-radius: 4px;
         border: 1px solid #dbdbdb;
-        color: #b8b8b8;
+        color: transparent;
         cursor: pointer;
         float: left;
         font-size: 0;
-        line-height: -9999em;
+        line-height: 0;
         min-width: 175px;
         overflow: hidden;
         padding: 23px;
@@ -1527,11 +1526,11 @@ header {
         -webkit-border-radius: 4px;
         border-radius: 4px;
         border: 1px solid #dbdbdb;
-        color: #b8b8b8;
+        color: transparent;
         cursor: pointer;
         float: left;
         font-size: 0;
-        line-height: -9999em;
+        line-height: 0;
         min-width: 175px;
         overflow: hidden;
         padding: 23px;
@@ -1960,11 +1959,11 @@ header {
           -webkit-border-radius: 4px;
           border-radius: 4px;
           border: 1px solid #dbdbdb;
-          color: #b8b8b8;
+          color: transparent;
           cursor: pointer;
           float: left;
           font-size: 0;
-          line-height: -9999em;
+          line-height: 0;
           min-width: 130px;
           overflow: hidden;
           padding: 23px;
@@ -2044,11 +2043,11 @@ header {
           -webkit-border-radius: 4px;
           border-radius: 4px;
           border: 1px solid #dbdbdb;
-          color: #b8b8b8;
+          color: transparent;
           cursor: pointer;
           float: left;
           font-size: 0;
-          line-height: -9999em;
+          line-height: 0;
           min-width: 130px;
           overflow: hidden;
           padding: 23px;
@@ -2126,6 +2125,9 @@ header {
       float: right; }
       .mid .right-67 ul li {
         float: left; }
+    .mid .right-67 ol li {
+      list-style-type: decimal;
+      margin: 0 0 0 30px; }
     .mid .right-67 form {
       float: left;
       -moz-border-radius: 4px;
@@ -2288,11 +2290,11 @@ header {
           -webkit-border-radius: 4px;
           border-radius: 4px;
           border: 1px solid #dbdbdb;
-          color: #b8b8b8;
+          color: transparent;
           cursor: pointer;
           float: left;
           font-size: 0;
-          line-height: -9999em;
+          line-height: 0;
           min-width: 130px;
           overflow: hidden;
           padding: 23px;
@@ -2372,11 +2374,11 @@ header {
           -webkit-border-radius: 4px;
           border-radius: 4px;
           border: 1px solid #dbdbdb;
-          color: #b8b8b8;
+          color: transparent;
           cursor: pointer;
           float: left;
           font-size: 0;
-          line-height: -9999em;
+          line-height: 0;
           min-width: 130px;
           overflow: hidden;
           padding: 23px;

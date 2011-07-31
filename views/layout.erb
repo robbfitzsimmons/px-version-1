@@ -38,9 +38,7 @@
 								<% if current_user.new_invites.length != 0 %>
 								<h6>Invites (<%= current_user.new_invites.count %>)</h6>
 									<% current_user.new_invites.each do |invite| %>
-										<li>
-											<%= invite.event.user_event_associations(:admin => true).user.first.name %> invited you to <a href="/invites/<%= invite.slug %>"><%= invite.event.name %></a>.
-										</li>
+										<li><%= invite.event.user_event_associations(:admin => true).user.first.name %> invited you to <a href="/invites/<%= invite.slug %>"><%= invite.event.name %></a>.</li>
 									<% end %>
 								<% end %>
 								<% if current_user.events_with_unanswered_questions.length != 0 %>

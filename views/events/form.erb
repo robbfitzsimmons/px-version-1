@@ -30,10 +30,16 @@
 <input type="file" name="event[image]" />
 
 <% if @new %>
-	<label for="start_day">Start Day</label>
+	<label for="start_day" class="two-lines">
+		Start Day
+		<span>This cannot be edited</span>
+	</label>
 	<input type="text" name="start_day" id="start_day" class="date-picker" readonly="readonly" />
 	
-	<label for="end_day">End Day</label>
+	<label for="end_day" class="two-lines">
+		End Day
+		<span>This cannot be edited</span>
+	</label>
 	<input type="text" name="end_day" id="end_day" class="date-picker" readonly="readonly" />
 	
 	<!-- <link rel="stylesheet" type="text/css" href="/css/datepicker.css" /> -->

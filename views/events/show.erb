@@ -74,7 +74,7 @@
 	</ul>
 	
 	<% if event_admin %>
-		<a href="/events/<%= @event.permalink %>/worksheet">View invites worksheet</a>
+		<a href="/events/<%= @event.permalink %>/worksheet">View invitees worksheet</a>
 	<% end %>
 	
 	<% events_unanswered_questions = current_user.questions_this_event(@event) %>
