@@ -51,10 +51,14 @@
 	<ul>
 	<% i = 0 %>
 	<% @attendees.each do |assoc| %>
-		<div class="nametag-sm">
+		<div class="nametag-sm" data-reveal-id="modal-<%= i %>">
 				<img src="<%= assoc.user.image(:thumb) %>" />
-				<h4><a href="#" data-reveal-id="modal-<%= i %>"><%= assoc.user.name %></a></h4>
-			
+				<div>
+					<h4><%= assoc.user.name %></h4>
+					<h5><%= assoc.user.description %></h5>
+					<h6><%= assoc.user.location %></h6>
+				</div>
+<!--
 				<% if !assoc.user.email.blank? %>
 					<a target="_blank" href="mailto:<%= assoc.user.email %>" class="social email">Email</a>
 				<% end %>
@@ -70,6 +74,7 @@
 				<% if !assoc.user.twitter.blank? %>
 					<a target="_blank" href="<%= assoc.user.twitter %>" class="social twitter">Twitter</a>
 				<% end %>
+-->
 				<% i += 1 %>
 		</div>		
 	<% end %>
@@ -154,3 +159,14 @@
      <% i += 1 %>
 </div>	
 <% end %>
+
+
+<script>
+	$(document).ready(function() {
+		$('.nametag-sm').click(function(e) {
+			e.preventDefault();
+			modal = $(this).attr('data-reveal-id');
+			$('#'+modal).reveal();
+		});
+	});
+</script>
