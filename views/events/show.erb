@@ -1,5 +1,28 @@
 <% event_admin = is_event_admin(@event) %>
 
+<% if !event_admin %>
+	<form action="/events/<%= @event.id %>/rsvp" method="post">
+		<input name="_method" type="hidden" value="put" />
+		<input name="invite" type="hidden" value="<%= session[:invite] %>" />
+		
+		<% if !current_user.invites(:event => @event, :hide => false).first.nil?  %>
+			<article class="progress">
+				<p>
+				<%= @event.name %>
+				<% @start = @event.start_date.strftime("%A, %B %e") %>
+				<% @end = @event.end_date.strftime("%A, %b %e") %>
+				<%= @start == @end ? 'is on' : 'starts on' %>
+				<%= @start %>.
+<!-- 				<%= @start != @end ? ' through ' + @end : "" %>. -->
+				Will you be attending?
+				</p>
+				<input name="attend" class="button" id="attend" type="submit" value="Attend" />
+				<input name="attend" class="button" id="not_attend" type="submit" value="Decline" />
+			</article>
+		<% end %>
+	</form>
+<% end %>
+
 <% if event_admin %>
 
 	<% if @progress < 100 %>
