@@ -140,7 +140,6 @@ end
 
 # Show a specific event
 get '/:permalink' do
-
 	pass if request.path_info == "/login"
 
 	@event_dashboard = true
@@ -201,6 +200,16 @@ get '/:permalink/attendees' do
 	@title = "#{@event.name} Attendees (#{@event.user_event_associations(:attending => true).count})"
 
 	erb :'events/attendees'	
+end
+
+
+get '/:permalink/nametags' do
+
+	 @event = Event.first(:permalink => params[:permalink].downcase)
+	 @users = @event.user_event_associations(:attending => true).users
+
+	 erb :'events/nametags', {:layout => :static_layout}
+  
 end
 
 # Show events worksheet (list of invites/ checked in)

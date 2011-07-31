@@ -18,6 +18,9 @@ gem "sass"
 
 gem "dm-paperclip", :git => "git://github.com/pdud/dm-paperclip.git"
 
+gem "pdfkit"
+gem "wkhtmltopdf-binary"
+
 group :development do
   gem "dm-sqlite-adapter"
   gem "dm-sweatshop"

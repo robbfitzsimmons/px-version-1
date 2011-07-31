@@ -7,6 +7,7 @@ Dir.glob("#{Dir.pwd}/controllers/*.rb") { |m| require "#{m.chomp}" }
 
 require 'openid/store/filesystem'
 require 'fileutils'
+require 'pdfkit'
 
 
 if (ENV['RACK_ENV']) == "production"
@@ -24,13 +25,16 @@ end
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite://#{Dir.pwd}/db/proximate.db")
 
 # Initialize (finalize) db
-#DataMapper.finalize
+DataMapper.finalize
 
 # Reset the db/tables and recreate
 #DataMapper.auto_migrate!
 
 # Create the db/tables if they don't exist
 DataMapper::auto_upgrade!
+
+
+use PDFKit::Middleware, :print_media_type => true
 
 require "#{Dir.pwd}/factories/factory.rb"
 

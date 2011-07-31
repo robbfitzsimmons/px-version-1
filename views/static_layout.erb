@@ -21,54 +21,12 @@
 	</head>
 	<body>
 		<div class="container">
-			<header>
-				<section id="logo">
-					<h1><a href="/">Pr<span>o</span>ximate Logo Belongs Here</a></h1>
-				</section>
-				
-				<nav>
-					<ul>
-					<!--
-
-						<li><a href="javascript: void(0)">how to use</a></li>
-						<li><a href="javascript: void(0)">plans & pricing</a></li>
-						<li><a href="javascript: void(0)">blog</a></li>
--->
-						<li><a href="javascript: void(0)" class="learn-more">learn more</a></li>
-						<li><a href="javascript: void(0)">say hello</a></li>
-						<li><a href="javascript: void(0)" class="sign-up">sign up</a></li>
-						<li>
-						  	<% if current_user %>
-						  		<a href="/users/<%= current_user.id %>" id="login">view dashboard</a>
-						  	<% else %>
-								<a href="/login" id="login">log in</a>
-						  	<% end %>
-						</li>
-					</ul>
-				</nav>
-			</header>
-			
-			<div class="top">
-				<h2><span>Hello</span> my name is</h2>
-			</div>
 			
 			<div class="mid">
 			    <%= yield %>
-
 			</div>
-			
-			<div class="bot"></div>
-			
-			<footer>
-				<span  class='st_twitter_hcount' displayText='Tweet'></span><span  class='st_facebook_hcount' displayText='Facebook'></span><span  class='st_linkedin_hcount' displayText='LinkedIn'></span><span  class='st_fblike_hcount' ></span>
-			</footer>
 			
 		</div> <!-- //container -->
 			
-	    <%= erb :flash %>
-		<script src="/js/scripts.js"></script>
-		<script type="text/javascript">var switchTo5x=true;</script>
-		<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-		<script type="text/javascript">stLight.options({publisher:'d4421eb4-bd0a-4665-ba3d-bfad0daebe1b'});</script>
 	</body>
 </html>
