@@ -9,3 +9,14 @@
      <a class="close-reveal-modal">&#215;</a>
 	</div>	
 <% end %>
+
+
+<script>
+	$(document).ready(function() {
+		$('.nametag-sm').click(function(e) {
+			e.preventDefault();
+			modal = $(this).attr('data-reveal-id');
+			$('#'+modal).reveal();
+		});
+	});
+</script>

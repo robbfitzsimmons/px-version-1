@@ -34,10 +34,14 @@
 		<% i = 0 %>
 		<h2>Matches (<%= @total_matches.count %>)</h2>
 		<% @matches.each do |match| %>
-		<div class="nametag-sm">
+		<div class="nametag-sm" data-reveal-id="modal-<%= i %>">
 			<img src="<%= match.image(:thumb) %>" />
-			<h4><a href="#" data-reveal-id="modal-<%= i %>"><%= match.name %></a></h4>
-		
+			<div>
+				<h4><%= match.name %></h4>
+				<h5><%= match.description %></h5>
+				<h6><%= match.location %></h6>
+			</div>
+<!--
 			<% if !match.email.blank? %>
 				<a target="_blank" href="mailto:<%= match.email %>" class="social email">Email</a>
 			<% end %>
@@ -53,6 +57,7 @@
 			<% if !match.twitter.blank? %>
 				<a target="_blank" href="<%= match.twitter %>" class="social twitter">Twitter</a>
 			<% end %>
+-->
 		</div>	
 		<% i += 1 %>
 		<% end %>
@@ -121,3 +126,13 @@
      <% i += 1 %>
 </div>	
 <% end %>
+
+<script>
+$(document).ready(function() {
+	$('.nametag-sm').click(function(e) {
+		e.preventDefault();
+		modal = $(this).attr('data-reveal-id');
+		$('#'+modal).reveal();
+	});
+});
+</script>

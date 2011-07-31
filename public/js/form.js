@@ -1,9 +1,9 @@
 $(document).ready(function()
-{	
+{
 	jQuery.validator.addMethod("accept", function(value, element, param) {
 	  return value.match(new RegExp("." + param + "$"));
 	});
-	
+
 	$("#form-signup").validate({
 		rules: {
 			'user[email]': {

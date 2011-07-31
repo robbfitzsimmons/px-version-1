@@ -47,7 +47,6 @@ $(document).ready(function()
     	f.removeClass('active');
 	});
 	
-	
 	/* Error messages */
 	$('.flash').delay(250).slideDown().delay(5000).slideUp();
 	

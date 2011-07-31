@@ -731,10 +731,20 @@ header {
 	}
 	
 	.nametag-sm {
+		display: block;
 		float: left;
 		overflow: hidden;
 		margin: 0 20px 20px 0;
 		width: 245px;
+		
+		&:hover {
+			@include radius(4px);
+			background: #fafafa url('/images/magnify.gif') 225px center no-repeat;
+			border: 1px solid #eee;
+			cursor: pointer;
+			padding: 10px;
+			margin: -11px 9px 9px -11px;
+		}
 		
 		div {
 			float: left;
@@ -760,6 +770,7 @@ header {
 		
 		h6 {
 			font-size: 14px;
+			line-height: 1.1em;
 		}
 		
 		img {
@@ -775,13 +786,13 @@ header {
 		}
 		
 		.mid {
-			height: 90px;
 			padding: 10px;
 			width: 223px;
 		}
 		.bot {
 			height: 15px;
 		}
+		
 		.social {
 			background: url('/images/socialicons_sm.gif') no-repeat;
 			display: block;

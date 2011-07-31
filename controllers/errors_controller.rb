@@ -1,5 +1,5 @@
 not_found do
-    'This is nowhere to be found.'
+	erb :'errors/404'
 end
 
 error 403 do

@@ -1,17 +1,15 @@
-<div class="nametag-sm">
+<div class="nametag-sm" data-reveal-id="modal-<%= nametagsmall.id %>">
 	<section class="top">
 		<h2><strong>Hello</strong> my name is</h2>
 	</section>
 	<section class="mid">
 		<img src="<%= nametagsmall.image(:thumb) %>" />
 		<div>
-			<h4>
-				<% if @attendee %><a href="#" data-reveal-id="modal-<%= nametagsmall.id %>"><% end %>
-					<%= nametagsmall.name %>
-				<% if @attendee %></a><% end %>
-				</h4>
+			<h4><%= nametagsmall.name %></h4>
 			<h5><%= nametagsmall.description %></h5>
-		
+			<h6><%= nametagsmall.location %></h6>
+		<!--
+
 			<% if !nametagsmall.email.blank? %>
 				<a target="_blank" href="mailto:<%= nametagsmall.email %>" class="social email">Email</a>
 			<% end %>
@@ -27,6 +25,7 @@
 			<% if !nametagsmall.twitter.blank? %>
 				<a target="_blank" href="<%= nametagsmall.twitter %>" class="social twitter">Twitter</a>
 			<% end %>
+-->
 		</div>
 	</section>
 	<section class="bot"></section>
