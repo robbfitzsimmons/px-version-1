@@ -32,10 +32,10 @@
 	Interests
 	<span>Type an interest, then press enter or comma</span>
 </label>
-<input id="interests" name="interests" type="text" value="<% @user.interests.each do |interest| %><%= interest.name %>,<% end %>" data-seperator="," />
+<input id="interests" name="interests" type="text" value="<% @user.interests(:order => [:name.asc]).each do |interest| %><%= interest.name %>,<% end %>" data-seperator="," />
 
 <label for="organizations">
 	Organization
 	<span>Type an organization, then press enter or comma</span>
 </label>
-<input id="organizations" name="organizations" type="text" value="<% @user.organizations.each do |organization| %><%= organization.name %>,<% end %>" data-seperator="," />
+<input id="organizations" name="organizations" type="text" value="<% @user.organizations(:order => [:name.asc]).each do |organization| %><%= organization.name %>,<% end %>" data-seperator="," />
