@@ -110,9 +110,14 @@ class User
 
   # Lists related people
   def people_matches
-    @users = []
-    @users = self.events.user_event_associations(:attending => true).users(:limit => 4, :id.not => self.id)
-    @users
+
+    matches = []
+    all_matches = User.first.organizations.users + User.first.interests.users
+    matches << all_matches[1+ rand(all_matches.count)]
+    matches << all_matches[1+ rand(all_matches.count)]
+    matches << all_matches[1+ rand(all_matches.count)]
+    matches << all_matches[1+ rand(all_matches.count)]
+    matches
   end
 
   def events_with_unanswered_questions
