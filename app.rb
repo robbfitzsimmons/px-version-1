@@ -16,7 +16,7 @@ if (ENV['RACK_ENV']) == "production"
 	smtp_conn.start('smtp.gmail.com', 'pdudley89@gmail.com', 'totspuRs505', :plain)
 
 	PDFKit.configure do |config|       
-     config.wkhtmltopdf = File.join(APP_ROOT, 'bin', 'wkhtmltopdf-amd64')
+     config.wkhtmltopdf = File.join(APP_ROOT, 'bin', 'wkhtmltopdf-amd64').to_s
 	end  
 
 	Mail.defaults do                                                   
