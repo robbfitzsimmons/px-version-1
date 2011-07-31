@@ -111,7 +111,7 @@ $(document).ready(function()
 
 	window.onbeforeunload = function() { 
 	  if (warning && !modal_active) {
-	  	return 'You have made changes on this page that you have not yet confirmed. If you navigate away from this page you will loose your unsaved changes';
+	  	return 'Are you sure you want to leave this page? You have unsaved changes on your profile';
 	  }
 	}
 	
