@@ -44,10 +44,8 @@ get '/auth/:name/callback' do
 		# if it is linked_in and linked_in has not been filled out
 		if (auth["provider"] == "linked_in" && @user.linked_in == nil)
 			puts "ITS LINKED IN"
-			puts auth["uid"]
 			@user.linked_in = auth["user_info"]["urls"]["LinkedIn"]
 			@user.linked_in_uid = auth["uid"]
-			puts @user.linked_in_uid
 			
 			if (@user.website == nil)
 				@user.website = auth["user_info"]["urls"]["Personal Website"]
@@ -67,6 +65,7 @@ get '/auth/:name/callback' do
 			puts "ITS FACEBOOK"
 			@user.facebook = auth["user_info"]["urls"]["Facebook"]
 			@user.facebook_uid = auth["uid"]
+			
 			if !auth["extra"]["user_hash"]["location"].nil?
 				@user.location = auth["extra"]["user_hash"]["location"]["name"]
 			end
@@ -85,27 +84,32 @@ get '/auth/:name/callback' do
 	else
 		@user = User.new
 
-		if (current_user.description == "")
+		if (current_user.description.blank?)
 			@user.description = auth["user_info"]["description"]
 		end
 
-		if (current_user.location == "")
+		if (current_user.location.blank?)
 			@user.location = auth["user_info"]["location"]
 		end
+
 
 		## It is linked in
 		if (auth["provider"] == "linked_in")
 			@user.linked_in = auth["user_info"]["urls"]["LinkedIn"]
 			@user.linked_in_uid = auth["uid"]
-			puts "linked_in"
+			@user.image_url = auth["user_info"]["image"] if (@user.image.url == "/images/original/missing.png")
 		## It is facebook
 		elsif (auth["provider"] == "facebook")
 			@user.facebook = auth["user_info"]["urls"]["Facebook"]
 			@user.facebook_uid = auth["uid"]
+			@user.image_url = auth["user_info"]["image"] if (@user.image.url == "/images/original/missing.png")
+			image = @user.image_url.split('=')
+			@user.image_url = image[0]+"=normal" if (@user.image.url == "/images/original/missing.png")
 		
 		elsif (auth["provider"] == "twitter")
 			@user.twitter = auth["user_info"]["urls"]["Twitter"]
 			@user.twitter_uid = auth["uid"]
+			@user.image_url = auth["user_info"]["image"] if (@user.image.url == "/images/original/missing.png")
 		end
 
 		session[:user_info] = @user
