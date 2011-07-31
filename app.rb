@@ -15,6 +15,10 @@ if (ENV['RACK_ENV']) == "production"
 	smtp_conn.enable_starttls          
 	smtp_conn.start('smtp.gmail.com', 'pdudley89@gmail.com', 'totspuRs505', :plain)
 
+	PDFKit.configure do |config|       
+     config.wkhtmltopdf = APP_ROOT.join('bin', 'wkhtmltopdf-amd64').to_s 
+	end  
+
 	Mail.defaults do                                                   
 	  delivery_method :smtp_connection, { :connection => smtp_conn }   
 	end
