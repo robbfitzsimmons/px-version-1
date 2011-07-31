@@ -11,6 +11,8 @@
 				<a href="/sessions/new">Add a session now!</a>
 			<% elsif (@event.days.sessions.activities.empty?) %>	
 				Add an activity to a session now!
+			<% elsif (@event.questions.empty?) %>	
+				<a href="/questions/new">Add a question now!</a>
 			<% elsif (@event.invites.empty?) %>	
 				<a href="/invites/new">Invite people to your event now!</a>
 			<% elsif (@event.image.url == "/images/original/missing.png") %>

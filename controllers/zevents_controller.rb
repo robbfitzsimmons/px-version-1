@@ -168,6 +168,7 @@ get '/:permalink' do
 	count += 1 if (!@event.color.blank?)			#5
 	count += 1 if (@event.image.url != "/images/original/missing.png")	#6
 	count += 1 if  (!@event.invites.empty?)	#7
+	count += 1 if  (!@event.questions.empty?)	#8
 
 	i = 0.0
 	@event.days.each do |day|
@@ -182,7 +183,7 @@ get '/:permalink' do
 		end
 	end
 
-	total = 7.0 + i
+	total = 8.0 + i
 
 	@progress = ((count/total) * 100).round(0) 
 
