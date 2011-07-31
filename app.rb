@@ -15,9 +15,7 @@ if (ENV['RACK_ENV']) == "production"
 	smtp_conn.enable_starttls          
 	smtp_conn.start('smtp.gmail.com', 'pdudley89@gmail.com', 'totspuRs505', :plain)
 
-	PDFKit.configure do |config|       
-     config.wkhtmltopdf = File.join(APP_ROOT, 'bin', 'wkhtmltopdf-amd64').to_s
-	end  
+
 
 	Mail.defaults do                                                   
 	  delivery_method :smtp_connection, { :connection => smtp_conn }   
@@ -42,6 +40,12 @@ use PDFKit::Middleware, :print_media_type => true
 
 if (ENV['RACK_ENV']) == "development"
 	require "#{Dir.pwd}/factories/factory.rb"
+end
+
+if (ENV['RACK_ENV']) == "production"
+	PDFKit.configure do |config|
+     config.wkhtmltopdf = File.join(APP_ROOT, 'bin', 'wkhtmltopdf-amd64').to_s
+	end  
 end
 
 use Rack::Session::Cookie, :secret => 'Xzw8TvIwQVZrnjKXkoI8SRDHhIZ65y'
