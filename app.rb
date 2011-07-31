@@ -36,7 +36,9 @@ DataMapper::auto_upgrade!
 
 use PDFKit::Middleware, :print_media_type => true
 
-require "#{Dir.pwd}/factories/factory.rb"
+if (ENV['RACK_ENV']) == "development"
+	require "#{Dir.pwd}/factories/factory.rb"
+end
 
 use Rack::Session::Cookie, :secret => 'Xzw8TvIwQVZrnjKXkoI8SRDHhIZ65y'
 use Rack::Flash
