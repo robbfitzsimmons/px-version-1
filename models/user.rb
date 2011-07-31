@@ -110,13 +110,16 @@ class User
 
   # Lists related people
   def people_matches
-
     matches = []
     all_matches = User.first.organizations.users + User.first.interests.users
-    matches << all_matches[1+ rand(all_matches.count)]
-    matches << all_matches[1+ rand(all_matches.count)]
-    matches << all_matches[1+ rand(all_matches.count)]
-    matches << all_matches[1+ rand(all_matches.count)]
+    if all_matches.count <= 4
+      matches = all_matches
+    else
+      while(matches.count < 4)
+        matches << all_matches[1+ rand(all_matches.count)]
+        matches = matches.uniq
+      end
+    end
     matches
   end
 

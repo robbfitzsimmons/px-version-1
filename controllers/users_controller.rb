@@ -69,6 +69,7 @@ get '/users/:id' do
 	@user = User.get(params[:id])
 
 	@matches = @user.people_matches
+	@total_matches = User.first.organizations.users + User.first.interests.users
 
 	count = 0
 

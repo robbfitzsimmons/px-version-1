@@ -32,7 +32,7 @@
 		
 	<% if @matches.length != 0 %>
 		<% i = 0 %>
-		<h2>Matches (<%= @matches.length %>)</h2>
+		<h2>Matches (<%= @total_matches.count %>)</h2>
 		<% @matches.each do |match| %>
 		<div class="nametag-sm">
 			<img src="<%= match.image(:thumb) %>" />
