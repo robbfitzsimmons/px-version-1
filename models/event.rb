@@ -76,7 +76,7 @@ class Event
 
   def check_name
 
-    dissallowed_names = %w{"login", recover", "users", "invites", "activities", "questions", "events", "sessions"} 
+    dissallowed_names = %w{"login", "logout", recover", "users", "invites", "activities", "questions", "events", "sessions"} 
 
     if self.attribute_dirty?(:name)
       self.name = self.name.squeeze(" ").strip
