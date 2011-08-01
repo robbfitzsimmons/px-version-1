@@ -1,8 +1,12 @@
 # Create a new session Page
-get '/sessions/new' do
+get '/:permalink/sessions/new' do
+
+
 	@title = "Create New Session"
 
-	@event = Event.get(session[:event])
+	@event = Event.first(:permalink => params[:permalink].downcase)
+
+	my_event?(@event)
 	@session = Session.new()
 
 	erb :'sessions/new'
@@ -10,9 +14,13 @@ end
 
 # Create a new session action
 post '/sessions' do
+
+
 	session = Session.new(params[:session])
 
 	day = Day.get(params[:day])
+
+	my_event?(day.event)
 
 
 	if params[:start_ampm].downcase == "pm"
@@ -82,6 +90,8 @@ put '/sessions/:id' do
 	session = Session.get(params[:id])
 	event = session.day.event
 
+	my_event?(event)
+
 	session.attributes = params[:session]
 
 	if session.save
@@ -102,6 +112,8 @@ delete '/sessions/:id' do
 
 	session = Session.get(params[:id])
 	event = session.day.event
+
+	my_event?(event)
 
 	session.activities.presentations.destroy
 	session.activities.destroy

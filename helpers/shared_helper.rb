@@ -62,3 +62,15 @@ def my_event?
   end
 
 end
+
+def my_event?(event)
+
+  logged_in?
+
+  if current_user.user_event_associations(:admin => true).events(:permalink => event.permalink).empty?
+    status 403
+    flash[:error] = "You do not have permission to look at this page."
+    redirect "/users/#{current_user.id}"
+  end
+
+end
