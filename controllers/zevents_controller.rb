@@ -273,8 +273,8 @@ end
 delete '/:permalink' do
 
 	my_permalink?
-
-	event = Event.get(params[:id])
+	
+	event = Event.first(:permalink => params[:permalink].downcase)
 
 	event.days.sessions.activities.presentations.destroy
 	event.days.sessions.activities.destroy
