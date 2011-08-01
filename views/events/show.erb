@@ -37,7 +37,7 @@
 			<% elsif (@event.questions.empty?) %>	
 				<a href="/<%= @event.permalink %>/questions/new">Add a question now!</a>
 			<% elsif (@event.invites.empty?) %>	
-				<a href="/invites/new">Invite people to your event now!</a>
+				<a href="/<%= @event.permalink %>/invites/new">Invite people to your event now!</a>
 			<% elsif (@event.image.url == "/images/original/missing.png") %>
 				<a href="/<%= @event.permalink %>/edit">Add a photo now!</a>
 			<% end %>
