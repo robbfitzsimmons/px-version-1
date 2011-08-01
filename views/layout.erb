@@ -79,7 +79,7 @@
 		  		<% if @event_dashboard %>
 		  			
 		  			<% if event_admin %>
-						<a href="/invites/new" class="button">Invite People</a>
+						<a href="/<%= @event.permalink %>/invites/new" class="button">Invite People</a>
 					<% end %>
 
 					<% if !event_admin %>
