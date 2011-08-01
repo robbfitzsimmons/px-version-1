@@ -1,10 +1,10 @@
 # Create a new actvitity Page
-get '/activities/new' do
-	@event = Event.get(session[:event])
+get '/:permalink/activities/new' do
+	my_permalink?
+
+	@event = Event.first(:permalink => params[:permalink].downcase)
 
 	@session = Session.get(params[:sessions])
-
-	puts @session.name
 
 	# need to get the day
 	@activity = Activity.new()
@@ -19,6 +19,8 @@ post '/activities' do
 	session = Session.get(params[:session])
 	activity = Activity.new(params[:activity])
 	event = session.day.event
+
+	my_event?(event)
 
 	if params[:start_ampm].downcase == "pm"
 		if params[:start_hour].to_i < 12
@@ -108,9 +110,13 @@ end
 
 put '/activities/:id' do
 
+
+
 	activity = Activity.get(params[:id])
 	session = activity.session
 	event = session.day.event
+
+	my_event?(event)
 
 	activity.attributes = params[:activity]
 
@@ -163,6 +169,8 @@ delete '/activities/:id' do
 
 	activity = Activity.get(params[:id])
 	event = activity.session.day.event
+
+	my_event?(event)
 
 	activity.presentations.destroy
 
