@@ -12,6 +12,8 @@ end
 
 # Edit an event Page
 get '/:permalink/edit' do
+	my_event?
+
 	@event = Event.first(:permalink => params[:permalink].downcase)
 	@title = "Edit #{@event.name}"
 	
@@ -20,6 +22,7 @@ end
 
 # Create an event action
 post '/events' do
+
 	@event = Event.new(params[:event])
 
 	start_day = params[:start_day].split("/")
@@ -63,11 +66,10 @@ post '/events' do
 	end
 end
 
-put '/events/:id/rsvp' do
+put '/:permalink/rsvp' do
+	invited_to_event?
 
-	event = Event.get(params[:id])
-
-	puts params[:attend]
+	event = Event.first(:permalink => params[:permalink].downcase)
 
 	if params[:attend] != "Attend"
 		event.users << current_user
@@ -110,14 +112,10 @@ put '/events/:id/rsvp' do
 end
 
 # Used for updating an event
-put '/events/:id' do
+put '/:permalink' do
+	my_event?
 
-	puts "put"
-
-	event = Event.get(params[:id])
-
-	puts event.name
-
+	event = Event.first(:permalink => params[:permalink].downcase)
 	event.attributes = params[:event]
 
 	if (!params[:event][:image].nil?)
@@ -140,6 +138,8 @@ end
 
 # Show a specific event
 get '/:permalink' do
+	invited_to_event?
+
 	pass if request.path_info == "/login"
 
 	@event_dashboard = true
@@ -194,6 +194,8 @@ end
 
 # Show a specific event
 get '/:permalink/attendees' do
+
+	invited_to_event?
 	
 	@attendee = true
 	@event = Event.first(:permalink => params[:permalink].downcase)
@@ -203,7 +205,8 @@ get '/:permalink/attendees' do
 end
 
 get '/:permalink/nametags' do
-
+		
+		my_event?
 
 	 @event = Event.first(:permalink => params[:permalink].downcase)
 	 @users = @event.user_event_associations(:attending => true).users
@@ -213,7 +216,7 @@ get '/:permalink/nametags' do
 end
 
 get '/:permalink/nametags.pdf' do
-		puts "http://#{request.host_with_port}/#{params[:permalink]}/nametags"
+		my_event?
 
 	 	content_type 'application/pdf'
     kit = PDFKit.new("http://#{request.host_with_port}/#{params[:permalink]}/nametags")
@@ -222,7 +225,9 @@ get '/:permalink/nametags.pdf' do
 end
 
 # Show events worksheet (list of invites/ checked in)
-get '/events/:permalink/worksheet' do
+get '/:permalink/worksheet' do
+
+	my_event?
 	@event = Event.first(:permalink => params[:permalink].downcase)
 
 	@title = "#{@event.name} Worksheet"
@@ -232,6 +237,8 @@ end
 
 # Show the events questions
 get '/:permalink/questions' do
+
+	my_event?
 
 	@event = Event.first(:permalink => params[:permalink].downcase)
 
@@ -244,6 +251,8 @@ end
 
 # Show events questions with answer fields for attendee
 get '/:permalink/questions/answer' do
+
+		invited_to_event?
 
 		@event = Event.first(:permalink => params[:permalink].downcase)
 		@answer = Answer.new()
@@ -261,7 +270,9 @@ get '/:permalink/questions/answer' do
 end
 
 # Delete an event
-delete '/events/:id' do
+delete '/:permalink' do
+
+	my_event?
 
 	event = Event.get(params[:id])
 
