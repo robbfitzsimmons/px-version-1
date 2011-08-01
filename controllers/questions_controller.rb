@@ -1,7 +1,9 @@
 # Create a new question Page
-get '/questions/new' do
+get '/:permalink/questions/new' do
+	my_event?
+
 	@title = "Create New Question"
-	@event = Event.get(session[:event])
+	@event = Event.first(:permalink => params[:permalink].downcase)
 	@question = Question.new()
 
 	erb :'questions/new'
@@ -11,6 +13,8 @@ end
 post '/questions' do
 	question = Question.new(params[:question])
 	event = Event.get(session[:event])
+
+	my_event?(event)
 
 	question.event = event
 
@@ -32,7 +36,9 @@ post '/questions' do
 end
 
 # Edit a question Page
-get '/questions/edit/:id' do
+get '/:permalink/questions/:id/edit' do
+	my_event?
+
 	@question = Question.get(params[:id])
 	@event = @question.event
 
