@@ -1,11 +1,22 @@
-<h6>Find me in views/activities/edit.erb</h6>
+<section class="left-33">
+	<h3>Edit Activity</h3>
+	
+	<p>Edit activities to each day of your event. Each session will have the event's activities.</p>
+	
+</section>
 
-<h1>Edit <%= @activity.name %></h1>
+<section class="right-67">
+	<form id="form-activity" action="/activities/<%= @activity.id %>" method="post">
+		<input name="_method" type="hidden" value="put" />
+		<%= erb :'activities/form' %>
+		<input type="submit" value="Submit" />
+	</form>
+	<form id="form-activity" action="/activities/<%= @activity.id %>" method="post">
+		<input name="_method" type="hidden" value="delete" />
+		<input type="submit" value="Delete" />
+	</form>
 
-<form action="/activities" method="post">
-	<input name="_method" type="hidden" value="put" />
-	 <%= erb :'activities/form' %>
-	<input type="submit" value="Submit" />
-</form>
+</section>
 
-
+<script src="/js/validate.js"></script>
+<script src="/js/form.js"></script>

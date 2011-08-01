@@ -1,11 +1,26 @@
-<h6>Find me in views/activities/edit.erb</h6>
+<section class="left-33">
+	<h3>Edit Session</h3>
+	
+	<p>Edi sessions to each day of your event. Each session will have the event's activities.</p>
+	
+</section>
 
-<h1>Edit <%= @activity.name %></h1>
+<section class="right-67">
+	<form id="form-session" action="/sessions/<%= @session.id %>" method="post">
+		<input name="_method" type="hidden" value="put" />
+		<%= erb :'sessions/form' %>
+		<input type="submit" value="Submit" />
+	</form>
+	<form id="form-session" action="/sessions/<%= @session.id %>" method="post">
+		<input name="_method" type="hidden" value="delete" />
+		<input type="submit" value="Delete" />
+	</form>
 
-<form action="/activities" method="post">
-	<input name="_method" type="hidden" value="put" />
-	 <%= erb :'activities/form' %>
-	<input type="submit" value="Submit" />
-</form>
+		<% if @edit  && !@session.activities.empty? %>
+			<p>This will delete all activites below this session.</p>
+		<% end %>
 
+</section>
 
+<script src="/js/validate.js"></script>
+<script src="/js/form.js"></script>

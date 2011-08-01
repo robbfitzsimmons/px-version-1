@@ -9,6 +9,10 @@
 		<%= erb :'events/form' %>
 		<input type="submit" value="Submit" />
 	</form>
+	<form action="/events/<%= @event.id %>" method="post">
+		<input name="_method" type="hidden" value="delete" />
+		<input type="submit" value="Delete" />
+	</form>
 </section>
 
 <script src="/js/validate.js"></script>

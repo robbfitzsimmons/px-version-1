@@ -7,6 +7,8 @@
 <label for="session[location]">Location</label>
 <input name="session[location]" type="text" value="<%= @session.location%>" />
 
+<% if not @edit %>
+
 <label for="day">Day</label>
 <select name="day">
 	<% @event.days.each do |day| %>
@@ -24,3 +26,5 @@
 <input name="end_hour" class="time-picker" type="text" maxlength="2" value="1" /> :
 <input name="end_minute" class="time-picker" type="text" maxlength="2" value="00" />
 <input name="end_ampm" class="time-picker" type="text" maxlength="2" value="PM" />
+
+<% end %>

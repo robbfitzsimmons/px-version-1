@@ -65,9 +65,55 @@ post '/sessions' do
 end
 
 # Create a new session Page
-get '/sessions/edit/:id' do
-	@session = session.get(params[:id])
-	@event = @session.event
+get '/:permalink/sessions/:id/edit' do
 
-	erb :'activities/edit'
+	@edit = true
+
+	@title = "Edit Session"
+
+	@session = Session.get(params[:id])
+	@event = @session.day.event
+
+	erb :'sessions/edit'
+end
+
+put '/sessions/:id' do
+
+	session = Session.get(params[:id])
+	event = session.day.event
+
+	session.attributes = params[:session]
+
+	if session.save
+		status(202)
+		flash[:success] = "Session #{session.name} updated successfully."
+		redirect "/#{event.permalink}"
+	else
+		status(412)
+		session.errors.each do |e|
+	    puts e
+		end
+		flash[:error] = "Please try again."
+		redirect back
+	end
+end
+
+delete '/sessions/:id' do
+
+	session = Session.get(params[:id])
+	event = session.day.event
+
+	if session.destroy
+		status(202)
+		flash[:success] = "Session #{session.name} deleted successfully."
+		redirect "/#{event.permalink}"
+	else
+		status(412)
+		session.errors.each do |e|
+	    puts e
+		end
+		flash[:error] = "Please try again."
+		redirect back
+	end
+
 end

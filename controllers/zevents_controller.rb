@@ -259,3 +259,23 @@ get '/:permalink/questions/answer' do
 
 	erb :'events/questions/answer'
 end
+
+# Delete an event
+delete '/events/:id' do
+
+	event = Event.get(params[:id])
+
+	if event.destroy
+		status(202)
+		flash[:success] = "#{event.name} deleted successfully."
+		redirect "/users/#{current_user.id}"
+	else
+		status(412)
+		event.errors.each do |e|
+	    puts e
+		end
+		flash[:error] = "Please try again."
+		redirect back
+	end
+
+end
