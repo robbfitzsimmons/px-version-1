@@ -35,7 +35,7 @@
 			<% elsif (@event.days.sessions.activities.empty?) %>	
 				Add an activity to a session now!
 			<% elsif (@event.questions.empty?) %>	
-				<a href="/questions/new">Add a question now!</a>
+				<a href="/<%= @event.permalink %>/questions/new">Add a question now!</a>
 			<% elsif (@event.invites.empty?) %>	
 				<a href="/invites/new">Invite people to your event now!</a>
 			<% elsif (@event.image.url == "/images/original/missing.png") %>
@@ -111,7 +111,7 @@
 	<% if events_unanswered_questions.count != 0 || event_admin %>
 		<hr />
 	
-		<h2><a href="<%= @event.permalink %>/questions">Questions (<%= @event.questions.count %>)</a></h2>
+		<h2><a href="/<%= @event.permalink %>/questions">Questions (<%= @event.questions.count %>)</a></h2>
 		
 		<ul>
 
@@ -120,8 +120,8 @@
 			<% end %>
 			
 			<% if event_admin %>
-				<li><a href="/questions/new">Add new</a></li>
-				<li><a href="<%= @event.permalink %>/answers">View answers</a></li>
+				<li><a href="/<%= @event.permalink %>/questions/new">Add new</a></li>
+				<li><a href="/<%= @event.permalink %>/answers">View answers</a></li>
 			<% end %>
 		</ul>
 	<% end %>
@@ -142,7 +142,12 @@
 				
 					<hr />
 					
-					<h5><%= session.name %> <a href="/<%= @event.permalink %>/sessions/<%= session.id %>/edit" class="edit">edit</a></h5>
+					<h5>
+						<%= session.name %> 
+						<% if event_admin %>
+							<a href="/<%= @event.permalink %>/sessions/<%= session.id %>/edit" class="edit">edit</a>
+						<% end %>
+					</h5>
 					<h5 style="font-size: 14px;"><span><%= session.description %><%= !session.location.blank? ? '&bull; ' + session.location : nil %></span></h5>
 					
 					<% session.activities(:order => [:start_date.asc]).each do |activity| %>
@@ -153,7 +158,9 @@
 							</span>
 							<strong><%= activity.name %></strong>
 							<em><%= ' with ' + activity.users.first.name if !activity.users.first.nil? %></em>
+							<% if event_admin %>
 							<a href="/<%= @event.permalink %>/activities/<%= activity.id %>/edit" class="edit">edit</a>
+							<% end %>
 						</p>
 						
 						<% if !activity.description.blank? %>
