@@ -141,7 +141,6 @@ end
 # Show a specific event
 get '/:permalink' do
 	pass if request.path_info == "/login"
-	pass
 
 	@event_dashboard = true
 	
@@ -205,11 +204,19 @@ end
 
 get '/:permalink/nametags' do
 
+
 	 @event = Event.first(:permalink => params[:permalink].downcase)
 	 @users = @event.user_event_associations(:attending => true).users
 
+
+	 erb :'events/nametags', {:layout => :static_layout}
+end
+
+get '/:permalink/nametags.pdf' do
+		puts "http://#{request.host_with_port}/#{params[:permalink]}/nametags"
+
 	 	content_type 'application/pdf'
-    kit = PDFKit.new('http://www.google.com')
+    kit = PDFKit.new("http://#{request.host_with_port}/#{params[:permalink]}/nametags")
     kit.to_pdf
  
 end
