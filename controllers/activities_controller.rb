@@ -83,6 +83,8 @@ get '/:permalink/activities/:id/edit' do
 
 	if @start_hour < 12
 		@start_am_pm = "AM"
+	elsif @start_hour
+			@start_am_pm = "PM"
 	else
 		@start_hour = @start_hour - 12
 		@start_am_pm = "PM"
@@ -93,6 +95,8 @@ get '/:permalink/activities/:id/edit' do
 
 	if @end_hour < 12
 		@end_am_pm = "AM"
+	elsif @start_hour
+			@start_am_pm = "PM"
 	else
 		@end_hour = @end_hour - 12
 		@end_am_pm = "PM"

@@ -14,7 +14,7 @@
 
 
 <label for="end_hour">End Hour</label>
-<input name="end_hour" class="time-picker" type="text" maxlength="2" value="<%= @end_hour.blank? ? "12" : @end_hour %>" /> :
+<input name="end_hour" class="time-picker" type="text" maxlength="2" value="<%= @end_hour.blank? ? "1" : @end_hour %>" /> :
 <input name="end_minute" class="time-picker" type="text" maxlength="2" value="<%= @end_min.blank? ? "00" : @end_min %>" />
 <input name="end_ampm" class="time-picker" type="text" maxlength="2" value="<%= @end_am_pm.blank? ? "PM" : @end_am_pm %>" />
 
@@ -22,6 +22,7 @@
 <select name="speaker">
 	<option value="None">None</option>
 	<% @event.users.each do |user| %>
-		<option value="<%= user.id %>"><%= user.name %></option>
+		
+		<option <%= "selected=selected" if (!@activity.users.empty? && user.id == @activity.users.first.id) %> value="<%= user.id %>"><%= user.name %></option>
 	<% end %>
 </select>
