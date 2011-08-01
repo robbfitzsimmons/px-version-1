@@ -31,7 +31,7 @@
 			<% if @event.description.blank? %>
 				<a href="/<%= @event.permalink %>/edit">Add event details now!</a>
 			<% elsif (@event.days.sessions.empty?) %>	
-				<a href="/sessions/new">Add a session now!</a>
+				<a href="/<%= @event.permalink %>/sessions/new">Add a session now!</a>
 			<% elsif (@event.days.sessions.activities.empty?) %>	
 				Add an activity to a session now!
 			<% elsif (@event.questions.empty?) %>	
@@ -177,7 +177,7 @@
 		</li>
 		<% end %>
 		<% if event_admin %>
-			<li class="last<%= i%2 == 1 ? ' even' : nil %>"><a href = "/sessions/new">Add Session</a></li>
+			<li class="last<%= i%2 == 1 ? ' even' : nil %>"><a href = "/<%= @event.permalink %>/sessions/new">Add Session</a></li>
 		<% end %>
 	</ul>
 </section>
