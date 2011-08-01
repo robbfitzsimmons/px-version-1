@@ -61,7 +61,9 @@ $(document).ready(function()
 			},
 			'event[location]': {
 				required: true
-			}
+			},
+			start_day: 'required',
+			end_day: 'required'
 		},
 		messages: {
 			'event[name]': {

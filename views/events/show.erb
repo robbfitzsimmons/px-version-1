@@ -175,7 +175,7 @@
 					<% end %>
 					<p>
 						<% if event_admin %>
-							<a href="/activities/new?sessions=<%= session.id %>">Add Activity</a>
+							<a href="/<%= @event.permalink %>/activities/new?sessions=<%= session.id %>">Add Activity</a>
 						<% end %>
 					</p>
 					

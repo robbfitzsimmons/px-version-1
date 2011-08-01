@@ -3010,7 +3010,8 @@ div.tagsinput {
   margin-left: -440px; }
 
 .reveal-modal .close-reveal-modal {
-  cursor: pointer; }
+  cursor: pointer;
+  display: none; }
 
 /* end modal windows */
 .flash {

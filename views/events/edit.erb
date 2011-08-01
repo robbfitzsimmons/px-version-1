@@ -8,13 +8,22 @@
 		<input name="_method" type="hidden" value="put" />
 		<%= erb :'events/form' %>
 		<input type="submit" value="Submit" />
+	<a data-reveal-id="modal-delete" href="javascript: void(0)" class="button" style="margin-right: 20px; width: 130px;" >Delete</a>
 	</form>
-	<form action="/<%= @event.permalink %>" method="post">
-		<input name="_method" type="hidden" value="delete" />
-		<input type="submit" value="Delete" />
+	<form id="modal-delete" class="reveal-modal" action="/<%= @event.permalink %>" method="post">
+		<h4>Are you sure you want to delete <em><%= @event.name %></em>?</h4>
+		<% if !@event.days.sessions.empty? || !@event.days.sessions.activities.empty? %>
+			<h5>This will delete all sessions and activities in this session.</h5>
+		<% end %>
+		
+		<div>
+			<a class="close-reveal-modal" style="margin-left: 20px;">Cancel</a>
+			<input name="_method" type="hidden" value="delete" />
+			<input type="submit" value="Delete" />
+		</div>
 	</form>
 </section>
 
 <script src="/js/validate.js"></script>
-<script src="/js/form.js"></script>
 <script src="/js/jquery.filestyle.min.js"></script>
+<script src="/js/form.js"></script>
