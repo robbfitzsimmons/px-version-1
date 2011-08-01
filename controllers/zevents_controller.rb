@@ -280,6 +280,7 @@ delete '/:permalink' do
 	event.days.sessions.activities.destroy
 	event.days.sessions.destroy
 	event.days.destroy
+	event.user_event_associations.destroy
 
 
 	if event.destroy
