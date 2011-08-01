@@ -1,16 +1,20 @@
 # Send an invite page
-get '/invites/new' do
+get '/:permalink/invites/new' do
+	my_event?
+
 	@title = 'Send Invites'
 	@invite = Invite.new()
-	@event = current_event
+	@event = Event.first(:permalink => params[:permalink].downcase)
 
 	erb :'invites/new'
 end
 
 post '/invites' do
 
-	puts "admin = #{is_event_admin(current_event)}"
-	
+	event = current_event
+
+	my_event?(event)
+
 	## Remove All White Space
 	emails = params[:emails].gsub(/ /,'')
 	puts emails
@@ -20,7 +24,7 @@ post '/invites' do
 	subject = params[:subject]
 	message = params[:message]
 	admin = current_user
-	event = current_event
+	
 
 	# 1 = Success all answers added, #2 = Some failed, #3 = all failed
 	success = 1
