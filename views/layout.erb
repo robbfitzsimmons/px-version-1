@@ -83,7 +83,7 @@
 					<% end %>
 
 					<% if !event_admin %>
-						<form action="/events/<%= @event.id %>/rsvp" method="post">
+						<form action="/<%= @event.permalink %>/rsvp" method="post">
 							<input name="_method" type="hidden" value="put" />
 							<input name="invite" type="hidden" value="<%= session[:invite] %>" />
 							
