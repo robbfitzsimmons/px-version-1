@@ -3,7 +3,7 @@ class Activity
 
   property :id,					      Serial    #
   property :name,             String    #
-  property :description,      String    #
+  property :description,      String, :length => 250    #
   property :location,         String    # Name of location
 
   before :valid?, :remove_html

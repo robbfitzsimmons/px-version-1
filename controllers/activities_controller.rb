@@ -153,7 +153,7 @@ put '/activities/:id' do
 
 	if activity.save
 		status(202)
-		flash[:success] = "Activity #{activity.name} updated successfully."
+		flash[:success] = "Activity <em>#{activity.name}</em> updated successfully."
 		redirect "/#{event.permalink}"
 	else
 		status(412)
@@ -176,7 +176,7 @@ delete '/activities/:id' do
 
 	if activity.destroy
 		status(202)
-		flash[:success] = "Activity #{activity.name} deleted successfully."
+		flash[:success] = "Activity <em>#{activity.name}</em> deleted successfully."
 		redirect "/#{event.permalink}"
 	else
 		status(412)

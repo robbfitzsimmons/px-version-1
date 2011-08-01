@@ -1,10 +1,3 @@
-get '/login' do
-	@title = "Login"
-	@user = User.new
-
-	erb :'login/login', {:layout => :static_layout}
-end
-
 post '/login' do
 
 	if params[:login] == "LinkedIn"
@@ -32,7 +25,7 @@ delete '/logout' do
 end
 
 get '/recover' do
-	erb :'login/recover', {:layout => :static_layout}
+	erb :'login/recover', {:layout => :sessions_layout}
 end
 
 post '/recover' do
@@ -91,7 +84,7 @@ get '/recover/:slug' do
 	end
 
 	status(200)
-	erb :'login/reset', {:layout => :static_layout}
+	erb :'login/reset', {:layout => :sessions_layout}
 end
 
 put '/recover/:slug' do
@@ -117,5 +110,5 @@ put '/recover/:slug' do
 		redirect '/'	
 	end
 
-	erb :'login/reset', {:layout => :static_layout}
+	erb :'login/reset', {:layout => :sessions_layout}
 end

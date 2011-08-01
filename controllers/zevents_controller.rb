@@ -212,7 +212,7 @@ get '/:permalink/nametags' do
 	 @users = @event.user_event_associations(:attending => true).users
 
 
-	 erb :'events/nametags', {:layout => :static_layout}
+	 erb :'events/nametags', {:layout => :print_layout}
 end
 
 get '/:permalink/nametags.pdf' do

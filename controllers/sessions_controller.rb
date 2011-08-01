@@ -99,7 +99,7 @@ put '/sessions/:id' do
 
 	if session.save
 		status(202)
-		flash[:success] = "Session #{session.name} updated successfully."
+		flash[:success] = "Session <em>#{session.name}</em> updated successfully."
 		redirect "/#{event.permalink}"
 	else
 		status(412)
@@ -123,7 +123,7 @@ delete '/sessions/:id' do
 
 	if session.destroy
 		status(202)
-		flash[:success] = "Session #{session.name} deleted successfully."
+		flash[:success] = "Session <em>#{session.name}</em> deleted successfully."
 		redirect "/#{event.permalink}"
 	else
 		status(412)

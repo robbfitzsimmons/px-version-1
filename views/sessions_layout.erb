@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Hello, my name is Proximate.</title>
+		<link href="/style.css" rel="stylesheet" type="text/css" />
+		<link href='http://fonts.googleapis.com/css?family=Raleway:100|Sue+Ellen+Francisco|Istok+Web:700italic,400,700,400italic' rel='stylesheet' type='text/css'>
+		<link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		
+		<!--[if IE]>
+			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<style type="text/css">
+				.clear {
+					display: block;
+					zoom: 1;
+				}
+			</style>
+		<![endif]-->
+
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<section id="logo">
+					<h1><a href="/">Proximate</a></h1>
+				</section>
+				
+<!--
+				<nav>
+					<ul>
+						<li><a href="javascript: void(0)" class="learn-more">learn more</a></li>
+						<li><a href="javascript: void(0)" class="sign-up">sign up</a></li>
+						<li><a href="javascript: void(0)" class="say-hello">say hello</a></li>
+						<li>
+						  	<% if current_user %>
+						  		<a href="/users/<%= current_user.id %>" class="log-in">view dashboard</a>
+						  	<% else %>
+								<a href="javascript: void(0)" class="log-in" id="log-in-link">log in</a>
+						  	<% end %>
+						</li>
+					</ul>
+				</nav>
+-->
+			</div>
+		</header>
+		
+		<div class="container">
+			
+			<div class="top">
+				<h2><span>Hello</span> my name is</h2>
+			</div>
+			
+			<div class="mid">
+
+			    <%= yield %>
+			</div>
+			
+			<div class="bot"></div>
+			
+		</div> <!-- //container -->
+		
+		<div class="share">
+			<span  class='st_linkedin_large' ></span><br />
+			<span  class='st_facebook_large' ></span><br />
+			<span  class='st_twitter_large' ></span><br />
+			<span  class='st_email_large' ></span><br />
+			<g:plusone size="tall" href="http://proximate.ly"></g:plusone>
+		</div>
+			
+	    <%= erb :flash %>
+		<script src="/js/scripts.js"></script>
+		<script type="text/javascript">var switchTo5x=true;</script>
+		<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+		<script type="text/javascript">stLight.options({publisher:'d4421eb4-bd0a-4665-ba3d-bfad0daebe1b'});</script>			
+		<script type="text/javascript">
+		  (function() {
+		    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		    po.src = 'https://apis.google.com/js/plusone.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		  })();
+		</script>
+	</body>
+</html>

@@ -2,10 +2,10 @@
 <input name="activity[name]" type="text" value="<%= @activity.name%>" />
 
 <label for="activity[description]">Description</label>
-<input name="activity[description]" maxlength="50" type="text" value="<%= @activity.description%>" />
+<input name="activity[description]" type="text" value="<%= @activity.description%>" />
 
 <label for="activity[location]">Location</label>
-<input name="activity[location]" maxlength="50" type="text" value="<%= @activity.location%>" />
+<input name="activity[location]" type="text" value="<%= @activity.location%>" />
 
 <label for="start_hour">Start Hour</label>
 <input name="start_hour" class="time-picker" type="text" maxlength="2" value="<%= @start_hour.blank? ? "12" : @start_hour %>" /> :

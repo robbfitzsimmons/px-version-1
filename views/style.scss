@@ -985,8 +985,8 @@ header {
 				color: #ccc;
 				font-family: $istok;
 				font-size: 14px;
-				line-height: 1.8em;
-				margin: 0;
+				line-height: 1.3em;
+				margin: 5px 0;
 
 				span {
 					float: left;
@@ -1622,11 +1622,13 @@ header {
 	@include radius-right(10px);
 	background: #eee;
 	border: 1px solid #e4e4e4;
+	height: 225px;
 	left: 0;
 	padding: 10px 5px;
 	position: fixed;
 	text-align: center;
 	top: 35%;
+	width: 53px;
 }
 
 footer {

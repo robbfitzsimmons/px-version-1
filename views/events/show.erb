@@ -162,15 +162,15 @@
 							<a href="/<%= @event.permalink %>/activities/<%= activity.id %>/edit" class="edit">edit</a>
 							<% end %>
 						</p>
-						
+						<div style="margin: 0 0 0 140px; width: 350px;">
 						<% if !activity.description.blank? %>
-							<p><span>&nbsp;</span><%= activity.description %> </p>
+							<p><%= activity.description %></p>
 						<% end %>
 						
 						<% if !activity.location.blank? %>
-							<p><span>&nbsp;</span><%= activity.location %> </p>
+							<p><%= activity.location %> </p>
 						<% end %>
-						
+						</div>
 						
 					<% end %>
 					<p>

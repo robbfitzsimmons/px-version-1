@@ -1,6 +1,6 @@
 # Sign up Authenticates with OmniAuth via OmniAuthController
 get '/signup' do
-	erb :'users/sign_up', {:layout => :static_layout}
+	erb :'users/sign_up', {:layout => :sessions_layout}
 end
 
 post '/signup' do
@@ -31,7 +31,7 @@ get '/signup/step2' do
 	@user = session[:user]
 	@user = User.new() if @user.class != User
 
-	erb :'users/step2', {:layout => :static_layout}
+	erb :'users/step2', {:layout => :sessions_layout}
 end
 
 post '/signup/step2' do
