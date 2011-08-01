@@ -115,7 +115,6 @@ post '/connect' do
 end
 
 get '/users/:id/approve' do
-	my_account?
 
 	@title = "Approve New Information"
 	@user = session[:user_info]

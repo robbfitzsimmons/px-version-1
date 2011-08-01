@@ -138,9 +138,11 @@ end
 
 # Show a specific event
 get '/:permalink' do
-	invited_to_event?
+	
+	dissallowed_names = %w{"login", recover", "users", "invites", "activities", "questions", "events", "sessions"} 
+	pass if dissallowed_names.one? {|dissallowed_name| dissallowed_name.match(request.path_info)}
 
-	pass if request.path_info == "/login"
+	invited_to_event?
 
 	@event_dashboard = true
 	
@@ -280,8 +282,11 @@ delete '/:permalink' do
 	event.days.sessions.activities.destroy
 	event.days.sessions.destroy
 	event.days.destroy
+
 	event.user_event_associations.destroy
 
+	event.questions.answers.destroy
+	event.questions.destroy
 
 	if event.destroy
 		

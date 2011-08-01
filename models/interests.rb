@@ -2,7 +2,7 @@ class Interest
   include DataMapper::Resource
 
   property :id,					  Serial                       #
-  property :name,         String
+  property :name,         String, :length => 250
 
   validates_uniqueness_of :name
 

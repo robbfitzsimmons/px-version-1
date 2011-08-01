@@ -2,8 +2,8 @@ class Invite
   include DataMapper::Resource
 
   property :id,					  Serial                       #
-  property :email,        String                       # 
-  property :slug,         String                       # Unique indentifier URL
+  property :email,        String, :length => 250                        # 
+  property :slug,         String, :length => 500                        # Unique indentifier URL
   property :visited,      Boolean, :default => false    # Has the slug been visited?
   property :hide,         Boolean, :default => false
 

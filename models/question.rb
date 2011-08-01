@@ -3,16 +3,16 @@ class Question
 
   property :id,					  Serial    #
   property :type,         String    # Type of Question (Radio, Text, Select)
-  property :text,         String    # Question's text
+  property :text,         String, :length => 50     # Question's text
 
   before :valid?, :remove_html
 
   validates_presence_of :type
   validates_presence_of :text
   
-  property :option1,      String    # If needed, question's option's text
-  property :option2,      String    # If needed, question's option's text
-  property :option3,      String    # If needed, question's option's text
+  property :option1,      String, :length => 50     # If needed, question's option's text
+  property :option2,      String, :length => 50     # If needed, question's option's text
+  property :option3,      String, :length => 50     # If needed, question's option's text
 
   #property :event_id,			Integer		# Links a question to an event
 

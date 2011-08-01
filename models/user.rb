@@ -10,9 +10,9 @@ class User
   before :valid?, :remove_html
 
   property :id,					Serial    #
-  property :name,       String    #
-  property :description,String    #
-  property :email,       String    #
+  property :name,       String, :length => 50    #
+  property :description,String, :length => 50    #
+  property :email,       String, :length => 50     #
 
   property :curator,       Boolean, :default => false    # Future for paid subscriptions
 
@@ -37,8 +37,8 @@ class User
   
   property :website,		String,	:length => 500 #
   #property :image,			String, :length => 500  		# URL Pulled from social service or added using File upload to Amazon (http://ididitmyway.heroku.com/past/2011/1/16/uploading_files_in_sinatra/)
-  property :location,		String		# Location of the user (ex. Massachusetts)
-  property :work,			String		# User's Work
+  property :location,		String, :length => 50 		# Location of the user (ex. Massachusetts)
+  property :work,			String, :length => 50 		# User's Work
   property :education,     String    # User's education
 
   property :created_at, DateTime  # Generated when each resource is created

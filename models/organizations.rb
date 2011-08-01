@@ -2,7 +2,7 @@ class Organization
   include DataMapper::Resource
 
   property :id,					  Serial                       #
-  property :name,         String
+  property :name,         String, :length => 250 
 
   before :valid?, :remove_html
 

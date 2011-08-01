@@ -2,9 +2,9 @@ class Day
   include DataMapper::Resource
 
   property :id,					      Serial    #
-  property :name,             String    #
-  property :description,      String    #
-  property :location,         String    #
+  property :name,             String, :length => 50     #
+  property :description,      String, :length => 50     #
+  property :location,         String, :length => 50     #
   
   property :date,             DateTime	#
 

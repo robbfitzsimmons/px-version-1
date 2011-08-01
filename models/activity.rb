@@ -2,9 +2,9 @@ class Activity
   include DataMapper::Resource
 
   property :id,					      Serial    #
-  property :name,             String    #
+  property :name,             String, :length => 50     #
   property :description,      String, :length => 250    #
-  property :location,         String    # Name of location
+  property :location,         String, :length => 50    # Name of location
 
   before :valid?, :remove_html
 
