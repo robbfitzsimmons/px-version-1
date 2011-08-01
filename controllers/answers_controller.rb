@@ -37,6 +37,8 @@ post '/answers' do
 	# Get the event
 	@event = Event.get(session[:event])
 
+	my_event?(@event)
+
 	# 1 = Success all answers added, #2 = Some failed, #3 = all failed
 	success = 1
 

@@ -7,7 +7,6 @@ end
 
 post '/login' do
 
-	puts "Login param is #{params[:login]}"
 	if params[:login] == "LinkedIn"
 		redirect '/auth/linked_in'
 	elsif params[:login] == "Facebook"
@@ -38,7 +37,6 @@ end
 
 post '/recover' do
 	user = User.first(:email => params[:email])
-	puts user.name
 	if user.nil?
 		flash[:error] = "There is no account associated with that email."
 		redirect back
