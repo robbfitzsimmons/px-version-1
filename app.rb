@@ -35,9 +35,6 @@ DataMapper.finalize
 # Create the db/tables if they don't exist
 DataMapper::auto_upgrade!
 
-
-use PDFKit::Middleware, :print_media_type => true
-
 if (ENV['RACK_ENV']) == "development"
 	require "#{Dir.pwd}/factories/factory.rb"
 end

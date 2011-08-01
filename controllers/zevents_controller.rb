@@ -141,6 +141,7 @@ end
 # Show a specific event
 get '/:permalink' do
 	pass if request.path_info == "/login"
+	pass
 
 	@event_dashboard = true
 	
@@ -202,14 +203,15 @@ get '/:permalink/attendees' do
 	erb :'events/attendees'	
 end
 
-
 get '/:permalink/nametags' do
 
 	 @event = Event.first(:permalink => params[:permalink].downcase)
 	 @users = @event.user_event_associations(:attending => true).users
 
-	 erb :'events/nametags', {:layout => :static_layout}
-  
+	 	content_type 'application/pdf'
+    kit = PDFKit.new('http://www.google.com')
+    kit.to_pdf
+ 
 end
 
 # Show events worksheet (list of invites/ checked in)
