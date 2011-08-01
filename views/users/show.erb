@@ -26,6 +26,7 @@
 		<li><a href="javascript: void(0)" id="filter-admin">Events I created (<%= @user.user_event_associations(:admin => true).length %>)</a></li>
 		<li><a href="javascript: void(0)" id="filter-invited">Pending invites (<%= @user.new_invites.length %>)</a></li>
 		<li><a href="javascript: void(0)" id="filter-declined">Invites I declined (<%= @user.user_event_associations(:attending => false).length %>)</a></li>
+		<li><a href="javascript: void(0)" id="filter-past">Past Events</a></li>
 	</ul>
 
 	<hr />
@@ -74,7 +75,12 @@
 				<div>
 					<h4><a href="/invites/<%= invite.slug %>"><%= invite.event.name %></a></h4>
 					<h5><%= invite.event.description %></h5>
-					<h6><%= invite.event.location %></h6>
+					<h6>
+						<%= invite.event.location %>
+						&bull;
+						<% start = invite.event.start_date.strftime("%b %e") %>
+						<%= start %><%= start != invite.event.end_date.strftime("%b %e") ? '-' + invite.event.end_date.strftime("%b %e") : "" %>
+					</h6>
 				</div>
 				<span class="tag">Invited</span>
 			</article>
@@ -84,7 +90,16 @@
 	<% if @user.user_event_associations.length != 0 %>
 		<% @user.events(:order => [ :start_date.asc ]).each do |event| %>
 			<% assoc = event.user_event_associations(:user => @user).first %>
-			<article class="all <%= assoc.admin ? 'admin' : '' %> <%= assoc.attending ? 'attendee' : 'declined' %>">
+			<article class="all
+				<% if assoc.event.end_date.strftime("%m%d%Y") <= Time.now.strftime("%m%d+1%Y") %>
+					past
+					<%= 'admin' if assoc.admin %>
+					<%= assoc.attending ? 'attendee' : 'declined' %>
+				<% else %>
+					<%= 'admin' if assoc.admin %>
+					<%= assoc.attending ? 'attendee' : 'declined' %>
+				<% end %>
+				">
 				<img src="<%= assoc.event.image(:thumb) %>" alt="" />
 				<div>
 					<h4><a href="/<%= assoc.event.permalink %>"><%= assoc.event.name %></a></h4>
@@ -92,20 +107,30 @@
 					<h6>
 						<%= assoc.event.location %>
 						&bull;
-						<% @start = assoc.event.start_date.strftime("%b %e") %>
-						<%= @start %><%= @start != assoc.event.end_date.strftime("%b %e") ? '-' + assoc.event.end_date.strftime("%b %e") : "" %>
+						<% start = assoc.event.start_date.strftime("%b %e") %>
+						<%= start %><%= start != assoc.event.end_date.strftime("%b %e") ? '-' + assoc.event.end_date.strftime("%b %e") : "" %>
 					</h6>
 				</div>
-				<% if assoc.admin %>
-					<span class="tag">Admin</span>
-					<span class="tag">Attending</span>
-				<% elsif !assoc.admin %>
-					<% if assoc.attending %>
-						<span class="tag">Attending</span>
-					<% else %>
-						<span class="tag">Not Attending</span>
+				<% if assoc.event.end_date.strftime("%m%d%Y") <= Time.now.strftime("%m%d+1%Y") %>
+					<span class="tag">Past Event</span>
+					<% if assoc.admin %>
+						<span class="tag">Admin</span>
 					<% end %>
+					
+				<% else %>
+					<% if assoc.admin %>
+						<span class="tag">Admin</span>
+						<span class="tag">Attending</span>
+					<% elsif !assoc.admin %>
+						<% if assoc.attending %>
+							<span class="tag">Attending</span>
+						<% else %>
+							<span class="tag">Not Attending</span>
+						<% end %>
+					<% end %>
+
 				<% end %>
+				
 			</article>
 		<% end %>
 	<% else %>

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<title>Proximate | <%= current_user.name %><%= !@title.nil? ? " | " + @title : "" %></title>
+		<title>Proximate<%= " | " + current_user.name if !current_user.nil? %><%= !@title.nil? ? " | " + @title : "" %></title>
 		<link href="/style.css" rel="stylesheet" type="text/css" />
 		<link href='http://fonts.googleapis.com/css?family=Raleway:100|Sue+Ellen+Francisco|Istok+Web:700italic,400,700,400italic|Shadows+Into+Light&v2' rel='stylesheet' type='text/css'>
 		<link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
@@ -23,6 +23,7 @@
 		<div class="container <%= @event.color if !@event.nil? %>">
 			
 			<header>
+				<% if !current_user.nil? %>
 				<section id="user-info">
 					<a href="/users/<%= current_user.id %>/nametag"><img src="<%= !current_user.image.nil? ? current_user.image.url(:thumb) : "/images/80x80.gif" %>" alt="<%= current_user.name %>" /></a>
 			  		<h2><a href="/users/<%= current_user.id %>"><%= current_user.name %></a></h2>
@@ -62,6 +63,8 @@
 					  	</li>
 					</ul>
 				</nav>
+				
+				<% end %>
 			</header>
 
 			<div class="top">
@@ -86,19 +89,16 @@
 							
 							<% if !current_user.user_event_associations(:attending => false).events.first(:id => @event.id).nil? %>
 								<input name="attend" class="button" id="attend" type="submit" value="Attend" />
+								<p style="float: right; font-size: 14px;">Change RSVP</p>
 							<% end %>
 							
 							<% if !current_user.user_event_associations(:attending => true).events.first(:id => @event.id).nil? %>
 								<input name="attend" class="button" id="not_attend" type="submit" value="Decline" />
+								<p style="float: right; font-size: 14px;">Change RSVP</p>
 							<% end %>
-							
-							<% if !current_user.invites(:event => @event, :hide => false).first.nil?  %>
-								<input name="attend" class="button" id="not_attend" type="submit" value="Decline" />
-								<input name="attend" class="button" id="attend" type="submit" value="Attend" />
-							<% end %>
-
 						</form>
 					<% end %>
+					
 		  		<% end %>
 			</div>
 			

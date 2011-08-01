@@ -57,34 +57,32 @@ $(document).ready(function()
 		$(this).addClass('filtered');
 	});
 	$('#filter-attendee').click(function () {
-		$('.invited').slideUp();
+		$('.all').not('.attendee').slideUp();
 		$('.attendee').slideDown();
-		$('.admin').slideDown();
-		$('.declined').slideUp();
 		$(this).parent().parent().find('a').removeClass('filtered');
 		$(this).addClass('filtered');
 	});
 	$('#filter-admin').click(function () {
-		$('.attendee').not('.admin').slideUp();
-		$('.invited').slideUp();
+		$('.all').not('.admin').slideUp();
 		$('.admin').slideDown();
-		$('.declined').slideUp();
 		$(this).parent().parent().find('a').removeClass('filtered');
 		$(this).addClass('filtered');
 	});
 	$('#filter-invited').click(function () {
-		$('.admin').slideUp();
-		$('.attendee').slideUp();
+		$('.all').not('.invited').slideUp();
 		$('.invited').slideDown();
-		$('.declined').slideUp();
 		$(this).parent().parent().find('a').removeClass('filtered');
 		$(this).addClass('filtered');
 	});
 	$('#filter-declined').click(function () {
-		$('.admin').slideUp();
-		$('.attendee').slideUp();
-		$('.invited').slideUp();
+		$('.all').not('.declined').slideUp();
 		$('.declined').slideDown();
+		$(this).parent().parent().find('a').removeClass('filtered');
+		$(this).addClass('filtered');
+	});
+	$('#filter-past').click(function () {
+		$('.all').not('.past').slideUp();
+		$('.past').slideDown();
 		$(this).parent().parent().find('a').removeClass('filtered');
 		$(this).addClass('filtered');
 	});
