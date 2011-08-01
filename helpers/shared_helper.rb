@@ -16,3 +16,30 @@ def partial(template,locals=nil)
     erb(template,{:layout => false})
   end
 end
+
+def logged_in?
+  if current_user.nil?
+    status 403
+    flash[:error] = "Please login first."
+    redirect "/"
+  end
+end
+
+
+def my_account?
+
+  logged_in?
+
+  if current_user.id != params[:id].to_i
+    status 403
+    flash[:error] = "You do not have permission to look at this page."
+    redirect "/users/#{current_user.id}"
+  end
+
+
+end
+
+def my_event
+
+
+end

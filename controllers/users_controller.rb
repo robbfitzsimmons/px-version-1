@@ -27,11 +27,6 @@ post '/signup' do
 	end
 end
 
-get '/interests' do
-
-
-end
-
 get '/signup/step2' do
 	@user = session[:user]
 	@user = User.new() if @user.class != User
@@ -64,9 +59,13 @@ end
 
 # Show a specific user
 get '/users/:id' do
+	my_account?
+
 	@user_dashboard = true
 	@title = "Dashboard"
 	@user = User.get(params[:id])
+
+
 
 	@matches = @user.people_matches
 	@total_matches = User.first.organizations.users + User.first.interests.users
@@ -94,6 +93,8 @@ get '/users/:id' do
 end
 
 get '/users/:id/connect' do
+	my_account?
+
 	@title = "Connect Your Social Accounts"
 	@user = User.get(params[:id])
 	
@@ -114,6 +115,8 @@ post '/connect' do
 end
 
 get '/users/:id/approve' do
+	my_account?
+
 	@title = "Approve New Information"
 	@user = session[:user_info]
 	
@@ -122,7 +125,7 @@ end
 
 
 put '/users/:id' do
-
+	my_account?
 	
 
 	@user = User.get(params[:id])
@@ -260,6 +263,7 @@ end
 
 # Show add new user page
 get '/users/new' do
+
 	@title = "New User"
 	@user = User.new
 	
@@ -268,6 +272,8 @@ end
 
 # Show edit user page
 get '/users/:id/edit' do
+	my_account?
+
 	@title = "Edit Nametag"
 	@user = User.get(params[:id])
 
@@ -277,8 +283,10 @@ get '/users/:id/edit' do
 	erb :'users/edit'	
 end
 
-# Show edit user page
+# Show nametag
 get '/users/:id/nametag' do
+	my_account?
+
 	@user = User.get(params[:id])
 	@title = "#{@user.name}'s Nametag"
 	

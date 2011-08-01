@@ -103,7 +103,7 @@ delete '/sessions/:id' do
 	session = Session.get(params[:id])
 	event = session.day.event
 
-
+	session.activities.presentations.destroy
 	session.activities.destroy
 
 	if session.destroy

@@ -164,8 +164,9 @@ delete '/activities/:id' do
 	activity = Activity.get(params[:id])
 	event = activity.session.day.event
 
+	activity.presentations.destroy
+
 	if activity.destroy
-		activit
 		status(202)
 		flash[:success] = "Activity #{activity.name} deleted successfully."
 		redirect "/#{event.permalink}"

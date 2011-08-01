@@ -265,6 +265,7 @@ delete '/events/:id' do
 
 	event = Event.get(params[:id])
 
+	event.days.sessions.activities.presentations.destroy
 	event.days.sessions.activities.destroy
 	event.days.sessions.destroy
 	event.days.destroy
