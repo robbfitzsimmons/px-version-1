@@ -6,22 +6,22 @@ $(document).ready(function()
 	/* Homepage */
 	$('a.learn-more').click(function() {
 		lm = $('#learn-more').offset();
-		$("html, body").animate({scrollTop:lm.top-105}, 500, "swing");
+		$("html, body").animate({scrollTop:lm.top-119}, 500, "swing");
 	});
 	
 	$('a.sign-up').click(function() {
 		su = $('#sign-up').offset();
-		$("html, body").animate({scrollTop:su.top-105}, 500, "swing");
+		$("html, body").animate({scrollTop:su.top-119}, 500, "swing");
 	});
 	
 	$('a#log-in-link').click(function() {
 		li = $('#log-in').offset();
-		$("html, body").animate({scrollTop:li.top-105}, 500, "swing");
+		$("html, body").animate({scrollTop:li.top-119}, 500, "swing");
 	});
 	
 	$('a.say-hello').click(function() {
 		sh = $('#say-hello').offset();
-		$("html, body").animate({scrollTop:sh.top-105}, 500, "swing");
+		$("html, body").animate({scrollTop:sh.top-119}, 500, "swing");
 	});
 	
 	/* Hide default input values on focus */

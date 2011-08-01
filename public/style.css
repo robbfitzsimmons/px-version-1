@@ -555,7 +555,7 @@ body {
 
 header {
   float: left;
-  padding: 0 0;
+  padding: 0;
   width: 100%; }
   header.sticky {
     background: #fafafa;
@@ -563,18 +563,22 @@ header {
     top: 0; }
   header #logo {
     float: left;
-    margin: 40px 0; }
-    header #logo h1 a {
-      color: #3870d1;
+    margin: 30px 0; }
+    header #logo h1 {
       float: left;
-      font-family: "Sue Ellen Francisco", cursive;
-      font-size: 24px; }
-      header #logo h1 a:hover {
-        color: red; }
-        header #logo h1 a:hover span {
-          color: #3870d1; }
-      header #logo h1 a span {
-        color: red; }
+      height: 47px;
+      width: 209px; }
+      header #logo h1 a {
+        background: url("/images/logo.gif") no-repeat;
+        color: transparent;
+        display: block;
+        float: left;
+        font-size: 0;
+        height: 47px;
+        line-height: 0;
+        width: 209px; }
+        header #logo h1 a:hover {
+          background-position: -209px 0; }
   header #user-info {
     float: left;
     margin: 20px 0 10px;
@@ -735,7 +739,7 @@ header {
   line-height: 1em;
   width: 960px; }
   .top.sticky {
-    margin: 105px 0 0; }
+    margin: 119px 0 0; }
   .top h2, .top .mid .landing .features article h3, .mid .landing .features article .top h3 {
     padding: 5px;
     text-align: center; }
@@ -2734,7 +2738,7 @@ header {
 
 footer {
   float: left;
-  font-size: 16px;
+  font-size: 14px;
   padding: 20px 0 40px; }
   footer a {
     color: #3870d1; }
