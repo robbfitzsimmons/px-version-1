@@ -1,7 +1,7 @@
 <section class="left-33">
 	<h3>Edit Activity</h3>
 	
-	<p>Edit activities to each day of your event. Each session will have the event's activities.</p>
+	<p>Is there a new speaker? Edit your activities here.</p>
 	
 </section>
 
@@ -10,10 +10,16 @@
 		<input name="_method" type="hidden" value="put" />
 		<%= erb :'activities/form' %>
 		<input type="submit" value="Submit" />
+	<a data-reveal-id="modal-delete" href="javascript: void(0)" class="button" style="margin-right: 20px;width: 130px;" >Delete</a>
 	</form>
-	<form id="form-activity" action="/activities/<%= @activity.id %>" method="post">
-		<input name="_method" type="hidden" value="delete" />
-		<input type="submit" value="Delete" />
+	
+	<form id="modal-delete" class="reveal-modal" action="/activities/<%= @activity.id %>" method="post">
+		<h4>Are you sure you want to delete <em><%= @activity.name %></em>?</h4>
+		<div>
+			<a class="close-reveal-modal" style="margin-left: 20px;">Cancel</a>
+			<input name="_method" type="hidden" value="delete" />
+			<input type="submit" value="Delete" />
+		</div>
 	</form>
 
 </section>

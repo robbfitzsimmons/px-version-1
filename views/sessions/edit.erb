@@ -10,15 +10,22 @@
 		<input name="_method" type="hidden" value="put" />
 		<%= erb :'sessions/form' %>
 		<input type="submit" value="Submit" />
+	<a data-reveal-id="modal-delete" href="javascript: void(0)" class="button" style="margin-right: 20px; width: 130px;" >Delete</a>
 	</form>
-	<form id="form-session" action="/sessions/<%= @session.id %>" method="post">
-		<input name="_method" type="hidden" value="delete" />
-		<input type="submit" value="Delete" />
-	</form>
-
+	
+	
+	<form id="modal-delete" class="reveal-modal" action="/sessions/<%= @session.id %>" method="post">
+		<h4>Are you sure you want to delete <em><%= @session.name %></em>?</h4>
 		<% if @edit  && !@session.activities.empty? %>
-			<p>This will delete all activites below this session.</p>
+			<h5>This will delete all activities in this session.</h5>
 		<% end %>
+		
+		<div>
+			<a class="close-reveal-modal" style="margin-left: 20px;">Cancel</a>
+			<input name="_method" type="hidden" value="delete" />
+			<input type="submit" value="Delete" />
+		</div>
+	</form>
 
 </section>
 

@@ -1028,15 +1028,14 @@ header {
     font-style: italic;
     line-height: 1.2em;
     margin: 0 0 5px 0; }
-    .mid h5 span {
-      color: #ccc;
-      font-size: 14px; }
   .mid h6 {
     color: #ccc;
     font-family: "Istok Web", "Arial", sans-serif;
     font-size: 14px;
     line-height: 1.5em;
     text-transform: uppercase; }
+  .mid .edit {
+    margin: 0 0 0 20px; }
   .mid span.date {
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
@@ -1795,6 +1794,14 @@ header {
   .mid form textarea {
     height: 120px;
     line-height: 1.3em; }
+  .mid form#modal-delete {
+    text-align: center; }
+    .mid form#modal-delete div {
+      margin: 0 auto;
+      width: 215px; }
+      .mid form#modal-delete div a {
+        margin: 7px 0 0;
+        width: 60px; }
   .mid .left-33 {
     float: left;
     width: 245px; }
@@ -3003,14 +3010,6 @@ div.tagsinput {
   margin-left: -440px; }
 
 .reveal-modal .close-reveal-modal {
-  font-size: 22px;
-  line-height: .5;
-  position: absolute;
-  top: 8px;
-  right: 11px;
-  color: #aaa;
-  text-shadow: 0 -1px 1px rbga(0, 0, 0, 0.6);
-  font-weight: bold;
   cursor: pointer; }
 
 /* end modal windows */

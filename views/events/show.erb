@@ -142,11 +142,19 @@
 				
 					<hr />
 					
-					<h5><%= session.name %> <span><%= session.description %><%= !session.location.blank? ? '&bull; ' + session.location : nil %></span></h5>
+					<h5><%= session.name %> <a href="/<%= @event.permalink %>/sessions/<%= session.id %>/edit" class="edit">edit</a></h5>
+					<h5 style="font-size: 14px;"><span><%= session.description %><%= !session.location.blank? ? '&bull; ' + session.location : nil %></span></h5>
 					
 					<% session.activities(:order => [:start_date.asc]).each do |activity| %>
 					
-						<p style="margin: 10px 0 0 0;"><span><%= activity.start_date.strftime("%l:%M %p").delete(" ") %>-<%= activity.end_date.strftime("%l:%M %p").delete(" ") %></span><strong><%= activity.name %></strong><em><%= ' with ' + activity.users.first.name if !activity.users.first.nil? %></em></p>
+						<p style="margin: 10px 0 0 0;">
+							<span>
+								<%= activity.start_date.strftime("%l:%M %p").delete(" ") %>-<%= activity.end_date.strftime("%l:%M %p").delete(" ") %>
+							</span>
+							<strong><%= activity.name %></strong>
+							<em><%= ' with ' + activity.users.first.name if !activity.users.first.nil? %></em>
+							<a href="/<%= @event.permalink %>/activities/<%= activity.id %>/edit" class="edit">edit</a>
+						</p>
 						
 						<% if !activity.description.blank? %>
 							<p><span>&nbsp;</span><%= activity.description %> </p>

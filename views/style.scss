@@ -876,11 +876,7 @@ header {
 		font-style: italic;
 		line-height: 1.2em;
 		margin: 0 0 5px 0;
-
-		span {
-			color: #ccc;
-			font-size: 14px;
-		}
+		
 	}
 	
 	h6 {
@@ -889,6 +885,10 @@ header {
 		font-size: 14px;
 		line-height: 1.5em;
 		text-transform: uppercase;
+	}
+	
+	.edit {
+		margin: 0 0 0 20px;
 	}
 	
 	span {
@@ -1152,6 +1152,20 @@ header {
 			@extend input[type=text];
 			height: 120px;
 			line-height: 1.3em;
+		}
+		
+		&#modal-delete {
+			text-align: center;
+			
+			div {
+				margin: 0 auto;
+				width: 215px;
+				
+				a {
+					margin: 7px 0 0;
+					width: 60px;
+				}
+			}
 		}
 	}
 	
@@ -1867,14 +1881,6 @@ div.tagsinput {
 .reveal-modal.xlarge 		{ width: 800px; margin-left: -440px;}
 
 .reveal-modal .close-reveal-modal {
-	font-size: 22px;
-	line-height: .5;
-	position: absolute;
-	top: 8px;
-	right: 11px;
-	color: #aaa;
-	text-shadow: 0 -1px 1px rbga(0,0,0,.6);
-	font-weight: bold;
 	cursor: pointer;
 	} 
 /* end modal windows */
