@@ -68,7 +68,7 @@ get '/users/:id' do
 
 
 	@matches = @user.people_matches
-	@total_matches = User.first.organizations.users + User.first.interests.users
+	@total_matches = current_user.organizations.users(:id.not => current_user.id) + current_user.interests.users(:id.not => current_user.id)
 
 	count = 0
 

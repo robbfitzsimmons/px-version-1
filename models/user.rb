@@ -111,8 +111,9 @@ class User
   # Lists related people
   def people_matches
     matches = []
-    all_matches = self.organizations.users + self.interests.users
+    all_matches = self.organizations.users(:id.not => self.id) + self.interests.users(:id.not => self.id)
     all_matches = all_matches.uniq
+
     if all_matches.count <= 4
       matches = all_matches
     else
