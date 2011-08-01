@@ -202,14 +202,23 @@ get '/:permalink/attendees' do
 	erb :'events/attendees'	
 end
 
-
 get '/:permalink/nametags' do
+
 
 	 @event = Event.first(:permalink => params[:permalink].downcase)
 	 @users = @event.user_event_associations(:attending => true).users
 
+
 	 erb :'events/nametags', {:layout => :static_layout}
-  
+end
+
+get '/:permalink/nametags.pdf' do
+		puts "http://#{request.host_with_port}/#{params[:permalink]}/nametags"
+
+	 	content_type 'application/pdf'
+    kit = PDFKit.new("http://#{request.host_with_port}/#{params[:permalink]}/nametags")
+    kit.to_pdf
+ 
 end
 
 # Show events worksheet (list of invites/ checked in)
