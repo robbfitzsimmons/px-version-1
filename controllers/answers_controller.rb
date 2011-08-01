@@ -1,4 +1,6 @@
 get '/:permalink/answers' do
+	my_permalink?
+
 	@event = Event.first(:permalink => params[:permalink])
 
 	if @event.questions.answers.count == 0

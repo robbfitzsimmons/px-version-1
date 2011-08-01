@@ -1,12 +1,13 @@
 # Create a new session Page
 get '/:permalink/sessions/new' do
 
+	my_permalink?
+
 
 	@title = "Create New Session"
 
 	@event = Event.first(:permalink => params[:permalink].downcase)
 
-	my_event?(@event)
 	@session = Session.new()
 
 	erb :'sessions/new'
@@ -74,6 +75,8 @@ end
 
 # Create a new session Page
 get '/:permalink/sessions/:id/edit' do
+
+	my_permalink?
 
 	@edit = true
 

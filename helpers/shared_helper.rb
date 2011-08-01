@@ -43,7 +43,7 @@ def invited_to_event?
 
   logged_in?
 
-  if current_user.events(:permalink => params[:permalink]).empty?
+  if current_user.invites.events(:permalink => params[:permalink]).empty? && current_user.events(:permalink => params[:permalink]).empty?
     status 403
     flash[:error] = "You do not have permission to look at this page."
     redirect "/users/#{current_user.id}"
@@ -51,7 +51,7 @@ def invited_to_event?
 
 end
 
-def my_event?
+def my_permalink?
 
   logged_in?
 

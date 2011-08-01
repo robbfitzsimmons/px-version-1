@@ -1,6 +1,6 @@
 # Create a new question Page
 get '/:permalink/questions/new' do
-	my_event?
+	my_permalink?
 
 	@title = "Create New Question"
 	@event = Event.first(:permalink => params[:permalink].downcase)
@@ -37,7 +37,7 @@ end
 
 # Edit a question Page
 get '/:permalink/questions/:id/edit' do
-	my_event?
+	my_permalink?
 
 	@question = Question.get(params[:id])
 	@event = @question.event

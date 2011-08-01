@@ -1,6 +1,6 @@
 # Send an invite page
 get '/:permalink/invites/new' do
-	my_event?
+	my_permalink?
 
 	@title = 'Send Invites'
 	@invite = Invite.new()
