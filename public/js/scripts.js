@@ -39,12 +39,12 @@ $(document).ready(function()
 			f.val(def);
     	}
 	});
-	$("input, textarea").focus(function() {
+	$("input, textarea").not("#interests").not("#organizations").focus(function() {
 		f = $(this);
-		
-    	f.addClass('active');
+		f.addClass('active');
 	}).blur(function() {
-    	f.removeClass('active');
+		f = $(this);
+		f.removeClass('active');
 	});
 	
 	/* Error messages */

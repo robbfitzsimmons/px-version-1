@@ -97,19 +97,19 @@ get '/auth/:name/callback' do
 		if (auth["provider"] == "linked_in")
 			@user.linked_in = auth["user_info"]["urls"]["LinkedIn"]
 			@user.linked_in_uid = auth["uid"]
-			@user.image_url = auth["user_info"]["image"] if (@user.image.url == "/images/original/missing.png")
+			@user.image_url = auth["user_info"]["image"] if (current_user.image.url == "/images/original/missing.png")
 		## It is facebook
 		elsif (auth["provider"] == "facebook")
 			@user.facebook = auth["user_info"]["urls"]["Facebook"]
 			@user.facebook_uid = auth["uid"]
-			@user.image_url = auth["user_info"]["image"] if (@user.image.url == "/images/original/missing.png")
-			image = @user.image_url.split('=')
-			@user.image_url = image[0]+"=normal" if (@user.image.url == "/images/original/missing.png")
+			@user.image_url = auth["user_info"]["image"] if (current_user.image.url == "/images/original/missing.png")
+			image = @user.image_url.split('=')	if (current_user.image.url == "/images/original/missing.png")
+			@user.image_url = image[0]+"=normal" if (current_user.image.url == "/images/original/missing.png")
 		
 		elsif (auth["provider"] == "twitter")
 			@user.twitter = auth["user_info"]["urls"]["Twitter"]
 			@user.twitter_uid = auth["uid"]
-			@user.image_url = auth["user_info"]["image"] if (@user.image.url == "/images/original/missing.png")
+			@user.image_url = auth["user_info"]["image"] if (current_user.image.url == "/images/original/missing.png")
 		end
 
 		session[:user_info] = @user
