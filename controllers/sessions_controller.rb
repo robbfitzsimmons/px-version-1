@@ -103,6 +103,9 @@ delete '/sessions/:id' do
 	session = Session.get(params[:id])
 	event = session.day.event
 
+
+	session.activities.destroy
+
 	if session.destroy
 		status(202)
 		flash[:success] = "Session #{session.name} deleted successfully."

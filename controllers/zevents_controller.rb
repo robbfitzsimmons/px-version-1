@@ -265,7 +265,13 @@ delete '/events/:id' do
 
 	event = Event.get(params[:id])
 
+	event.days.sessions.activities.destroy
+	event.days.sessions.destroy
+	event.days.destroy
+
+
 	if event.destroy
+		
 		status(202)
 		flash[:success] = "#{event.name} deleted successfully."
 		redirect "/users/#{current_user.id}"
