@@ -10,7 +10,7 @@ post '/login' do
 	if user.nil? 
 		# Create an error message and re-render the signin form.
 		flash[:error] = "Login failed."
-		redirect "/login"
+		redirect "/"
 	else
 		# Sign the user in and redirect to the user's show page.
 		session[:invite_event] = nil
