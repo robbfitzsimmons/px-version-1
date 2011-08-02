@@ -20,6 +20,8 @@ gem "dm-paperclip", :git => "git://github.com/pdud/dm-paperclip.git"
 
 gem "pdfkit"
 
+gem "mail"
+
 
 group :development do
   gem "dm-sqlite-adapter"
