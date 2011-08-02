@@ -13,11 +13,6 @@ post '/login' do
 		redirect "/"
 	else
 		# Sign the user in and redirect to the user's show page.
-		session[:invite_event] = nil
-		session[:invite] = nil
-
-		puts session[:invite]
-		puts "session above should not exist :)"
 
 		flash[:success] = "Logged in successfully."
 		session[:user] = user.id
