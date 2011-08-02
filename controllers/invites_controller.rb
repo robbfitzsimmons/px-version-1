@@ -61,10 +61,12 @@ post '/invites' do
 								</tr>
 								<tr>
 									<td style='padding: 10px 4px'>
-										<p style='font-size: 13px; line-height: 1.5em; color: #a4a4a4; font-family: Helvetica, Arial, sans-serif;'>Hello #{invite.email},</p>
-										<p style='font-size: 13px; line-height: 1.5em; color: #a4a4a4; font-family: Helvetica, Arial, sans-serif;'>#{message}</p>
+										<p style='font-size: 16px; line-height: 1.5em; color: #a4a4a4; font-family: Helvetica, Arial, sans-serif;'>Hello #{invite.email},</p>
+										<p style='font-size: 16px; line-height: 1.5em; color: #a4a4a4; font-family: Helvetica, Arial, sans-serif;'>#{message}<br />
+										#{current_user.name}
+										</p>
 										<hr style='background: #fff; border: none; border-bottom: 1px solid #e6e6e6; height: 1px;' />
-										<p style='font-size: 13px; line-height: 1.5em; color: #a4a4a4; font-family: Helvetica, Arial, sans-serif;'>Please follow this link to check out #{admin.name}'s event #{event.name}
+										<p style='font-size: 13px; line-height: 1.5em; color: #a4a4a4; font-family: Helvetica, Arial, sans-serif;'>Please follow this link to check out #{admin.name}'s, <em>#{event.name}</em>.
 												<a href='http://bulldozer.heroku.com/invites/#{invite.slug}'>http://bulldozer.heroku.com/invites/#{invite.slug}</a>
 										</p>
 										<p style='font-size: 13px; line-height: 1.5em; color: #a4a4a4; font-family: Helvetica, Arial, sans-serif;'>Thank you,<br /> 

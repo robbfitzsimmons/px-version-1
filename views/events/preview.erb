@@ -1,12 +1,12 @@
 <article class="progress">
 				<h2>If you are interested in attending
-				<%= @event.name %>
+				<em><%= @event.name %></em>
 				<% @start = @event.start_date.strftime("%A, %B %e") %>
 				<% @end = @event.end_date.strftime("%A, %b %e") %>
-				<%= @start == @end ? 'on' : 'starts on' %>
-				<%= @start %>.
+				<%= @start == @end ? 'on' : 'which starts on' %>
+				<%= @start %>,
 <!-- 				<%= @start != @end ? ' through ' + @end : "" %>. -->
-				you must sign up or login from the homepage.
+				please sign up or login.
 				</h2>
 					<a href="/" class="button" id="attend" type="submit" style="margin: 0 0px 0 10px">Sign Up</a>
 					<a href="/" class="button" id="attend" type="submit">Log In</a>
