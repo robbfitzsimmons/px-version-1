@@ -11,11 +11,8 @@ gem "dm-validations"
 gem "dm-timestamps"
 
 gem "omniauth"
-
 gem "sass"
-
 gem "dm-paperclip", :git => "git://github.com/pdud/dm-paperclip.git"
-
 gem "pdfkit"
 
 group :development do
