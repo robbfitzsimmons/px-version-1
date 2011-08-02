@@ -14,9 +14,7 @@ gem "dm-timestamps"
 
 gem "omniauth"
 
-gem "sass" 
-
-#gem "mail"
+gem "sass"
 
 gem "dm-paperclip", :git => "git://github.com/pdud/dm-paperclip.git"
 
