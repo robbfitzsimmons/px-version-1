@@ -63,7 +63,7 @@ post '/invites' do
 									<td style='padding: 10px 4px'>
 										<p style='font-size: 16px; line-height: 1.5em; color: #a4a4a4; font-family: Helvetica, Arial, sans-serif;'>Hello #{invite.email},</p>
 										<p style='font-size: 16px; line-height: 1.5em; color: #a4a4a4; font-family: Helvetica, Arial, sans-serif;'>#{message}<br />
-										#{current_user.name}
+										#{admin.name}
 										</p>
 										<hr style='background: #fff; border: none; border-bottom: 1px solid #e6e6e6; height: 1px;' />
 										<p style='font-size: 13px; line-height: 1.5em; color: #a4a4a4; font-family: Helvetica, Arial, sans-serif;'>Please follow this link to check out #{admin.name}'s, <em>#{event.name}</em>.
