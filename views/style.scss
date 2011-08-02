@@ -617,8 +617,8 @@ header {
 	width: 870px;
 
 	hr {
-		color: #eaeaea;
-		background: #eaeaea;
+		color: #e4e4e4;
+		background: #e4e4e4;
 		float: left;
 		height: 1px;
 		margin: 20px 0;
@@ -949,11 +949,6 @@ header {
 			}
 			&.even {
 				background: #eee;
-				
-				hr {
-					color: #ccc;
-					background: #ccc;
-				}
 			}
 		}
 	}

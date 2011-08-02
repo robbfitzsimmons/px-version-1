@@ -1,5 +1,5 @@
 3.1.4 (Brainy Betty)
-426ec4f674f43e9b3c3b1331ddf42c0c9914f2f1
+995c150f8fc84395b7253c9db389e7ede6be2a20
 o:Sass::Tree::RootNode
 :@has_childrenT:@template"Œ‚@charset "UTF-8";
 
@@ -620,8 +620,8 @@ header {
 	width: 870px;
 
 	hr {
-		color: #eaeaea;
-		background: #eaeaea;
+		color: #e4e4e4;
+		background: #e4e4e4;
 		float: left;
 		height: 1px;
 		margin: 20px 0;
@@ -3055,8 +3055,8 @@ float;i ;[ ;@;o;;;;@;"	left;igo;;;;
 width;i ;[ ;@;o;;;;@;"
 870px;iio;;T;i ;[o;;;;
 ["
-color;i ;[ ;@;o;;;;@;"#eaeaea;ilo;;;;
-["background;i ;[ ;@;o;;;;@;"#eaeaea;imo;;;;
+color;i ;[ ;@;o;;;;@;"#e4e4e4;ilo;;;;
+["background;i ;[ ;@;o;;;;@;"#e4e4e4;imo;;;;
 ["
 float;i ;[ ;@;o;;;;@;"	left;ino;;;;
 ["height;i ;[ ;@;o;;;;@;"1px;ioo;;;;
