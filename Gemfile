@@ -16,9 +16,13 @@ gem "omniauth"
 
 gem "sass" 
 
+#gem "mail"
+
 gem "dm-paperclip", :git => "git://github.com/pdud/dm-paperclip.git"
 
 gem "pdfkit"
+
+
 
 
 group :development do

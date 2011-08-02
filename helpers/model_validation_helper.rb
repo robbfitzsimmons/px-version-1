@@ -25,12 +25,14 @@ end
 
 # Creates a unique slug for an Invite
 def create_slug
-	length = 16
-	# Loop while slug is not unique
-	begin
-		self.slug = (0..(length-1)).map{ rand(36).to_s(36) }.join 
-		object = self.class.first(:slug => self.slug) 
-	end while(object != nil)
+  if new? 
+  	length = 16
+  	# Loop while slug is not unique
+  	begin
+  		self.slug = (0..(length-1)).map{ rand(36).to_s(36) }.join 
+  		object = self.class.first(:slug => self.slug) 
+  	end while(object != nil)
+  end
 end
 
 def create_permalink

@@ -1,54 +1,17 @@
-<% event_admin = is_event_admin(@event) %>
-
-<% if !event_admin %>
-	<form action="/<%= @event.permalink %>/rsvp" method="post">
-		<input name="_method" type="hidden" value="put" />
-		<input name="invite" type="hidden" value="<%= session[:invite] %>" />
-		
-		<% if !current_user.invites(:event => @event, :hide => false).first.nil?  %>
-			<article class="progress">
-				<p>
+<article class="progress">
+				<h2>If you are interested in attending
 				<%= @event.name %>
 				<% @start = @event.start_date.strftime("%A, %B %e") %>
 				<% @end = @event.end_date.strftime("%A, %b %e") %>
-				<%= @start == @end ? 'is on' : 'starts on' %>
+				<%= @start == @end ? 'on' : 'starts on' %>
 				<%= @start %>.
 <!-- 				<%= @start != @end ? ' through ' + @end : "" %>. -->
-				Will you be attending?
-				</p>
-				<input name="attend" class="button" id="attend" type="submit" value="Attend" />
-				<input name="attend" class="button" id="not_attend" type="submit" value="Decline" />
-			</article>
-		<% end %>
-	</form>
-<% end %>
+				you must sign up or login from the homepage.
+				</h2>
+					<a href="/" class="button" id="attend" type="submit" style="margin: 0 0px 0 10px">Sign Up</a>
+					<a href="/" class="button" id="attend" type="submit">Log In</a>
+</article>
 
-<% if event_admin %>
-
-	<% if @progress < 100 %>
-	<article class="progress">
-		<p>Your event is <strong><%= @progress %>%</strong> complete.
-			<% if @event.description.blank? %>
-				<a href="/<%= @event.permalink %>/edit">Add event details now!</a>
-			<% elsif (@event.days.sessions.empty?) %>	
-				<a href="/<%= @event.permalink %>/sessions/new">Add a session now!</a>
-			<% elsif (@event.days.sessions.activities.empty?) %>	
-				Add an activity to a session now!
-			<% elsif (@event.questions.empty?) %>	
-				<a href="/<%= @event.permalink %>/questions/new">Add a question now!</a>
-			<% elsif (@event.invites.empty?) %>	
-				<a href="/<%= @event.permalink %>/invites/new">Invite people to your event now!</a>
-			<% elsif (@event.image.url == "/images/original/missing.png") %>
-				<a href="/<%= @event.permalink %>/edit">Add a photo now!</a>
-			<% end %>
-		</p>
-		<div>
-			<span style="width: <%= @progress %>%;"></span>
-		</div>
-	</article>
-<% end %>
-
-<% end %>
 
 <section class="left-33">
 	<img class="event-image" src="<%= @event.image(:thumb) %>" alt="<%= @event.name %>" />
@@ -61,9 +24,6 @@
 		<%= @start %><%= @start != @event.end_date.strftime("%b %e") ? '-' + @event.end_date.strftime("%b %e") : "" %>
 	</h6>
 	
-	<% if event_admin %>
-		<a href="/<%= @event.permalink %>/edit">edit event details</a>
-	<% end %>
 	
 	<hr />
 	
@@ -102,29 +62,8 @@
 		</div>		
 	<% end %>
 	</ul>
-	
-	<% if event_admin %>
-		<a href="/<%= @event.permalink %>/worksheet">View invitees worksheet</a>
-	<% end %>
-	
-	<% events_unanswered_questions = current_user.questions_this_event(@event) %>
-	<% if events_unanswered_questions.count != 0 || event_admin %>
-		<hr />
-	
-		<h2><a href="/<%= @event.permalink %>/questions">Questions (<%= @event.questions.count %>)</a></h2>
-		
-		<ul>
 
-			<% if events_unanswered_questions.count != 0 %>
-				<li><a href="/<%= @event.permalink %>/questions/answer">Answer Questions</a></li>
-			<% end %>
-			
-			<% if event_admin %>
-				<li><a href="/<%= @event.permalink %>/questions/new">Add new</a></li>
-				<li><a href="/<%= @event.permalink %>/answers">View answers</a></li>
-			<% end %>
-		</ul>
-	<% end %>
+	
 </section>
 
 <section class="right-67">
@@ -144,9 +83,6 @@
 					
 					<h5>
 						<%= session.name %> 
-						<% if event_admin %>
-							<a href="/<%= @event.permalink %>/sessions/<%= session.id %>/edit" class="edit">edit</a>
-						<% end %>
 					</h5>
 					<h5 style="font-size: 14px;"><span><%= session.description %><%= !session.location.blank? ? '&bull; ' + session.location : nil %></span></h5>
 					
@@ -158,9 +94,7 @@
 							</span>
 							<strong><%= activity.name %></strong>
 							<em><%= ' with ' + activity.users.first.name if !activity.users.first.nil? %></em>
-							<% if event_admin %>
-							<a href="/<%= @event.permalink %>/activities/<%= activity.id %>/edit" class="edit">edit</a>
-							<% end %>
+							
 						</p>
 						<div style="margin: 0 0 0 140px; width: 350px;">
 						<% if !activity.description.blank? %>
@@ -174,18 +108,14 @@
 						
 					<% end %>
 					<p>
-						<% if event_admin %>
-							<a href="/<%= @event.permalink %>/activities/new?sessions=<%= session.id %>">Add Activity</a>
-						<% end %>
+						
 					</p>
 					
 				<% end %>
 			</div>
 		</li>
 		<% end %>
-		<% if event_admin %>
-			<li class="last<%= i%2 == 1 ? ' even' : nil %>"><a href = "/<%= @event.permalink %>/sessions/new">Add Session</a></li>
-		<% end %>
+	
 	</ul>
 </section>
 

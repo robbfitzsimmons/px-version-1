@@ -13,8 +13,15 @@ post '/login' do
 		redirect "/login"
 	else
 		# Sign the user in and redirect to the user's show page.
+		session[:invite_event] = nil
+		session[:invite] = nil
+
+		puts session[:invite]
+		puts "session above should not exist :)"
+
 		flash[:success] = "Logged in successfully."
 		session[:user] = user.id
+
 		redirect "/users/#{user.id}"
 	end
 end
@@ -38,7 +45,7 @@ post '/recover' do
 		if recover_password.save
 			status(202)
 
-			if (ENV['RACK_ENV']) == "zproduction"
+			if (ENV['RACK_ENV']) == "production"
 
 				#Send Email
 				mail = Mail.new do          
@@ -50,12 +57,27 @@ post '/recover' do
 				html_part = Mail::Part.new do |part| 
 		      part.content_type 'text/html; charset=UTF-8' 
 		      part.body("
-		      	<p>Hello #{user.name},</p>
-						<p>Please follow this link to reset your password
-						<a href='http://localhost:9292/recover/#{recover_password.slug}'>http://localhost:9292/recover/#{recover_password.slug}</a></p>
-						<p>Thank you, <br />
-						The Proximate Team
-						</p>
+						<div style='background: #f9f9f9;' leftmargin='0' topmargin='0' marginwidth='0' marginheight='0'>
+						<center>
+							<table style='padding: 50px 0' width='656' height='182' border='0' cellpadding='0' cellspacing='0'>
+								<tr>
+									<td rowspan='2'>
+										<img src='http://bulldozer.heroku.com/images/mailer/proximate_logo.png' width='330' height='182' alt=''></td>
+									<td>
+										<img src='http://bulldozer.heroku.com/images/mailer/password.png' width='326' height='40' alt=''></td>
+								</tr>
+								<tr>
+									<td style='padding: 10px 4px'>
+										<p style='font-size: 13px; line-height: 1.5em; color: #a4a4a4; font-family: Helvetica, Arial, sans-serif;'>Hello #{user.name},</p>
+										<p style='font-size: 13px; line-height: 1.5em; color: #a4a4a4; font-family: Helvetica, Arial, sans-serif;'>Please follow this link to reset your password
+											<a href='http://bulldozer.heroku.com/recover/#{recover_password.slug}'>http://bulldozer.heroku.com/recover/#{recover_password.slug}</a></p>
+										<p style='font-size: 13px; line-height: 1.5em; color: #a4a4a4; font-family: Helvetica, Arial, sans-serif;'>Thank you,<br /> 
+										The Proximate Team</p>	
+									</td>
+								</tr>
+							</table>
+						</center>
+						</div>
 		      ") 
 	   		end 
 	    	mail.html_part = html_part

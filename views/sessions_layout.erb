@@ -60,13 +60,15 @@
 			
 		</div> <!-- //container -->
 		
-		<div class="share">
-			<span  class='st_linkedin_large' ></span><br />
-			<span  class='st_facebook_large' ></span><br />
-			<span  class='st_twitter_large' ></span><br />
-			<span  class='st_email_large' ></span><br />
-			<g:plusone size="tall" href="http://proximate.ly"></g:plusone>
-		</div>
+		<% if !@event_dashboard %>
+			<div class="share">
+				<span  class='st_linkedin_large' ></span><br />
+				<span  class='st_facebook_large' ></span><br />
+				<span  class='st_twitter_large' ></span><br />
+				<span  class='st_email_large' ></span><br />
+				<g:plusone size="tall" href="http://proximate.ly"></g:plusone>
+			</div>
+		<% end %>
 			
 	    <%= erb :flash %>
 		<script src="/js/scripts.js"></script>
