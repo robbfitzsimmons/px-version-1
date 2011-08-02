@@ -39,7 +39,7 @@ post '/invites' do
 		
 		if invite.save
 			status(202)
-			if (ENV['RACK_ENV']) == "zproduction"
+			if (ENV['RACK_ENV']) == "production"
 				#Send Email
 				mail = Mail.new do          
 				  to "<#{invite.email}>"         
@@ -50,16 +50,33 @@ post '/invites' do
 				html_part = Mail::Part.new do |part| 
 		      part.content_type 'text/html; charset=UTF-8' 
 		      part.body("
-		      	<p>Hello #{invite.email},</p>
-		      	<p>#{message}</p>
-		      	<p>Thank you, <br />
-						#{admin.name}</p>
-		      	<hr />
-						<p>Please follow this link to check out #{admin.name}'s event #{event.name}
-						<a href='http://localhost:9292/events/#{event.permalink}'>http://localhost:9292/events/#{event.permalink}</a></p>
-						<p>Thank you, <br />
-						The Proximate Team
-						</p>
+					<div style='background: #f9f9f9;' leftmargin='0' topmargin='0' marginwidth='0' marginheight='0'>
+						<center>
+							<table style='padding: 50px 0' width='656' height='182' border='0' cellpadding='0' cellspacing='0'>
+								<tr>
+									<td rowspan='2'>
+										<img src='http://bulldozer.heroku.com/images/mailer/proximate_logo.png' width='330' height='182' alt=''></td>
+									<td>
+										<img src='http://bulldozer.heroku.com/images/mailer/your_invited.png' width='326' height='40' alt=''></td>
+								</tr>
+								<tr>
+									<td style='padding: 10px 4px'>
+										<p style='font-size: 16px; line-height: 1.5em; color: #a4a4a4; font-family: Helvetica, Arial, sans-serif;'>Hello #{invite.email},</p>
+										<p style='font-size: 16px; line-height: 1.5em; color: #a4a4a4; font-family: Helvetica, Arial, sans-serif;'>#{message}<br />
+										#{current_user.name}
+										</p>
+										<hr style='background: #fff; border: none; border-bottom: 1px solid #e6e6e6; height: 1px;' />
+										<p style='font-size: 13px; line-height: 1.5em; color: #a4a4a4; font-family: Helvetica, Arial, sans-serif;'>Please follow this link to check out #{admin.name}'s, <em>#{event.name}</em>.
+												<a href='http://bulldozer.heroku.com/invites/#{invite.slug}'>http://bulldozer.heroku.com/invites/#{invite.slug}</a>
+										</p>
+										<p style='font-size: 13px; line-height: 1.5em; color: #a4a4a4; font-family: Helvetica, Arial, sans-serif;'>Thank you,<br /> 
+										The Proximate Team</p>	
+									</td>
+								</tr>
+							</table>
+						</center>
+						</div>
+
 		      ") 
 		 		end 
 		  	mail.html_part = html_part
@@ -104,5 +121,5 @@ get '/invites/:slug' do
 	session[:invite_event] = invite.event.id
 	session[:invite] = invite.id
 
-	redirect "/#{invite.event.permalink}"
+	redirect "/#{invite.event.permalink}/preview"
 end

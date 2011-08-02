@@ -3,7 +3,7 @@ class Event
   include Paperclip::Resource
 
   property :id,					  Serial    #
-  property :name,         String    #
+  property :name,         String, :length => 50     #
   property :description,  String, :length => 250
   property :color,  	  String,   :default => "blue" #
   #property :logo,         String    # URL linking to Amazon File Upload (http://ididitmyway.heroku.com/past/2011/1/16/uploading_files_in_sinatra/)
@@ -24,7 +24,7 @@ class Event
   validates_with_method :end_date, :method => :valid_end_date?, :if => lambda { |t| t.start_date != nil && t.end_date != nil}
 
   
-  property :location,     String    # Name of location
+  property :location,     String, :length => 50     # Name of location
   property :latitude,		  Float	, :default => 0	  # Latitude of location (useful for Google Maps)
   property :longitude,	  Float,  :default => 0		  # Longtitude of location (useful for Google Maps)
   property :language,     String    # 
@@ -76,7 +76,7 @@ class Event
 
   def check_name
 
-    dissallowed_names = %w{"login", "signup", "recover", "users", "invites", "activities", "questions", "events", "sessions"} 
+    dissallowed_names = %w{"login", "logout", recover", "users", "invites", "activities", "questions", "events", "sessions"} 
 
     if self.attribute_dirty?(:name)
       self.name = self.name.squeeze(" ").strip

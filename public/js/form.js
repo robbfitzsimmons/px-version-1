@@ -20,7 +20,14 @@ $(document).ready(function()
 				required: true
 			},
 			'user[name]': {
-				required: true
+				required: true,
+				maxlength: 50
+			},
+			'user[description]': {
+				maxlength: 50
+			},
+			'user[location]': {
+				maxlength: 50
 			},
 			terms: {
 				required: true
@@ -41,7 +48,14 @@ $(document).ready(function()
 				required: "Please re-enter your password."
 			},
 			'user[name]': {
-				required: "Please enter your name."
+				required: "Please enter your name.",
+				maxlength: "Name must be at most 50 characters long."
+			},
+			'user[description]': {
+				maxlength: "Name must be at most 50 characters long."
+			},
+			'user[location]': {
+				maxlength: "Name must be at most 50 characters long."
 			},
 			terms: {
 				required: "You must agree to the terms."
@@ -60,7 +74,8 @@ $(document).ready(function()
 				maxlength: 250
 			},
 			'event[location]': {
-				required: true
+				required: true,
+				maxlength: 50
 			},
 			start_day: 'required',
 			end_day: 'required'
@@ -74,7 +89,8 @@ $(document).ready(function()
 				maxlength: "Please enter a description up to 250 characters long."
 			},
 			'event[location]': {
-				required: "Please enter a location."
+				required: "Please enter a location.",
+				maxlength: "Location must be at most 50 characters long."
 			}
 		}
 	}); // end form-event.validate
@@ -120,7 +136,14 @@ $(document).ready(function()
 				maxlength: 50
 			},
 			'user[website]': {
-				url: true
+				url: true,
+				maxlength: 500
+			},
+			'user[work]': {
+				maxlength: 50
+			},
+			'user[education]': {
+				maxlength: 50
 			}
 		},
 		messages: {
@@ -136,6 +159,16 @@ $(document).ready(function()
 			},
 			'user[location]': {
 				maxlength: "Please enter up to 50 characters."
+			},
+			'user[website]': {
+				url: "Please enter a valid url.",
+				maxlength: "Please enter up to 500 characters."
+			},
+			'user[work]': {
+				maxlength: "Please enter up to 50 characters."
+			},
+			'user[education]': {
+				maxlength: "Please enter up to 50 characters."
 			}
 		}
 	}); // end form-edit-profile.validate
@@ -143,7 +176,14 @@ $(document).ready(function()
 	$("#form-session").validate({
 		rules: {
 			'session[name]': {
-				required: true
+				required: true,
+				maxlength: 50
+			},
+			'session[description]': {
+				maxlength: 50
+			},
+			'session[location]': {
+				maxlength: 50
 			},
 			start_hour: {
 				digits: true,
@@ -180,7 +220,14 @@ $(document).ready(function()
 		},
 		messages: {
 			'session[name]': {
-				required: "Please enter a name."
+				required: "Please enter a name.",
+				maxlength: "Name must be at most 50 characters long."
+			},
+			'session[description]': {
+				maxlength: "Description must be at most 50 characters long."
+			},
+			'session[location]': {
+				maxlength: "Location must be at most 50 characters long."
 			},
 			start_hour: {
 				digits: "Please enter the start hour.",
@@ -220,7 +267,14 @@ $(document).ready(function()
 	$("#form-activity").validate({
 		rules: {
 			'activity[name]': {
-				required: true
+				required: true,
+				maxlength: 50
+			},
+			'activity[description]': {
+				maxlength: 50
+			},
+			'activity[location]': {
+				maxlength: 50
 			},
 			start_hour: {
 				digits: true,
@@ -257,7 +311,14 @@ $(document).ready(function()
 		},
 		messages: {
 			'activity[name]': {
-				required: "Please enter a name."
+				required: "Please enter a name.",
+				maxlength: "Name must be at most 50 characters long."
+			},
+			'activity[description]': {
+				maxlength: "Description must be at most 50 characters long."
+			},
+			'activity[location]': {
+				maxlength: "Location must be at most 50 characters long."
 			},
 			start_hour: {
 				digits: "Please enter the start hour.",
@@ -298,30 +359,42 @@ $(document).ready(function()
 		ignore: ':hidden',
 		rules: {
 			'question[text]': {
-				required: true
+				required: true,
+				maxlength: 50
 			},
 			'question[type]': {
 				required: true
 			},
 			'question[option1]': {
-				required: true
+				required: true,
+				maxlength: 50
 			},
 			'question[option2]': {
-				required: true
+				required: true,
+				maxlength: 50
+			},
+			'question[option3]': {
+				maxlength: 50
 			}
 		},
 		messages: {
 			'question[text]': {
-				required: "Please enter a question."
+				required: "Please enter a question.",
+				maxlength: "Question must be at most 50 characters long."
 			},
 			'question[type]': {
 				required: "Please select a question type."
 			},
 			'question[option1]': {
-				required: "Please provide at least two options."
+				required: "Please provide at least two options.",
+				maxlength: "Option 1 must be at most 50 characters long."
 			},
 			'question[option2]': {
-				required: "Please provide at least two options."
+				required: "Please provide at least two options.",
+				maxlength: "Option 2 must be at most 50 characters long."
+			},
+			'question[option3]': {
+				maxlength: "Option 3 must be at most 50 characters long."
 			}
 		}
 	}); // end form-questions.validate

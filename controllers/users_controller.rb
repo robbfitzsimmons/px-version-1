@@ -40,6 +40,9 @@ post '/signup/step2' do
 	if @user.save
 		status(202)
 
+		session[:invite_event] = nil
+		session[:invite] = nil
+
 		@user.invites = Invite.all(:email => @user.email)
 		@user.save
 
@@ -115,7 +118,6 @@ post '/connect' do
 end
 
 get '/users/:id/approve' do
-	my_account?
 
 	@title = "Approve New Information"
 	@user = session[:user_info]

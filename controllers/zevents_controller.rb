@@ -138,9 +138,12 @@ end
 
 # Show a specific event
 get '/:permalink' do
+	
+	dissallowed_names = %w{"/login", "/logout", "/recover", "/users", "/invites", "/activities", "/questions", "/events", "/sessions"} 
+	pass if dissallowed_names.one? {|dissallowed_name| dissallowed_name.match(request.path_info)}
+
 	invited_to_event?
 
-	pass if request.path_info == "/login"
 
 	@event_dashboard = true
 	
@@ -186,10 +189,41 @@ get '/:permalink' do
 
 	@progress = ((count/total) * 100).round(0) 
 
-	if is_event_admin(@event)
-		session[:event] = @event.id
+	
+		puts "NORMAL"
+		puts session[:invite]
+		if is_event_admin(@event)
+			session[:event] = @event.id
+		end
+		erb :'events/show'
+end
+
+# Show a specific event
+get '/:permalink/preview' do
+
+	if !current_user.nil?
+		redirect "/#{params[:permalink]}"
 	end
-	erb :'events/show'	
+
+	@event_dashboard = true
+	
+	@event = Event.first(:permalink => params[:permalink].downcase)
+	@title = "Event: #{@event.name}"
+
+	all_attendees = @event.user_event_associations(:attending => true)
+	@attendees = []
+	if all_attendees.count < 4
+		@attendees = all_attendees
+	else
+		while(@attendees.count < 4) do 
+			random = rand(all_attendees.length)
+		  @attendees << all_attendees[random] if (!@attendees.include? all_attendees[random])
+		end
+	end 
+
+		puts "JUST AN INVITE"
+		puts session[:invite]
+		erb :'events/preview', {:layout => :sessions_layout}
 end
 
 # Show a specific event
@@ -216,10 +250,9 @@ get '/:permalink/nametags' do
 end
 
 get '/:permalink/nametags.pdf' do
-		my_permalink?
 
 	 	content_type 'application/pdf'
-    kit = PDFKit.new("http://#{request.host_with_port}/#{params[:permalink]}/nametags")
+    kit = PDFKit.new("http://localhost:9292/#{params[:permalink]}/nametags")
     kit.to_pdf
  
 end
@@ -280,8 +313,11 @@ delete '/:permalink' do
 	event.days.sessions.activities.destroy
 	event.days.sessions.destroy
 	event.days.destroy
+
 	event.user_event_associations.destroy
 
+	event.questions.answers.destroy
+	event.questions.destroy
 
 	if event.destroy
 		

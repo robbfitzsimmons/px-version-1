@@ -38,6 +38,8 @@ get '/auth/:name/callback' do
 			session[:user] = @user.id
 			flash[:success] = "Welcome back, <em>#{@user.name}</em>."
 			puts "Logged them in as user #{session[:user]}"
+			session[:invite_event] = nil
+			session[:invite] = nil
 			redirect "/users/#{@user.id}"
 		end
 		
@@ -114,7 +116,7 @@ get '/auth/:name/callback' do
 
 		session[:user_info] = @user
 
-		flash[:success] = "When you save, your #{auth["provider"].capitalize} account will be added."
+		flash[:success] = "When you save, your #{auth["provider"].capitalize.sub("_", "")} account will be added."
 
 
 		redirect "/users/#{current_user.id}/approve"

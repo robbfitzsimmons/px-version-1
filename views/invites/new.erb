@@ -19,13 +19,13 @@
 		<textarea name="message" type="text">I'd like to invite you to join us at <%= @event.name %> on <%= @event.start_date.strftime('%A, %B %e') %>.
 
 Hope to see you there!
-<%= current_user.name %></textarea>
+</textarea>
 
 		<input type="submit" value="Send Invites" />
 	</form>
 </section>
 <script src="/js/jquery.autocomplete.min.js"></script>
-<script src="/js/jquery.tagsinput.min.js"></script>
+<script src="/js/jquery.tagsinput.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/jquery.autocomplete.css">
 <script src="/js/validate.js"></script>
 <script src="/js/form.js"></script>
