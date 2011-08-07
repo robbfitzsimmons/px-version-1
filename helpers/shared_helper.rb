@@ -43,7 +43,7 @@ def invited_to_event?
 
   event = Event.first(:permalink => params[:permalink])
 
-  if (!event.nil? || session[:invite_event] != event.id)
+  if (!event.nil? && session[:invite_event] != event.id)
     logged_in?
 
     if current_user.invites.events(:permalink => params[:permalink]).empty? && current_user.events(:permalink => params[:permalink]).empty?
