@@ -7,19 +7,7 @@ Dir.glob("#{Dir.pwd}/controllers/*.rb") { |m| require "#{m.chomp}" }
 
 require 'openid/store/filesystem'
 require 'fileutils'
-require 'pdfkit'
-
-
-if (ENV['RACK_ENV']) == "production"
-	smtp_conn = Net::SMTP.new('smtp.gmail.com', 587)
-	smtp_conn.enable_starttls          
-	smtp_conn.start('smtp.gmail.com', 'pdudley89@gmail.com', 'totspuRs505', :plain)
-
-	Mail.defaults do                                                   
-	  delivery_method :smtp_connection, { :connection => smtp_conn }   
-	end
-end 
-
+#require 'pdfkit'
 
 # Set up database
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite://#{Dir.pwd}/db/proximate.db")
@@ -37,11 +25,12 @@ if (ENV['RACK_ENV']) == "development"
 	require "#{Dir.pwd}/factories/factory.rb"
 end
 
-if (ENV['RACK_ENV']) == "production"
-	PDFKit.configure do |config|
-     config.wkhtmltopdf = File.join(APP_ROOT, 'bin', 'wkhtmltopdf-amd64').to_s
-	end  
-end
+# Set up the PDF Converter - will need to remove it from the gitignore
+# if (ENV['RACK_ENV']) == "production"
+# 	PDFKit.configure do |config|
+#      config.wkhtmltopdf = File.join(APP_ROOT, 'bin', 'wkhtmltopdf-amd64').to_s
+# 	end  
+# end
 
 use Rack::Session::Cookie, :secret => 'Xzw8TvIwQVZrnjKXkoI8SRDHhIZ65y'
 use Rack::Flash

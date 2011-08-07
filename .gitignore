@@ -1,3 +1,4 @@
 /db
 /.sass-cache
 /public/uploads/
+/bin/wkhtmltopdf-amd64

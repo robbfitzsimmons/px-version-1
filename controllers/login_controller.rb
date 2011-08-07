@@ -42,6 +42,8 @@ post '/recover' do
 
 			if (ENV['RACK_ENV']) == "production"
 
+				initialize_email
+
 				#Send Email
 				mail = Mail.new do          
 				  to "#{user.name} <#{user.email}>"         

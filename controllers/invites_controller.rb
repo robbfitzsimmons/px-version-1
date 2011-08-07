@@ -40,6 +40,9 @@ post '/invites' do
 		if invite.save
 			status(202)
 			if (ENV['RACK_ENV']) == "production"
+
+				initialize_email
+
 				#Send Email
 				mail = Mail.new do          
 				  to "<#{invite.email}>"         

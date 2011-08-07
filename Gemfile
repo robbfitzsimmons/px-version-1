@@ -13,12 +13,12 @@ gem "dm-timestamps"
 gem "omniauth"
 gem "sass"
 gem "dm-paperclip", :git => "git://github.com/pdud/dm-paperclip.git"
-gem "pdfkit"
+# gem "pdfkit"									# converts elements to pdf
 
 group :development do
   gem "dm-sqlite-adapter"
   gem "dm-sweatshop"
-  gem "wkhtmltopdf-binary"
+  # gem "wkhtmltopdf-binary"               # the software that does the pdf converting
 end
 
 group :production do
