@@ -1,5 +1,13 @@
 # Create a new Event Page
 get '/events/new' do
+
+
+	if not current_user.curator
+		flash[:error] = "This feature is currently private."
+		redirect back
+	end
+
+
 	@title = "Create New Event"
 	@new = true
 	
@@ -22,6 +30,7 @@ end
 
 # Create an event action
 post '/events' do
+
 
 	@event = Event.new(params[:event])
 
@@ -137,7 +146,7 @@ put '/:permalink' do
 end
 
 # Show a specific event
-get '/events/:permalink' do
+get '/:permalink' do
 	
 	dissallowed_names = %w{"/login", "/logout", "/recover", "/users", "/invites", "/activities", "/questions", "/events", "/sessions"} 
 	pass if dissallowed_names.one? {|dissallowed_name| dissallowed_name.match(request.path_info)}

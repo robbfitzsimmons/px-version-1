@@ -104,6 +104,7 @@ get '/auth/:name/callback' do
 		elsif (auth["provider"] == "facebook")
 			@user.facebook = auth["user_info"]["urls"]["Facebook"]
 			@user.facebook_uid = auth["uid"]
+			puts "#{@user.facebook_uid} is the uid"
 			@user.image_url = auth["user_info"]["image"] if (current_user.image.url == "/images/original/missing.png")
 			image = @user.image_url.split('=')	if (current_user.image.url == "/images/original/missing.png")
 			@user.image_url = image[0]+"=normal" if (current_user.image.url == "/images/original/missing.png")

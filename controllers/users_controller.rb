@@ -37,6 +37,11 @@ end
 post '/signup/step2' do
 	@user = User.new(params[:user])
 
+		
+	
+	admin_emails = %w{"pdudley89@gmail.com", "scanieso@gmail.com", "fongandrew@gmail.com", "hugo.vanvuuren@gmail.com", "rvfitzsimmons@gmail.com"} 
+	@user.curator = true if admin_emails.one? {|admin_email| admin_email.match(@user.email)}
+
 	if @user.save
 		status(202)
 
@@ -206,12 +211,12 @@ put '/users/:id' do
 
 		if (params[:user][:facebook] != nil)
 			@user.facebook = params[:user][:facebook]
-			@user.facebook_uid = params[:user][:facebook]
+			@user.facebook_uid = params[:user][:facebook_uid]
 		end
 
 		if (params[:user][:twitter] != nil)
-			@user.facebook = params[:user][:twitter]
-			@user.facebook_uid = params[:user][:twitter]
+			@user.twitter = params[:user][:twitter]
+			@user.twitter_uid = params[:user][:twitter_uid]
 		end
 
 		if @user.save

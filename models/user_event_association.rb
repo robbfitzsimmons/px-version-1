@@ -1,7 +1,7 @@
 class UserEventAssociation
   include DataMapper::Resource
 
-  property :id,					  	Serial    #
+  #property :id,					  	Serial    #
  
   # property :user_id,        Integer    # Links an event to a user
   # property :event_id,		    Integer    # Links an user to an event
