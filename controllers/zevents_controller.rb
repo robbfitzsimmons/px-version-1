@@ -31,6 +31,10 @@ end
 # Create an event action
 post '/events' do
 
+		if not current_user.curator
+		flash[:error] = "This feature is currently private."
+		redirect back
+	end
 
 	@event = Event.new(params[:event])
 
