@@ -23,45 +23,6 @@
 		<% @start = @event.start_date.strftime("%b %e") %>
 		<%= @start %><%= @start != @event.end_date.strftime("%b %e") ? '-' + @event.end_date.strftime("%b %e") : "" %>
 	</h6>
-	
-	
-	<hr />
-	
-	<h2>
-		<a href = "/<%= @event.permalink %>/attendees">Attendees (<%= @event.user_event_associations(:attending => true).length %>)</a>
-	</h2>
-	
-	<ul>
-	<% i = 0 %>
-	<% @attendees.each do |assoc| %>
-		<div class="nametag-sm" data-reveal-id="modal-<%= i %>">
-				<img src="<%= assoc.user.image(:thumb) %>" />
-				<div>
-					<h4><%= assoc.user.name %></h4>
-					<h5><%= assoc.user.description %></h5>
-					<h6><%= assoc.user.location %></h6>
-				</div>
-<!--
-				<% if !assoc.user.email.blank? %>
-					<a target="_blank" href="mailto:<%= assoc.user.email %>" class="social email">Email</a>
-				<% end %>
-				<% if !assoc.user.website.blank? %>
-					<a target="_blank" href="<%= assoc.user.website %>" class="social www">Website</a>
-				<% end %>
-				<% if !assoc.user.facebook.blank? %>
-					<a target="_blank" href="<%= assoc.user.facebook %>" class="social facebook">Facebook</a>
-				<% end %>
-				<% if !assoc.user.linked_in.blank? %>
-					<a target="_blank" href="<%= assoc.user.linked_in %>" class="social linkedin">LinkedIn</a>
-				<% end %>
-				<% if !assoc.user.twitter.blank? %>
-					<a target="_blank" href="<%= assoc.user.twitter %>" class="social twitter">Twitter</a>
-				<% end %>
--->
-				<% i += 1 %>
-		</div>		
-	<% end %>
-	</ul>
 
 	
 </section>
