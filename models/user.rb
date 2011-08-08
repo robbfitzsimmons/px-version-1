@@ -55,7 +55,7 @@ class User
                       :secret_access_key => ENV['S3_SECRET']
                     },
                     :path => "/:class/:attachment/:id/:style/:basename.:extension",
-                    :bucket         => "proximate_test",
+                    :bucket         => "proximate",
                     :styles => { :original => "300x300#",
                                  :thumb => "80x80#" }
   elsif (ENV['RACK_ENV']) == "OOHHHH"
