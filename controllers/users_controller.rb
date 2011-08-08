@@ -39,7 +39,7 @@ post '/signup/step2' do
 
 		
 	
-	admin_emails = %w{"pdudley89@gmail.com", "scanieso@gmail.com", "fongandrew@gmail.com", "hugo.vanvuuren@gmail.com", "rvfitzsimmons@gmail.com"} 
+	admin_emails = %w{"pdudley89@gmail.com", "philip.dudley@quinnipiac.edu", "sarahcanieso@gmail.com" "scanieso@gmail.com", "fongandrew@gmail.com", "hugo.vanvuuren@gmail.com", "rvfitzsimmons@gmail.com"} 
 	@user.curator = true if admin_emails.one? {|admin_email| admin_email.match(@user.email)}
 
 	if @user.save
