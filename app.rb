@@ -38,10 +38,10 @@ use Rack::Flash
 use OmniAuth::Builder do
 	provider :open_id, 		OpenID::Store::Filesystem.new('./tmp')
 	provider :twitter, 		'6kDJ3xRTKjubSoXL1CE41Q', 'FP4UD6lcyyMti5rGm9v3EwfAxIFqIpsDJ84cHlpbTM'
-	provider :linked_in, 	'CuqtbGhGfygi_swi36LOR91i-qHQSuMpz6BstFD5lABv3n9qNcRV7Mcfu2ZaKW5g', 'DId-d7qGWoVTcsfLseckYGdD53CObk1Mp9ISDCXEu8d-HC_UrPzLrxiF3I2bKmas'
+	provider :linked_in, 	'1et24u1DIAxiRNH2jyJSeJKVX5H_c590P9GBVO-5nNDDywd2QAQg9OecPg-QwxzG', '3Ve2dmMnLuobeWVdwecN4No5XgxrJelbAwFPJcDQFTDo8kjoAO4UR5XsvNGOQk6u'
 	
 	if (ENV['RACK_ENV']) == "production"
-		provider :facebook, 	'227605130610885', 'ff85f418057fafa85c4c8ea458cb4193'
+		provider :facebook, 	'157163231019021', '5c2573e95bb4518633ad5ff28cb45645'
 	else
 		provider :facebook, 	'174201209313410', 'cbf7277923e7325a66fe5b8ccb17d537'
 	end
