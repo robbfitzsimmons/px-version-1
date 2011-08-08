@@ -136,7 +136,9 @@
 	<% else %>
 		<article>
 			<h1>You have no events yet.</h1>
-			<a href="/events/new">Create one now!</a>
+				<% if current_user.curator %>
+					<a href="/events/new">Create one now!</a>
+				<% end %>
 		</article>
 	<% end %>
 	
