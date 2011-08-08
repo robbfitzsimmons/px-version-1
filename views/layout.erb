@@ -71,7 +71,7 @@
 
 		  		<p><%= @title %></p>
 
-		  		<% if @user_dashboard %>
+		  		<% if @user_dashboard && current_user.curator %>
 							<a href="/events/new" class="button">Create an Event</a>
 					<% end %>
 		  		
