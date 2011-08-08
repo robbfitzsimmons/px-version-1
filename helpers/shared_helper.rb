@@ -88,7 +88,7 @@ end
 def initialize_email
   smtp_conn = Net::SMTP.new('smtp.gmail.com', 587)
   smtp_conn.enable_starttls          
-  smtp_conn.start('smtp.gmail.com', 'pdudley89@gmail.com', 'totspuRs505', :plain)
+  smtp_conn.start('smtp.gmail.com', 'no-reply@proximate.ly', ENV['GMAIL_PASSWORD'], :plain)
 
   Mail.defaults do                                                   
     delivery_method :smtp_connection, { :connection => smtp_conn }   
