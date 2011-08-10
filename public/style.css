@@ -1461,7 +1461,7 @@ header {
         cursor: pointer;
         float: left;
         font-size: 0;
-        line-height: 0;
+        line-height: 9999em;
         min-width: 175px;
         overflow: hidden;
         padding: 23px;
@@ -1545,7 +1545,7 @@ header {
         cursor: pointer;
         float: left;
         font-size: 0;
-        line-height: 0;
+        line-height: 9999em;
         min-width: 175px;
         overflow: hidden;
         padding: 23px;
@@ -1986,7 +1986,7 @@ header {
           cursor: pointer;
           float: left;
           font-size: 0;
-          line-height: 0;
+          line-height: 9999em;
           min-width: 130px;
           overflow: hidden;
           padding: 23px;
@@ -2070,7 +2070,7 @@ header {
           cursor: pointer;
           float: left;
           font-size: 0;
-          line-height: 0;
+          line-height: 9999em;
           min-width: 130px;
           overflow: hidden;
           padding: 23px;
@@ -2317,7 +2317,7 @@ header {
           cursor: pointer;
           float: left;
           font-size: 0;
-          line-height: 0;
+          line-height: 9999em;
           min-width: 130px;
           overflow: hidden;
           padding: 23px;
@@ -2401,7 +2401,7 @@ header {
           cursor: pointer;
           float: left;
           font-size: 0;
-          line-height: 0;
+          line-height: 9999em;
           min-width: 130px;
           overflow: hidden;
           padding: 23px;

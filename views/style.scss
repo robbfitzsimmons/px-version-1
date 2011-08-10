@@ -154,13 +154,12 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,hr,p,input,textarea,bl
 	@include boxshadow(0 1px 1px 0 #eee);
 	@include gradient-image(#f6f6f6, #eee, $img);
 	@include radius(4px);
-	
 	border: 1px solid #dbdbdb;
 	color: transparent;
 	cursor: pointer;
 	float: left;
 	font-size: 0;
-	line-height: 0;
+	line-height: 9999em;
 	min-width: $width;
 	overflow: hidden;
 	padding: 23px;
@@ -171,7 +170,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,hr,p,input,textarea,bl
 	img {
 		@include boxshadow(1px 1px 1px 0 #fff);
 	}
-				
+	
 	&:hover {
 		@include boxshadow2(inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #ccc);
 		@include gradient-image(#df4c4b, #c43037, $img);
