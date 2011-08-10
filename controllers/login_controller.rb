@@ -47,7 +47,7 @@ post '/recover' do
 				#Send Email
 				mail = Mail.new do          
 				  to "#{user.name} <#{user.email}>"         
-				  from 'Proximate Staff <no-reply@proximate.com>'     
+				  from 'Proximate Team <no-reply@proximate.com>'     
 				  subject 'Proximate Password Reset'               
 				end  
 
