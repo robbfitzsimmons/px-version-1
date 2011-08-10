@@ -1920,6 +1920,63 @@ div.tagsinput {
 	}
 }
 
+#attend{
+	@include gradient(#53b43a, #418d2e);
+	color: #2d6420;
+	@include boxshadow(0 1px 1px 0 #eee);
+	@include radius(4px);
+	
+	border: 1px solid #3d832b;
+	text-decoration: none;
+	text-shadow: 0 1px 1px #53b43a;
+
+	&:hover {
+		@include boxshadow2(inset 0 2px 2px 0 #53b43a, 0 1px 1px 0 #418d2e);
+		@include gradient(#53b43a + #111, #418d2e + #111);
+		border: 1px solid #3d832b;
+		text-decoration: none;
+		text-shadow: 0 1px 1px #53b43a+#222;
+	}
+				
+	&:active {
+		@include gradient(#53b43a - #111, #418d2e - #111);
+		@include boxshadow(none);
+		border: 1px solid #3d832b - #222;
+		color: #2d6420-#111;
+		text-shadow: 0 1px 1px #53b43a;
+	}
+}
+
+#not_attend{
+		@include gradient(#df4c4b-#111, #c43037-#111);
+		@include boxshadow(0 1px 1px 0 #eee);
+		border: 1px solid #884f51;
+		color: #7e171e;
+		text-shadow: 0 1px 1px #e35851;
+			
+	&:hover {
+		@include boxshadow2(inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #ccc);
+		@include gradient(#df4c4b, #c43037);
+		border: 1px solid #884f51;
+		color: #7e171e;
+		text-shadow: 0 1px 1px #e35851;
+			
+		img {
+			@include boxshadow(1px 1px 1px 0 #e35851);
+		}
+	}
+				
+	&:active {
+		@include gradient(#c43037, #df4c4b);
+		@include boxshadow(none);
+		border: 1px solid #884f51;
+		color: #7e171e;
+		text-shadow: 0 1px 1px #e35851;
+	}
+}
+
+
+
 ::selection {
 	background: #c43037;
 	color: #fff;

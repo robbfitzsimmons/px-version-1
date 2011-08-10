@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* Proximate Styles 1.0
  * Author: Sarah Canieso
  */
@@ -3069,6 +3068,116 @@ div.tagsinput {
     background-image: linear-gradient(top, #ffdc11, #ffed22);
     border-top: 1px solid #dca900;
     color: #cb9800; }
+
+#attend {
+  background: #418d2e;
+  background-image: -moz-linear-gradient(top, #53b43a, #418d2e);
+  background-image: -ms-linear-gradient(top, #53b43a, #418d2e);
+  background-image: -o-linear-gradient(top, #53b43a, #418d2e);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#53b43a), to(#418d2e));
+  background-image: -webkit-linear-gradient(top, #53b43a, #418d2e);
+  background-image: linear-gradient(top, #53b43a, #418d2e);
+  color: #2d6420;
+  -moz-box-shadow: 0 1px 1px 0 #eeeeee;
+  -ms-box-shadow: 0 1px 1px 0 #eeeeee;
+  -o-box-shadow: 0 1px 1px 0 #eeeeee;
+  -webkit-box-shadow: 0 1px 1px 0 #eeeeee;
+  box-shadow: 0 1px 1px 0 #eeeeee;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #3d832b;
+  text-decoration: none;
+  text-shadow: 0 1px 1px #53b43a; }
+  #attend:hover {
+    -moz-box-shadow: inset 0 2px 2px 0 #53b43a, 0 1px 1px 0 #418d2e;
+    -ms-box-shadow: inset 0 2px 2px 0 #53b43a, 0 1px 1px 0 #418d2e;
+    -o-box-shadow: inset 0 2px 2px 0 #53b43a, 0 1px 1px 0 #418d2e;
+    -webkit-box-shadow: inset 0 2px 2px 0 #53b43a, 0 1px 1px 0 #418d2e;
+    box-shadow: inset 0 2px 2px 0 #53b43a, 0 1px 1px 0 #418d2e;
+    background: #529e3f;
+    background-image: -moz-linear-gradient(top, #64c54b, #529e3f);
+    background-image: -ms-linear-gradient(top, #64c54b, #529e3f);
+    background-image: -o-linear-gradient(top, #64c54b, #529e3f);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#64c54b), to(#529e3f));
+    background-image: -webkit-linear-gradient(top, #64c54b, #529e3f);
+    background-image: linear-gradient(top, #64c54b, #529e3f);
+    border: 1px solid #3d832b;
+    text-decoration: none;
+    text-shadow: 0 1px 1px #75d65c; }
+  #attend:active {
+    background: #307c1d;
+    background-image: -moz-linear-gradient(top, #42a329, #307c1d);
+    background-image: -ms-linear-gradient(top, #42a329, #307c1d);
+    background-image: -o-linear-gradient(top, #42a329, #307c1d);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#42a329), to(#307c1d));
+    background-image: -webkit-linear-gradient(top, #42a329, #307c1d);
+    background-image: linear-gradient(top, #42a329, #307c1d);
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid #1b6109;
+    color: #1c530f;
+    text-shadow: 0 1px 1px #53b43a; }
+
+#not_attend {
+  background: #b31f26;
+  background-image: -moz-linear-gradient(top, #ce3b3a, #b31f26);
+  background-image: -ms-linear-gradient(top, #ce3b3a, #b31f26);
+  background-image: -o-linear-gradient(top, #ce3b3a, #b31f26);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ce3b3a), to(#b31f26));
+  background-image: -webkit-linear-gradient(top, #ce3b3a, #b31f26);
+  background-image: linear-gradient(top, #ce3b3a, #b31f26);
+  -moz-box-shadow: 0 1px 1px 0 #eeeeee;
+  -ms-box-shadow: 0 1px 1px 0 #eeeeee;
+  -o-box-shadow: 0 1px 1px 0 #eeeeee;
+  -webkit-box-shadow: 0 1px 1px 0 #eeeeee;
+  box-shadow: 0 1px 1px 0 #eeeeee;
+  border: 1px solid #884f51;
+  color: #7e171e;
+  text-shadow: 0 1px 1px #e35851; }
+  #not_attend:hover {
+    -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+    -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+    -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+    -webkit-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+    box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+    background: #c43037;
+    background-image: -moz-linear-gradient(top, #df4c4b, #c43037);
+    background-image: -ms-linear-gradient(top, #df4c4b, #c43037);
+    background-image: -o-linear-gradient(top, #df4c4b, #c43037);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#df4c4b), to(#c43037));
+    background-image: -webkit-linear-gradient(top, #df4c4b, #c43037);
+    background-image: linear-gradient(top, #df4c4b, #c43037);
+    border: 1px solid #884f51;
+    color: #7e171e;
+    text-shadow: 0 1px 1px #e35851; }
+    #not_attend:hover img {
+      -moz-box-shadow: 1px 1px 1px 0 #e35851;
+      -ms-box-shadow: 1px 1px 1px 0 #e35851;
+      -o-box-shadow: 1px 1px 1px 0 #e35851;
+      -webkit-box-shadow: 1px 1px 1px 0 #e35851;
+      box-shadow: 1px 1px 1px 0 #e35851; }
+  #not_attend:active {
+    background: #df4c4b;
+    background-image: -moz-linear-gradient(top, #c43037, #df4c4b);
+    background-image: -ms-linear-gradient(top, #c43037, #df4c4b);
+    background-image: -o-linear-gradient(top, #c43037, #df4c4b);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#c43037), to(#df4c4b));
+    background-image: -webkit-linear-gradient(top, #c43037, #df4c4b);
+    background-image: linear-gradient(top, #c43037, #df4c4b);
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid #884f51;
+    color: #7e171e;
+    text-shadow: 0 1px 1px #e35851; }
 
 ::selection {
   background: #c43037;
