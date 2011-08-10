@@ -330,6 +330,7 @@ delete '/:permalink' do
 	event.days.sessions.destroy
 	event.days.destroy
 
+	event.invites.destroy
 	event.user_event_associations.destroy
 
 	event.questions.answers.destroy
