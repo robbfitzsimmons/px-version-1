@@ -59,15 +59,15 @@ post '/recover' do
 							<table style='padding: 50px 0' width='656' height='182' border='0' cellpadding='0' cellspacing='0'>
 								<tr>
 									<td rowspan='2'>
-										<img src='http://bulldozer.heroku.com/images/mailer/proximate_logo.png' width='330' height='182' alt=''></td>
+										<img src='http://test.proximate.ly/images/mailer/proximate_logo.png' width='330' height='182' alt=''></td>
 									<td>
-										<img src='http://bulldozer.heroku.com/images/mailer/password.png' width='326' height='40' alt=''></td>
+										<img src='http://test.proximate.ly/images/mailer/password.png' width='326' height='40' alt=''></td>
 								</tr>
 								<tr>
 									<td style='padding: 10px 4px'>
 										<p style='font-size: 13px; line-height: 1.5em; color: #a4a4a4; font-family: Helvetica, Arial, sans-serif;'>Hello #{user.name},</p>
 										<p style='font-size: 13px; line-height: 1.5em; color: #a4a4a4; font-family: Helvetica, Arial, sans-serif;'>Please follow this link to reset your password
-											<a href='http://bulldozer.heroku.com/recover/#{recover_password.slug}'>http://bulldozer.heroku.com/recover/#{recover_password.slug}</a></p>
+											<a href='http://test.proximate.ly/recover/#{recover_password.slug}'>http://test.proximate.ly/recover/#{recover_password.slug}</a></p>
 										<p style='font-size: 13px; line-height: 1.5em; color: #a4a4a4; font-family: Helvetica, Arial, sans-serif;'>Thank you,<br /> 
 										The Proximate Team</p>	
 									</td>

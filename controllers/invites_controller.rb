@@ -58,9 +58,9 @@ post '/invites' do
 							<table style='padding: 50px 0' width='656' height='182' border='0' cellpadding='0' cellspacing='0'>
 								<tr>
 									<td rowspan='2'>
-										<img src='http://bulldozer.heroku.com/images/mailer/proximate_logo.png' width='330' height='182' alt=''></td>
+										<img src='http://test.proximate.ly/images/mailer/proximate_logo.png' width='330' height='182' alt=''></td>
 									<td>
-										<img src='http://bulldozer.heroku.com/images/mailer/your_invited.png' width='326' height='40' alt=''></td>
+										<img src='http://test.proximate.ly/images/mailer/your_invited.png' width='326' height='40' alt=''></td>
 								</tr>
 								<tr>
 									<td style='padding: 10px 4px'>
@@ -70,7 +70,7 @@ post '/invites' do
 										</p>
 										<hr style='background: #fff; border: none; border-bottom: 1px solid #e6e6e6; height: 1px;' />
 										<p style='font-size: 13px; line-height: 1.5em; color: #a4a4a4; font-family: Helvetica, Arial, sans-serif;'>Please follow this link to check out #{admin.name}'s, <em>#{event.name}</em>.
-												<a href='http://bulldozer.heroku.com/invites/#{invite.slug}'>http://bulldozer.heroku.com/invites/#{invite.slug}</a>
+												<a href='http://test.proximate.ly/invites/#{invite.slug}'>http://test.proximate.ly/invites/#{invite.slug}</a>
 										</p>
 										<p style='font-size: 13px; line-height: 1.5em; color: #a4a4a4; font-family: Helvetica, Arial, sans-serif;'>Thank you,<br /> 
 										The Proximate Team</p>	
