@@ -20,6 +20,8 @@ post '/signup' do
 
 	if params[:sign_up] == "LinkedIn"
 		redirect '/auth/linked_in'
+	elsif params[:sign_up] == "Twitter"
+		redirect '/auth/twitter'
 	elsif params[:sign_up] == "Facebook"
 		redirect '/auth/facebook'
 	elsif params[:sign_up] == "Sign Up"
@@ -91,9 +93,10 @@ get '/users/:id' do
 	count += 1 if (!@user.organizations.empty?)	#9
 	count += 1 if (!@user.facebook.blank?)			#10
 	count += 1 if (!@user.linked_in.blank?)			#11
-	count += 1 if (@user.image.url != "/images/original/missing.png")	#12
+	count += 1 if (!@user.twitter.blank?)			#12
+	count += 1 if (@user.image.url != "/images/original/missing.png")	#13
 
-	@progress = ((count/12.0) * 100).round(0) 
+	@progress = ((count/13.0) * 100).round(0) 
 
 	session[:connect] = nil
 	
@@ -118,6 +121,8 @@ post '/connect' do
 		redirect '/auth/linked_in'
 	elsif params[:connect] == "Facebook"
 		redirect '/auth/facebook'
+	elsif params[:connect] == "Twitter"
+		redirect '/auth/twitter'
 	end
 
 end

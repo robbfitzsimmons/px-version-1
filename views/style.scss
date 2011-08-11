@@ -159,12 +159,13 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,hr,p,input,textarea,bl
 	cursor: pointer;
 	float: left;
 	font-size: 0;
-	line-height: 9999em;
+	line-height: 0;
 	min-width: $width;
 	overflow: hidden;
 	padding: 23px;
 	text-align: center;
 	text-decoration: none;
+	text-indent: -9999px;
 	text-shadow: 0 1px 1px #fff;
 				
 	img {
@@ -192,7 +193,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,hr,p,input,textarea,bl
 	}
 }
 
-@mixin buttontrio($width: 130px) {
+@mixin buttontrio($width: 100px) {
 	@include button($width);
 	
 	&#signup{
@@ -205,7 +206,6 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,hr,p,input,textarea,bl
 		@include button-image($width, 'social_linkedin.gif');
 		@include radius(0);
 		border-left: 0;
-		border-right: 0;
 		
 		&:hover {
 			border: 1px solid #884f51;
@@ -213,6 +213,18 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,hr,p,input,textarea,bl
 		}
 	}
 	
+	&#twitter {
+		@include button-image($width, 'social_twitter.gif');
+		@include radius(0);
+		border-left: 0;
+		border-right: 0;
+		
+		&:hover {
+			border: 1px solid #884f51;
+			width: $width - 2px;
+		}
+	}
+
 	&#facebook {
 		@include button-image($width, 'social_facebook.gif');
 		@include radius(0);
@@ -1091,7 +1103,7 @@ header {
 			}
 			
 			input[type=submit] {
-				@include buttontrio(175px);
+				@include buttontrio(132px);
 			}
 		}
 	} /* landing */

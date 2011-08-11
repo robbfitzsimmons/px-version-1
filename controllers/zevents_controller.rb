@@ -152,7 +152,7 @@ end
 # Show a specific event
 get '/:permalink' do
 	
-	dissallowed_names = %w{"/login", "/logout", "/recover", "/users", "/invites", "/activities", "/questions", "/events", "/sessions"} 
+	dissallowed_names = %w{"/auth", "/login", "/logout", "/recover", "/users", "/invites", "/activities", "/questions", "/events", "/sessions"} 
 	pass if dissallowed_names.one? {|dissallowed_name| dissallowed_name.match(request.path_info)}
 
 	invited_to_event?

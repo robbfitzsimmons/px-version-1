@@ -3,7 +3,7 @@
 		<p>Your nametag is <strong><%= @progress %>%</strong> complete. 
 			<% if (@user.image.url == "/images/original/missing.png") %>
 				<a href="/users/<%= @user.id %>/edit">Add a photo now!</a>
-			<% elsif @user.facebook.blank? || @user.linked_in.blank? %>
+			<% elsif @user.facebook.blank? || @user.linked_in.blank? || @user.twitter.blank? %>
 				<a href="/users/<%= @user.id %>/edit">Connect your social networks now!</a>
 			<% elsif @user.location.blank? || @user.work.blank? || @user.education.blank? || @user.description.blank? || @user.website.blank? || @user.website.blank? || @user.interests.empty? || @user.organizations.empty? %>
 				<a href="/users/<%= @user.id %>/edit">Add some personal info now!</a>

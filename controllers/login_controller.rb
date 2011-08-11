@@ -4,6 +4,8 @@ post '/login' do
 		redirect '/auth/linked_in'
 	elsif params[:login] == "Facebook"
 		redirect '/auth/facebook'
+	elsif params[:login] == "Twitter"
+		redirect '/auth/twitter'
 	end
 
 	user = User.authenticate(params[:session][:email], params[:session][:password])

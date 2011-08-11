@@ -37,7 +37,7 @@ use Rack::Flash
 
 use OmniAuth::Builder do
 	provider :open_id, 		OpenID::Store::Filesystem.new('./tmp')
-	provider :twitter, 		'6kDJ3xRTKjubSoXL1CE41Q', 'FP4UD6lcyyMti5rGm9v3EwfAxIFqIpsDJ84cHlpbTM'
+	provider :twitter, 		'qC4lqaHZAxUUTx7bVvWSQ', 'C857b05mgSLhCaSbUplbd4jhZ5pbcBiK4FPwyskctRs'
 	provider :linked_in, 	'1et24u1DIAxiRNH2jyJSeJKVX5H_c590P9GBVO-5nNDDywd2QAQg9OecPg-QwxzG', '3Ve2dmMnLuobeWVdwecN4No5XgxrJelbAwFPJcDQFTDo8kjoAO4UR5XsvNGOQk6u'
 	
 	if (ENV['RACK_ENV']) == "production"

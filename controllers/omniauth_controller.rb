@@ -1,4 +1,4 @@
-#require 'pp'
+##require 'pp'
 
 get '/auth/:name/callback' do
 	auth = request.env['omniauth.auth']
@@ -7,7 +7,7 @@ get '/auth/:name/callback' do
 	if session[:connect] == false || session[:connect].nil?
 	
 		#puts auth["provider"]
-		#puts PP::pp(auth, $stderr, 50)
+		##puts PP::pp(auth, $stderr, 50)
 		# Search for a user with the name
 		if(auth["provider"] == "linked_in")
 			@user = User.first(:linked_in_uid => auth["uid"])
@@ -48,7 +48,6 @@ get '/auth/:name/callback' do
 			puts "ITS LINKED IN"
 			@user.linked_in = auth["user_info"]["urls"]["LinkedIn"]
 			@user.linked_in_uid = auth["uid"]
-			
 			if (@user.website == nil)
 				@user.website = auth["user_info"]["urls"]["Personal Website"]
 			end
@@ -58,6 +57,7 @@ get '/auth/:name/callback' do
 			puts "ITS TWITTER"
 			@user.twitter = auth["user_info"]["urls"]["Twitter"]
 			@user.twitter_uid = auth["uid"]
+			@user.image_url = @user.image_url.gsub("_normal", "")
 				if (@user.website == nil)
 					@user.website = auth["user_info"]["urls"]["Website"]
 				end
@@ -112,7 +112,7 @@ get '/auth/:name/callback' do
 		elsif (auth["provider"] == "twitter")
 			@user.twitter = auth["user_info"]["urls"]["Twitter"]
 			@user.twitter_uid = auth["uid"]
-			@user.image_url = auth["user_info"]["image"] if (current_user.image.url == "/images/original/missing.png")
+			@user.image_url = auth["user_info"]["image"].gsub("_normal", "") if (current_user.image.url == "/images/original/missing.png")
 		end
 
 		session[:user_info] = @user

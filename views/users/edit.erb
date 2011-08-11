@@ -12,9 +12,17 @@
 	<% end %>
 	<% if @user.facebook.blank? %>
 		<form id="connect-facebook" action="/connect" method="post">
-			<label>
+			<label style="float: left; margin: 0 0 15px 0; width: 100%;">
 			<input name="connect" type="hidden" value="Facebook" />
 			Connect with <input id="connect-facebook" name="connect" type="submit" value="Facebook" />
+			</label>
+		</form>
+	<% end %>
+	<% if @user.twitter.blank? %>
+		<form id="connect-twitter" action="/connect" method="post">
+			<label>
+			<input name="connect" type="hidden" value="Twitter" />
+			Connect with <input id="connect-twitter" name="connect" type="submit" value="Twitter" />
 			</label>
 		</form>
 	<% end %>

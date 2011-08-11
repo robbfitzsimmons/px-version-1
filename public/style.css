@@ -1371,7 +1371,7 @@ header {
       float: left;
       font-size: 18px;
       line-height: 1em;
-      min-width: 175px;
+      min-width: 132px;
       padding: 10px;
       text-align: center;
       text-decoration: none;
@@ -1460,20 +1460,20 @@ header {
         cursor: pointer;
         float: left;
         font-size: 0;
-        line-height: 9999em;
-        min-width: 175px;
+        line-height: 0;
+        min-width: 132px;
         overflow: hidden;
         padding: 23px;
         text-align: center;
         text-decoration: none;
+        text-indent: -9999px;
         text-shadow: 0 1px 1px #fff;
         -moz-border-radius: 0;
         -ms-border-radius: 0;
         -o-border-radius: 0;
         -webkit-border-radius: 0;
         border-radius: 0;
-        border-left: 0;
-        border-right: 0; }
+        border-left: 0; }
         .mid .landing form input[type=submit]#linkedin img {
           -moz-box-shadow: 1px 1px 1px 0 white;
           -ms-box-shadow: 1px 1px 1px 0 white;
@@ -1520,7 +1520,92 @@ header {
           text-shadow: 0 1px 1px #e35851; }
         .mid .landing form input[type=submit]#linkedin:hover {
           border: 1px solid #884f51;
-          width: 173px; }
+          width: 130px; }
+      .mid .landing form input[type=submit]#twitter {
+        -moz-box-shadow: 0 1px 1px 0 #eeeeee;
+        -ms-box-shadow: 0 1px 1px 0 #eeeeee;
+        -o-box-shadow: 0 1px 1px 0 #eeeeee;
+        -webkit-box-shadow: 0 1px 1px 0 #eeeeee;
+        box-shadow: 0 1px 1px 0 #eeeeee;
+        background: #eeeeee no-repeat center center;
+        background-image: url("images/social_twitter.gif"), -moz-linear-gradient(top, #f6f6f6, #eeeeee);
+        background-image: url("images/social_twitter.gif"), -ms-linear-gradient(top, #f6f6f6, #eeeeee);
+        background-image: url("images/social_twitter.gif"), -o-linear-gradient(top, #f6f6f6, #eeeeee);
+        background-image: url("images/social_twitter.gif"), -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#eeeeee));
+        background-image: url("images/social_twitter.gif"), -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
+        background-image: url("images/social_twitter.gif"), linear-gradient(top, #f6f6f6, #eeeeee);
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        border: 1px solid #dbdbdb;
+        color: transparent;
+        cursor: pointer;
+        float: left;
+        font-size: 0;
+        line-height: 0;
+        min-width: 132px;
+        overflow: hidden;
+        padding: 23px;
+        text-align: center;
+        text-decoration: none;
+        text-indent: -9999px;
+        text-shadow: 0 1px 1px #fff;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+        -webkit-border-radius: 0;
+        border-radius: 0;
+        border-left: 0;
+        border-right: 0; }
+        .mid .landing form input[type=submit]#twitter img {
+          -moz-box-shadow: 1px 1px 1px 0 white;
+          -ms-box-shadow: 1px 1px 1px 0 white;
+          -o-box-shadow: 1px 1px 1px 0 white;
+          -webkit-box-shadow: 1px 1px 1px 0 white;
+          box-shadow: 1px 1px 1px 0 white; }
+        .mid .landing form input[type=submit]#twitter:hover {
+          -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+          -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+          -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+          -webkit-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+          box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+          background: #c43037 no-repeat center center;
+          background-image: url("images/social_twitter.gif"), -moz-linear-gradient(top, #df4c4b, #c43037);
+          background-image: url("images/social_twitter.gif"), -ms-linear-gradient(top, #df4c4b, #c43037);
+          background-image: url("images/social_twitter.gif"), -o-linear-gradient(top, #df4c4b, #c43037);
+          background-image: url("images/social_twitter.gif"), -webkit-gradient(linear, left top, left bottom, from(#df4c4b), to(#c43037));
+          background-image: url("images/social_twitter.gif"), -webkit-linear-gradient(top, #df4c4b, #c43037);
+          background-image: url("images/social_twitter.gif"), linear-gradient(top, #df4c4b, #c43037);
+          border: 1px solid #884f51;
+          color: #7e171e;
+          text-shadow: 0 1px 1px #e35851; }
+          .mid .landing form input[type=submit]#twitter:hover img {
+            -moz-box-shadow: 1px 1px 1px 0 #e35851;
+            -ms-box-shadow: 1px 1px 1px 0 #e35851;
+            -o-box-shadow: 1px 1px 1px 0 #e35851;
+            -webkit-box-shadow: 1px 1px 1px 0 #e35851;
+            box-shadow: 1px 1px 1px 0 #e35851; }
+        .mid .landing form input[type=submit]#twitter:active {
+          background: #df4c4b no-repeat center center;
+          background-image: url("images/social_twitter.gif"), -moz-linear-gradient(top, #c43037, #df4c4b);
+          background-image: url("images/social_twitter.gif"), -ms-linear-gradient(top, #c43037, #df4c4b);
+          background-image: url("images/social_twitter.gif"), -o-linear-gradient(top, #c43037, #df4c4b);
+          background-image: url("images/social_twitter.gif"), -webkit-gradient(linear, left top, left bottom, from(#c43037), to(#df4c4b));
+          background-image: url("images/social_twitter.gif"), -webkit-linear-gradient(top, #c43037, #df4c4b);
+          background-image: url("images/social_twitter.gif"), linear-gradient(top, #c43037, #df4c4b);
+          -moz-box-shadow: none;
+          -ms-box-shadow: none;
+          -o-box-shadow: none;
+          -webkit-box-shadow: none;
+          box-shadow: none;
+          border: 1px solid #884f51;
+          color: #7e171e;
+          text-shadow: 0 1px 1px #e35851; }
+        .mid .landing form input[type=submit]#twitter:hover {
+          border: 1px solid #884f51;
+          width: 130px; }
       .mid .landing form input[type=submit]#facebook {
         -moz-box-shadow: 0 1px 1px 0 #eeeeee;
         -ms-box-shadow: 0 1px 1px 0 #eeeeee;
@@ -1544,12 +1629,13 @@ header {
         cursor: pointer;
         float: left;
         font-size: 0;
-        line-height: 9999em;
-        min-width: 175px;
+        line-height: 0;
+        min-width: 132px;
         overflow: hidden;
         padding: 23px;
         text-align: center;
         text-decoration: none;
+        text-indent: -9999px;
         text-shadow: 0 1px 1px #fff;
         -moz-border-radius: 0;
         -ms-border-radius: 0;
@@ -1896,7 +1982,7 @@ header {
         float: left;
         font-size: 18px;
         line-height: 1em;
-        min-width: 130px;
+        min-width: 100px;
         padding: 10px;
         text-align: center;
         text-decoration: none;
@@ -1985,20 +2071,20 @@ header {
           cursor: pointer;
           float: left;
           font-size: 0;
-          line-height: 9999em;
-          min-width: 130px;
+          line-height: 0;
+          min-width: 100px;
           overflow: hidden;
           padding: 23px;
           text-align: center;
           text-decoration: none;
+          text-indent: -9999px;
           text-shadow: 0 1px 1px #fff;
           -moz-border-radius: 0;
           -ms-border-radius: 0;
           -o-border-radius: 0;
           -webkit-border-radius: 0;
           border-radius: 0;
-          border-left: 0;
-          border-right: 0; }
+          border-left: 0; }
           .mid .right-50 form input[type=submit]#linkedin img, .mid .right-67 form a form input[type=submit]#linkedin img {
             -moz-box-shadow: 1px 1px 1px 0 white;
             -ms-box-shadow: 1px 1px 1px 0 white;
@@ -2045,7 +2131,92 @@ header {
             text-shadow: 0 1px 1px #e35851; }
           .mid .right-50 form input[type=submit]#linkedin:hover, .mid .right-67 form a form input[type=submit]#linkedin:hover {
             border: 1px solid #884f51;
-            width: 128px; }
+            width: 98px; }
+        .mid .right-50 form input[type=submit]#twitter, .mid .right-67 form a form input[type=submit]#twitter {
+          -moz-box-shadow: 0 1px 1px 0 #eeeeee;
+          -ms-box-shadow: 0 1px 1px 0 #eeeeee;
+          -o-box-shadow: 0 1px 1px 0 #eeeeee;
+          -webkit-box-shadow: 0 1px 1px 0 #eeeeee;
+          box-shadow: 0 1px 1px 0 #eeeeee;
+          background: #eeeeee no-repeat center center;
+          background-image: url("images/social_twitter.gif"), -moz-linear-gradient(top, #f6f6f6, #eeeeee);
+          background-image: url("images/social_twitter.gif"), -ms-linear-gradient(top, #f6f6f6, #eeeeee);
+          background-image: url("images/social_twitter.gif"), -o-linear-gradient(top, #f6f6f6, #eeeeee);
+          background-image: url("images/social_twitter.gif"), -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#eeeeee));
+          background-image: url("images/social_twitter.gif"), -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
+          background-image: url("images/social_twitter.gif"), linear-gradient(top, #f6f6f6, #eeeeee);
+          -moz-border-radius: 4px;
+          -ms-border-radius: 4px;
+          -o-border-radius: 4px;
+          -webkit-border-radius: 4px;
+          border-radius: 4px;
+          border: 1px solid #dbdbdb;
+          color: transparent;
+          cursor: pointer;
+          float: left;
+          font-size: 0;
+          line-height: 0;
+          min-width: 100px;
+          overflow: hidden;
+          padding: 23px;
+          text-align: center;
+          text-decoration: none;
+          text-indent: -9999px;
+          text-shadow: 0 1px 1px #fff;
+          -moz-border-radius: 0;
+          -ms-border-radius: 0;
+          -o-border-radius: 0;
+          -webkit-border-radius: 0;
+          border-radius: 0;
+          border-left: 0;
+          border-right: 0; }
+          .mid .right-50 form input[type=submit]#twitter img, .mid .right-67 form a form input[type=submit]#twitter img {
+            -moz-box-shadow: 1px 1px 1px 0 white;
+            -ms-box-shadow: 1px 1px 1px 0 white;
+            -o-box-shadow: 1px 1px 1px 0 white;
+            -webkit-box-shadow: 1px 1px 1px 0 white;
+            box-shadow: 1px 1px 1px 0 white; }
+          .mid .right-50 form input[type=submit]#twitter:hover, .mid .right-67 form a form input[type=submit]#twitter:hover {
+            -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            -webkit-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            background: #c43037 no-repeat center center;
+            background-image: url("images/social_twitter.gif"), -moz-linear-gradient(top, #df4c4b, #c43037);
+            background-image: url("images/social_twitter.gif"), -ms-linear-gradient(top, #df4c4b, #c43037);
+            background-image: url("images/social_twitter.gif"), -o-linear-gradient(top, #df4c4b, #c43037);
+            background-image: url("images/social_twitter.gif"), -webkit-gradient(linear, left top, left bottom, from(#df4c4b), to(#c43037));
+            background-image: url("images/social_twitter.gif"), -webkit-linear-gradient(top, #df4c4b, #c43037);
+            background-image: url("images/social_twitter.gif"), linear-gradient(top, #df4c4b, #c43037);
+            border: 1px solid #884f51;
+            color: #7e171e;
+            text-shadow: 0 1px 1px #e35851; }
+            .mid .right-50 form input[type=submit]#twitter:hover img, .mid .right-67 form a form input[type=submit]#twitter:hover img {
+              -moz-box-shadow: 1px 1px 1px 0 #e35851;
+              -ms-box-shadow: 1px 1px 1px 0 #e35851;
+              -o-box-shadow: 1px 1px 1px 0 #e35851;
+              -webkit-box-shadow: 1px 1px 1px 0 #e35851;
+              box-shadow: 1px 1px 1px 0 #e35851; }
+          .mid .right-50 form input[type=submit]#twitter:active, .mid .right-67 form a form input[type=submit]#twitter:active {
+            background: #df4c4b no-repeat center center;
+            background-image: url("images/social_twitter.gif"), -moz-linear-gradient(top, #c43037, #df4c4b);
+            background-image: url("images/social_twitter.gif"), -ms-linear-gradient(top, #c43037, #df4c4b);
+            background-image: url("images/social_twitter.gif"), -o-linear-gradient(top, #c43037, #df4c4b);
+            background-image: url("images/social_twitter.gif"), -webkit-gradient(linear, left top, left bottom, from(#c43037), to(#df4c4b));
+            background-image: url("images/social_twitter.gif"), -webkit-linear-gradient(top, #c43037, #df4c4b);
+            background-image: url("images/social_twitter.gif"), linear-gradient(top, #c43037, #df4c4b);
+            -moz-box-shadow: none;
+            -ms-box-shadow: none;
+            -o-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            border: 1px solid #884f51;
+            color: #7e171e;
+            text-shadow: 0 1px 1px #e35851; }
+          .mid .right-50 form input[type=submit]#twitter:hover, .mid .right-67 form a form input[type=submit]#twitter:hover {
+            border: 1px solid #884f51;
+            width: 98px; }
         .mid .right-50 form input[type=submit]#facebook, .mid .right-67 form a form input[type=submit]#facebook {
           -moz-box-shadow: 0 1px 1px 0 #eeeeee;
           -ms-box-shadow: 0 1px 1px 0 #eeeeee;
@@ -2069,12 +2240,13 @@ header {
           cursor: pointer;
           float: left;
           font-size: 0;
-          line-height: 9999em;
-          min-width: 130px;
+          line-height: 0;
+          min-width: 100px;
           overflow: hidden;
           padding: 23px;
           text-align: center;
           text-decoration: none;
+          text-indent: -9999px;
           text-shadow: 0 1px 1px #fff;
           -moz-border-radius: 0;
           -ms-border-radius: 0;
@@ -2226,7 +2398,7 @@ header {
         float: left;
         font-size: 18px;
         line-height: 1em;
-        min-width: 130px;
+        min-width: 100px;
         padding: 10px;
         text-align: center;
         text-decoration: none;
@@ -2316,20 +2488,20 @@ header {
           cursor: pointer;
           float: left;
           font-size: 0;
-          line-height: 9999em;
-          min-width: 130px;
+          line-height: 0;
+          min-width: 100px;
           overflow: hidden;
           padding: 23px;
           text-align: center;
           text-decoration: none;
+          text-indent: -9999px;
           text-shadow: 0 1px 1px #fff;
           -moz-border-radius: 0;
           -ms-border-radius: 0;
           -o-border-radius: 0;
           -webkit-border-radius: 0;
           border-radius: 0;
-          border-left: 0;
-          border-right: 0; }
+          border-left: 0; }
           .mid .right-67 form input[type=submit]#linkedin img {
             -moz-box-shadow: 1px 1px 1px 0 white;
             -ms-box-shadow: 1px 1px 1px 0 white;
@@ -2376,7 +2548,92 @@ header {
             text-shadow: 0 1px 1px #e35851; }
           .mid .right-67 form input[type=submit]#linkedin:hover {
             border: 1px solid #884f51;
-            width: 128px; }
+            width: 98px; }
+        .mid .right-67 form input[type=submit]#twitter {
+          -moz-box-shadow: 0 1px 1px 0 #eeeeee;
+          -ms-box-shadow: 0 1px 1px 0 #eeeeee;
+          -o-box-shadow: 0 1px 1px 0 #eeeeee;
+          -webkit-box-shadow: 0 1px 1px 0 #eeeeee;
+          box-shadow: 0 1px 1px 0 #eeeeee;
+          background: #eeeeee no-repeat center center;
+          background-image: url("images/social_twitter.gif"), -moz-linear-gradient(top, #f6f6f6, #eeeeee);
+          background-image: url("images/social_twitter.gif"), -ms-linear-gradient(top, #f6f6f6, #eeeeee);
+          background-image: url("images/social_twitter.gif"), -o-linear-gradient(top, #f6f6f6, #eeeeee);
+          background-image: url("images/social_twitter.gif"), -webkit-gradient(linear, left top, left bottom, from(#f6f6f6), to(#eeeeee));
+          background-image: url("images/social_twitter.gif"), -webkit-linear-gradient(top, #f6f6f6, #eeeeee);
+          background-image: url("images/social_twitter.gif"), linear-gradient(top, #f6f6f6, #eeeeee);
+          -moz-border-radius: 4px;
+          -ms-border-radius: 4px;
+          -o-border-radius: 4px;
+          -webkit-border-radius: 4px;
+          border-radius: 4px;
+          border: 1px solid #dbdbdb;
+          color: transparent;
+          cursor: pointer;
+          float: left;
+          font-size: 0;
+          line-height: 0;
+          min-width: 100px;
+          overflow: hidden;
+          padding: 23px;
+          text-align: center;
+          text-decoration: none;
+          text-indent: -9999px;
+          text-shadow: 0 1px 1px #fff;
+          -moz-border-radius: 0;
+          -ms-border-radius: 0;
+          -o-border-radius: 0;
+          -webkit-border-radius: 0;
+          border-radius: 0;
+          border-left: 0;
+          border-right: 0; }
+          .mid .right-67 form input[type=submit]#twitter img {
+            -moz-box-shadow: 1px 1px 1px 0 white;
+            -ms-box-shadow: 1px 1px 1px 0 white;
+            -o-box-shadow: 1px 1px 1px 0 white;
+            -webkit-box-shadow: 1px 1px 1px 0 white;
+            box-shadow: 1px 1px 1px 0 white; }
+          .mid .right-67 form input[type=submit]#twitter:hover {
+            -moz-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            -ms-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            -o-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            -webkit-box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            box-shadow: inset 0 2px 2px 0 #f46766, 0 1px 1px 0 #cccccc;
+            background: #c43037 no-repeat center center;
+            background-image: url("images/social_twitter.gif"), -moz-linear-gradient(top, #df4c4b, #c43037);
+            background-image: url("images/social_twitter.gif"), -ms-linear-gradient(top, #df4c4b, #c43037);
+            background-image: url("images/social_twitter.gif"), -o-linear-gradient(top, #df4c4b, #c43037);
+            background-image: url("images/social_twitter.gif"), -webkit-gradient(linear, left top, left bottom, from(#df4c4b), to(#c43037));
+            background-image: url("images/social_twitter.gif"), -webkit-linear-gradient(top, #df4c4b, #c43037);
+            background-image: url("images/social_twitter.gif"), linear-gradient(top, #df4c4b, #c43037);
+            border: 1px solid #884f51;
+            color: #7e171e;
+            text-shadow: 0 1px 1px #e35851; }
+            .mid .right-67 form input[type=submit]#twitter:hover img {
+              -moz-box-shadow: 1px 1px 1px 0 #e35851;
+              -ms-box-shadow: 1px 1px 1px 0 #e35851;
+              -o-box-shadow: 1px 1px 1px 0 #e35851;
+              -webkit-box-shadow: 1px 1px 1px 0 #e35851;
+              box-shadow: 1px 1px 1px 0 #e35851; }
+          .mid .right-67 form input[type=submit]#twitter:active {
+            background: #df4c4b no-repeat center center;
+            background-image: url("images/social_twitter.gif"), -moz-linear-gradient(top, #c43037, #df4c4b);
+            background-image: url("images/social_twitter.gif"), -ms-linear-gradient(top, #c43037, #df4c4b);
+            background-image: url("images/social_twitter.gif"), -o-linear-gradient(top, #c43037, #df4c4b);
+            background-image: url("images/social_twitter.gif"), -webkit-gradient(linear, left top, left bottom, from(#c43037), to(#df4c4b));
+            background-image: url("images/social_twitter.gif"), -webkit-linear-gradient(top, #c43037, #df4c4b);
+            background-image: url("images/social_twitter.gif"), linear-gradient(top, #c43037, #df4c4b);
+            -moz-box-shadow: none;
+            -ms-box-shadow: none;
+            -o-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            border: 1px solid #884f51;
+            color: #7e171e;
+            text-shadow: 0 1px 1px #e35851; }
+          .mid .right-67 form input[type=submit]#twitter:hover {
+            border: 1px solid #884f51;
+            width: 98px; }
         .mid .right-67 form input[type=submit]#facebook {
           -moz-box-shadow: 0 1px 1px 0 #eeeeee;
           -ms-box-shadow: 0 1px 1px 0 #eeeeee;
@@ -2400,12 +2657,13 @@ header {
           cursor: pointer;
           float: left;
           font-size: 0;
-          line-height: 9999em;
-          min-width: 130px;
+          line-height: 0;
+          min-width: 100px;
           overflow: hidden;
           padding: 23px;
           text-align: center;
           text-decoration: none;
+          text-indent: -9999px;
           text-shadow: 0 1px 1px #fff;
           -moz-border-radius: 0;
           -ms-border-radius: 0;
