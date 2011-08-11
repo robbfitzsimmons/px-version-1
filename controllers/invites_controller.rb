@@ -36,6 +36,20 @@ post '/invites' do
 		existing_user = User.first(:email => email)
 		invite.user = existing_user if (existing_user.nil? == false)
 
+		## TEMP FIX
+		## Add people to event automatically
+		if (existing_user.nil? == false)
+			puts "adding user"
+			event.users << existing_user
+			event.save
+			assoc = event.user_event_associations.first(:user => existing_user)
+			assoc.attending = true
+			assoc.save
+			invite.hide = true
+			puts "done"
+		end
+		## END TEMP FIX
+
 		
 		if invite.save
 			status(202)

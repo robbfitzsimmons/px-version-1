@@ -51,6 +51,21 @@ post '/signup/step2' do
 		session[:invite] = nil
 
 		@user.invites = Invite.all(:email => @user.email)
+
+		## TEMP FIX
+		## Add people to event automatically
+		event = @user.invites.events.first
+		event.users << @user
+		event.save
+		invite = @user.invites.first(:event => event)
+		invite.hide = true
+		invite.save
+		assoc = event.user_event_associations.first(:user => @user)
+		assoc.attending = true
+		assoc.save
+		puts "done"
+		## END TEMP FIX
+
 		@user.save
 
 		session[:user] = @user.id
