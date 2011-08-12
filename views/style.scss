@@ -1011,6 +1011,21 @@ header {
 			
 			&.even {
 				background: #eee;
+				color: #ccc - #333;
+
+				p {
+				color: #ccc - #333;
+				font-family: $istok;
+				font-size: 14px;
+				line-height: 1.3em;
+				margin: 5px 0;
+				}
+
+				hr{
+					background: #ccc;
+					color: #ccc;
+
+				}
 			}
 			
 			&.last {

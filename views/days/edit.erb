@@ -1,0 +1,18 @@
+<section class="left-33">
+	<h3>Edit Day</h3>
+	
+	<p>Edit day's names for your event. Each day will have the event's sessions.</p>
+	
+</section>
+
+<section class="right-67">
+	<form id="form-day" action="/days/<%= @day.id %>" method="post">
+		<input name="_method" type="hidden" value="put" />
+		<%= erb :'days/form' %>
+		<input type="submit" value="Submit" />
+	</form>
+
+</section>
+
+<script src="/js/validate.js"></script>
+<script src="/js/form.js"></script>

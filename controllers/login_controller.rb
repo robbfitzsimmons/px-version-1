@@ -8,7 +8,7 @@ post '/login' do
 		redirect '/auth/twitter'
 	end
 
-	user = User.authenticate(params[:session][:email], params[:session][:password])
+	user = User.authenticate(params[:session][:email].downcase, params[:session][:password])
 	if user.nil? 
 		# Create an error message and re-render the signin form.
 		flash[:error] = "Login failed."

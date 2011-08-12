@@ -136,7 +136,12 @@
 		<li <%= i%2 == 0 ? "class='even'" : nil %>>
 			<span class="date"><strong><%= day.date.strftime("%b") %></strong><%= day.date.strftime("%e") %></span>
 			<div>
-				<h4><%= day.name %></h4>
+				<h4>
+					<%= day.name %>
+					<% if event_admin %>
+							<a href="/<%= @event.permalink %>/days/<%= day.id %>/edit" class="edit">edit</a>
+					<% end %>
+				</h4>
 				
 				<% day.sessions(:order => [:start_date.asc]).each do |session| %>
 				

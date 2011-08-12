@@ -1,0 +1,16 @@
+<section class="left-33">
+	<h3>Add Session</h3>
+	
+	<p>Add sessions to each day of your event. Each session will have the event's activities.</p>
+	
+</section>
+
+<section class="right-67">
+	<form id="form-session" action="/sessions" method="post">
+		<%= erb :'sessions/form' %>
+		<input type="submit" value="Add" />
+	</form>
+</section>
+
+<script src="/js/validate.js"></script>
+<script src="/js/form.js"></script>

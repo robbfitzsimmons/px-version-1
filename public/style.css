@@ -1149,7 +1149,17 @@ header {
         .mid ul.table li p strong {
           font-size: 18px; }
       .mid ul.table li.even {
-        background: #eee; }
+        background: #eee;
+        color: #999999; }
+        .mid ul.table li.even p {
+          color: #999999;
+          font-family: "Istok Web", "Arial", sans-serif;
+          font-size: 14px;
+          line-height: 1.3em;
+          margin: 5px 0; }
+        .mid ul.table li.even hr {
+          background: #ccc;
+          color: #ccc; }
       .mid ul.table li.last {
         border: 0; }
   .mid .landing h1 {

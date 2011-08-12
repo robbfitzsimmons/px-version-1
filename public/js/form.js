@@ -120,6 +120,21 @@ $(document).ready(function()
 		}
 	}); // end form-invites.validate
 
+	$("#form-day").validate({
+		rules: {
+			'day[name]': {
+				required: true,
+				maxlength: 50
+			}
+		},
+		messages: {
+			'day[name]': {
+				required: "Please enter a name.",
+				maxlength: "Please enter up to 50 characters."
+			}
+		}
+	}); // end form-day.validate
+
 	$("#form-edit-profile").validate({
 		rules: {
 			'user[email]': {
