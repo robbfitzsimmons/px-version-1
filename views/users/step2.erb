@@ -40,13 +40,25 @@
 		<fieldset id="terms">
 			<label>
 				<input name="terms" type="checkbox" />
-				<p>I agree to the terms.</p>
+				<p>I agree to the <a id="a-terms" href="#" data-reveal-id="modal-terms">terms</a>.</p>
 			</label>
 			<label for="terms" class="error hide">You must agree to the terms.</label>
 		</fieldset>
 	
-		<input type="submit" value="Sign Up" />
+		<input id="sign_up" type="submit" value="Sign Up" />
 	</form>
 </section>
 <script src="/js/validate.js"></script>
 <script src="/js/form.js"></script>
+
+
+<div id="modal-terms" class="reveal-modal">
+			<section class="top">
+		<h2><span>Hello</span> my name is</h2>
+	</section>
+	<section class="mid">
+			<%= partial :'terms'  %>
+			</section>
+	<section class="bot"></section>
+     <a class="close-reveal-modal">&#215;</a>
+	</div>	
