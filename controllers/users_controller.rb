@@ -39,7 +39,7 @@ end
 post '/signup/step2' do
 	@user = User.new(params[:user])
 
-		
+	@user.email = @user.email.downcase
 	
 	admin_emails = %w{"pdudley89@gmail.com", "philip.dudley@quinnipiac.edu", "sarahcanieso@gmail.com" "scanieso@gmail.com", "fongandrew@gmail.com", "hugo.vanvuuren@gmail.com", "rvfitzsimmons@gmail.com"} 
 	@user.curator = true if admin_emails.one? {|admin_email| admin_email.match(@user.email)}
@@ -54,16 +54,18 @@ post '/signup/step2' do
 
 		## TEMP FIX
 		## Add people to event automatically
-		event = @user.invites.events.first
-		event.users << @user
-		event.save
-		invite = @user.invites.first(:event => event)
-		invite.hide = true
-		invite.save
-		assoc = event.user_event_associations.first(:user => @user)
-		assoc.attending = true
-		assoc.save
-		puts "done"
+		if @user.invites.count != 0
+			event = @user.invites.events.first
+			event.users << @user
+			event.save
+			invite = @user.invites.first(:event => event)
+			invite.hide = true
+			invite.save
+			assoc = event.user_event_associations.first(:user => @user)
+			assoc.attending = true
+			assoc.save
+			puts "done"
+		end
 		## END TEMP FIX
 
 		@user.save

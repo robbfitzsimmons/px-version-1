@@ -32,8 +32,8 @@ post '/invites' do
 
 	## For each name send an invite
 	emails.each do |email|
-		invite = Invite.new(:email => email, :event => current_event)
-		existing_user = User.first(:email => email)
+		invite = Invite.new(:email => email.downcase, :event => current_event)
+		existing_user = User.first(:email => email.downcase)
 		invite.user = existing_user if (existing_user.nil? == false)
 
 		## TEMP FIX
