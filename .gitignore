@@ -3,3 +3,4 @@
 /public/uploads/
 /bin/wkhtmltopdf-amd64
 /config/s3.yml
+.DS_Store
